@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="我的作品https://fullstack.xinshengdaxue.com/works/345用的Amazon AWS S3存储桶。 用来存储：  用户上传的头像 简历的作品展示图 微信二维码图  刚收到亚玛逊的邮件通知，我的存储桶已泄密！（后果：被盗刷信用卡） 这已经是第三次了！我跟打开github一看，还真泄密了： 问题来了：.gitnore文件，已经去掉config/applicatio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="总有刁民想害联，为什么我的AWS密码…总泄密！.md">
+<meta property="og:url" content="http://yoursite.com/2017/04/25/2017-04-25-always-obstinate-residents-want-to-harm-why-my-aws-password-total-leakmd/index.html">
+<meta property="og:site_name" content="Activeliang&#39;s Blog">
+<meta property="og:description" content="我的作品https://fullstack.xinshengdaxue.com/works/345用的Amazon AWS S3存储桶。 用来存储：  用户上传的头像 简历的作品展示图 微信二维码图  刚收到亚玛逊的邮件通知，我的存储桶已泄密！（后果：被盗刷信用卡） 这已经是第三次了！我跟打开github一看，还真泄密了： 问题来了：.gitnore文件，已经去掉config/applicatio">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-04-25-031506.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-04-25-031003.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-04-25-Snip20170425_30.png">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-04-25-032045.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-04-25-%E5%85%A8%E6%A0%88%E6%B1%82%E8%81%8C%E7%BD%91%E5%AE%A3%E4%BC%A0.png">
+<meta property="og:updated_time" content="2017-09-07T17:10:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="总有刁民想害联，为什么我的AWS密码…总泄密！.md">
+<meta name="twitter:description" content="我的作品https://fullstack.xinshengdaxue.com/works/345用的Amazon AWS S3存储桶。 用来存储：  用户上传的头像 简历的作品展示图 微信二维码图  刚收到亚玛逊的邮件通知，我的存储桶已泄密！（后果：被盗刷信用卡） 这已经是第三次了！我跟打开github一看，还真泄密了： 问题来了：.gitnore文件，已经去掉config/applicatio">
+<meta name="twitter:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-04-25-031506.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/25/2017-04-25-always-obstinate-residents-want-to-harm-why-my-aws-password-total-leakmd/"/>
+
+
+
+
+
+  <title>总有刁民想害联，为什么我的AWS密码…总泄密！.md | Activeliang's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Activeliang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/25/2017-04-25-always-obstinate-residents-want-to-harm-why-my-aws-password-total-leakmd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">总有刁民想害联，为什么我的AWS密码…总泄密！.md</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-25T03:36:00+08:00">
+                2017-04-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>我的作品<a href="https://fullstack.xinshengdaxue.com/works/345" target="_blank" rel="external">https://fullstack.xinshengdaxue.com/works/345</a>用的Amazon AWS S3存储桶。</p>
+<p>用来存储：</p>
+<ul>
+<li>用户上传的头像</li>
+<li>简历的作品展示图</li>
+<li>微信二维码图<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-04-25-031506.jpg" alt=""></li>
+</ul>
+<p>刚收到亚玛逊的邮件通知，我的存储桶已泄密！（后果：被盗刷信用卡）<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-04-25-031003.jpg" alt=""></p>
+<p>这已经是第三次了！我跟打开github一看，还真泄密了：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-04-25-Snip20170425_30.png" alt=""></p>
+<h3 id="问题来了："><a href="#问题来了：" class="headerlink" title="问题来了："></a>问题来了：</h3><p>.gitnore文件，已经去掉config/application.yml(用来存储密码的文件)的追踪！！！为什么还会被push到github呢？？？<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-04-25-032045.jpg" alt=""></p>
+<h5 id="过程：掉坑n个钟，尝试n个方案。"><a href="#过程：掉坑n个钟，尝试n个方案。" class="headerlink" title="过程：掉坑n个钟，尝试n个方案。"></a>过程：掉坑n个钟，尝试n个方案。</h5><h3 id="解法："><a href="#解法：" class="headerlink" title="解法："></a>解法：</h3><p>问题原因：在前面的开发中，曾经把这个文件加入过git cached中，到了后面的开发，你在.gitignore中加入免追踪，无效！</p>
+<p>解法：执行<code>git rm cached config/application.yml</code>，搞定！</p>
+<h5 id="广告时间："><a href="#广告时间：" class="headerlink" title="广告时间："></a>广告时间：</h5><p>这是我正在参赛的作品，欢迎大家来支持我……！<a href="https://fullstack.xinshengdaxue.com/works/345" target="_blank" rel="external">https://fullstack.xinshengdaxue.com/works/345</a><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-04-25-%E5%85%A8%E6%A0%88%E6%B1%82%E8%81%8C%E7%BD%91%E5%AE%A3%E4%BC%A0.png" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/24/2017-04-24-1745976/" rel="next" title="2017-2-23/24 ORID 开挂了的节奏">
+                <i class="fa fa-chevron-left"></i> 2017-2-23/24 ORID 开挂了的节奏
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/25/2017-04-25-2017-4-25-orid/" rel="prev" title="2017-4-25 ORID">
+                2017-4-25 ORID <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg"
+              alt="黄鸿亮" />
+          
+            <p class="site-author-name" itemprop="name">黄鸿亮</p>
+            <p class="site-description motion-element" itemprop="description">记录才能走得更远...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">167</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题来了："><span class="nav-number">1.</span> <span class="nav-text">问题来了：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#过程：掉坑n个钟，尝试n个方案。"><span class="nav-number">1.0.1.</span> <span class="nav-text">过程：掉坑n个钟，尝试n个方案。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解法："><span class="nav-number">2.</span> <span class="nav-text">解法：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#广告时间："><span class="nav-number">2.0.1.</span> <span class="nav-text">广告时间：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄鸿亮</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

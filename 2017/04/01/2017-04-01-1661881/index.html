@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="每日学习纪录：ORID 这是一个思考框架，利用 ORID 整理今天的思绪。  Objective 关于今天的课程, 你记得什么? 完成了什么?  今天的任务是：部署到linode,然后简单地美化下界面，做一个最小可行性产品。 还记得：  早上重置远程主机，想再试试能否部署成功。仍然出现那个问题：在Gemfile里找不到PG这个gem,google了很多方法找不到问题所在。晚上做专案的时候，才领悟：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017-3-30 ORID">
+<meta property="og:url" content="http://yoursite.com/2017/04/01/2017-04-01-1661881/index.html">
+<meta property="og:site_name" content="Activeliang&#39;s Blog">
+<meta property="og:description" content="每日学习纪录：ORID 这是一个思考框架，利用 ORID 整理今天的思绪。  Objective 关于今天的课程, 你记得什么? 完成了什么?  今天的任务是：部署到linode,然后简单地美化下界面，做一个最小可行性产品。 还记得：  早上重置远程主机，想再试试能否部署成功。仍然出现那个问题：在Gemfile里找不到PG这个gem,google了很多方法找不到问题所在。晚上做专案的时候，才领悟：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-07T17:10:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2017-3-30 ORID">
+<meta name="twitter:description" content="每日学习纪录：ORID 这是一个思考框架，利用 ORID 整理今天的思绪。  Objective 关于今天的课程, 你记得什么? 完成了什么?  今天的任务是：部署到linode,然后简单地美化下界面，做一个最小可行性产品。 还记得：  早上重置远程主机，想再试试能否部署成功。仍然出现那个问题：在Gemfile里找不到PG这个gem,google了很多方法找不到问题所在。晚上做专案的时候，才领悟：">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/01/2017-04-01-1661881/"/>
+
+
+
+
+
+  <title>2017-3-30 ORID | Activeliang's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Activeliang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/01/2017-04-01-1661881/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2017-3-30 ORID</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-01T23:19:00+08:00">
+                2017-04-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="每日学习纪录：ORID"><a href="#每日学习纪录：ORID" class="headerlink" title="每日学习纪录：ORID"></a>每日学习纪录：ORID</h3><blockquote>
+<p>这是一个思考框架，利用 ORID 整理今天的思绪。</p>
+</blockquote>
+<h2 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h2><blockquote>
+<p>关于今天的课程, 你记得什么? 完成了什么?</p>
+</blockquote>
+<p>今天的任务是：部署到linode,然后简单地美化下界面，做一个最小可行性产品。</p>
+<p>还记得：</p>
+<ol>
+<li>早上重置远程主机，想再试试能否部署成功。仍然出现那个问题：在Gemfile里找不到PG这个gem,google了很多方法找不到问题所在。晚上做专案的时候，才领悟：原来capistrano部署默认只会去拉master这个主干。而我的pg gem是在分支里，自然拉不到。就因为这个问题，无用功费时：12个小时。</li>
+</ol>
+<ol>
+<li>晚上看ihower关于前端的直播。对前端要怎么搭，清晰一点了。</li>
+<li>看完视频，现学现用，在专案里套一个很漂亮的演示动画，一个用js代码运算出来的动画。会吃电脑性能。吃性能会越来越厉害。我开了几个后，电脑竟然卡到爆，第一次遇到卡的情况！</li>
+<li>晚上，其实12点就部署好了linodel，但linode访问速度慢。至少在手机上慢。所以我又去到阿里云部署，阿里云的100M网速，部署时明显感觉到速度。阿里云还是蛮有优势的。（我重置过三次主机，原因是安装nginx整合passenger的时候，会卡住不动。）第四次的时候才找到解决方案：卡住是因为与主机的ssh遂道断开了。重新连接重来这个步骤就可以了。搞好已4点多。睡了三个小时，上班。</li>
+</ol>
+<p>完成了：简单地弄了首页图。修复之前做做好的功能。完成部署。</p>
+<h2 id="Reflective"><a href="#Reflective" class="headerlink" title="Reflective"></a>Reflective</h2><blockquote>
+<p>你要如何形容今天的情绪 今天的高峰是什么? 今天的低点是什么?</p>
+</blockquote>
+<ul>
+<li><p>今天的情绪：疲倦中带着痛苦还带着一点点希望。</p>
+<p>高峰：晚上弄首页特效，成功！很惊艳，满满的精神回报。</p>
+<p>低点：</p>
+<ol>
+<li>上午试的时候遇找不到pg的问题。</li>
+</ol>
+</li>
+</ul>
+<ol>
+<li>中午重做专案的时候也遇到不少坑。各种报错。</li>
+<li>凌晨3点的时候，部署阿里云配置环境的时候，老是到中途卡住！！！</li>
+<li>弄了老半天，早上醒来发现：域名被限制了。未备案，而且购买的产品类型无法备案。</li>
+</ol>
+<h2 id="Interpretive"><a href="#Interpretive" class="headerlink" title="Interpretive"></a>Interpretive</h2><blockquote>
+<p>我们今天学到了什么? 今天一个重要的领悟是什么?</p>
+</blockquote>
+<p>今天学到了什么：</p>
+<ol>
+<li>capistrano自动化部署会去github拉master主干，自动部署到服务器。有没有办法直接拉分支吗？有，官方文档上有介绍，但我没有弄成功。</li>
+<li>想要把别人的专案拉回来本地执行，遇错一般是因为没有还原<code>cp config/database.yml.example config/database.yml.</code></li>
+<li>套网页的时候，可以把js和css下载下来，放在专案里。然后application.js application.scss里把这个文件导入就可以了。</li>
+<li>一个很好的gem select2.</li>
+<li>部署刚开始的时候一脸懵，现在几遍下来，就像擦窗户的感觉，越来越清晰了，越来越不出错了。体会到了重要是学习有难度东西的最好方法。也体会到了元学习课的精华。</li>
+<li>凌晨部署阿里云选的100m(1至100m的带宽价格都一样)，体会到了快感。比linode快多了！</li>
+</ol>
+<p>今天一个重要的领悟是什么：感觉没有</p>
+<h2 id="Decisional"><a href="#Decisional" class="headerlink" title="Decisional"></a>Decisional</h2><blockquote>
+<p>我们会如何用一句话形容今天的工作 有哪些工作需要明天继续努力?</p>
+</blockquote>
+<p>今天的工作真是疲倦中带着希望，就好像被抽打的陀螺，转得头晕，但心中的大方向没有记忆。</p>
+<p>明天要继续努力的：什么都不要做了。好好休息。！</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/31/2017-03-31-how-to-export-the-data-to-excel-table/" rel="next" title="如何把数据导出到excel表格？">
+                <i class="fa fa-chevron-left"></i> 如何把数据导出到excel表格？
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/01/2017-04-01-2017-4-1-orid/" rel="prev" title="2017-4-1 ORID">
+                2017-4-1 ORID <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg"
+              alt="黄鸿亮" />
+          
+            <p class="site-author-name" itemprop="name">黄鸿亮</p>
+            <p class="site-description motion-element" itemprop="description">记录才能走得更远...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">167</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#每日学习纪录：ORID"><span class="nav-number">1.</span> <span class="nav-text">每日学习纪录：ORID</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective"><span class="nav-number"></span> <span class="nav-text">Objective</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reflective"><span class="nav-number"></span> <span class="nav-text">Reflective</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpretive"><span class="nav-number"></span> <span class="nav-text">Interpretive</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decisional"><span class="nav-number"></span> <span class="nav-text">Decisional</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄鸿亮</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="在moder里定义了一个method,然而：因为是要在order_controller 里用的，所以我没思考过多就在对应 的order.rb里定义了这个方法！ 分析 ：不应该是这样判断的，因为是这个方法要操作哪个对象，比如这里，是要操作购物车（清空）的，所以，应该在对应购物车的model里定义才真！ 总结：设置方法的时候，应该关注要被操作的对象! 最近连续3遍购物网站（6天），终于顺手点了……">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017-3-24 学习记录ORID">
+<meta property="og:url" content="http://yoursite.com/2017/03/24/2017-03-24-354/index.html">
+<meta property="og:site_name" content="Activeliang&#39;s Blog">
+<meta property="og:description" content="在moder里定义了一个method,然而：因为是要在order_controller 里用的，所以我没思考过多就在对应 的order.rb里定义了这个方法！ 分析 ：不应该是这样判断的，因为是这个方法要操作哪个对象，比如这里，是要操作购物车（清空）的，所以，应该在对应购物车的model里定义才真！ 总结：设置方法的时候，应该关注要被操作的对象! 最近连续3遍购物网站（6天），终于顺手点了……">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-24-Snip20170324_1.png">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-24-Snip20170324_2.png">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-24-063402.jpg">
+<meta property="og:updated_time" content="2017-09-07T17:10:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2017-3-24 学习记录ORID">
+<meta name="twitter:description" content="在moder里定义了一个method,然而：因为是要在order_controller 里用的，所以我没思考过多就在对应 的order.rb里定义了这个方法！ 分析 ：不应该是这样判断的，因为是这个方法要操作哪个对象，比如这里，是要操作购物车（清空）的，所以，应该在对应购物车的model里定义才真！ 总结：设置方法的时候，应该关注要被操作的对象! 最近连续3遍购物网站（6天），终于顺手点了……">
+<meta name="twitter:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-24-Snip20170324_1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/24/2017-03-24-354/"/>
+
+
+
+
+
+  <title>2017-3-24 学习记录ORID | Activeliang's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Activeliang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/24/2017-03-24-354/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2017-3-24 学习记录ORID</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T15:06:00+08:00">
+                2017-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li><p>在moder里定义了一个method,然而：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-24-Snip20170324_1.png" alt=""><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-24-Snip20170324_2.png" alt=""><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-24-063402.jpg" alt="">因为是要在order_controller 里用的，所以我没思考过多就在对应 的order.rb里定义了这个方法！</p>
+<p>分析 ：不应该是这样判断的，因为是这个方法要操作哪个对象，比如这里，是要操作购物车（清空）的，所以，应该在对应购物车的model里定义才真！</p>
+<h5 id="总结：设置方法的时候，应该关注要被操作的对象"><a href="#总结：设置方法的时候，应该关注要被操作的对象" class="headerlink" title="总结：设置方法的时候，应该关注要被操作的对象!"></a>总结：设置方法的时候，应该关注要被操作的对象!</h5></li>
+<li><p>最近连续3遍购物网站（6天），终于顺手点了……</p>
+<p>第1遍：4天</p>
+<p>第2遍：8.5h</p>
+<p>第3遍：7h</p>
+<p>连续打上三遍，很多疑问都解开了……</p>
+</li>
+</ol>
+<h3 id="每日学习纪录：ORID"><a href="#每日学习纪录：ORID" class="headerlink" title="每日学习纪录：ORID"></a>每日学习纪录：ORID</h3><blockquote>
+<p>这是一个思考框架，利用 ORID 整理今天的思绪。</p>
+</blockquote>
+<h2 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h2><blockquote>
+<p>关于今天的课程, 你记得什么? 完成了什么?</p>
+</blockquote>
+<p>今天一任务是做购物网站。</p>
+<p>还记得： </p>
+<ul>
+<li>写helper写错地方。</li>
+<li><code>order.aasm_state.order_placed?</code>可以写成<code>order.order_placed?</code>，不知道是不是因为在model增加了这个index的缘故！</li>
+</ul>
+<p>完成了：购物网站一遍！第二遍开始了，现在进度停留在5-5.</p>
+<h2 id="Reflective"><a href="#Reflective" class="headerlink" title="Reflective"></a>Reflective</h2><blockquote>
+<p>你要如何形容今天的情绪 今天的高峰是什么? 今天的低点是什么?</p>
+</blockquote>
+<p>今天心情昏沉中度过。</p>
+<p>高峰：下午3点，打code如飞，打字越来越快，出错率也越来越低！这种感觉不错！有快感！</p>
+<p>低峰：下午6点半，运动完吃饭的时候。持续半个小时注意力散，然后就打code收回来了～</p>
+<h2 id="Interpretive"><a href="#Interpretive" class="headerlink" title="Interpretive"></a>Interpretive</h2><blockquote>
+<p>我们今天学到了什么? 今天一个重要的领悟是什么?</p>
+</blockquote>
+<p>今天学到了什么：今天的进步，看购物网站打一遍的时间变短了就知道，现在爬坑的能力越来越强了！</p>
+<p>今天一个重要的领悟是什么：</p>
+<ul>
+<li>xdite老师微信公众号文章里：跳槽不是罪！</li>
+<li>状态不好，不顺手，打着打着就顺手了，一开始做不好，做着做着就变好了（当然不断完善的前提下）</li>
+</ul>
+<h2 id="Decisional"><a href="#Decisional" class="headerlink" title="Decisional"></a>Decisional</h2><blockquote>
+<p>我们会如何用一句话形容今天的工作 有哪些工作需要明天继续努力?</p>
+</blockquote>
+<p>今天的工作还算满意。完成了自己出乎意料的任务！</p>
+<p>明天继续努力：完成购物网站。开始写固定资产的user story.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/23/2017-03-23-1632432/" rel="next" title="2017-3-23学习记录 ORID">
+                <i class="fa fa-chevron-left"></i> 2017-3-23学习记录 ORID
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/25/2017-03-25-23546/" rel="prev" title="2017-3-25 学习记录 ORID">
+                2017-3-25 学习记录 ORID <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg"
+              alt="黄鸿亮" />
+          
+            <p class="site-author-name" itemprop="name">黄鸿亮</p>
+            <p class="site-description motion-element" itemprop="description">记录才能走得更远...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">167</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#总结：设置方法的时候，应该关注要被操作的对象"><span class="nav-number">1.</span> <span class="nav-text">总结：设置方法的时候，应该关注要被操作的对象!</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#每日学习纪录：ORID"><span class="nav-number"></span> <span class="nav-text">每日学习纪录：ORID</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective"><span class="nav-number"></span> <span class="nav-text">Objective</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reflective"><span class="nav-number"></span> <span class="nav-text">Reflective</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpretive"><span class="nav-number"></span> <span class="nav-text">Interpretive</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decisional"><span class="nav-number"></span> <span class="nav-text">Decisional</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄鸿亮</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

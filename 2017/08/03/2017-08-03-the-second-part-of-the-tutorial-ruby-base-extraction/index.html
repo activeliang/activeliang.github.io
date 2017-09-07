@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="第2部分 Ruby的基础： 什么是对象：在RUBY中， 靓丽数据的基本单位称为对象。  数值对象 字符串对象 数组对象，散列对象 正则表达式对象 时间对象 文件对象 符号对象   什么是类：表示对象的种类。   什么是伪变量：代表某特定值的特殊量。  nil true false self   常量：  常量以大写英文字母开头。 给常量重复定义时，ruby会做出警告。   多重赋值里还可以这样用：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《ruby基础教程》第二部分 提取">
+<meta property="og:url" content="http://yoursite.com/2017/08/03/2017-08-03-the-second-part-of-the-tutorial-ruby-base-extraction/index.html">
+<meta property="og:site_name" content="Activeliang&#39;s Blog">
+<meta property="og:description" content="第2部分 Ruby的基础： 什么是对象：在RUBY中， 靓丽数据的基本单位称为对象。  数值对象 字符串对象 数组对象，散列对象 正则表达式对象 时间对象 文件对象 符号对象   什么是类：表示对象的种类。   什么是伪变量：代表某特定值的特殊量。  nil true false self   常量：  常量以大写英文字母开头。 给常量重复定义时，ruby会做出警告。   多重赋值里还可以这样用：">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-05-Snip20170705_9.png">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-05-Snip20170705_11.png">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-07-071120.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-07-071615.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-07-073344.jpg">
+<meta property="og:updated_time" content="2017-09-07T17:10:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《ruby基础教程》第二部分 提取">
+<meta name="twitter:description" content="第2部分 Ruby的基础： 什么是对象：在RUBY中， 靓丽数据的基本单位称为对象。  数值对象 字符串对象 数组对象，散列对象 正则表达式对象 时间对象 文件对象 符号对象   什么是类：表示对象的种类。   什么是伪变量：代表某特定值的特殊量。  nil true false self   常量：  常量以大写英文字母开头。 给常量重复定义时，ruby会做出警告。   多重赋值里还可以这样用：">
+<meta name="twitter:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-05-Snip20170705_9.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/03/2017-08-03-the-second-part-of-the-tutorial-ruby-base-extraction/"/>
+
+
+
+
+
+  <title>《ruby基础教程》第二部分 提取 | Activeliang's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Activeliang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/03/2017-08-03-the-second-part-of-the-tutorial-ruby-base-extraction/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《ruby基础教程》第二部分 提取</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-03T01:25:00+08:00">
+                2017-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="第2部分-Ruby的基础："><a href="#第2部分-Ruby的基础：" class="headerlink" title="第2部分 Ruby的基础："></a>第2部分 Ruby的基础：</h4><ol>
+<li><p>什么是对象：在RUBY中， 靓丽数据的基本单位称为对象。</p>
+<ul>
+<li>数值对象</li>
+<li>字符串对象</li>
+<li>数组对象，散列对象</li>
+<li>正则表达式对象</li>
+<li>时间对象</li>
+<li>文件对象</li>
+<li>符号对象</li>
+</ul>
+</li>
+<li><p>什么是类：表示对象的种类。</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-05-Snip20170705_9.png" alt=""></p>
+</li>
+<li><p>什么是伪变量：代表某特定值的特殊量。</p>
+<ul>
+<li><code>nil</code> <code>true</code> <code>false</code> <code>self</code></li>
+</ul>
+</li>
+<li><p>常量：</p>
+<ul>
+<li>常量以大写英文字母开头。</li>
+<li>给常量重复定义时，ruby会做出警告。</li>
+</ul>
+</li>
+<li><p>多重赋值里还可以这样用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ary = [1,2]</div><div class="line">a,b = ary          #=&gt; a=1, b=2</div></pre></td></tr></table></figure>
+</li>
+<li><p>比较值是否相等时，通常用<code>==</code> ，但如果要严谨一点的，就用<code>eql?</code></p>
+</li>
+<li><p>一些控制循环的语句：</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-05-Snip20170705_11.png" alt=""></p>
+</li>
+<li><p>语法糖(syntaxsugar),是指一种为了照顾一般人习惯而产生的特殊语法</p>
+</li>
+</ol>
+<h5 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h5><ol>
+<li><p>什么是方法：把一系统参数传递给对象的过程。（对象会返回结果值）</p>
+</li>
+<li><p>方法的调用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">对象.方法名(参数1， 参数2， ...， 参数n)</div></pre></td></tr></table></figure>
+</li>
+<li><p>方法的分类：</p>
+<ul>
+<li><p>实例方法：作用在实例上的方法。</p>
+</li>
+<li><p>类方法：作用在类上的方法。调用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">类名.方法名</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">类名::方法名</div></pre></td></tr></table></figure>
+</li>
+<li><p>函数式方法：没有作用对象的方法，也没有回传值。</p>
+</li>
+</ul>
+</li>
+<li><p>参数个数不确定的方法，使用带<code>*</code>号的参数：</p>
+<p>这个参数组会被封装为数组供内部使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">def	foo(*args)</div><div class="line">  args</div><div class="line">end</div><div class="line"></div><div class="line">p foo(1,2,3)       #=&gt; [1,2,3]</div><div class="line">p foo(1,2)         #=&gt; [1,2]</div></pre></td></tr></table></figure>
+<p>至少需要一个参数的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">def	meth(arg, *args)</div><div class="line">  [arg, args]</div><div class="line">end</div><div class="line"></div><div class="line">p meth(1)     #=&gt; [1, []]</div><div class="line">p meth(1,2,3) #=&gt; [1, [2,3]]</div></pre></td></tr></table></figure>
+<p>首尾确定，中间不确定时：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">def	a(a, *b, c)</div><div class="line">  [a,b,c]</div><div class="line">end</div><div class="line"></div><div class="line">p a(1,2,3,4,5)     #=&gt; [1, [2,3,4], 5]</div><div class="line">p a(1,2)           #=&gt; [1, [], 2]</div></pre></td></tr></table></figure>
+</li>
+<li><p>关键字参数：以hash形式传递参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">def	a(a: 1, b: 2, c: 3)</div><div class="line">  [a,b,c]</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>如果想传递未定义的参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">def a(a:1, **args)</div><div class="line">  [a, args]</div><div class="line">end</div><div class="line"></div><div class="line">p a(a: 2, k: 3, v: 4)    #=&gt; [2, &#123;:k =&gt; 3, :v =&gt; 4&#125;]</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="类与模块："><a href="#类与模块：" class="headerlink" title="类与模块："></a>类与模块：</h5><ol>
+<li><p>判断某个对象是否属于某个类时：<code>instance_of?</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ary = []</div><div class="line">str = &quot;Hello world.&quot;</div><div class="line">p ary.instance_of?(Array)      #=&gt; true</div><div class="line">p str.instance_of?(String)     #=&gt; true</div><div class="line">p ary.instance_of?(String)     #=&gt; false</div><div class="line">p ary.instance_of?(Array)      #=&gt; false</div></pre></td></tr></table></figure>
+</li>
+<li><p>判断某个对象是否属于某个类时：<code>is_a?</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">str = &quot;This is a String.&quot;</div><div class="line">p str.is_a?(String)        #=&gt; true</div><div class="line">p str.is_a?(Object)        #=&gt; true</div></pre></td></tr></table></figure>
+</li>
+<li><p>常量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class HelloWorld</div><div class="line">  Version = &quot;1.0&quot;</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>调用时：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">p HelloWorld::Version     #=&gt; &quot;1.0&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>@@xxx</code>：类变量，可以多次修改。</p>
+</li>
+<li><p>限制访问级别：</p>
+<ul>
+<li><code>public</code> 公开，外部可以访问。一般默认方法都是<code>public</code>的，但<code>initialize</code>方法除外。</li>
+<li><code>private</code>内部使用。外部无法访问。</li>
+<li><code>protected</code>同一类中可以使用。外部无法使用。</li>
+</ul>
+</li>
+<li><p>想知道一个类下有什么方法可以 被调用 ？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">类名.instance_methods</div></pre></td></tr></table></figure>
+</li>
+<li><p>为方法设置多个名字：<code>alias</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alias 别名 原名</div><div class="line">alias :别名 :原名</div></pre></td></tr></table></figure>
+</li>
+<li><p>删除方法:  <code>undef 方法名</code>  or  <code>undef   :方法名</code></p>
+</li>
+<li><p>什么是单例类：只为了个实体对象服务的类和方法。</p>
+</li>
+</ol>
+<h5 id="模块："><a href="#模块：" class="headerlink" title="模块："></a>模块：</h5><ol>
+<li><p>使用方法：</p>
+<ul>
+<li><code>模块名.方法名</code></li>
+<li>在类中<code>include 模块名</code>， 然后就可以直接使用方法啦~</li>
+</ul>
+</li>
+<li><p>如果希望在外部可以用<code>模块名.方法名</code>，你可以这样做：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">module_function :hello</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果想知道继承关系 ，可以使用：<code>ancestors</code>这个方法，如果想知道父类，可以使用方法：<code>superclass</code>。</p>
+</li>
+<li><p>调用时的优先级：</p>
+<ul>
+<li><code>类本身</code> =&gt; <code>引入的模块（最后引入模块的优先）</code> =&gt; <code>父类</code></li>
+<li>重复引入，第二个引入的会被忽略。</li>
+</ul>
+</li>
+<li><p><code>extend方法</code>：直接引入作用在对象上的模块。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">module  Edition</div><div class="line">  def  edition(n)</div><div class="line">    &quot;#&#123;self&#125;第#&#123;n&#125;版&quot;</div><div class="line">  end</div><div class="line">end</div><div class="line"></div><div class="line">str = &quot;Ruby 基础教程&quot;</div><div class="line">str.extend(Edition)     #=&gt; 将模块 Mix-in 进对象</div><div class="line"></div><div class="line">p str.edtion(4)         #=&gt; &quot;Ruby 基础教程第 4 版&quot;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>也可以用<code>extend</code>来代替继承：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class MyClass</div><div class="line">  extend ClassMethods</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>.ceil</code>：进位的意思，会把对象变成大一位的整数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=3.23</div><div class="line">b=5.8</div><div class="line">a.ceil     #=&gt; 4</div><div class="line">b.ceil     #=&gt; 6</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="运算符："><a href="#运算符：" class="headerlink" title="运算符："></a>运算符：</h5><ol>
+<li><p>一直以为<code>||</code>就是<code>or</code>的意思（visual basic中的<code>or</code>），今天才发现，我错了：</p>
+<p><strong><u>其实这两个符号不仅可以用在判断，还可以用在运算！！！</u></strong></p>
+<ul>
+<li><code>||</code> ：从左到右，返回第一个不为 <strong><u>fasle</u></strong> 或 <strong><u>nil</u></strong> 的值。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a = false || nil || 2 || 3     #=&gt; a = 2</div></pre></td></tr></table></figure>
+<ul>
+<li><code>&amp;&amp;</code> ：返回最后一个真值（期间不能出现假值）。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = 1 &amp;&amp; 2 &amp;&amp; 3 &amp;&amp; 4     #=&gt; a = 4</div><div class="line">a = nil &amp;&amp; false &amp;&amp; 1    #=&gt; a = nil</div></pre></td></tr></table></figure>
+<ul>
+<li><p><code>||=</code> ：当为 <strong><u>false</u></strong> 或 <strong><u>nil</u></strong> 时，才进行赋值。（这可给变量赋予默认值 ）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var ||= 1     #=&gt; 当var为nil或false时，var = 1</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>范围运算符<code>succ</code> 可以返回一个：进位到下一位的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1.succ     #=&gt; 2</div><div class="line">a.succ     #=&gt; b</div></pre></td></tr></table></figure>
+</li>
+<li><p>原来ruby本身有优先级运算符：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1 + 2 * 3     #=&gt; 1 + (2 * 3)        #=&gt; 7</div><div class="line">2 +3 &lt; 5 + 4  #=&gt; (2 + 3) &lt; (5 + 4)  #=&gt; true</div></pre></td></tr></table></figure>
+<p>还有一些没见过的运算符，刚开始还是老实用括号吧，哈哈！</p>
+</li>
+</ol>
+<h4 id="异常处理与错误提示："><a href="#异常处理与错误提示：" class="headerlink" title="异常处理与错误提示："></a>异常处理与错误提示：</h4><ol>
+<li><p>错误提示格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">文件名：行号：in 方法名：错误信息(异常类名)</div><div class="line">      form 文件名：行号：in 方法名</div></pre></td></tr></table></figure>
+<p>example: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; ruby test.rb</div><div class="line">test.rb:2:in `initialize&apos;:No such file or directory - /no/file(Errno::ENOENT)</div><div class="line">        form test.rb:2:in `open&apos;</div><div class="line">        form test.rb:2:in `foo&apos;</div><div class="line">        form test.rb:9:in `main&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>可以用这个格式来处理异常：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">begin</div><div class="line">  可能会发生异常的处理</div><div class="line">rescue =&gt; 引用异常对象的变量</div><div class="line">  发生异常时的处理</div><div class="line">  sleep(10)             #=&gt; 等待10秒</div><div class="line">  retry                 #=&gt; 再执行一次begin下的程式</div><div class="line">ensure</div><div class="line">  不管是否发生异常都希望执行的处理</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>这样不至于遇到错误时立即爆掉！！！</p>
+</li>
+<li><p>还可以：简化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">begin</div><div class="line">  表达式 1</div><div class="line">rescue</div><div class="line">  表达式 2</div><div class="line">end</div><div class="line"></div><div class="line">#=&gt; 等同于下面这个：</div><div class="line"></div><div class="line">表达式1 rescue 表达式2</div></pre></td></tr></table></figure>
+</li>
+<li><p>还可以：再简化</p>
+<ul>
+<li>如果该方法是一整个begin ~ end 包含，可以省略<code>begin</code> <code>end</code>，可以直接用<code>rescue</code> <code>ensure</code></li>
+</ul>
+</li>
+<li><p>还可以指定需要捕捉的异常：<br><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-07-071120.jpg" alt=""></p>
+</li>
+<li><p><strong><u>主动抛出异常</u></strong></p>
+<p><strong><u><code>raise</code></u></strong></p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-07-071615.jpg" alt=""></p>
+<p>书中没有给出例子！差评！</p>
+</li>
+<li><p><code>sort</code>方法可以对数组进行排序：<br><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-07-073344.jpg" alt=""></p>
+</li>
+<li><p><code>&lt;=&gt;</code>排序运算符，可以进行排序。</p>
+</li>
+<li><p>数组里如果要按照长度来排序，可以：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">array = [&quot;rails&quot;, &quot;ruby&quot;, &quot;fullstack&quot;]</div><div class="line">array.sort&#123; |a, b| a.length &lt;=&gt; b.length &#125;</div><div class="line">#=&gt; [&quot;ruby&quot;, &quot;rails&quot;, &quot;fullstack&quot;]</div></pre></td></tr></table></figure>
+<p>解说：先利用<code>sort</code>让数组遍历两两相比较，再增加代码块！人才啊！</p>
+</li>
+<li><p>要想把一段文字，直接切成一个个单词然后放入数组？可以这样：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ary = %w(This is a example, I love rails)</div><div class="line"></div><div class="line">#=&gt; [&quot;This&quot;, &quot;is&quot;, &quot;a&quot;, &quot;example,&quot;, &quot;I&quot;, &quot;love&quot;, &quot;rails&quot;]</div></pre></td></tr></table></figure>
+<ol>
+<li><p><code>upto</code>把值按从小到大的顺序取出，这个是Integer#upto方法！</p>
+</li>
+<li><p>判断使用方法时是否有带块？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">if block_given?</div></pre></td></tr></table></figure>
+</li>
+<li><p>在块中直接调用<code>break</code> <code>next</code>等方法控制流程，会直接返回nil，如果想返回带参数，可以使用：</p>
+<ul>
+<li><code>break 0</code></li>
+<li><code>next 0</code></li>
+</ul>
+</li>
+<li><p>利用<code>Proc</code>把代码块变成对象后，就可以直接用<code>cell方法</code>来直接使用啦~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">hello = Proc.new do |new|</div><div class="line">  puts &quot;Hello, #&#123;name&#125;.&quot;</div><div class="line">end</div><div class="line"></div><div class="line">hello.call(&quot;World&quot;)          #=&gt; Hello, World.</div><div class="line">hello.call(&quot;Ruby&quot;)           #=&gt; Hello, Ruby.</div></pre></td></tr></table></figure>
+</li>
+<li><p>传参数的时候 ，有一种参数叫做：<code>Proc参数</code>是这样的：<code>&amp;block</code> （要放在最后一个参数）</p>
+</li>
+<li><p>判断是否有带block的另一个方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">if block #直接进行判断</div></pre></td></tr></table></figure>
+</li>
+<li><p>块变量的作用域：只在block中有效。如果跟局部变量同名，要小心赋值问题！</p>
+</li>
+</ol>
+<p>### </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/03/2017-08-03-extracting-of-the-ruby-base-tutorial/" rel="next" title="《ruby基础教程》第一部分 提取">
+                <i class="fa fa-chevron-left"></i> 《ruby基础教程》第一部分 提取
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/03/2017-08-03-part-iii-of-the-ruby-base-tutorial-extraction/" rel="prev" title="《ruby基础教程》 第三部分 提取">
+                《ruby基础教程》 第三部分 提取 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg"
+              alt="黄鸿亮" />
+          
+            <p class="site-author-name" itemprop="name">黄鸿亮</p>
+            <p class="site-description motion-element" itemprop="description">记录才能走得更远...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">167</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#第2部分-Ruby的基础："><span class="nav-number">1.</span> <span class="nav-text">第2部分 Ruby的基础：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方法："><span class="nav-number">1.1.</span> <span class="nav-text">方法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#类与模块："><span class="nav-number">1.2.</span> <span class="nav-text">类与模块：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#模块："><span class="nav-number">1.3.</span> <span class="nav-text">模块：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#运算符："><span class="nav-number">1.4.</span> <span class="nav-text">运算符：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#异常处理与错误提示："><span class="nav-number">2.</span> <span class="nav-text">异常处理与错误提示：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄鸿亮</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="先看效果： 在增加职位时，可以直接在地图上选取坐标 在职位详情页里，可以直接显示地图,并带上标注，可以拖动放大！ 更好的体验，请大家去我的作品里浏览：【全栈小伙伴求职网】https://fullstack.xinshengdaxue.com/works/345  实做：step1 执行：touch app/views/common/_baidumap_1.html  填入以下代码：  点击页面进去">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【小伙伴分享】三步接入百度地图！为你的职位增加位置信息。">
+<meta property="og:url" content="http://yoursite.com/2017/05/02/2017-05-02-525/index.html">
+<meta property="og:site_name" content="Activeliang&#39;s Blog">
+<meta property="og:description" content="先看效果： 在增加职位时，可以直接在地图上选取坐标 在职位详情页里，可以直接显示地图,并带上标注，可以拖动放大！ 更好的体验，请大家去我的作品里浏览：【全栈小伙伴求职网】https://fullstack.xinshengdaxue.com/works/345  实做：step1 执行：touch app/views/common/_baidumap_1.html  填入以下代码：  点击页面进去">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-01-222246.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-01-222518.jpg">
+<meta property="og:updated_time" content="2017-09-07T17:10:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【小伙伴分享】三步接入百度地图！为你的职位增加位置信息。">
+<meta name="twitter:description" content="先看效果： 在增加职位时，可以直接在地图上选取坐标 在职位详情页里，可以直接显示地图,并带上标注，可以拖动放大！ 更好的体验，请大家去我的作品里浏览：【全栈小伙伴求职网】https://fullstack.xinshengdaxue.com/works/345  实做：step1 执行：touch app/views/common/_baidumap_1.html  填入以下代码：  点击页面进去">
+<meta name="twitter:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-01-222246.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/02/2017-05-02-525/"/>
+
+
+
+
+
+  <title>【小伙伴分享】三步接入百度地图！为你的职位增加位置信息。 | Activeliang's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Activeliang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/02/2017-05-02-525/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【小伙伴分享】三步接入百度地图！为你的职位增加位置信息。</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-02T01:20:00+08:00">
+                2017-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="先看效果："><a href="#先看效果：" class="headerlink" title="先看效果："></a>先看效果：</h4><ul>
+<li>在增加职位时，可以直接在地图上选取坐标<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-01-222246.jpg" alt=""></li>
+<li>在职位详情页里，可以直接显示地图,并带上标注，可以拖动放大！<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-01-222518.jpg" alt=""></li>
+<li>更好的体验，请大家去我的作品里浏览：<a href="https://fullstack.xinshengdaxue.com/works/345" target="_blank" rel="external">【全栈小伙伴求职网】https://fullstack.xinshengdaxue.com/works/345</a></li>
+</ul>
+<h4 id="实做："><a href="#实做：" class="headerlink" title="实做："></a>实做：</h4><h4 id="step1"><a href="#step1" class="headerlink" title="step1"></a>step1</h4><ol>
+<li>执行：<code>touch app/views/common/_baidumap_1.html</code></li>
+</ol>
+<p>填入以下代码：</p>
+<ul>
+<li>点击页面进去复制: <a href="https://github.com/activeliang/baidumapdemo/blob/master/app/views/common/_baidumap_1.html.erb" target="_blank" rel="external">https://github.com/activeliang/baidumapdemo/blob/master/app/views/common/_baidumap_1.html.erb</a></li>
+</ul>
+<ol>
+<li>执行：<code>touch app/views/common/_baidumap_2.html.erb</code></li>
+</ol>
+<p>填入：</p>
+<ul>
+<li>点击页面进去复制：<a href="https://github.com/activeliang/baidumapdemo/blob/master/app/views/common/_baidumap_2.html.erb" target="_blank" rel="external">https://github.com/activeliang/baidumapdemo/blob/master/app/views/common/_baidumap_2.html.erb</a></li>
+</ul>
+<ol>
+<li>执行 <code>rails g migration add_map_detail_to_job cp_lng:string cp_lat:string</code>然后<code>rake db:migrate</code>这一步将会在你的job里新增两个存位置信息的栏位。</li>
+</ol>
+<h4 id="step2"><a href="#step2" class="headerlink" title="step2"></a>step2</h4><ol>
+<li>去到<code>app/views/layouts/application.html.erb</code>在<code>&lt;head&gt;&lt;/head&gt;里</code>，填入以下代码：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;https://api.map.baidu.com/api?v=2.0&amp;ak=fitXUIqC5oHoWvnUhd4PwtHlbMb22AvH&amp;s=1&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<ol>
+<li>去到<code>app/views/jobs/new.html.erb</code>的<code>simple_form</code>当中，填入：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;%= f.text_field :cp_lat, :id =&gt; &quot;maplat&quot;, :type =&gt; &quot;hidden&quot; %&gt;</div><div class="line">&lt;%= f.text_field :cp_lng, :id =&gt; &quot;maplng&quot;, :type =&gt; &quot;hidden&quot; %&gt;</div><div class="line">&lt;%= render &quot;common/baidumap_1&quot; %&gt;</div></pre></td></tr></table></figure>
+<ol>
+<li>去到<code>app/views/jobs/show.html.erb</code>的任何你想插入地图的位置，填入：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%= render &quot;common/baidumap_2&quot; %&gt;</div></pre></td></tr></table></figure>
+<h4 id="step3"><a href="#step3" class="headerlink" title="step3"></a>step3</h4><ol>
+<li>为了让地图用到的js更稳定地工作，我们去把<code>Turnolinks</code>拆掉！</li>
+</ol>
+<ul>
+<li>去到<code>app/assets/javascripts/application.js</code> 把<code>//=requireturnolinks</code> 删掉。</li>
+<li>去到<code>Gemfile</code> 里，把<code>gem &#39;turbolinks&#39;, &#39;~&gt; 5&#39;</code> 删掉，然后<code>bundle install</code></li>
+</ul>
+<ol>
+<li>(这一步我已经帮你做了，你可以直接用我的ak，直接跳过。)</li>
+</ol>
+<p>去到<a href="http://lbsyun.baidu.com/apiconsole/key" target="_blank" rel="external">百度地图开放平台 http://lbsyun.baidu.com/apiconsole/key</a> 申请ak，然后把上面教程中的ak替换成自己的。百度地图ak免费易申请!</p>
+<h5 id="完工！"><a href="#完工！" class="headerlink" title="完工！"></a>完工！</h5><h5 id="完工！-1"><a href="#完工！-1" class="headerlink" title="完工！"></a>完工！</h5><h3 id="以下是解说："><a href="#以下是解说：" class="headerlink" title="以下是解说："></a>以下是解说：</h3><h4 id="运作："><a href="#运作：" class="headerlink" title="运作："></a>运作：</h4><ul>
+<li>我们利用了js把获取到的经度lng,纬度lat，赋值给simple_form里两个待命的隐藏输入框。当我们新增数据时，这两个参数会跟随着表单一起存入数据库。</li>
+<li>我们在详情页面，把这两个参数调取出来赋给地图，地图就能清楚都显示该位置。</li>
+</ul>
+<h4 id="进阶："><a href="#进阶：" class="headerlink" title="进阶："></a>进阶：</h4><ul>
+<li>可以增加<code>地图缩略图</code> <code>地图比例尽</code> <code>地图缩放条</code> <code>设置地图背影模式</code> 在这里不多说，有兴趣请看官方文档：<a href="http://lbsyun.baidu.com/index.php?title=jspopular" target="_blank" rel="external">http://lbsyun.baidu.com/index.php?title=jspopular</a></li>
+</ul>
+<h4 id="遇到的坑："><a href="#遇到的坑：" class="headerlink" title="遇到的坑："></a>遇到的坑：</h4><ul>
+<li>部署<code>heroku</code>后，地图失效！</li>
+<li>原因：网上绝大部分教程都没有提到一个问题：<code>https</code>模式下，密钥后要加上一个字段。具体：<a href="http://lbsyun.baidu.com/index.php?title=jspopular" target="_blank" rel="external">http://lbsyun.baidu.com/index.php?title=jspopular</a></li>
+</ul>
+<h5 id="希望你5票投我1票："><a href="#希望你5票投我1票：" class="headerlink" title="希望你5票投我1票："></a>希望你5票投我1票：</h5><p>这是我的作品链接：<a href="https://fullstack.xinshengdaxue.com/works/345" target="_blank" rel="external">【全栈小伙伴求职网】https://fullstack.xinshengdaxue.com/works/345</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/26/2017-04-26-1753227/" rel="next" title="2017-4-26 ORID 今天遇到的问题都解决啦。">
+                <i class="fa fa-chevron-left"></i> 2017-4-26 ORID 今天遇到的问题都解决啦。
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/02/2017-05-02-5252/" rel="prev" title="【魔改分享】两步让你的footer乖乖置底！只需要CSS">
+                【魔改分享】两步让你的footer乖乖置底！只需要CSS <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg"
+              alt="黄鸿亮" />
+          
+            <p class="site-author-name" itemprop="name">黄鸿亮</p>
+            <p class="site-description motion-element" itemprop="description">记录才能走得更远...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">167</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#先看效果："><span class="nav-number">1.</span> <span class="nav-text">先看效果：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实做："><span class="nav-number">2.</span> <span class="nav-text">实做：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step1"><span class="nav-number">3.</span> <span class="nav-text">step1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step2"><span class="nav-number">4.</span> <span class="nav-text">step2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step3"><span class="nav-number">5.</span> <span class="nav-text">step3</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#完工！"><span class="nav-number">5.1.</span> <span class="nav-text">完工！</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#完工！-1"><span class="nav-number">5.2.</span> <span class="nav-text">完工！</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以下是解说："><span class="nav-number"></span> <span class="nav-text">以下是解说：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#运作："><span class="nav-number">1.</span> <span class="nav-text">运作：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#进阶："><span class="nav-number">2.</span> <span class="nav-text">进阶：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#遇到的坑："><span class="nav-number">3.</span> <span class="nav-text">遇到的坑：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#希望你5票投我1票："><span class="nav-number">3.1.</span> <span class="nav-text">希望你5票投我1票：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄鸿亮</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

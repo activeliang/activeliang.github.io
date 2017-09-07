@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="每日学习纪录：ORID 这是一个思考框架，利用 ORID 整理今天的思绪。  Objective 关于今天的课程, 你记得什么? 完成了什么?  今天的任务：debug，我和队友商店上线！ 还记得：  在herokuh无法上传力图片，报错。=&amp;gt; s3重新设置，搞定！@陈慧娟帮忙的  大半天因为在heroku上出各种小问题。debug  在heroku上无法播放视频背景中的视频。  关于这个问">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2017-3-5学习记录ORID">
+<meta property="og:url" content="http://yoursite.com/2017/03/05/2017-03-05-1512288/index.html">
+<meta property="og:site_name" content="Activeliang&#39;s Blog">
+<meta property="og:description" content="每日学习纪录：ORID 这是一个思考框架，利用 ORID 整理今天的思绪。  Objective 关于今天的课程, 你记得什么? 完成了什么?  今天的任务：debug，我和队友商店上线！ 还记得：  在herokuh无法上传力图片，报错。=&amp;gt; s3重新设置，搞定！@陈慧娟帮忙的  大半天因为在heroku上出各种小问题。debug  在heroku上无法播放视频背景中的视频。  关于这个问">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-05-WechatIMG5.jpeg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-05-162612.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-05-162744.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-05-163307.jpg">
+<meta property="og:updated_time" content="2017-09-07T17:10:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="2017-3-5学习记录ORID">
+<meta name="twitter:description" content="每日学习纪录：ORID 这是一个思考框架，利用 ORID 整理今天的思绪。  Objective 关于今天的课程, 你记得什么? 完成了什么?  今天的任务：debug，我和队友商店上线！ 还记得：  在herokuh无法上传力图片，报错。=&amp;gt; s3重新设置，搞定！@陈慧娟帮忙的  大半天因为在heroku上出各种小问题。debug  在heroku上无法播放视频背景中的视频。  关于这个问">
+<meta name="twitter:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-05-WechatIMG5.jpeg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/05/2017-03-05-1512288/"/>
+
+
+
+
+
+  <title>2017-3-5学习记录ORID | Activeliang's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Activeliang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/05/2017-03-05-1512288/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2017-3-5学习记录ORID</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-05T16:45:00+08:00">
+                2017-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="每日学习纪录：ORID"><a href="#每日学习纪录：ORID" class="headerlink" title="每日学习纪录：ORID"></a>每日学习纪录：ORID</h3><blockquote>
+<p>这是一个思考框架，利用 ORID 整理今天的思绪。</p>
+</blockquote>
+<h2 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h2><blockquote>
+<p>关于今天的课程, 你记得什么? 完成了什么?</p>
+</blockquote>
+<p>今天的任务：debug，我和队友商店上线！</p>
+<p>还记得：</p>
+<ul>
+<li><p>在herokuh无法上传力图片，报错。=&gt; s3重新设置，搞定！@陈慧娟帮忙的<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-05-WechatIMG5.jpeg" alt=""></p>
+</li>
+<li><p>大半天因为在heroku上出各种小问题。debug</p>
+</li>
+<li><p>在heroku上无法播放视频背景中的视频。</p>
+<blockquote>
+<p>关于这个问题：一开始觉得这是个非常复杂的东西，经常今天这一折腾：</p>
+<ul>
+<li>可以加载本地视频，也可以加载youtube等网络视频。</li>
+<li>可以用简单的html css搞定。也可以利用Js来搞定。</li>
+<li>基本思路：设置相对定位和图层，让两个东西堆叠在一起，然后设置视频自动播放。</li>
+</ul>
+<p>总结：还没怎么搞明白。有机会单独开一个页面调试下，今天在这上面花费了有5个小时之多。</p>
+</blockquote>
+</li>
+<li><p>晚上，看同学的作品，反思：</p>
+<blockquote>
+<ul>
+<li><p>打开深圳李安的作品，秒开，原来是部署了其他服务器，网页风格做得很美。</p>
+</li>
+<li><p>找到了一个很牛逼的作品，前后端做得很好，功能也做得很强，能生成二维码，能查看地图位置信息，能选座系统。令人赞叹。<a href="https://imoviestore.herokuapp.com/" target="_blank" rel="external">https://imoviestore.herokuapp.com/</a> 联系了作者，学到了一个生成二维码的gem:</p>
+<ul>
+<li><p>[<a href="https://github.com/whomwah/rqrcode" target="_blank" rel="external">https://github.com/whomwah/rqrcode</a>使用方法：</p>
+<ol>
+<li>安装gem<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-05-162612.jpg" alt=""></li>
+<li>在html利用这个api.<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-05-162744.jpg" alt=""></li>
+</ol>
+<h5 id="原来有很多好用的gem"><a href="#原来有很多好用的gem" class="headerlink" title="原来有很多好用的gem!"></a>原来有很多好用的gem!</h5></li>
+</ul>
+</li>
+</ul>
+<h4 id="总结：同学很牛逼，还需要更多的努力。无论功能还是前端。"><a href="#总结：同学很牛逼，还需要更多的努力。无论功能还是前端。" class="headerlink" title="总结：同学很牛逼，还需要更多的努力。无论功能还是前端。"></a>总结：同学很牛逼，还需要更多的努力。无论功能还是前端。</h4></blockquote>
+</li>
+</ul>
+<p>完成了什么：上传heroku debug，我和队友的商店成功上线！</p>
+<h2 id="Reflective"><a href="#Reflective" class="headerlink" title="Reflective"></a>Reflective</h2><blockquote>
+<p>你要如何形容今天的情绪 今天的高峰是什么? 今天的低点是什么?</p>
+</blockquote>
+<p>今天的情绪：低沉耐心不够，有点迷失，注意力无法集中。这些都是要去睡觉的前兆。</p>
+<p>今天的高峰：商店上线成功，看到同学们的赞美，很开心！上传作品后，心里踏实多了！<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-05-163307.jpg" alt=""></p>
+<p>今天的低点：中午在调试视频的时候，就快被调哭了……这页面真不听话……/捂脸。</p>
+<h2 id="Interpretive"><a href="#Interpretive" class="headerlink" title="Interpretive"></a>Interpretive</h2><blockquote>
+<p>我们今天学到了什么? 今天一个重要的领悟是什么?</p>
+</blockquote>
+<p>今天学到了什么：</p>
+<ul>
+<li>视频背影原来有多种方法，原来背后的语句也不用那么复杂，简单的htmlcss就可以做出来。</li>
+<li>关于html定位的一些语句</li>
+<li>知道了一个生成二维码的gem</li>
+<li>请看上面，有讲。</li>
+</ul>
+<p>今天一个重要的领悟：陈慧娟同学的作品票增速很快，我想是因为她帮助了很多同学，得道多助。</p>
+<h2 id="Decisional"><a href="#Decisional" class="headerlink" title="Decisional"></a>Decisional</h2><blockquote>
+<p>我们会如何用一句话形容今天的工作 有哪些工作需要明天继续努力?</p>
+</blockquote>
+<p>今天在低迷的状态下debug，感觉迷失了，所谓迷失：就是不停地debug,已经无法收回注意力了，分不清哪些重要，哪些次要了……</p>
+<p>明天要继续努力：写参赛总结，想清楚留级做决定，课程存档，重打code!</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/05/2017-03-05-1512287/" rel="next" title="2017-3-4 学习记录ORID">
+                <i class="fa fa-chevron-left"></i> 2017-3-4 学习记录ORID
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/06/2017-03-06-1516601/" rel="prev" title="全栈营魔改大赛购物网站大赛心得">
+                全栈营魔改大赛购物网站大赛心得 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg"
+              alt="黄鸿亮" />
+          
+            <p class="site-author-name" itemprop="name">黄鸿亮</p>
+            <p class="site-description motion-element" itemprop="description">记录才能走得更远...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">167</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#每日学习纪录：ORID"><span class="nav-number">1.</span> <span class="nav-text">每日学习纪录：ORID</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Objective"><span class="nav-number"></span> <span class="nav-text">Objective</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#原来有很多好用的gem"><span class="nav-number">0.0.1.</span> <span class="nav-text">原来有很多好用的gem!</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结：同学很牛逼，还需要更多的努力。无论功能还是前端。"><span class="nav-number">0.1.</span> <span class="nav-text">总结：同学很牛逼，还需要更多的努力。无论功能还是前端。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reflective"><span class="nav-number"></span> <span class="nav-text">Reflective</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpretive"><span class="nav-number"></span> <span class="nav-text">Interpretive</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decisional"><span class="nav-number"></span> <span class="nav-text">Decisional</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄鸿亮</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

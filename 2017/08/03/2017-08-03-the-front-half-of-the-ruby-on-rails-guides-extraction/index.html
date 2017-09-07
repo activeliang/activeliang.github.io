@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="[TOC] 新手入门 Form_for表单助手： 1234567891011121314151617&amp;lt;h1&amp;gt;New Article&amp;lt;/h1&amp;gt;&amp;lt;%= form_for :article, url: articles_path do |f| %&amp;gt;&amp;lt;p&amp;gt;  &amp;lt;%= f.label :title %&amp;gt; &amp;lt;br&amp;gt;  &amp;lt;%= f.t">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《ruby on rails guides》前半部分提取">
+<meta property="og:url" content="http://yoursite.com/2017/08/03/2017-08-03-the-front-half-of-the-ruby-on-rails-guides-extraction/index.html">
+<meta property="og:site_name" content="Activeliang&#39;s Blog">
+<meta property="og:description" content="[TOC] 新手入门 Form_for表单助手： 1234567891011121314151617&amp;lt;h1&amp;gt;New Article&amp;lt;/h1&amp;gt;&amp;lt;%= form_for :article, url: articles_path do |f| %&amp;gt;&amp;lt;p&amp;gt;  &amp;lt;%= f.label :title %&amp;gt; &amp;lt;br&amp;gt;  &amp;lt;%= f.t">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-07-26-051603.jpg">
+<meta property="og:updated_time" content="2017-09-07T17:10:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《ruby on rails guides》前半部分提取">
+<meta name="twitter:description" content="[TOC] 新手入门 Form_for表单助手： 1234567891011121314151617&amp;lt;h1&amp;gt;New Article&amp;lt;/h1&amp;gt;&amp;lt;%= form_for :article, url: articles_path do |f| %&amp;gt;&amp;lt;p&amp;gt;  &amp;lt;%= f.label :title %&amp;gt; &amp;lt;br&amp;gt;  &amp;lt;%= f.t">
+<meta name="twitter:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-07-26-051603.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/03/2017-08-03-the-front-half-of-the-ruby-on-rails-guides-extraction/"/>
+
+
+
+
+
+  <title>《ruby on rails guides》前半部分提取 | Activeliang's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Activeliang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/03/2017-08-03-the-front-half-of-the-ruby-on-rails-guides-extraction/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">《ruby on rails guides》前半部分提取</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-03T01:29:00+08:00">
+                2017-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[TOC]</p>
+<h4 id="新手入门"><a href="#新手入门" class="headerlink" title="新手入门"></a>新手入门</h4><ol>
+<li><p>Form_for表单助手：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>New Article<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">%=</span> <span class="attr">form_for</span> <span class="attr">:article</span>, <span class="attr">url:</span> <span class="attr">articles_path</span> <span class="attr">do</span> |<span class="attr">f</span>| %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.label</span> <span class="attr">:title</span> %&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.text_field</span> <span class="attr">:title</span> %&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.label</span> <span class="attr">:text</span> %&gt;</span> <span class="tag">&lt;<span class="name">br</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.text_area</span> <span class="attr">:text</span> %&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">%=</span> <span class="attr">f.submit</span> %&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">end</span> %&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p><code>url: articles_path</code> 可以指定路由</p>
+</li>
+<li><p>用下面这个语句可以直接返回字符形式得知params:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">create</span></span></div><div class="line">  render <span class="symbol">plain:</span> params[<span class="symbol">:article</span>].inspect</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>CRUD的常规顺序：</p>
+<ul>
+<li>index</li>
+<li>show</li>
+<li>new</li>
+<li>edit</li>
+<li>create</li>
+<li>update</li>
+<li>destroy</li>
+</ul>
+</li>
+<li><p>Link_to方法还可以这样用：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%= link_to &apos;New Blog&apos;, controller: &apos;articles&apos; %&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>pluralize方法</code>一个rails内建的方法，超过1会自动转换成复数形式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%= pluralize(@article.errors.count, &quot;error&quot;) %&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>原来rails内置了一个身份验证器，可以很方便地使用起来！：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">http_basic_authenticate_with name: &quot;dhh&quot;, password: &quot;secret&quot;, except: [:index, :show]</div></pre></td></tr></table></figure>
+<p>在controller里增加一条这样的语句就可以了，效果：<img src="http://olmrxx9ks.bkt.clouddn.com/2017-07-26-051603.jpg" alt=""></p>
+<p>超级棒，在开发的时候，或者只需要一人的管理系统上这是很方便的！</p>
+</li>
+</ol>
+<h4 id="Active-Record基础"><a href="#Active-Record基础" class="headerlink" title="Active Record基础"></a>Active Record基础</h4><ol>
+<li><p>更新一个栏位：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">user = User.find_by(name: &apos;David&apos;)</div><div class="line">user.update(name: &apos;Dave&apos;)</div></pre></td></tr></table></figure>
+<p>就搞定了，比我之前的要简单一点。</p>
+</li>
+</ol>
+<h4 id="Active-Record迁移"><a href="#Active-Record迁移" class="headerlink" title="Active Record迁移"></a>Active Record迁移</h4><ol>
+<li><p>如何让migration文件自动生成栏位：(按以下这种格式)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rails g migration add_title_to_products title:string</div><div class="line">rails g migration remove_title_from_products title:string</div></pre></td></tr></table></figure>
+</li>
+<li><p>migration 中还有另外一个关于修改默认值的方法：</p>
+<ul>
+<li><code>change_column_default</code></li>
+<li><code>change_column_null</code></li>
+</ul>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">change_column_null <span class="symbol">:products</span>, <span class="symbol">:name</span>, <span class="literal">false</span>   (设置这个字段不能空)</div><div class="line">change_column_default <span class="symbol">:users</span>, <span class="symbol">:is_admin</span>, <span class="symbol">from:</span> <span class="literal">false</span>, <span class="symbol">to:</span> <span class="literal">true</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>字体修饰符：</p>
+<ul>
+<li><code>limit</code> 修饰符：设置 <code>string/text/binary/integer</code> 字段的最大长度。</li>
+<li><code>precision</code> 修饰符：定义 <code>decimal</code> 字段的精度，表示数字的总位数。</li>
+<li><code>scale</code> 修饰符：定义 <code>decimal</code> 字段的标度，表示小数点后的位数。</li>
+<li><code>polymorphic</code> 修饰符：为 <code>belongs_to</code> 关联添加 <code>type</code> 字段。</li>
+<li><code>null</code> 修饰符：设置字段能否为 <code>NULL</code> 值。</li>
+<li><code>default</code> 修饰符：设置字段的默认值。请注意，如果使用动态值（如日期）作为默认值，那么默认值只会在第一次使时（如应用迁移的日期）计算一次。</li>
+<li><code>index</code> 修饰符：为字段添加索引。</li>
+<li><code>comment</code> 修饰符：为字段添加注释。</li>
+</ul>
+</li>
+<li><p>回滚</p>
+<ul>
+<li><code>rails db:rollback</code></li>
+<li><code>rails db:rollback  STEP=3</code>回滚三步</li>
+<li><code>rails db:migration:redo</code>重做最后一个步骤，</li>
+<li><code>rails db:migration:redo STEP=3</code>重做最后有一个步骤。</li>
+</ul>
+</li>
+<li><p>重置数据库</p>
+<ul>
+<li><code>rake db:reset</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="Active-Record数据验证"><a href="#Active-Record数据验证" class="headerlink" title="Active Record数据验证"></a>Active Record数据验证</h4><ol>
+<li><p><code>.new_record?</code> 判断对象是否已经存入数据库。</p>
+</li>
+<li><p>下面的方法会触发验证：</p>
+<ul>
+<li><code>create</code></li>
+<li><code>create!</code></li>
+<li><code>save</code></li>
+<li><code>save!</code></li>
+<li><code>update</code></li>
+<li><code>update!</code></li>
+</ul>
+</li>
+<li><p>下面的方法会跳过验证：</p>
+<ul>
+<li><code>decrement!</code></li>
+<li><code>decrement_counter</code></li>
+<li><code>increment!</code></li>
+<li><code>increment_counter</code></li>
+<li><code>toggle!</code></li>
+<li><code>touch</code></li>
+<li><code>update_all</code></li>
+<li><code>update_attribute</code></li>
+<li><code>update_column</code></li>
+<li><code>update_columns</code></li>
+<li><code>update_counters</code></li>
+</ul>
+<blockquote>
+<p>另外，在需要验证的方法里如果传入<code>validates: false</code>也会跳过验证。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; save(validates: false)</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>判断是否能通过验证：</p>
+<ul>
+<li><code>valid?</code></li>
+</ul>
+<blockquote>
+<p><code>invalid?</code> 刚好相反，意思是要验证是否无法通过。</p>
+</blockquote>
+</li>
+<li><p>关于获取验证的错误信息：</p>
+<blockquote>
+<p>所有发现的错误都可以通过实例方法<code>errors.messages</code>来获取。该方法会返回一个错误集合。</p>
+</blockquote>
+</li>
+<li><p>如果想精确的查看某个属性存在错误，可以这样：</p>
+<ul>
+<li><code>.errors[attribute]</code></li>
+</ul>
+</li>
+<li><p>进一步想看是什么导致的错误，可以这样：</p>
+<ul>
+<li><code>.errors.details[attribute]</code></li>
+</ul>
+</li>
+<li><p>如果相关联的Model也要验证的话，可以这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class Library &lt; ApplicationRecord</div><div class="line">  has_many :books</div><div class="line">  validates_associated :books</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果想验证一个重要的栏位，如果确认密码，邮件时，必须要两个 栏位都正确时，才会通过验证：</p>
+<ul>
+<li><p>创建一个虚拟属性，命名规则是在后面加<code>_confirmation</code> </p>
+</li>
+<li><p>在views中：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">%=</span> <span class="attr">text_field</span> <span class="attr">:person</span>, <span class="attr">:email</span> %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">%=</span> <span class="attr">text_field</span> <span class="attr">:person</span>, <span class="attr">:email_confirmation</span> %&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>在Model中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class Person &lt; ApplicationRecord</div><div class="line">  validates :email, confirmation: true</div><div class="line">  validates :email_confirmation, presence: true</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>验证时，是否区分大小写：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt; class Person &lt; ApplicationRecord</div><div class="line">&gt;   validates :email, confirmation: &#123; case_sensitive: false &#125;</div><div class="line">&gt; end</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>辅助方法：验证是否在指定的集合中？</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class Account &lt; ApplicationRecord</div><div class="line">  validates :subdomain, exclusion: &#123; in: %w(www us ca jp),</div><div class="line">    message: &quot;%&#123;value&#125; is reserved.&quot; &#125;</div><div class="line">end</div></pre></td></tr></table></figure>
+<ol>
+<li><p>format用正则表达式来匹配：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class Product &lt; ApplicationRecord</div><div class="line">  validates :legacy_code, format: &#123; with: /\A[a-zA-Z]+\z/,</div><div class="line">    message: &quot;only allows letters&quot; &#125;</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+<li><p>给验证限定指定的几个选项。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class Coffee &lt; ApplicationRecord</div><div class="line">  validates :size, inclusion: &#123; in: %w(small medium large),</div><div class="line">    message: &quot;%&#123;value&#125; is not a valid size&quot; &#125;</div><div class="line">end</div></pre></td></tr></table></figure>
+<blockquote>
+<p>相反的结果：<code>within</code></p>
+</blockquote>
+</li>
+<li><p>为栏位限定长度：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class Coffee &lt; ApplicationRecord</div><div class="line">  validates :size, inclusion: &#123; in: %w(small medium large),</div><div class="line">    message: &quot;%&#123;value&#125; is not a valid size&quot; &#125;</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>可用的长度约束选项有：</p>
+<ul>
+<li><code>:minimum</code>：属性的值不能比指定的长度短；</li>
+<li><code>:maximum</code>：属性的值不能比指定的长度长；</li>
+<li><code>:in</code>（或 <code>:within</code>）：属性值的长度在指定的范围内。该选项的值必须是一个范围；</li>
+<li><code>:is</code>：属性值的长度必须等于指定值；</li>
+</ul>
+</li>
+<li><p>验证栏位必须是数字：</p>
+<blockquote>
+<p>默认情况下，匹配的值是可选的正负符号后加整数或浮点数。如果只接受整数，把 <code>:only_integer</code> 选项设为 <code>true</code>。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class Player &lt; ApplicationRecord</div><div class="line">  validates :points, numericality: true</div><div class="line">  validates :games_played, numericality: &#123; only_integer: true &#125;</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>此外，还有以下这些选项：</p>
+<ul>
+<li><code>:greater_than</code>：属性值必须比指定的值大。该选项默认的错误消息是“must be greater than %{count}”；</li>
+<li><code>:greater_than_or_equal_to</code>：属性值必须大于或等于指定的值。该选项默认的错误消息是“must be greater than or equal to %{count}”；</li>
+<li><code>:equal_to</code>：属性值必须等于指定的值。该选项默认的错误消息是“must be equal to %{count}”；</li>
+<li><code>:less_than</code>：属性值必须比指定的值小。该选项默认的错误消息是“must be less than %{count}”；</li>
+<li><code>:less_than_or_equal_to</code>：属性值必须小于或等于指定的值。该选项默认的错误消息是“must be less than or equal to %{count}”；</li>
+<li><code>:other_than</code>：属性值必须与指定的值不同。该选项默认的错误消息是“must be other than %{count}”。</li>
+<li><code>:odd</code>：如果设为 <code>true</code>，属性值必须是奇数。该选项默认的错误消息是“must be odd”；</li>
+<li><code>:even</code>：如果设为 <code>true</code>，属性值必须是偶数。该选项默认的错误消息是“must be even”；</li>
+</ul>
+<blockquote>
+<p><code>numericality</code> 默认不接受 <code>nil</code> 值。可以使用 <code>allow_nil: true</code> 选项允许接受 <code>nil</code>。</p>
+</blockquote>
+</li>
+<li><p>验证是否为空值：</p>
+<ul>
+<li><p><code>presence</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class Person &lt; ApplicationRecord</div><div class="line">  validates :name, :login, :email, presence: true</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+<li><p>验证关联的对象是否存在：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class Order &lt; ApplicationRecord</div><div class="line">  has_many :line_items, inverse_of: :order</div><div class="line">end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class LineItem &lt; ApplicationRecord</div><div class="line">  belongs_to :order</div><div class="line">  validates :order, presence: true</div><div class="line">end</div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果验证 <code>has_one</code> 或 <code>has_many</code> 关联的对象是否存在，会在关联的对象上调用 <code>blank?</code> 和 <code>marked_for_destruction?</code> 方法。</p>
+<p>因为 <code>false.blank?</code> 的返回值是 <code>true</code>，所以如果要验证布尔值字段是否存在，要使用下述验证中的一个：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; validates :boolean_field_name, inclusion: &#123; in: [true, false] &#125;</div><div class="line">&gt; validates :boolean_field_name, exclusion: &#123; in: [nil] &#125;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>另外一个验证是否为空的方法：</p>
+<ul>
+<li><p><code>absence</code></p>
+<blockquote>
+<p>这个方法和上面的<code>presence</code> 比较相似，这里暂时跳过。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>验证是否唯一性：</p>
+<ul>
+<li><p><code>uniqueness</code> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class Account &lt; ApplicationRecord</div><div class="line">  validates :email, uniqueness: true</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<ul>
+<li><p>选项一   </p>
+<p>可以加一个<code>:scope</code>以指定使用一个或多个属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt;   class Holiday &lt; ApplicationRecord</div><div class="line">&gt;     validates :name, uniqueness: &#123; scope: :year,</div><div class="line">&gt;       message: &quot;should happen once per year&quot; &#125;</div><div class="line">&gt;   end</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>  选项二   区分大小写用<code>case_sensitive</code></p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&gt;   class Person &lt; ApplicationRecord</div><div class="line">&gt;     validates :name, uniqueness: &#123; case_sensitive: false &#125;</div><div class="line">&gt;   end</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li><p>人才啊：这个方法可以用让其他类的方法来验证！也就是把借别人的方法来用！</p>
+<ul>
+<li><code>validates_with</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class GoodnessValidator &lt; ActiveModel::Validator</div><div class="line">  def validate(record)</div><div class="line">    if record.first_name == &quot;Evil&quot;</div><div class="line">      record.errors[:base] &lt;&lt; &quot;This person is evil&quot;</div><div class="line">    end</div><div class="line">  end</div><div class="line">end</div><div class="line"> </div><div class="line">class Person &lt; ApplicationRecord</div><div class="line">  validates_with GoodnessValidator</div><div class="line">end</div></pre></td></tr></table></figure>
+<blockquote>
+<p><code>record.errors[:base]</code> 中的错误针对整个对象，而不是特定的属性。</p>
+</blockquote>
+</li>
+<li><p>给要验证的对象使用代码块block来运算：</p>
+<ul>
+<li><p><code>validates_each</code></p>
+<p>每次把对象传入block运算</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class Person &lt; ApplicationRecord</div><div class="line">  validates_each :name, :surname do |record, attr, value|</div><div class="line">    record.errors.add(attr, &apos;must start with upper case&apos;) if value =~ /\A[[:lower:]]/</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>一些常用的验证选项:</p>
+<ul>
+<li><code>allow_nil</code> ：如果要验证值为Nil就跳过验证。</li>
+<li><code>allow_blank</code> ：和上面的类似。</li>
+<li><code>message</code> ：当发生验证失败时，把message选项里的值赋给errors集合。</li>
+<li><code>:on</code> ：指定什么时候验证。如<code>on: :create</code> <code>on: :update</code></li>
+</ul>
+</li>
+<li><p>严格验证</p>
+<ul>
+<li><p><code>strict</code>  ：当对象无效时爆炸</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class Person &lt; ApplicationRecord</div><div class="line">  validates :name, presence: &#123; strict: true &#125;</div><div class="line">end</div><div class="line"> </div><div class="line">Person.new.valid?  # =&gt; ActiveModel::StrictValidationFailed: Name can&apos;t be blank</div></pre></td></tr></table></figure>
+<blockquote>
+<p>同时还可以用<code>strict</code>来指定爆炸的提示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&gt; class Person &lt; ApplicationRecord</div><div class="line">&gt;   validates :token, presence: true, uniqueness: true, strict: TokenGenerationException</div><div class="line">&gt; end</div><div class="line">&gt;  </div><div class="line">&gt; Person.new.valid?  # =&gt; TokenGenerationException: Token can&apos;t be blank</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>条件验证：只有当对象满足特定条件时，才触发验证，这个可以自己用<code>if</code> <code>unless</code>等条件语句实现。</p>
+<ul>
+<li><p>使用符号：<code>:if</code> 和 <code>:unless</code> 选项的值为符号时，表示要在验证之前执行对应的方法。这是最常用的设置方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class Order &lt; ApplicationRecord</div><div class="line">  validates :card_number, presence: true, if: :paid_with_card?</div><div class="line"> </div><div class="line">  def paid_with_card?</div><div class="line">    payment_type == &quot;card&quot;</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+<li><p>条件组合：有时需要很多验证：</p>
+<ul>
+<li><code>with_options</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class User &lt; ApplicationRecord</div><div class="line">  with_options if: :is_admin? do |admin|</div><div class="line">    admin.validates :password, length: &#123; minimum: 10 &#125;</div><div class="line">    admin.validates :email, presence: true</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+<li><p>联合条件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class Computer &lt; ApplicationRecord</div><div class="line">  validates :mouse, presence: true,</div><div class="line">                    if: [&quot;market.retail?&quot;, :desktop?],</div><div class="line">                    unless: Proc.new &#123; |c| c.trackpad.present? &#125;</div><div class="line">end</div></pre></td></tr></table></figure>
+<p> 这里只有当<code>:if</code> 选项返回true,且<code>:unless</code>选项返回false时都会做验证。</p>
+</li>
+</ul>
+</li>
+<li><p>自定义验证</p>
+<blockquote>
+<p>跳过</p>
+</blockquote>
+</li>
+<li><p>处理错误信息</p>
+<ul>
+<li><p>手动增加错误信息：</p>
+<ul>
+<li><p><code>errors.add</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a.errors.add(:name, &quot;this is a example.&quot;)</div><div class="line">a.errors.full_messages </div><div class="line">#=&gt; [&quot;Title this is a example.&quot;]</div><div class="line">a.errors.to_a</div><div class="line">#=&gt; [&quot;Title this is a example.&quot;]</div></pre></td></tr></table></figure>
+<blockquote>
+<p>这个的<code>.to_a</code>和<code>.full_messages</code>是一样的效果。</p>
+</blockquote>
+</li>
+<li><p><code>&lt;&lt;</code>方法，追回到errors.messages数组中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a.errors.messages[:name] &lt;&lt; &quot;test&quot;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>不分属性栏位的错误提示：<code>errors[:base]</code> </p>
+<blockquote>
+<p>这里的错误信息是针对整个对象的。只是简单都标记这对象无效。</p>
+</blockquote>
+</li>
+<li><p>清空错误信息：</p>
+<ul>
+<li><code>.clear</code></li>
+</ul>
+</li>
+<li><p>查看错误错误信息的数量：</p>
+<ul>
+<li><code>.size</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="Active-Record回调"><a href="#Active-Record回调" class="headerlink" title="Active Record回调"></a>Active Record回调</h4><blockquote>
+<p>什么是回调：回调使我们可以在对象状态更改之前或之后触发逻辑。</p>
+</blockquote>
+<p>通过回调，我们可以编写在创建、保存、更新、删除、验证或从数据库中加载 Active Record 对象时执行的代码。</p>
+<blockquote>
+<p>通常需要封装为私有方法。</p>
+</blockquote>
+<h5 id="方法列表："><a href="#方法列表：" class="headerlink" title="方法列表："></a>方法列表：</h5><ol>
+<li>创建对象：<ul>
+<li><code>before_validation</code></li>
+<li><code>after_validation</code></li>
+<li><code>before_save</code></li>
+<li><code>around_save</code></li>
+<li><code>before_create</code></li>
+<li><code>around_create</code></li>
+<li><code>after_create</code></li>
+<li><code>after_save</code></li>
+<li><code>after_commit/after_rollback</code></li>
+</ul>
+</li>
+<li>更新对象：<ul>
+<li><code>before_validation</code></li>
+<li><code>after_validation</code></li>
+<li><code>before_save</code></li>
+<li><code>around_save</code></li>
+<li><code>before_update</code></li>
+<li><code>around_update</code></li>
+<li><code>after_update</code></li>
+<li><code>after_save</code></li>
+<li><code>after_commit/after_rollback</code></li>
+</ul>
+</li>
+<li>删除对象：<ul>
+<li><code>before_destroy</code></li>
+<li><code>around_destroy</code></li>
+<li><code>after_destroy</code></li>
+<li><code>after_commit/after_rollback</code></li>
+</ul>
+</li>
+</ol>
+<p>其他回调：</p>
+<ol>
+<li><p><code>after_initialize</code> <code>after_find</code> 在每次对数据库有操作时都会触发的回调。</p>
+</li>
+<li><p>下面这些方法会触发回调：</p>
+<ul>
+<li><code>create</code></li>
+<li><code>create!</code></li>
+<li><code>decrement!</code></li>
+<li><code>destroy</code></li>
+<li><code>destroy!</code></li>
+<li><code>destroy_all</code></li>
+<li><code>increment!</code></li>
+<li><code>save</code></li>
+<li><code>save!</code></li>
+<li><code>save(validate: false)</code></li>
+<li><code>toggle!</code></li>
+<li><code>update_attribute</code></li>
+<li><code>update</code></li>
+<li><code>update!</code></li>
+<li><code>valid?</code></li>
+</ul>
+<p>此外，下面这些查找方法会触发 <code>after_find</code> 回调：</p>
+<ul>
+<li><code>all</code></li>
+<li><code>first</code></li>
+<li><code>find</code></li>
+<li><code>find_by</code></li>
+<li><code>find_by_*</code></li>
+<li><code>find_by_*!</code></li>
+<li><code>find_by_sql</code></li>
+<li><code>last</code></li>
+</ul>
+<p>每次初始化类的新对象时都会触发 <code>after_initialize</code> 回调。</p>
+</li>
+<li><p>一些会跳过回调的方法。</p>
+<blockquote>
+<p>在不清楚有什么回调的情况下，要慎重使用。</p>
+</blockquote>
+<ul>
+<li><code>decrement</code></li>
+<li><code>decrement_counter</code></li>
+<li><code>delete</code></li>
+<li><code>delete_all</code></li>
+<li><code>increment</code></li>
+<li><code>increment_counter</code></li>
+<li><code>toggle</code></li>
+<li><code>touch</code></li>
+<li><code>update_column</code></li>
+<li><code>update_columns</code></li>
+<li><code>update_all</code></li>
+<li><code>update_counters</code></li>
+</ul>
+</li>
+<li><p>可以把回调的方法封装成一个类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class PictureFileCallbacks</div><div class="line">  def self.after_destroy(picture_file)</div><div class="line">    if File.exist?(picture_file.filepath)</div><div class="line">      File.delete(picture_file.filepath)</div><div class="line">    end</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class PictureFile &lt; ApplicationRecord</div><div class="line">  after_destroy PictureFileCallbacks</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+<li><p>事务性回调：</p>
+<ul>
+<li><code>after_commit</code> <code>after_rollback</code> 这两个回调会在数据库事务完成时触发。</li>
+<li>after_ commit包括在执行创建，更新，删除时会触发。所以，这些操作都拥有别名：<ul>
+<li><code>after_create_commit</code></li>
+<li><code>after_update_commit</code></li>
+<li><code>after_update_commit</code></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>在事务中使用回调要注意，如果其中一个发生异常，会使得其他回调不再执行。这点要注意。需要适当处理，以便让其他回调继续运行。</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="Active-Record关联"><a href="#Active-Record关联" class="headerlink" title="Active Record关联"></a>Active Record关联</h4><ol>
+<li><p>Rails支持六种关联：</p>
+<ul>
+<li><code>belongs_to</code></li>
+<li><code>has_one</code></li>
+<li><code>has_many</code></li>
+<li><code>has_many :through</code></li>
+<li><code>has_one :through</code></li>
+<li><code>has_and_belongs_to_many</code></li>
+</ul>
+</li>
+<li><h5 id="多态关联：超好用的模型关联，以后再也不用建立那么多图片数据表了！！！"><a href="#多态关联：超好用的模型关联，以后再也不用建立那么多图片数据表了！！！" class="headerlink" title="多态关联：超好用的模型关联，以后再也不用建立那么多图片数据表了！！！"></a>多态关联：超好用的模型关联，以后再也不用建立那么多图片数据表了！！！</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class Picture &lt; ApplicationRecord</div><div class="line">  belongs_to :imageable, polymorphic: true</div><div class="line">end</div><div class="line"> </div><div class="line">class Employee &lt; ApplicationRecord</div><div class="line">  has_many :pictures, as: :imageable</div><div class="line">end</div><div class="line"> </div><div class="line">class Product &lt; ApplicationRecord</div><div class="line">  has_many :pictures, as: :imageable</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>在 <code>belongs_to</code> 中指定使用多态，可以理解成创建了一个接口，可供任何一个模型使用。在 <code>Employee</code> 模型实例上，可以使用 <code>@employee.pictures</code> 获取图片集合。</p>
+<p>类似地，可使用 <code>@product.pictures</code> 获取产品的图片。</p>
+<p>在 <code>Picture</code> 模型的实例上，可以使用 <code>@picture.imageable</code> 获取父对象。不过事先要在声明多态接口的模型中创建外键字段和类型字段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class CreatePictures &lt; ActiveRecord::Migration[5.0]</div><div class="line">  def change</div><div class="line">    create_table :pictures do |t|</div><div class="line">      t.string :name</div><div class="line">      t.references :imageable, polymorphic: true, index: true</div><div class="line">      t.timestamps</div><div class="line">    end</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+<blockquote>
+<p>现在才发现以前写那么多的图片的数据表，好浪费资源，浪费代码量。</p>
+</blockquote>
+</li>
+<li><p>自联结</p>
+<ul>
+<li><p>有时，在同一表中需要息关联。如：同Users表中，有雇员，有经理，需要建立上级和下属的关系。怎么做：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class Employee &lt; ApplicationRecord</div><div class="line">  has_many :subordinates, class_name: &quot;Employee&quot;,</div><div class="line">                          foreign_key: &quot;manager_id&quot;</div><div class="line"> </div><div class="line">  belongs_to :manager, class_name: &quot;Employee&quot;</div><div class="line">end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">class CreateEmployees &lt; ActiveRecord::Migration[5.0]</div><div class="line">  def change</div><div class="line">    create_table :employees do |t|</div><div class="line">      t.references :manager, index: true</div><div class="line">      t.timestamps</div><div class="line">    end</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>这样定义模型后，可以使用 <code>@employee.subordinates</code> 和 <code>@employee.manager</code> 检索了。</p>
+</li>
+</ul>
+</li>
+<li><p>小技巧和注意事项</p>
+<ul>
+<li><p>控制缓存</p>
+<p>关联添加的方法都会使用缓存，记录最近一次查询的结果，以备后用。缓存还会在方法之间共享。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">author.books           # 从数据库中检索图书</div><div class="line">author.books.size      # 使用缓存的图书副本</div><div class="line">author.books.empty?    # 使用缓存的图书副本</div></pre></td></tr></table></figure>
+<p>那，如何重新加载呢？<br><code>reload</code>方法即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">author.books.reload.empty?   # 丢掉缓存的图书副本</div></pre></td></tr></table></figure>
+</li>
+<li><p>避免命名冲突</p>
+</li>
+<li><p>控制关联的作用域：</p>
+<blockquote>
+<p>关联只会查找当前模块作用域中的对象。</p>
+</blockquote>
+<p>不同的命名空间中的模型要正常关联，就需要声明完整的类名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">module MyApplication</div><div class="line">  module Business</div><div class="line">    class Supplier &lt; ApplicationRecord</div><div class="line">       has_one :account,</div><div class="line">        class_name: &quot;MyApplication::Billing::Account&quot;</div><div class="line">    end</div><div class="line">  end</div><div class="line"> </div><div class="line">  module Billing</div><div class="line">    class Account &lt; ApplicationRecord</div><div class="line">       belongs_to :supplier,</div><div class="line">        class_name: &quot;MyApplication::Business::Supplier&quot;</div><div class="line">    end</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>华丽丽的分割线，以下部分开始启动略过模式》》》》》》</p>
+<blockquote>
+<p>脑子里的代码记忆不够匹配，看这书真心烧脑，笔记记得再清楚，也记不住，还低效！如何破解：</p>
+<ul>
+<li>开启略过模式：只记录有什么工具，工具有什么作用。不过多记录用法，需要用到时再来复查。</li>
+</ul>
+</blockquote>
+<hr>
+<ol>
+<li><p><code>:touch</code>选项的意思是：保存或销毁对象时，关联的对象的Update_at &amp;&amp; update_on 字段会自动设为当前时间。</p>
+</li>
+<li><p><code>validate</code> 选项，意思是，保存时，会同时验证关联的对象。</p>
+</li>
+<li><p><code>optional</code>选项，意思是，保存时，不会验证关联的对象是否存在。</p>
+</li>
+<li><p>如果经常透过第三方加载数据，如：@line_item.book.author,就可以在关联中及早把作者从商品引入图书中：这也是避免n+1query的作法。</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">LineItem</span> &lt; ApplicationRecord</span></div><div class="line">  belongs_to <span class="symbol">:book</span>, -&gt; &#123; includes <span class="symbol">:author</span> &#125;</div><div class="line"><span class="keyword">end</span></div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span> &lt; ApplicationRecord</span></div><div class="line">  belongs_to <span class="symbol">:author</span></div><div class="line">  has_many <span class="symbol">:line_items</span></div><div class="line"><span class="keyword">end</span></div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Author</span> &lt; ApplicationRecord</span></div><div class="line">  has_many <span class="symbol">:books</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>dependent</code> 控制对象销毁后怎么处理关联的对象：</p>
+<ul>
+<li>destroy：也销毁关联的对象</li>
+<li>delete：直接把关联的对象从数据库中删除。</li>
+</ul>
+</li>
+<li><p>在<code>has_many</code>后面，自动会多出这些方法，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class Author &lt; ApplicationRecord</div><div class="line">  has_many :books</div><div class="line">end</div></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">books</div><div class="line">books&lt;&lt;(object, ...)</div><div class="line">books.delete(object, ...)</div><div class="line">books.destroy(object, ...)</div><div class="line">books=(objects)</div><div class="line">book_ids</div><div class="line">book_ids=(ids)</div><div class="line">books.clear</div><div class="line">books.empty?</div><div class="line">books.size</div><div class="line">books.find(...)</div><div class="line">books.where(...)</div><div class="line">books.exists?(...)</div><div class="line">books.build(attributes = &#123;&#125;, ...)</div><div class="line">books.create(attributes = &#123;&#125;)</div><div class="line">books.create!(attributes = &#123;&#125;)</div></pre></td></tr></table></figure>
+<p>看吧，就会以有这么多方法可以用！</p>
+<p>比如<code>@author.books &lt;&lt; @book1</code> 这个方法可以用来存储多个照片，很方便，可以直接就追加进去了！</p>
+<ul>
+<li><code>@author.books.clear</code> 这个方法可以把关联的对象清空</li>
+<li><code>@author.books.empty?</code> 这个方法可以检查关联的对象是否为空？</li>
+</ul>
+</li>
+<li><p><code>offset</code>方法</p>
+<p>与limit差不多，但这里是跳过一定量的记录。如：</p>
+<ul>
+<li><code>-&gt; { offset(11) }</code>会跳过11个记录。</li>
+</ul>
+</li>
+<li><p><code>readonly</code>方法，读取出来的对象是只读的。</p>
+</li>
+<li><p>关联扩展，可以使用其他类里面的方法，做法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">module FindRecentExtension</div><div class="line">  def find_recent</div><div class="line">    where(&quot;created_at &gt; ?&quot;, 5.days.ago)</div><div class="line">  end</div><div class="line">end</div><div class="line"> </div><div class="line">class Author &lt; ApplicationRecord</div><div class="line">  has_many :books, -&gt; &#123; extending FindRecentExtension &#125;</div><div class="line">end</div><div class="line"> </div><div class="line">class Supplier &lt; ApplicationRecord</div><div class="line">  has_many :deliveries, -&gt; &#123; extending FindRecentExtension &#125;</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+<li><p>表单继承，把共同的东西都抽取出来，存入同一个模型。我又想到了众多图片可以存入同一个模型。</p>
+<p>做法：假如有 Car、Motorcycle 和 Bicycle 三个模型，我们想在它们中共用 <code>color</code> 和 <code>price</code> 字段，但是各自的具体行为不同，而且使用不同的控制器。</p>
+</li>
+</ol>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rails generate model vehicle type:string color:string price:decimal&#123;10.2&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ rails generate model car --parent=Vehicle</div></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">class Car &lt; Vehicle</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>可以了，这样就节省了数据表了。</p>
+</li>
+</ul>
+<h4 id="Active-Record-查询接口"><a href="#Active-Record-查询接口" class="headerlink" title="Active Record 查询接口"></a>Active Record 查询接口</h4><h5 id="检索单个对象："><a href="#检索单个对象：" class="headerlink" title="检索单个对象："></a>检索单个对象：</h5><ol>
+<li><p><code>.find</code>方法 ：检索指定主键对应的对象</p>
+<blockquote>
+<p>会报错</p>
+</blockquote>
+<ul>
+<li><code>Post.find(10)</code></li>
+<li><code>Post.find([1,10])</code> 检查多个值。返回的结果也是数组形式</li>
+</ul>
+</li>
+<li><p><code>.take</code>方法：检索一条记录而不考虑排序</p>
+<blockquote>
+<p>不会抛出异常</p>
+</blockquote>
+<ul>
+<li><code>Post.take</code></li>
+<li><code>Post.take(2)</code> 返回不超过指定数量的查询结果。</li>
+</ul>
+</li>
+<li><p><code>.first</code>方法，返回第一条记录，如果没有找到不会抛出异常。</p>
+<ul>
+<li><p>可以指定数量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Post.first(3)   返回头三个记录</div></pre></td></tr></table></figure>
+</li>
+<li><p>可以指定一个属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Post.order(:first_name).first</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>.last</code> 方法，基本和<code>first</code>一样，相反而已。</p>
+</li>
+<li><p><code>.find_by</code>还可以这样写:</p>
+<ul>
+<li><code>Post.find_by first_name:  &#39;activeliang&#39;</code></li>
+</ul>
+</li>
+<li><p><code>find_each</code> ，分批量检索记录，每次都把记录传入block。</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">User.find_each do |user|</div><div class="line">  NewsMailer.weekly(user).deliver_now</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>batch_size</code>规定一次检索的数量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">User.find_each(batch_size: 5000) do |user|</div><div class="line">  NewsMailer.weekly(user).deliver_now</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>start</code>规定要从哪一个记录开发检索，小于这个值的不会被检索。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">User.find_each(start: 2000) do |user|</div><div class="line">  NewsMailer.weekly(user).deliver_now</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>finish</code>规定到哪一个记录就停止，大于这个值的不会被检索。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">User.find_each(start: 2000, finish: 10000) do |user|</div><div class="line">  NewsMailer.weekly(user).deliver_now</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>find_in_batches</code> 方法与前面的<code>find_each</code>类似，区别在于：这个方法是把批量的数据以数组的形式一次性传入block里的。</p>
+</li>
+</ol>
+<h5 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h5><ol>
+<li><p>查询时的子集条件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Post.where(orders_count: [1,3,5])</div></pre></td></tr></table></figure>
+</li>
+<li><p>not条件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Post.where.not(locked: true)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h5><ol>
+<li><p>多个字段排序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Client.order(orders_count: :asc, created_at: :desc)</div><div class="line"># 或</div><div class="line">Client.order(:orders_count, created_at: :desc)</div><div class="line"># 或</div><div class="line">Client.order(&quot;orders_count ASC, created_at DESC&quot;)</div><div class="line"># 或</div><div class="line">Client.order(&quot;orders_count ASC&quot;, &quot;created_at DESC&quot;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Client.order(&quot;orders_count ASC&quot;).order(&quot;created_at DESC&quot;)</div></pre></td></tr></table></figure>
+<p>每次调用order的时候，都会在前一次的基础上进行排序。</p>
+</li>
+</ol>
+<h5 id="选择选定的字段"><a href="#选择选定的字段" class="headerlink" title="选择选定的字段"></a>选择选定的字段</h5><ol>
+<li><p>选择某个字段</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Client.select(&quot;viewable_by, locked&quot;)</div></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Client.select(:name).distinct    后面的选项表示无重复的。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="条件覆盖"><a href="#条件覆盖" class="headerlink" title="条件覆盖"></a>条件覆盖</h5><ol>
+<li><p><code>unscope</code>方法，删除某些条件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Article.where(&apos;id &gt; 10&apos;).limit(20).order(&apos;id asc&apos;).unscope(:order)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>only</code>方法，忽略某些条件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Article.where(&apos;id &gt; 10&apos;).limit(20).order(&apos;id desc&apos;).only(:order, :where)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>reorder</code>方法，可以覆盖默认作用域中的排序方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class Article &lt; ApplicationRecord</div><div class="line">  has_many :comments, -&gt; &#123; order(&apos;posted_at DESC&apos;) &#125;</div><div class="line">end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Article.find(10).comments.reorder(&apos;name&apos;)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>reverse_order</code>方法 ：反转排序结果。</p>
+</li>
+<li><p><code>rewhere</code>方法，覆盖where方法中指定的条件。</p>
+</li>
+</ol>
+<h5 id="空关系"><a href="#空关系" class="headerlink" title="空关系"></a>空关系</h5><ol>
+<li><p><code>none</code>方法，可以返回一个空Relation对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Article.none     #返回一个空的Relation对象，而且不执行查询</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="在更新时锁定记录"><a href="#在更新时锁定记录" class="headerlink" title="在更新时锁定记录"></a>在更新时锁定记录</h5><ol>
+<li><p>乐观锁定与悲观锁定。这里只讲理解，要用时再来深究。</p>
+<blockquote>
+<p>悲观锁：需要的悲观锁的数据，一旦有用户打开后，此数据就进入锁定状态，其他用户暂时无法再读取。当事务结束后，再释放这个锁定。</p>
+<p>乐观锁：加了乐观锁的数据，同时会在数据库里需要珍上字段存储锁的版本，每次提交事务都会通过这个版本判断这个数据是否被改过，如果被改过则拒绝提交事务，但可以重来。</p>
+</blockquote>
+</li>
+<li><p>n+1查询问题</p>
+<blockquote>
+<p>解决方法：通过指明<code>includes方法</code>，Active Record会使用尽可能少的查询来加载所有已指明的关联。</p>
+<ul>
+<li><p>多个关联的数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;   Article.includes(:category, :comments)</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>删除作用域：</p>
+<blockquote>
+<ul>
+<li><code>unscoped</code> 方法</li>
+</ul>
+</blockquote>
+</li>
+<li><p><code>find_or_create_by</code> 意思是：检索，如果空的那就新建一个。</p>
+</li>
+<li><p>检查对象是否存在：</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Post.exists?(1)</div><div class="line">POst.exists?(id: [1,2,3])</div></pre></td></tr></table></figure>
+</li>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Post.any?</div><div class="line">Post.many?</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>数据库自带的计算功能：</p>
+<ul>
+<li><p><code>count</code>方法：计算计数</p>
+</li>
+<li><p><code>average</code>方法，计算平均值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Client.average(&quot;orders_count&quot;)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>minimum</code>方法，查找最小值</p>
+</li>
+<li><p><code>maximum</code>方法，查找最大值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Post.minimum(&quot;age&quot;)</div><div class="line">Post.maximum(&quot;age&quot;)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>sum</code>方法，求某个字段值的和。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="Active-Model-基础"><a href="#Active-Model-基础" class="headerlink" title="Active Model 基础"></a>Active Model 基础</h4><blockquote>
+<p>这一章节讲的是有个叫Active Model的库，里面有很多模块。这里只是大概地说明了部分模块。</p>
+</blockquote>
+<ol>
+<li><p>弄脏</p>
+<p>如果修改了对象的一个或多个属性，但是没有保存，此时就把对象弄脏了。<code>ActiveModel::Dirty</code>模块提供检查对象是否被修改的功能。它还提供了基于属性的存取方法。假如有个 <code>Person</code> 类，它有两个属性，<code>first_name</code> 和 <code>last_name</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">class Person</div><div class="line">  include ActiveModel::Dirty</div><div class="line">  define_attribute_methods :first_name, :last_name</div><div class="line"> </div><div class="line">  def first_name</div><div class="line">    @first_name</div><div class="line">  end</div><div class="line"> </div><div class="line">  def first_name=(value)</div><div class="line">    first_name_will_change!</div><div class="line">    @first_name = value</div><div class="line">  end</div><div class="line"> </div><div class="line">  def last_name</div><div class="line">    @last_name</div><div class="line">  end</div><div class="line"> </div><div class="line">  def last_name=(value)</div><div class="line">    last_name_will_change!</div><div class="line">    @last_name = value</div><div class="line">  end</div><div class="line"> </div><div class="line">  def save</div><div class="line">    # 执行保存操作……</div><div class="line">    changes_applied</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">person = Person.new</div><div class="line">person.changed? # =&gt; false</div><div class="line"> </div><div class="line">person.first_name = &quot;First Name&quot;</div><div class="line">person.first_name # =&gt; &quot;First Name&quot;</div><div class="line"> </div><div class="line"># 如果修改属性后未保存，返回 true</div><div class="line">person.changed? # =&gt; true</div><div class="line"> </div><div class="line"># 返回修改之后没有保存的属性列表</div><div class="line">person.changed # =&gt; [&quot;first_name&quot;]</div><div class="line"> </div><div class="line"># 返回一个属性散列，指明原来的值</div><div class="line">person.changed_attributes # =&gt; &#123;&quot;first_name&quot;=&gt;nil&#125;</div><div class="line"> </div><div class="line"># 返回一个散列，键为修改的属性名，值是一个数组，包含旧值和新值</div><div class="line">person.changes # =&gt; &#123;&quot;first_name&quot;=&gt;[nil, &quot;First Name&quot;]&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>这里就可以查询到某个参数是否被更改过？如果有，那原来提什么？</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="Action-View-概览"><a href="#Action-View-概览" class="headerlink" title="Action View 概览"></a>Action View 概览</h4><ol>
+<li><h5 id="DateHelper模块"><a href="#DateHelper模块" class="headerlink" title="DateHelper模块"></a>DateHelper模块</h5><ul>
+<li><p><code>date_select</code>方法，选择年，月，日的选择列表。</p>
+</li>
+<li><p><code>datetime_select</code>方法，选择年，月，日，时，分的选择列表。</p>
+</li>
+<li><p><code>distance_of_time_in_words</code>方法，返回两个 时间的间隔：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">distance_of_time_in_words(Time.now, Time.now + 15.seconds)        # =&gt; less than a minute</div><div class="line">distance_of_time_in_words(Time.now, Time.now + 15.seconds, include_seconds: true)  # =&gt; less than 20 seconds</div></pre></td></tr></table></figure>
+<blockquote>
+<p>加入<code>include_seconds</code>选项设置为true可以得到更精确的时间间隔。</p>
+</blockquote>
+</li>
+<li><p><code>select_date</code>方法，返回年月日的选择列表，并通过Datetime对象来设置默认值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 生成一个日期时间选择列表，默认选中指定的日期时间（四天以后）</div><div class="line">select_datetime(Time.now + 4.days)</div><div class="line"> </div><div class="line"># 生成一个日期时间选择列表，默认选中今天（未指定日期时间）</div><div class="line">select_datetime()</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>select_datetime</code> 方法，和上面的方法如出一辙。</p>
+</li>
+<li><p><code>select_day</code>方法，和上面的方法如出一辙。</p>
+</li>
+<li><p><code>select_hour</code>方法，和上面的方法如出一辙。</p>
+</li>
+<li><p><code>select_minute</code>方法。同上。</p>
+</li>
+<li><p><code>select_month</code>方法，同上。</p>
+</li>
+<li><p><code>select_second</code>方法，同上。</p>
+</li>
+<li><p><code>select_time</code></p>
+</li>
+<li><p><code>select_year</code></p>
+</li>
+<li><p><code>time_ago_in_words</code>方法，计算指定时间到当前时间的间隔。</p>
+</li>
+<li><p><code>time_select</code></p>
+</li>
+</ul>
+</li>
+<li><h4 id="FormHelper模块"><a href="#FormHelper模块" class="headerlink" title="FormHelper模块"></a>FormHelper模块</h4><ul>
+<li><p><code>form_for</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 生成一个日期时间选择列表，默认选中指定的日期时间（四天以后）</div><div class="line">select_datetime(Time.now + 4.days)</div><div class="line"> </div><div class="line"># 生成一个日期时间选择列表，默认选中今天（未指定日期时间）</div><div class="line">select_datetime()</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>check_box</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># 假设 @article.validated? 的值是 1</div><div class="line">check_box(&quot;article&quot;, &quot;validated&quot;)</div><div class="line"># =&gt; &lt;input type=&quot;checkbox&quot; id=&quot;article_validated&quot; name=&quot;article[validated]&quot; value=&quot;1&quot; /&gt;</div><div class="line">#    &lt;input name=&quot;article[validated]&quot; type=&quot;hidden&quot; value=&quot;0&quot; /&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>label</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">label(:article, :title)</div><div class="line"># =&gt; &lt;label for=&quot;article_title&quot;&gt;Title&lt;/label&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>radio_button</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 假设 @article.category 的值是“rails”</div><div class="line">radio_button(&quot;article&quot;, &quot;category&quot;, &quot;rails&quot;)</div><div class="line">radio_button(&quot;article&quot;, &quot;category&quot;, &quot;java&quot;)</div><div class="line"># =&gt; &lt;input type=&quot;radio&quot; id=&quot;article_category_rails&quot; name=&quot;article[category]&quot; value=&quot;rails&quot; checked=&quot;checked&quot; /&gt;</div><div class="line">#    &lt;input type=&quot;radio&quot; id=&quot;article_category_java&quot; name=&quot;article[category]&quot; value=&quot;java&quot; /&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>email_field</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">email_field(:user, :email)</div><div class="line"># =&gt; &lt;input type=&quot;email&quot; id=&quot;user_email&quot; name=&quot;user[email]&quot; value=&quot;#&#123;@user.email&#125;&quot; /&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>url_field</code></p>
+<blockquote>
+<p>看到这个方法的我，眼泪掉下来</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">url_field(:user, :url)</div><div class="line"># =&gt; &lt;input type=&quot;url&quot; id=&quot;user_url&quot; name=&quot;user[url]&quot; value=&quot;#&#123;@user.url&#125;&quot; /&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h4 id="FormOptionsHelper模块"><a href="#FormOptionsHelper模块" class="headerlink" title="FormOptionsHelper模块"></a>FormOptionsHelper模块</h4><ul>
+<li><code>image_submit_tag</code> ：此方法会显示一张图像，点击图像会提交表单。</li>
+</ul>
+</li>
+<li><h4 id="JavaScriptHelper模块"><a href="#JavaScriptHelper模块" class="headerlink" title="JavaScriptHelper模块"></a>JavaScriptHelper模块</h4><ul>
+<li><p><code>javascript_tag</code>方法，可以很方便在页面中塞Javascripts语句</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">javascript_tag <span class="string">"alert('All is good')"</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><h4 id="NumberHelper模块"><a href="#NumberHelper模块" class="headerlink" title="NumberHelper模块"></a>NumberHelper模块</h4><ul>
+<li><p><code>number_to_currency</code> 方法，把数字转换成货币字符串：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">number_to_currency(1234567890.50) # =&gt; $1,234,567,890.50</div><div class="line"></div><div class="line">6.12.2</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>number_with_delimiter</code>方法，把数字软的成带千们转换符的数字。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">number_with_delimiter(12345678) # =&gt; 12,345,678</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>number_with_precision</code>方法，把数字转换成具有指定精度的数字。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="Rails-布局和视图渲染"><a href="#Rails-布局和视图渲染" class="headerlink" title="Rails 布局和视图渲染"></a>Rails 布局和视图渲染</h4><ol>
+<li><p><code>render</code>方法：</p>
+<ul>
+<li><p><code>:plain</code>选项，可以直接返回没有标记语言的线文本：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure></p>
+<p>render plain: “OK”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- `:html`选项，可以直接返回页面使用的html：</div></pre></td></tr></table></figure>
+<p>render html : “<strong>Not Found</strong>“.html_safe</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- `:inline`选项，直接返回erb代码。</div></pre></td></tr></table></figure>
+<p>render inline: “&lt;% products.each do |p| %&gt;</p><p>&lt;%= p.name %&gt;</p>&lt;% end %&gt;”<p></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- `json` `xml`</div><div class="line"></div><div class="line">- `js`</div></pre></td></tr></table></figure>
+<p>render js: “alert(‘Hello Rails’);”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">   - `:status` 直接返回状态码</div><div class="line"></div><div class="line">   - `formats` 返回数据格式</div><div class="line"></div><div class="line">   &gt; `render` 和 `redirect_to`的区别：`render`会直接去加载html页面而不会通过controller,而`redirect_to` 会重新从controller开发请求。</div><div class="line"></div><div class="line">2. `redirect_to`方法</div><div class="line"></div><div class="line">3. `javascript_include_tag`可以很方便引入js</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>&lt;%= javascript_include_tag “main”, “/photos/columns” %&gt;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<p>&lt;%= javascript_include_tag “<a href="http://example.com/main.js" target="_blank" rel="external">http://example.com/main.js</a>“ %&gt;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">4. `stylesheet_link_tag`可以很方便引入css，大致方法同上。</div><div class="line"></div><div class="line">5. `video_tag` 方法可以很方便载入视频。</div></pre></td></tr></table></figure>
+<p>&lt;%= video_tag “movie.ogg” %&gt;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">   `video_tag` 方法还可使用散列指定 `&lt;video&gt;` 标签的所有属性，包括：</div><div class="line"></div><div class="line">   - `poster: &quot;image_name.png&quot;`：指定视频播放前在视频的位置显示的图片；</div><div class="line">   - `autoplay: true`：页面加载后开始播放视频；</div><div class="line">   - `loop: true`：视频播完后再次播放；</div><div class="line">   - `controls: true`：为用户显示浏览器提供的控件，用于和视频交互；</div><div class="line">   - `autobuffer: true`：页面加载时预先加载视频文件；</div><div class="line"></div><div class="line">6. `audio_tag`方法，可以很方便载入音频。</div><div class="line"></div><div class="line">   与 `video_tag` 类似，`audio_tag` 也有特殊的选项：</div><div class="line"></div><div class="line">   - `autoplay: true`：页面加载后开始播放音频；</div><div class="line">   - `controls: true`：为用户显示浏览器提供的控件，用于和音频交互；</div><div class="line">   - `autobuffer: true`：页面加载时预先加载音频文件；</div><div class="line"></div><div class="line">#### 表单辅助方法</div><div class="line"></div><div class="line">1. 一些辅助方法：</div></pre></td></tr></table></figure>
+<p>&lt;%= text_area_tag(:message, “Hi, nice site”, size: “24x6”) %&gt;<br>&lt;%= password_field_tag(:password) %&gt;<br>&lt;%= hidden_field_tag(:parent_id, “5”) %&gt;<br>&lt;%= search_field(:user, :name) %&gt;<br>&lt;%= telephone_field(:user, :phone) %&gt;<br>&lt;%= date_field(:user, :born_on) %&gt;<br>&lt;%= datetime_local_field(:user, :graduation_day) %&gt;<br>&lt;%= month_field(:user, :birthday_month) %&gt;<br>&lt;%= week_field(:user, :birthday_week) %&gt;<br>&lt;%= url_field(:user, :homepage) %&gt;<br>&lt;%= email_field(:user, :address) %&gt;<br>&lt;%= color_field(:user, :favorite_color) %&gt;<br>&lt;%= time_field(:task, :started_at) %&gt;<br>&lt;%= number_field(:product, :price, in: 1.0..20.0, step: 0.5) %&gt;<br>&lt;%= range_field(:product, :discount, in: 1..100) %&gt;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">2. 终于知道如何在一个表单内完成同时创建两个值的方法了！：</div><div class="line"></div><div class="line">   - `fields_for`方法可以办到：</div></pre></td></tr></table></figure>
+<p>  &lt;%= form_for @person, url: {action: “create”} do |person_form| %&gt;</p>
+<pre><code>&lt;%= person_form.text_field :name %&gt;
+&lt;%= fields_for @person.contact_detail do |contact_detail_form| %&gt;
+  &lt;%= contact_detail_form.text_field :phone_number %&gt;
+&lt;% end %&gt;
+</code></pre><p>  &lt;% end %&gt;</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">3. Form_for处理命名空间：</div><div class="line">   ![](http://olmrxx9ks.bkt.clouddn.com/2017-07-30-Snip20170730_1.png)</div><div class="line"></div><div class="line">   1. 快速动态生成选择列表</div><div class="line"></div><div class="line">      - `select_tag`</div></pre></td></tr></table></figure>
+<pre><code>&lt;%= select_tag(:city_id, &apos;&lt;option value=&quot;1&quot;&gt;Lisbon&lt;/option&gt;...&apos;) %&gt;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- `options_for_select`</div></pre></td></tr></table></figure>
+
+&lt;%= options_for_select([[&apos;Lisbon&apos;, 1], [&apos;Madrid&apos;, 2], ...]) %&gt;
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">两者相结合，就可以动态方便都生成了：</div></pre></td></tr></table></figure>
+</code></pre><p>   &lt;%= select_tag(:city_id, options_for_select(…)) %&gt;</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">   - 到这里，还有一个问题没有解决：option的选项还是需要手工，如果选项很多，那得输死。解决方法：见下面</div><div class="line"></div><div class="line">4. 从任意对象组成的集合中创建option标签。</div><div class="line"></div><div class="line">   - 先把选项变成一个集合，再整合进`option_for_select`</div></pre></td></tr></table></figure>
+<p>  &lt;% cities_array = City.all.map { |city| [city.name, city.id] } %&gt;<br>  &lt;%= options_for_select(cities_array) %&gt;</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- 更简单粗暴的作法：</div><div class="line"></div><div class="line">  利用rails已经帮我们内建的方法：`options_from_collection_for_select`</div></pre></td></tr></table></figure>
+<p>  &lt;%= options_from_collection_for_select(City.all, :id, :name) %&gt;</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">5. 时间日期的表单辅助方法</div><div class="line"></div><div class="line">   -</div></pre></td></tr></table></figure>
+<p>  &lt;%= select_date Date.today, prefix: :start_date %&gt;</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- 处理模型对象时，可以更简单粗暴：</div></pre></td></tr></table></figure>
+<p>  &lt;%= date_select :person, :birth_date %&gt;</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">   &gt; 通常rails的内置方法只是会包括前后5年而已，如果想更多，可以设置`start_year` `end_year` </div><div class="line"></div><div class="line">6. ##### 上传文件</div><div class="line"></div><div class="line">   &gt; 在上传文件时特别需要注意的是，表单的编码必须设置为 `multipart/form-data`。使用 `form_for` 辅助方法时会自动完成这一设置。如果使用 `form_tag` 辅助方法，就必须手动完成这一设置，具体操作可以参考下面的例子。</div><div class="line">   &gt;</div><div class="line">   &gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>&lt;%= form_tag({action: :upload}, multipart: true) do %&gt;<br>  &lt;%= file_field_tag ‘picture’ %&gt;<br>&lt;% end %&gt;</p>
+<p>&lt;%= form_for @person do |f| %&gt;<br>  &lt;%= f.file_field :picture %&gt;<br>&lt;% end %&gt;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">#### Action Controller概览</div><div class="line"></div><div class="line">&gt; 控制器负责解析请求，生成相应的输出。</div><div class="line"></div><div class="line">1. rails的参数要求是标量值，数组和Hash不是标量值，所以不能被使用。</div><div class="line"></div><div class="line">   &gt; 允许使用的标量类型：有：`String`、`Symbol`、`NilClass`、`Numeric`、`TrueClass`、`FalseClass`、`Date`、`Time`、`DateTime`、`StringIO`、`IO`、`ActionDispatch::Http::UploadedFile` 和 `Rack::Test::UploadedFile`</div><div class="line"></div><div class="line">2. 会话（原来就是session)</div><div class="line"></div><div class="line">3. ##### 事务transaction</div><div class="line"></div><div class="line">   &gt; 主要的作用是，把一系列的数据库操作包裹在一起，当其中一条出错时，整个操作会回滚！</div><div class="line"></div><div class="line">   常见的错误用法：</div><div class="line"></div><div class="line">   1. 单条记录操作时使用事务</div><div class="line">   2. 不必要的使用嵌套式事务</div><div class="line">   3. 事务中的代码不会导致回滚</div><div class="line">   4. 在 controller 中使用事务</div><div class="line"></div><div class="line">   其中第3条占比比较多，常见：</div><div class="line"></div><div class="line">   - 没有使用`!`方法，遇错不回滚</div><div class="line">   - 容易出错的地方，主动判断，主动抛出异常</div><div class="line">   - 嵌套的事务中，子事务的遇错回滚不会上传到父事务。</div><div class="line"></div><div class="line">4. 数据流和文件下载</div><div class="line"></div><div class="line">   &gt; 这里提供了两个方法，可以直接传送数据给用户。像我们平时下载文件一样！</div><div class="line">   &gt;</div><div class="line">   &gt; - `send_data` 主要是把数据以流的形式发送。</div><div class="line">   &gt; - `send_file` 主要是用来发送磁盘中现有的数据。</div><div class="line"></div><div class="line">   &gt; 另外本书提示：下载最好是放在public里，这样能直接代下载，不需要经常rails栈，效率更高。</div><div class="line"></div><div class="line">5. REST式下载</div><div class="line"></div><div class="line">   优势：不使用数据流：</div></pre></td></tr></table></figure>
+</blockquote>
+<p>class ClientsController &lt; ApplicationController</p>
+<h1 id="用户可以请求接收-HTML-或-PDF-格式的资源"><a href="#用户可以请求接收-HTML-或-PDF-格式的资源" class="headerlink" title="用户可以请求接收 HTML 或 PDF 格式的资源"></a>用户可以请求接收 HTML 或 PDF 格式的资源</h1><p>  def show</p>
+<pre><code>@client = Client.find(params[:id])
+
+respond_to do |format|
+  format.html
+  format.pdf { render pdf: generate_pdf(@client) }
+end
+</code></pre><p>  end<br>end</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">为了让这段代码能顺利运行，要把 PDF 的 MIME 类型加入 Rails。在 `config/initializers/mime_types.rb` 文件中加入下面这行代码即可:</div></pre></td></tr></table></figure>
+<p>Mime::Type.register “application/pdf”, :pdf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">6. 强大的数据流：</div><div class="line"></div><div class="line">   &gt; 这个就好像和浏览器一直在通话一样，你可以随时发送数据。（平常的请求可以理解为微信发语音，而数据流可以想象成语音通话）</div><div class="line"></div><div class="line">7. 强制使用HTTPS协议</div><div class="line"></div><div class="line">   - 在controller里增加：</div></pre></td></tr></table></figure>
+<p>  class DinnerController</p>
+<pre><code>force_ssl only: :cheeseburger
+# 或者
+force_ssl except: :cheeseburger
+</code></pre><p>  end</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### Rails 路由全解</div><div class="line"></div><div class="line">1. 同时定义多个资源：</div></pre></td></tr></table></figure>
+<p>resources :photos, :books, :videos</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">   &gt; FUCK，原来可以这样！</div><div class="line"></div><div class="line">2. 使用单数资源时，form_for辅助方法无法自动处理单数资源，这里我们需要指定表单URL，例如：</div></pre></td></tr></table></figure>
+<p>form_for @geocoder, url: geocoder_path do |f|</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">3. 嵌套资源最好不要超过1层</div><div class="line"></div><div class="line">4. 有时可以省略`path` ：</div></pre></td></tr></table></figure>
+<p>&lt;%= link_to ‘Ad details’, magazine_ad_path(@magazine, @ad) %&gt;<br>&lt;%= link_to ‘Ad details’, [@magazine, @ad] %&gt;<br>&lt;%= link_to ‘Magazine details’, @magazine %&gt;<br>&lt;%= link_to ‘Edit Ad’, [:edit, @magazine, @ad] %&gt;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">5. 动态片段</div></pre></td></tr></table></figure>
+<p>get ‘photos/:id/:user_id’, to: ‘photos#show’<br>```</p>
+<p><code>/photos/1/2</code> 路径会被映射到 <code>Photos</code> 控制器的 <code>show</code> 动作上。此时，<code>params[:id]</code> 的值是 <code>&quot;1&quot;</code>，<code>params[:user_id]</code> 的值是 <code>&quot;2&quot;</code>。</p>
+<ul>
+<li>片段限制</li>
+<li>请求限制</li>
+<li>通配符和通配片段</li>
+</ul>
+</li>
+</ol>
+<h5 id="前半部分结束》》》》》》》》》》》》》》"><a href="#前半部分结束》》》》》》》》》》》》》》" class="headerlink" title="前半部分结束》》》》》》》》》》》》》》"></a>前半部分结束》》》》》》》》》》》》》》</h5><hr>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/03/2017-08-03-part-iii-of-the-ruby-base-tutorial-extraction/" rel="next" title="《ruby基础教程》 第三部分 提取">
+                <i class="fa fa-chevron-left"></i> 《ruby基础教程》 第三部分 提取
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/03/2017-08-03-xu-cen-how-to-efficiently-extract-records/" rel="prev" title="听许岑《如何高效学习》提取记录">
+                听许岑《如何高效学习》提取记录 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg"
+              alt="黄鸿亮" />
+          
+            <p class="site-author-name" itemprop="name">黄鸿亮</p>
+            <p class="site-description motion-element" itemprop="description">记录才能走得更远...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">167</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#新手入门"><span class="nav-number">1.</span> <span class="nav-text">新手入门</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Active-Record基础"><span class="nav-number">2.</span> <span class="nav-text">Active Record基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Active-Record迁移"><span class="nav-number">3.</span> <span class="nav-text">Active Record迁移</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Active-Record数据验证"><span class="nav-number">4.</span> <span class="nav-text">Active Record数据验证</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Active-Record回调"><span class="nav-number">5.</span> <span class="nav-text">Active Record回调</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#方法列表："><span class="nav-number">5.1.</span> <span class="nav-text">方法列表：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Active-Record关联"><span class="nav-number">6.</span> <span class="nav-text">Active Record关联</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#多态关联：超好用的模型关联，以后再也不用建立那么多图片数据表了！！！"><span class="nav-number">6.1.</span> <span class="nav-text">多态关联：超好用的模型关联，以后再也不用建立那么多图片数据表了！！！</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Active-Record-查询接口"><span class="nav-number">7.</span> <span class="nav-text">Active Record 查询接口</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#检索单个对象："><span class="nav-number">7.1.</span> <span class="nav-text">检索单个对象：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#条件查询"><span class="nav-number">7.2.</span> <span class="nav-text">条件查询</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排序"><span class="nav-number">7.3.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#选择选定的字段"><span class="nav-number">7.4.</span> <span class="nav-text">选择选定的字段</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#条件覆盖"><span class="nav-number">7.5.</span> <span class="nav-text">条件覆盖</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#空关系"><span class="nav-number">7.6.</span> <span class="nav-text">空关系</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在更新时锁定记录"><span class="nav-number">7.7.</span> <span class="nav-text">在更新时锁定记录</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Active-Model-基础"><span class="nav-number">8.</span> <span class="nav-text">Active Model 基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Action-View-概览"><span class="nav-number">9.</span> <span class="nav-text">Action View 概览</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DateHelper模块"><span class="nav-number">9.1.</span> <span class="nav-text">DateHelper模块</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FormHelper模块"><span class="nav-number">10.</span> <span class="nav-text">FormHelper模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#FormOptionsHelper模块"><span class="nav-number">11.</span> <span class="nav-text">FormOptionsHelper模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JavaScriptHelper模块"><span class="nav-number">12.</span> <span class="nav-text">JavaScriptHelper模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NumberHelper模块"><span class="nav-number">13.</span> <span class="nav-text">NumberHelper模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Rails-布局和视图渲染"><span class="nav-number">14.</span> <span class="nav-text">Rails 布局和视图渲染</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用户可以请求接收-HTML-或-PDF-格式的资源"><span class="nav-number"></span> <span class="nav-text">用户可以请求接收 HTML 或 PDF 格式的资源</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#前半部分结束》》》》》》》》》》》》》》"><span class="nav-number">0.1.</span> <span class="nav-text">前半部分结束》》》》》》》》》》》》》》</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄鸿亮</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

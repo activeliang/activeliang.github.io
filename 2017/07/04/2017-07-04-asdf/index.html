@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="写在前面：这里的提取是个人提取（只记录不知道的东西）。电子书地址：http://railsbook.tw/  提示：在学RUBY基础时，有时不要把它和rails混在一起思考。先有ruby才有rails，ruby不了解rails，但rails很了解ruby…. 开发工具和常用指令 如果出门在外，忘了带mac，怎么写代码？？？答案是可以用三线编辑器：  https://c9.io/ http://tr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="读《为你自己学RUBY ON RAILS--高见龙》提取记录">
+<meta property="og:url" content="http://yoursite.com/2017/07/04/2017-07-04-asdf/index.html">
+<meta property="og:site_name" content="Activeliang&#39;s Blog">
+<meta property="og:description" content="写在前面：这里的提取是个人提取（只记录不知道的东西）。电子书地址：http://railsbook.tw/  提示：在学RUBY基础时，有时不要把它和rails混在一起思考。先有ruby才有rails，ruby不了解rails，但rails很了解ruby…. 开发工具和常用指令 如果出门在外，忘了带mac，怎么写代码？？？答案是可以用三线编辑器：  https://c9.io/ http://tr">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-03-Snip20170703_9.png">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-04-Snip20170704_17.png">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-04-Snip20170705_26.png">
+<meta property="og:updated_time" content="2017-09-07T17:10:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="读《为你自己学RUBY ON RAILS--高见龙》提取记录">
+<meta name="twitter:description" content="写在前面：这里的提取是个人提取（只记录不知道的东西）。电子书地址：http://railsbook.tw/  提示：在学RUBY基础时，有时不要把它和rails混在一起思考。先有ruby才有rails，ruby不了解rails，但rails很了解ruby…. 开发工具和常用指令 如果出门在外，忘了带mac，怎么写代码？？？答案是可以用三线编辑器：  https://c9.io/ http://tr">
+<meta name="twitter:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-03-Snip20170703_9.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/07/04/2017-07-04-asdf/"/>
+
+
+
+
+
+  <title>读《为你自己学RUBY ON RAILS--高见龙》提取记录 | Activeliang's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Activeliang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/04/2017-07-04-asdf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">读《为你自己学RUBY ON RAILS--高见龙》提取记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-04T16:43:00+08:00">
+                2017-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h6 id="写在前面：这里的提取是个人提取（只记录不知道的东西）。"><a href="#写在前面：这里的提取是个人提取（只记录不知道的东西）。" class="headerlink" title="写在前面：这里的提取是个人提取（只记录不知道的东西）。"></a>写在前面：这里的提取是个人提取（只记录不知道的东西）。</h6><p>电子书地址：<a href="http://railsbook.tw/" target="_blank" rel="external">http://railsbook.tw/</a></p>
+<blockquote>
+<h5 id="提示：在学RUBY基础时，有时不要把它和rails混在一起思考。先有ruby才有rails，ruby不了解rails，但rails很了解ruby…"><a href="#提示：在学RUBY基础时，有时不要把它和rails混在一起思考。先有ruby才有rails，ruby不了解rails，但rails很了解ruby…" class="headerlink" title="提示：在学RUBY基础时，有时不要把它和rails混在一起思考。先有ruby才有rails，ruby不了解rails，但rails很了解ruby…."></a>提示：在学RUBY基础时，有时不要把它和rails混在一起思考。先有ruby才有rails，ruby不了解rails，但rails很了解ruby….</h5></blockquote>
+<h4 id="开发工具和常用指令"><a href="#开发工具和常用指令" class="headerlink" title="开发工具和常用指令"></a>开发工具和常用指令</h4><ol>
+<li><p>如果出门在外，忘了带mac，怎么写代码？？？答案是可以用三线编辑器：</p>
+<ul>
+<li><a href="https://c9.io/" target="_blank" rel="external">https://c9.io/</a></li>
+<li><a href="http://tryruby.org/levels/1/challenges/0" target="_blank" rel="external">http://tryruby.org/levels/1/challenges/0</a></li>
+<li><a href="https://codeanywhere.com/" target="_blank" rel="external">https://codeanywhere.com/</a></li>
+</ul>
+<p>后两款：自带开发环境！！！！</p>
+</li>
+<li><p>常用指令：</p>
+<ul>
+<li><code>sudo</code> 暂时取得权限</li>
+</ul>
+</li>
+</ol>
+<h4 id="第一个应用程式"><a href="#第一个应用程式" class="headerlink" title="第一个应用程式"></a>第一个应用程式</h4><ol>
+<li><p><code>scaffold</code>的作用：自动完成增删改查的功能，包括MVC。</p>
+</li>
+<li><p>在新增migration时，数据类型string可以省略（因为是默认）。</p>
+</li>
+<li><p>N+1查询问题，就是会额外查询关联的资料库，对系统资源很浪费）。解法：</p>
+<ul>
+<li><p>用<code>includes</code>来减少不必要的资料库查询。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">def index</div><div class="line">  @posts = Post.all</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>改成：(里是关联了user)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">def index</div><div class="line">  @posts = Post.includes(:user)</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="變數、常數、流程控制、迴圈"><a href="#變數、常數、流程控制、迴圈" class="headerlink" title="變數、常數、流程控制、迴圈"></a>變數、常數、流程控制、迴圈</h4><ol>
+<li><p>如果想交换x,y两个变数的值，怎么写最ruby???</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x, y = y, x</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>if</code>可以放到程式的后面（这样读起来更像英文文章）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a=1 if b &gt; a #如果b &gt; a，那么a = 1</div></pre></td></tr></table></figure>
+</li>
+<li><p>三元连算子：（if ….. else …..这个语法放到同一行）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">if a &gt; b </div><div class="line">  a = 1</div><div class="line">else</div><div class="line">  a = 2</div><div class="line">end</div><div class="line"></div><div class="line">#上面的程式码，可以压缩成一行：</div><div class="line">a &gt; b ? a = 1 : a = 2</div><div class="line"></div><div class="line">#帅到掉渣，有木有！</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="數字、字串、陣列、雜湊、符號"><a href="#數字、字串、陣列、雜湊、符號" class="headerlink" title="數字、字串、陣列、雜湊、符號"></a>數字、字串、陣列、雜湊、符號</h4><ol>
+<li>注意<code>=</code> <code>==</code>的问题。一个是赋值，一个是比较！</li>
+<li>整数的除法，其中一个数为小数，结果才为小数。</li>
+<li>取余数<code>%</code> <ul>
+<li>判断是否为单数：<code>.odd?</code></li>
+<li>判断是否为复数： <code>.even?</code></li>
+</ul>
+</li>
+<li>四舍五入<code>.round(x)</code></li>
+<li>字串中要插入变量，可以用<code>#{}</code>！！！</li>
+<li>字串可以直接当成数组来用，取字。</li>
+<li>如何获得字串的长度：<ul>
+<li>长度： <code>.size</code></li>
+<li>字节： <code>.bytesize</code></li>
+</ul>
+</li>
+<li>计算几个字几个单词： <code>.sqlite.count</code></li>
+<li>大小写转换：<ul>
+<li>转大写： <code>upcase</code></li>
+<li>转小写： <code>downcase</code></li>
+</ul>
+</li>
+<li>对比首尾字母：<ul>
+<li>start_with?</li>
+<li>end_with?</li>
+</ul>
+</li>
+<li>替换掉其中的片段：<ul>
+<li>只换第一个： <code>sub</code></li>
+</ul>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- 全部换掉：`gsub`</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">​</div></pre></td></tr></table></figure>
+<p>  puts “PHP is good, and I love PHP”.sub(/PHP/, “Ruby”)</p>
+<h1 id="sub-只會換掉最先遇到的那個字串"><a href="#sub-只會換掉最先遇到的那個字串" class="headerlink" title="sub 只會換掉最先遇到的那個字串"></a>sub 只會換掉最先遇到的那個字串</h1><h1 id="gt-印出「Ruby-is-good-and-I-love-PHP」"><a href="#gt-印出「Ruby-is-good-and-I-love-PHP」" class="headerlink" title="=&gt; 印出「Ruby is good, and I love PHP」"></a>=&gt; 印出「Ruby is good, and I love PHP」</h1><p>  puts “PHP is good, and I love PHP”.gsub(/PHP/, “Ruby”)</p>
+<h1 id="gsub-會換掉全部符合的字串"><a href="#gsub-會換掉全部符合的字串" class="headerlink" title="gsub 會換掉全部符合的字串"></a>gsub 會換掉全部符合的字串</h1><h1 id="gt-印出「Ruby-is-good-and-I-love-Ruby」"><a href="#gt-印出「Ruby-is-good-and-I-love-Ruby」" class="headerlink" title="=&gt; 印出「Ruby is good, and I love Ruby」"></a>=&gt; 印出「Ruby is good, and I love Ruby」</h1><p>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line"></div><div class="line">1. `map`方法示例：</div></pre></td></tr></table></figure></p>
+<pre><code>list = [1, 2, 3, 4, 5]
+p list.map { |i| i * 2 - 1 }    # [1, 3, 5, 7, 9]
+</code></pre>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">2. `reduce`方法示例：（只作数值与index的运算）</div></pre></td></tr></table></figure>
+<pre><code>puts [*1..100].reduce(:+)
+</code></pre>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">3. `select`方法示例：（相当于一个过滤器）</div></pre></td></tr></table></figure>
+<pre><code>p [*1..100].select(&amp;:odd?)
+</code></pre>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">4. 取随机数的方法：</div><div class="line"></div><div class="line">   - `shuffle`洗牌：</div></pre></td></tr></table></figure>
+<pre><code>puts [*1..52].shuffle.first(5)
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- `sample`不重复的乱数：</div></pre></td></tr></table></figure>
+
+puts [*1..100].sample(5)
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">5. `object_id`可以检测是否同一物件。</div><div class="line"></div><div class="line">6. 什么是`symbol`：*&lt;u&gt;一个带有名字的物件&lt;/u&gt;*（其他物件都没有名字，只有它有）</div><div class="line"></div><div class="line">7. `string`与`symbol`的对比：</div><div class="line"></div><div class="line">   - string可以被改变，symbol不行</div><div class="line">   - symbol可以直接从内存中取得相同的东西，不会像string总是新建物件，所以一定程度上symbol是比较省内存的。</div><div class="line">   - symbol的比较会比string快！</div><div class="line">   - string和symbol是可以相互转换的！</div><div class="line"></div><div class="line">#### 方法與程式碼區塊（block）</div><div class="line"></div><div class="line">1. 在 Ruby 執行方法，經常省略小括號，目的是為了讓程式碼看起來更不像程式碼，反而像是一般的文章。</div><div class="line"></div><div class="line">2. 定义方法时，可以加个预设值：</div></pre></td></tr></table></figure>
+
+def say_something(message = &quot;something&quot;)
+  &quot;message: #{message}&quot;
+end
+
+p say_something &quot;hi&quot;     # =&gt; message: hi
+p say_something          # =&gt; message: something
+</code></pre>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">3. ruby很爱省略小括号和大括号，这里日后可能会掉坑~</div><div class="line"></div><div class="line">4. 什么是**程式码区块**？</div><div class="line"></div><div class="line">   &gt; `&#123; ... &#125;` 以及 `do ... end`，在 Ruby 稱之一個程式碼區塊（Block）</div><div class="line"></div><div class="line">5. 程式码区块不是：</div><div class="line"></div><div class="line">   - 不是物件：无法单独存在</div><div class="line"></div><div class="line">   - 不是参数：无法当参数，放在方法后一般不会执行。要如何才能执行：</div></pre></td></tr></table></figure>
+<pre><code>  def say_hello
+    puts &quot;開始&quot;
+    yield          # 把控制權暫時讓給 Block
+    puts &quot;結束&quot;
+  end
+
+  say_hello {
+    puts &quot;這裡是 Block&quot;
+  }
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">6666，原来这两个地方都可以传参数……：</div></pre></td></tr></table></figure>
+
+  def say_hello
+    puts &quot;開始&quot;
+    yield 123         # 把控制權暫時讓給 Block，並且傳數字 123 給 Block
+    puts &quot;結束&quot;
+  end
+
+  say_hello { |x|     # 這個 x 是來自 yield 方法
+    puts &quot;這裡是 Block，我收到了 #{x}&quot;
+  }
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">6. &lt;u&gt;**block的物件化：**&lt;/u&gt;</div></pre></td></tr></table></figure>
+
+say_hello_to = Proc.new { |name| puts &quot;你好，#{name}&quot;}
+say_hello_to.call(&quot;尼特羅會長&quot;)
+
+say_hello_to.call(&quot;尼特羅會長&quot;)    # 使用 call 方法
+say_hello_to.(&quot;尼特羅會長&quot;)        # 使用小括號（注意，有多一個小數點）
+say_hello_to[&quot;尼特羅會長&quot;]         # 使用中括號
+say_hello_to === &quot;尼特羅會長&quot;      # 使用三個等號
+say_hello_to.yield &quot;尼特羅會長&quot;    # 使用 yield 方法
+</code></pre>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### 類別（Class）與模組（Module）</div><div class="line"></div><div class="line">##### 类别</div><div class="line"></div><div class="line">1. 什么类别：</div><div class="line"></div><div class="line">   &gt; ##### 物件（object） = 狀態（state） + 行為（behavior）</div><div class="line"></div><div class="line">   ***一个精妙的类比：***</div><div class="line"></div><div class="line">   不知道大家有沒有在夜市有看過或吃過雞蛋糕，有小貓、小狗等可愛動物造型，只要把調配好的麵粉糊倒進模具，蓋上蓋子，幾分鐘後就會有香噴噴又造型可愛的雞蛋糕可以吃了。</div><div class="line"></div><div class="line">   ![image](http://railsbook.tw/images/chapter08/cake_maker.jpg)photo by [Bryan Liu](https://www.flickr.com/photos/bryanliu99/)</div><div class="line"></div><div class="line">   那個烤盤模具，就是類別（Class）的概念。如果沒意外，一樣形狀的模具，放一樣的原料進去，做出來雞蛋糕的型狀應該都會長得一樣。而這個做出來的雞蛋糕，以物件導向程式設計的概念來說便稱之「實體（Instance）」。</div><div class="line"></div><div class="line">2. 传参数初始化：</div></pre></td></tr></table></figure>
+<pre><code>class Cat
+  def initialize(name, gender)
+    @name = name
+    @gender = gender
+  end
+
+  def say_hello
+    puts &quot;hello, my name is #{@name}&quot;
+  end
+end
+
+kitty = Cat.new(&quot;kitty&quot;, &quot;female&quot;)
+kitty.say_hello    # =&gt; hello, my name is kitty
+</code></pre>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">3. `attr_accessor`的作用：</div><div class="line"></div><div class="line">   帮助设定和取用实体变数的值！（ruby没有【属性】一说！）</div><div class="line"></div><div class="line">   所以，以下这个：</div></pre></td></tr></table></figure>
+<pre><code>class Cat
+  def initialize(name, gender)
+    @name = name
+    @gender = gender
+  end
+
+  def say_hello
+    puts &quot;hello, my name is #{@name}&quot;
+  end
+
+  def name
+    @name
+  end
+
+  def name=(new_name)
+    @name = new_name
+  end
+end
+
+kitty = Cat.new(&quot;kitty&quot;, &quot;female&quot;)
+kitty.name = &quot;nancy&quot;
+puts kitty.name        # =&gt; nancy
+</code></pre>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">可以直接变成：</div></pre></td></tr></table></figure>
+<pre><code>class Cat
+  attr_accessor :name
+
+  def initialize(name, gender)
+    @name = name
+    @gender = gender
+  end
+
+  def say_hello
+    puts &quot;hello, my name is #{@name}&quot;
+  end
+end
+</code></pre>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">   有了这个设定后，我们就可以直接用这个参数，像属性一样方便用！！！</div><div class="line"></div><div class="line">4. 什么实体方法，什么是类别方法：</div><div class="line"></div><div class="line">   - 作用在实体上的方法，叫做：实体方法。</div><div class="line"></div><div class="line">   - 作用在类别上的方法，叫做：类别方法。这个有几种表现：</div><div class="line"></div><div class="line">     -</div></pre></td></tr></table></figure>
+<pre><code>  class Cat
+    def self.all
+      # ...
+    end
+  end
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+
+- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class Cat</div><div class="line">  class &lt;&lt; self</div><div class="line">    def all</div><div class="line">      # ...</div><div class="line">    end</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+
+  有很多类别方法时，可以用这种！
+</code></pre><ol>
+<li><p>继承：可以让代码更简洁</p>
+</li>
+<li><p><strong>open class</strong>: 可以方便地为方法“加料”！</p>
+</li>
+<li><p>如果想要分开定义一些方法，可以用到<strong><em>模组</em></strong>，方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">module Flyable</div><div class="line">  def fly</div><div class="line">    puts &quot;I can fly!&quot;</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class Dog</div><div class="line">  include Flyable</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+<li><p>模组和类别的不同之处：</p>
+<ul>
+<li>模组没办法<code>new</code>一个新的实体出来。</li>
+<li>模组没办法继承别的模组。</li>
+</ul>
+</li>
+<li><p>定义外部键时，使用<code>references</code>来自动增加外部键：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rails g model post user:references</div></pre></td></tr></table></figure>
+<p>这样，<code>references</code>会做多两件事：</p>
+<ol>
+<li>自动加上索引，加快查询速度。</li>
+<li>自动帮model加入关联。</li>
+</ol>
+</li>
+</ol>
+<h4 id="Layout，Render-與-View-Helper"><a href="#Layout，Render-與-View-Helper" class="headerlink" title="Layout，Render 與 View Helper"></a>Layout，Render 與 View Helper</h4><ol>
+<li><p>在特定的controller 的action里，如何你想用不同的layout可以这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class CandidatesController &lt; ApplicationController</div><div class="line"></div><div class="line">  def index</div><div class="line">    @candidates = Candidate.all</div><div class="line">    render layout: &quot;backend&quot;</div><div class="line">  end</div><div class="line"></div><div class="line">  # ...[略]...</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果想给每个页面定义网页title，这个好！可以这样做：</p>
+<ul>
+<li>方法1：使用 provide：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">  &lt;head&gt;</div><div class="line">    &lt;title&gt;&lt;%= yield :my_title %&gt;&lt;/title&gt;</div><div class="line">    &lt;%= csrf_meta_tags %&gt;</div><div class="line">    &lt;%= stylesheet_link_tag &apos;application&apos;, media: &apos;all&apos;, &apos;data-turbolinks-track&apos;: &apos;reload&apos; %&gt;</div><div class="line">    &lt;%= javascript_include_tag &apos;application&apos;, &apos;data-turbolinks-track&apos;: &apos;reload&apos; %&gt;</div><div class="line">  &lt;/head&gt;</div><div class="line"></div><div class="line">  &lt;body&gt;</div><div class="line">    &lt;div class=&quot;container&quot;&gt;</div><div class="line">    &lt;%= yield %&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;% provide :my_title, &quot;你好，我是 Title&quot; %&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;候選人列表&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;%= link_to &quot;新增候選人&quot;, new_candidate_path %&gt;</div><div class="line"></div><div class="line">&lt;table class=&quot;table&quot;&gt;</div><div class="line">  &lt;thead&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">      &lt;td&gt;投票&lt;/td&gt;</div><div class="line">      &lt;td&gt;候選人姓名&lt;/td&gt;</div><div class="line">...[略]...</div></pre></td></tr></table></figure>
+<ul>
+<li>使用 content_for：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;% content_for :my_title do %&gt;</div><div class="line">你好，我是 Title</div><div class="line">&lt;% end %&gt;</div><div class="line"></div><div class="line">&lt;h1&gt;候選人列表&lt;/h1&gt;</div><div class="line"></div><div class="line">&lt;%= link_to &quot;新增候選人&quot;, new_candidate_path %&gt;</div><div class="line"></div><div class="line">&lt;table class=&quot;table&quot;&gt;</div><div class="line">  &lt;thead&gt;</div><div class="line">    &lt;tr&gt;</div><div class="line">      &lt;td&gt;投票&lt;/td&gt;</div><div class="line">      &lt;td&gt;候選人姓名&lt;/td&gt;</div><div class="line">...[略]...</div></pre></td></tr></table></figure>
+</li>
+<li><p>更好地用<code>render</code>:</p>
+<ul>
+<li>partial里尽量用区域变量。</li>
+<li>使用时再传递这个变量。</li>
+</ul>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;advertisement&quot;&gt;</div><div class="line">  &lt;div&gt;廣告&lt;/div&gt;</div><div class="line">  &lt;div&gt; &lt;%= content %&gt; &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%= render &quot;banner&quot;, content: &quot;我是廣告的內容&quot; %&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>partial里有一个<code>collection</code>的方法，使用时传递这个参数，就可以迭代输出partial。（回圈效果）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%= render partial: &quot;candidate&quot;, collection: @candidates %&gt;</div></pre></td></tr></table></figure>
+<p>这里还可以简化成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%= render @candidates %&gt;</div></pre></td></tr></table></figure>
+<p>但要满足以下条件：（利用了rails的惯例）</p>
+<ul>
+<li><code>_xxx.html.erb</code>的名字必须是这包资料的<strong><u>单数</u></strong> </li>
+<li>位置必须放在同一目录下。</li>
+<li><code>_xxx.html.erb</code>里不要写回圈，里面的区域变数必须是单数。</li>
+</ul>
+</li>
+<li><p>善用<code>View Helper</code> !</p>
+</li>
+</ol>
+<h4 id="Model-基本操作"><a href="#Model-基本操作" class="headerlink" title="Model 基本操作"></a>Model 基本操作</h4><ol>
+<li><p>当我们需要引用外部数据库时，假如我们想改名字，可以这样做：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class User &lt; ActiveRecord::Base</div><div class="line">  self.table_name = &quot;example&quot;</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+<li><p>什么是<code>主键</code>（primary key）：每個資料表的流水編號欄位（ID）.</p>
+<p>当然这个主键也可以<strong>自定义</strong>：</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class User &lt; ActiveRecord::Base</div><div class="line">  self.primary_key = &quot;user_id&quot;</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+</li>
+<li><p>什么是ORM?</p>
+<blockquote>
+<p>我們如果想要存取資料庫裡的內容，以前必需透過資料庫查詢語言(SQL)向資料庫進行查詢，但透過 ORM 的包裝之後，可以讓我們用操作「物件」的方式來操作資料庫。</p>
+</blockquote>
+</li>
+<li><p><code>平均数</code>， <code>求和</code>， <code>最大值</code>，<code>最小值</code> 直接让数据库来计算！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ bin/rails console</div><div class="line">&gt;&gt; Candidate.sum(:age)</div><div class="line">   (0.2ms)  SELECT SUM(&quot;candidates&quot;.&quot;age&quot;) FROM &quot;candidates&quot;</div><div class="line">=&gt; 44</div><div class="line"></div><div class="line">&gt;&gt; Candidate.average(:age).to_f</div><div class="line">   (0.1ms)  SELECT AVG(&quot;candidates&quot;.&quot;age&quot;) FROM &quot;candidates&quot;</div><div class="line">=&gt; 14.6666666666667</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ bin/rails console</div><div class="line">&gt;&gt; Candidate.maximum(:age)</div><div class="line">   (0.2ms)  SELECT MAX(&quot;candidates&quot;.&quot;age&quot;) FROM &quot;candidates&quot;</div><div class="line">=&gt; 22</div><div class="line">&gt;&gt; Candidate.minimum(:age)</div><div class="line">   (0.2ms)  SELECT MIN(&quot;candidates&quot;.&quot;age&quot;) FROM &quot;candidates&quot;</div><div class="line">=&gt; 2</div></pre></td></tr></table></figure>
+</li>
+<li><p>更新数据的方法有 <code>save</code>、<code>update</code>、<code>update_attribute</code> 及 <code>update_attributes</code>：</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"># 使用 save 方法</div><div class="line">candidate.name = &quot;剪彩倫&quot;</div><div class="line">candidate.save</div><div class="line"></div><div class="line"># 使用 update_attribute 方法更新單一欄位的值（注意：方法名字是單數）</div><div class="line">candidate.update_attribute(:name, &quot;剪彩倫&quot;)</div><div class="line"></div><div class="line"># 使用 update 更新資料，可一次更新多個欄位，且不需要再呼叫 save 方法</div><div class="line">candidate.update(name: &quot;剪彩倫&quot;, age: 20)</div><div class="line"></div><div class="line"># 使用 update_attributes 方法</div><div class="line">candidate.update_attributes(name: &quot;剪彩倫&quot;, age: 20)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">  單數的 `update_attribute` 方法會跳過驗證（Validation），等於是 `save(validate: false)` 的效果，在使用的時候要稍微注意一下。</div><div class="line"></div><div class="line">- 如果想整个资料表一起修改：</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Candidate.update_all(name: &quot;剪彩倫&quot;, age: 18)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+</li>
+<li><p>scope可以嵌套，利用嵌套，可以方便我们：</p>
+<ul>
+<li>使代码整洁。</li>
+<li>方便我们修改。</li>
+</ul>
+<p>还可以：预设scope,  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class Product &lt; ActiveRecord::Base</div><div class="line">  default_scope &#123; order(&apos;id DESC&apos;) &#125;</div><div class="line">  scope :available, -&gt; &#123; where(is_available: true) &#125;</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>要取消預設的 scope，必須使用 <code>unscope</code> 方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ bin/rails console</div><div class="line">&gt;&gt; Product.unscope(:order)</div><div class="line">  Product Load (0.2ms)  SELECT &quot;products&quot;.* FROM &quot;products&quot;</div><div class="line"></div><div class="line">&gt;&gt; Product.unscope(:order).order(:title)</div><div class="line">  Product Load (0.3ms)  SELECT &quot;products&quot;.* FROM &quot;products&quot; ORDER BY &quot;products&quot;.&quot;title&quot; ASC</div></pre></td></tr></table></figure>
+<p>這樣才能把預設的 scope 的效果移除。</p>
+</li>
+</ol>
+<h4 id="Model-Migration"><a href="#Model-Migration" class="headerlink" title="Model Migration"></a>Model Migration</h4><ol>
+<li><p>什么是migration: 描述数据表长什么样的档案。</p>
+</li>
+<li><p>为什么要这样设计：一切为了方便多人协作！</p>
+</li>
+<li><p>刚执行<code>rake db:migrate</code>发现要改一下栏位，怎么办？</p>
+<ul>
+<li>可以用<code>rollback</code> : <code>rake db:rollback</code> (这样一次可以退回一个migration文件。）</li>
+<li>新增migration文件来修改。（推荐！）</li>
+</ul>
+</li>
+<li><p>新增migration文件时，原来可以直接上index索引啊，酷！：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ bin/rails g migration add_candidate_id_to_articles candidate_id:integer:index</div><div class="line">Running via Spring preloader in process 7765</div><div class="line">  invoke  active_record</div><div class="line">  create    db/migrate/20170101081538_add_candidate_id_to_articles.rb</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class AddCandidateIdToArticles &lt; ActiveRecord::Migration[5.0]</div><div class="line">  def change</div><div class="line">    add_column :articles, :candidate_id, :integer</div><div class="line">    add_index :articles, :candidate_id</div><div class="line">  end</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>rake db:setup</code>可以一口氣把資料表建完，順便把預設資料寫入。</p>
+</li>
+</ol>
+<h4 id="model的关联性"><a href="#model的关联性" class="headerlink" title="model的关联性"></a>model的关联性</h4><ol>
+<li><p>什么是外部键：用于对应其他model主键的栏位，例如：<code>user_id</code> <code>product_id</code></p>
+</li>
+<li><p>可以用<code>user.create_post(:title =&gt; &quot;hello&quot;)</code>来新建对应的资料，生成的资料自动对应好user_id。</p>
+</li>
+<li><p>之前商店大赛加油站，无法先新建address再对应user_id，现在终于找到原因和解决方法！：</p>
+<ul>
+<li><p>原因：rails5之后，必须先建立<strong><u><code>头</code></u></strong>才能建立<strong><code>尾</code></strong>！</p>
+</li>
+<li><p>解法：加多一个<code>optional: true</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class Store &lt; ApplicationRecord</div><div class="line">  belongs_to :user, optional: true</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>has_one 跟 belongs_to 方法需要同時設定嗎？</p>
+<p>不一定，端看需求，一樣以我們上面 User 跟 Store 的例子來看，如果你不需要「從 Store 反查 User」的功能的話，那 <code>belongs_to</code> 是不需要設定的。</p>
+</li>
+<li><p>其实多对多没有我们rails101教材上的那么复杂，其实可以这么简单：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class WareHouse &lt; ApplicationRecord</div><div class="line">  belongs_to :store</div><div class="line">  belongs_to :product</div><div class="line">end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class Store &lt; ApplicationRecord</div><div class="line">  belongs_to :user</div><div class="line"></div><div class="line">  has_many :ware_houses</div><div class="line">  has_many :products, through: :ware_houses</div><div class="line">end</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class Product &lt; ApplicationRecord</div><div class="line">  has_many :ware_houses</div><div class="line">  has_many :stores, through: :ware_houses</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>看到没有，第二个has_many只要写两个字段就可以啦！之前是这样的：</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-03-Snip20170703_9.png" alt=""></p>
+<p>有点让新手摸不着头脑。。。</p>
+</li>
+<li><p>酷！还有一种叫HABTM（has_and_belongs_to_many）!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"># Store Model</div><div class="line">class Store &lt; ActiveRecord::Base</div><div class="line">  has_and_belongs_to_many :products</div><div class="line">end</div><div class="line"></div><div class="line"># Product Model</div><div class="line">class Product &lt; ActiveRecord::Base</div><div class="line">  has_and_belongs_to_many :stores</div><div class="line">end</div></pre></td></tr></table></figure>
+<p>就這樣，不需要另外新增第三方 Model 即可完成多對多關連。注意，我是說「不需要第三方 Model」，不是「不需要第三方資料表」，畢竟還是要有一個資料表存放雙方的資訊，只是這個資料表因為不重要也不會存取它，所以可以不需要 Model 對應。</p>
+<p>這個第三方資料表的名字是有規定的，預設是「兩個資料表依照英文字母先後順序排序，中間以底線分格」，所以以我們這個例子來說，這個資料表的名字就是「products_stores」。</p>
+</li>
+</ol>
+<h4 id="Model-驗證及回呼"><a href="#Model-驗證及回呼" class="headerlink" title="Model 驗證及回呼"></a>Model 驗證及回呼</h4><ol>
+<li><p>资料验证：有三个方法：</p>
+<ul>
+<li>前端驗證：在 HTML 頁面使用 JavaScript 在使用者填寫資料的時候就先檢查。</li>
+<li>後端驗證：資料傳進來在寫入資料庫之前之後再檢查。</li>
+<li>資料庫驗證：直接由資料庫本身所提供的功能來做資料驗證。</li>
+</ul>
+<p>推荐model层来做这件事！</p>
+</li>
+<li><p>验证是否为空：</p>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class Article &lt; ApplicationRecord</div><div class="line">  validates :title, presence: true</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-</div></pre></td></tr></table></figure>
+<pre><code>class Article &lt; ActiveRecord::Base
+  validates_presence_of :title
+end
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">     这两种效果是一样的。</div><div class="line"></div><div class="line">3. 想查看错误的提示信息？</div><div class="line"></div><div class="line">   - 检查是否有错误提示：`a1.errors.any?`</div><div class="line">   - 检查错误提示是什么：`a1.errors.full_messages`</div><div class="line"></div><div class="line">4. 只有这些方法会触发验证： </div><div class="line"></div><div class="line">   - create</div><div class="line">   - create!</div><div class="line">   - save</div><div class="line">   - save!</div><div class="line">   - update</div><div class="line">   - update!</div><div class="line"></div><div class="line">   其它方法不會經過驗證流程喔</div><div class="line"></div><div class="line">   &gt; 有驚嘆號版本的，如果驗證未通過會產生錯誤訊息，而沒有驚嘆號版本則僅會回傳該 Model 的一個空物件。这大概就是惊叹号的好处了！</div><div class="line"></div><div class="line">5. 如何跳过验证？</div></pre></td></tr></table></figure>
+<p>  user1 = User.new<br>  user1.save(validate: false)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">6. 检查是否能通过验证？</div></pre></td></tr></table></figure>
+<blockquote>
+<blockquote>
+<p>user1.valid?<br>=&gt; false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">7. 回呼（Callback）：</div><div class="line"></div><div class="line">   ![](http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-03-060507.jpg)其中，顏色比較深的那幾個流程是有機會可以掛上一些方法，又稱之回呼（Callback）</div><div class="line"></div><div class="line">   &gt; 注意：`before_save` 跟 `before_create` 的差別，在於 `before_save` 是每次存檔的時候都會經過，但 `before_create` 只有在「新增」的時候才會觸發。</div><div class="line"></div><div class="line">   除了這樣的寫法，如果內容單純的話，也是可以使用 Block 的方式來寫：</div></pre></td></tr></table></figure>
+</blockquote>
+</blockquote>
+<p>  require ‘digest’<br>  class User &lt; ActiveRecord::Base</p>
+<pre><code>before_create do
+  self.email = Digest::MD5.hexdigest(email)
+end
+</code></pre><p>  end</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">#### 寄發信件</div><div class="line"></div><div class="line">1. 之前的奇怪，现在不奇怪了，寄送信件，rails已内置好这个功能了，使用很容易！</div><div class="line"></div><div class="line">#### 背景工作及工作排程（异步任务）</div><div class="line"></div><div class="line">&gt; 慌然大悟，原来这就是我之前一直想学的异步任务！！！！相见恨晚！</div><div class="line"></div><div class="line">如果我要写一个异步任务，可以这样做：</div><div class="line"></div><div class="line">1. 执行`rails g job user_confirm_email`</div><div class="line"></div><div class="line">2. 设置   *&lt;u&gt;app/jobs&lt;/u&gt;* :</div></pre></td></tr></table></figure>
+<p>  class UserConfirmEmailJob &lt; ApplicationJob</p>
+<pre><code>queue_as :default
+
+def perform(user)
+  # 在這裡寄發確認信...
+end
+</code></pre><p>  end</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">3. 在controller里作用：</div></pre></td></tr></table></figure>
+<pre><code>def create
+  @user = User.new(user_params)
+  if @user.save
+    UserConfirmEmailJob.perform_later(@user)
+    redirect_to @user, notice: &apos;User was successfully created.&apos;
+  else
+    render :new
+  end
+end
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">##### 搞定！</div><div class="line"></div><div class="line">一些小技巧：</div><div class="line"></div><div class="line">- 其中，`queue_as` 方法是指這件工作急不急，預設值是 `:default`，如果這件工作不急，可把 `:default` 改成 `:low_priority`，如果是急件則可設定成 `:urgent`。</div><div class="line"></div><div class="line">-</div></pre></td></tr></table></figure>
+<h1 id="這樣是-5-秒之後做"><a href="#這樣是-5-秒之後做" class="headerlink" title="這樣是 5 秒之後做"></a>這樣是 5 秒之後做</h1><p> UserConfirmEmailJob.set(wait: 5.seconds).perform_later(@user)</p>
+<h1 id="這樣是「明天下午有空再做」"><a href="#這樣是「明天下午有空再做」" class="headerlink" title="這樣是「明天下午有空再做」"></a>這樣是「明天下午有空再做」</h1><p> UserConfirmEmailJob.set(wait_until: Date.tomorrow.noon).perform_later(@user)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- 通常异步任务会被放在缓存中，如果宕机，重开机这些资料会不见。安全起见，可以用第三方gem:（把任务放入资料库）常用：有 `Sidekiq` 跟 `Delayed Job`</div><div class="line"></div><div class="line">  下面以`Delayed Job`为例：</div><div class="line"></div><div class="line">  - 在 *&lt;u&gt;Gemfile.rb&lt;/u&gt;* 中增加：</div></pre></td></tr></table></figure>
+<p>   gem ‘delayed_job_active_record’</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">-</div></pre></td></tr></table></figure>
+<p> $bundle</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">  - 修改：`app/configs/application.rb`：</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">#### API 模式</div><div class="line"></div><div class="line">1. 直接用`render json: @users`会输出所有的json数据。如果想过滤一些数据的话，可以这样：</div><div class="line"></div><div class="line">   - 新增`app/views/users/index.json.jbuilder`:</div></pre></td></tr></table></figure>
+<pre><code>json.array! @users, partial: &apos;users/user&apos;, as: :user
+</code></pre>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">- 新增`app/views/users/_user.json.jbuilder`:</div></pre></td></tr></table></figure>
+<pre><code>json.extract! user, :id, :name, :email, :created_at, :updated_at
+json.url user_url(user, format: :json)
+</code></pre>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">2. 有一个叫**&lt;u&gt;API-Only&lt;/u&gt;** 的东西，在新增专案时，选择这种模式，可以帮rails减肥！</div></pre></td></tr></table></figure>
+<p>$ rails new my_blog –api</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">#### 寫測試讓你更有信心 Part 1</div><div class="line"></div><div class="line">1. 为什么要写测试：</div><div class="line"></div><div class="line">   &gt; 前期看起来有点花功能 ，但却是为后面多次开发的测试节省时间！</div><div class="line"></div><div class="line">   不写测试可能还有各种偷懒的理由，但，跟着大神学着写吧~</div><div class="line"></div><div class="line">   &gt; 不要為了測試而測試，你寫的是「規格」（Spec）</div><div class="line"></div><div class="line">2. 开发前写一写“测试“，这里作者说是`规格`。</div><div class="line"></div><div class="line">###### 下面以RSpec来实作：</div><div class="line"></div><div class="line">1. 安装RSpec:</div></pre></td></tr></table></figure>
+<p>$ gem install rspec</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">2. 把要有哪些项目要测试，先写出来：</div></pre></td></tr></table></figure>
+<h1 id="檔案：bank-account-spec-rb"><a href="#檔案：bank-account-spec-rb" class="headerlink" title="檔案：bank_account_spec.rb"></a>檔案：bank_account_spec.rb</h1><p>  RSpec.describe BankAccount do</p>
+<pre><code>describe &quot;存錢功能&quot; do
+  it &quot;原本帳戶有 10 元，存入 5 元之後，帳戶餘額變 15 元&quot; do
+  end
+
+  it &quot;原本帳戶有 10 元，存入 -5 元之後，帳戶餘額還是 10 元（不能存入小於等於零的金額）&quot; do
+  end
+end
+
+describe &quot;領錢功能&quot; do
+  it &quot;原本帳戶有 10 元，領出 5 元之後，帳戶餘額變 5 元&quot; do
+  end
+
+  it &quot;原本帳戶有 10 元，試圖領出 20 元，帳戶餘額還是 10 元，但無法領出（餘額不足）&quot; do
+  end
+
+  it &quot;原本帳戶有 10 元，領出 -5 元之後，帳戶餘額還是 10 元（不能領出小於或等於零的金額）&quot; do
+  end
+end
+</code></pre><p>  end<br>```</p>
+<p>然后开始写内容：</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-04-Snip20170704_17.png" alt=""></p>
+</li>
+<li><p>然后，开始<code>$ rspec bank_account_spec.rb</code>进行测试，自然会出错。</p>
+</li>
+<li><p>根据错误提示，把所有bug都解掉！</p>
+</li>
+<li><p>一些小技巧：</p>
+<ul>
+<li>before(:each)</li>
+<li>before(:all)</li>
+<li><code>let(:account){BankAccount.new(10)}</code>这个语句相当于动态地为整个方法提供一个区块变数。</li>
+</ul>
+</li>
+<li><p>寫測試是算是業界很常見的標準技能，所以：写吧！</p>
+</li>
+</ol>
+<h4 id="代码重构："><a href="#代码重构：" class="headerlink" title="代码重构："></a>代码重构：</h4><ol>
+<li>页面上的逻辑可以这样处理：<ul>
+<li>写进viewhelper</li>
+<li>在model里写义一个实体方法，然后在页面就只可以直接用啦！</li>
+</ul>
+</li>
+<li>善用继承，不能继承的就引入模组功能。</li>
+</ol>
+<h4 id="代码重构（进阶版）："><a href="#代码重构（进阶版）：" class="headerlink" title="代码重构（进阶版）："></a>代码重构（进阶版）：</h4><ol>
+<li><h6 id="設計-Service-Object-類別，新增纯ruby的类别。"><a href="#設計-Service-Object-類別，新增纯ruby的类别。" class="headerlink" title="設計 Service Object 類別，新增纯ruby的类别。"></a>設計 Service Object 類別，新增纯ruby的类别。</h6></li>
+<li><h6 id="使用-Form-Object"><a href="#使用-Form-Object" class="headerlink" title="使用 Form Object"></a>使用 Form Object</h6></li>
+</ol>
+<blockquote>
+<p>表示暂时看不太懂。。。先放过。。</p>
+</blockquote>
+<p>后面的内容实操一遍，基本没有什么重要的知识了……。。</p>
+<blockquote>
+<p>当然这个课程还有一些不错的内容在更新中……</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-04-Snip20170705_26.png" alt=""></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/02/2017-07-02-1991027/" rel="next" title="2017-7-2 看菜谱所想……">
+                <i class="fa fa-chevron-left"></i> 2017-7-2 看菜谱所想……
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/03/2017-08-03-extracting-of-the-ruby-base-tutorial/" rel="prev" title="《ruby基础教程》第一部分 提取">
+                《ruby基础教程》第一部分 提取 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg"
+              alt="黄鸿亮" />
+          
+            <p class="site-author-name" itemprop="name">黄鸿亮</p>
+            <p class="site-description motion-element" itemprop="description">记录才能走得更远...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">167</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#写在前面：这里的提取是个人提取（只记录不知道的东西）。"><span class="nav-number">1.</span> <span class="nav-text">写在前面：这里的提取是个人提取（只记录不知道的东西）。</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#提示：在学RUBY基础时，有时不要把它和rails混在一起思考。先有ruby才有rails，ruby不了解rails，但rails很了解ruby…"><span class="nav-number"></span> <span class="nav-text">提示：在学RUBY基础时，有时不要把它和rails混在一起思考。先有ruby才有rails，ruby不了解rails，但rails很了解ruby….</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开发工具和常用指令"><span class="nav-number"></span> <span class="nav-text">开发工具和常用指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第一个应用程式"><span class="nav-number"></span> <span class="nav-text">第一个应用程式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#變數、常數、流程控制、迴圈"><span class="nav-number"></span> <span class="nav-text">變數、常數、流程控制、迴圈</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#數字、字串、陣列、雜湊、符號"><span class="nav-number"></span> <span class="nav-text">數字、字串、陣列、雜湊、符號</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sub-只會換掉最先遇到的那個字串"><span class="nav-number"></span> <span class="nav-text">sub 只會換掉最先遇到的那個字串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gt-印出「Ruby-is-good-and-I-love-PHP」"><span class="nav-number"></span> <span class="nav-text">=> 印出「Ruby is good, and I love PHP」</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gsub-會換掉全部符合的字串"><span class="nav-number"></span> <span class="nav-text">gsub 會換掉全部符合的字串</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#gt-印出「Ruby-is-good-and-I-love-Ruby」"><span class="nav-number"></span> <span class="nav-text">=> 印出「Ruby is good, and I love Ruby」</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Layout，Render-與-View-Helper"><span class="nav-number"></span> <span class="nav-text">Layout，Render 與 View Helper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Model-基本操作"><span class="nav-number"></span> <span class="nav-text">Model 基本操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Model-Migration"><span class="nav-number"></span> <span class="nav-text">Model Migration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#model的关联性"><span class="nav-number"></span> <span class="nav-text">model的关联性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Model-驗證及回呼"><span class="nav-number"></span> <span class="nav-text">Model 驗證及回呼</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#這樣是-5-秒之後做"><span class="nav-number"></span> <span class="nav-text">這樣是 5 秒之後做</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#這樣是「明天下午有空再做」"><span class="nav-number"></span> <span class="nav-text">這樣是「明天下午有空再做」</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#檔案：bank-account-spec-rb"><span class="nav-number"></span> <span class="nav-text">檔案：bank_account_spec.rb</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码重构："><span class="nav-number"></span> <span class="nav-text">代码重构：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码重构（进阶版）："><span class="nav-number"></span> <span class="nav-text">代码重构（进阶版）：</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#設計-Service-Object-類別，新增纯ruby的类别。"><span class="nav-number">1.</span> <span class="nav-text">設計 Service Object 類別，新增纯ruby的类别。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#使用-Form-Object"><span class="nav-number">2.</span> <span class="nav-text">使用 Form Object</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄鸿亮</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

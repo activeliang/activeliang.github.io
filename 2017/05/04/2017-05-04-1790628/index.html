@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="先看效果：如何才能实现在详情页面(或任何页面)登入！（不需要跳转到登入页面），登入后直接返回之前页面。（通常登入后会被导向首页） 做弹窗登入，你需要解决三个问题： 如何在在其他页面实现登陆功能？ 登入后如何跳转回之前的页面？ 最好把登入成功的英文提示关掉。  现在，我来帮你解决……开始：本教程以Job-listing为例。 step1：解决：在其他页面实现登入。 找到你想插入的页面对应的helpe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【分享】如何在其他页面中实现登入功能，无需跳转至登入页面。">
+<meta property="og:url" content="http://yoursite.com/2017/05/04/2017-05-04-1790628/index.html">
+<meta property="og:site_name" content="Activeliang&#39;s Blog">
+<meta property="og:description" content="先看效果：如何才能实现在详情页面(或任何页面)登入！（不需要跳转到登入页面），登入后直接返回之前页面。（通常登入后会被导向首页） 做弹窗登入，你需要解决三个问题： 如何在在其他页面实现登陆功能？ 登入后如何跳转回之前的页面？ 最好把登入成功的英文提示关掉。  现在，我来帮你解决……开始：本教程以Job-listing为例。 step1：解决：在其他页面实现登入。 找到你想插入的页面对应的helpe">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-28.gif">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-125018.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-130016.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-Snip20170503_15.png">
+<meta property="og:updated_time" content="2017-09-07T17:10:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【分享】如何在其他页面中实现登入功能，无需跳转至登入页面。">
+<meta name="twitter:description" content="先看效果：如何才能实现在详情页面(或任何页面)登入！（不需要跳转到登入页面），登入后直接返回之前页面。（通常登入后会被导向首页） 做弹窗登入，你需要解决三个问题： 如何在在其他页面实现登陆功能？ 登入后如何跳转回之前的页面？ 最好把登入成功的英文提示关掉。  现在，我来帮你解决……开始：本教程以Job-listing为例。 step1：解决：在其他页面实现登入。 找到你想插入的页面对应的helpe">
+<meta name="twitter:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-28.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/04/2017-05-04-1790628/"/>
+
+
+
+
+
+  <title>【分享】如何在其他页面中实现登入功能，无需跳转至登入页面。 | Activeliang's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Activeliang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/04/2017-05-04-1790628/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">【分享】如何在其他页面中实现登入功能，无需跳转至登入页面。</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-04T13:10:00+08:00">
+                2017-05-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="先看效果："><a href="#先看效果：" class="headerlink" title="先看效果："></a>先看效果：</h4><p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-28.gif" alt="">如何才能实现在详情页面(或任何页面)登入！（不需要跳转到登入页面），登入后直接返回之前页面。（通常登入后会被导向首页）</p>
+<h4 id="做弹窗登入，你需要解决三个问题："><a href="#做弹窗登入，你需要解决三个问题：" class="headerlink" title="做弹窗登入，你需要解决三个问题："></a>做弹窗登入，你需要解决三个问题：</h4><ul>
+<li>如何在在其他页面实现登陆功能？</li>
+<li>登入后如何跳转回之前的页面？</li>
+<li>最好把登入成功的英文提示关掉。</li>
+</ul>
+<h5 id="现在，我来帮你解决……"><a href="#现在，我来帮你解决……" class="headerlink" title="现在，我来帮你解决……"></a>现在，我来帮你解决……</h5><h3 id="开始："><a href="#开始：" class="headerlink" title="开始："></a>开始：</h3><p>本教程以Job-listing为例。</p>
+<h4 id="step1：解决：在其他页面实现登入。"><a href="#step1：解决：在其他页面实现登入。" class="headerlink" title="step1：解决：在其他页面实现登入。"></a>step1：解决：在其他页面实现登入。</h4><ol>
+<li><p>找到你想插入的页面对应的helper。比如：在jobs的show.html.erb页面。我们找到<code>app/helpers/jobs_helper.rb</code>填入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">def resource_name</div><div class="line">:user</div><div class="line">end</div><div class="line"></div><div class="line">def resource</div><div class="line">@resource ||= User.new</div><div class="line">end</div><div class="line"></div><div class="line">def devise_mapping</div><div class="line">@devise_mapping ||= Devise.mappings[:user]</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="step2-解决：登入后跳转回之前的页面。"><a href="#step2-解决：登入后跳转回之前的页面。" class="headerlink" title="step2: 解决：登入后跳转回之前的页面。"></a>step2: 解决：登入后跳转回之前的页面。</h4><ol>
+<li><p>打开<code>app/controllers/application_controller.rb</code> 填入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">before_action :store_current_location, :unless =&gt; :devise_controller?</div><div class="line"></div><div class="line">private</div><div class="line"></div><div class="line">def store_current_location</div><div class="line">  store_location_for(:user, request.url)</div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="step3-解决：如何关闭登入成功提示？"><a href="#step3-解决：如何关闭登入成功提示？" class="headerlink" title="step3: 解决：如何关闭登入成功提示？"></a>step3: 解决：如何关闭登入成功提示？</h4><ol>
+<li>找到<code>config/locales/devise.en.yml</code>，把下图中的字段清空。<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-125018.jpg" alt=""></li>
+</ol>
+<h4 id="ok-三个问题解决了，就可以开始实做登入弹窗了。"><a href="#ok-三个问题解决了，就可以开始实做登入弹窗了。" class="headerlink" title="ok,三个问题解决了，就可以开始实做登入弹窗了。"></a>ok,三个问题解决了，就可以开始实做登入弹窗了。</h4><p>关于登入弹窗，w3schools有详尽的教程：<a href="https://www.w3schools.com/howto/howto_css_login_form.asp" target="_blank" rel="external">https://www.w3schools.com/howto/howto_css_login_form.asp</a></p>
+<p>大家遇到问题，可以加我微信一起探讨。<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-130016.jpg" alt=""></p>
+<p>同系列教程：</p>
+<ul>
+<li><p><a href="http://activeliang-blog.logdown.com/posts/1789967-52" target="_blank" rel="external">页面上如何生成二维码链接？</a></p>
+</li>
+<li><p>[<a href="http://activeliang-blog.logdown.com/posts/1781530-525" target="_blank" rel="external">【小伙伴分享】三步接入百度地图！为你的职位增加位置信息。</a></p>
+</li>
+<li><p>[<a href="http://activeliang-blog.logdown.com/posts/1790624" target="_blank" rel="external">【魔改分享】两步让你的footer乖乖置底！只需要CSS</a></p>
+<p>​</p>
+</li>
+</ul>
+<h5 id="希望你5票投我1票！"><a href="#希望你5票投我1票！" class="headerlink" title="希望你5票投我1票！"></a>希望你5票投我1票！</h5><p>这是我用很多很多注意力堆出来的参赛作品，希望精心的作品能打动你。如果你手上还有票，这个作品值得你投上一票！欢迎浏览网址细节：<a href="https://fullstack.xinshengdaxue.com/works/345" target="_blank" rel="external">【全栈小伙伴求职网】https://fullstack.xinshengdaxue.com/works/345</a>  <img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-Snip20170503_15.png" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/04/2017-05-04-1790624/" rel="next" title="【魔改分享】两步让你的footer乖乖置底！只需要CSS">
+                <i class="fa fa-chevron-left"></i> 【魔改分享】两步让你的footer乖乖置底！只需要CSS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/10/2017-05-10-1815772/" rel="prev" title="对一些问题的回答">
+                对一些问题的回答 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg"
+              alt="黄鸿亮" />
+          
+            <p class="site-author-name" itemprop="name">黄鸿亮</p>
+            <p class="site-description motion-element" itemprop="description">记录才能走得更远...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">167</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#先看效果："><span class="nav-number">1.</span> <span class="nav-text">先看效果：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#做弹窗登入，你需要解决三个问题："><span class="nav-number">2.</span> <span class="nav-text">做弹窗登入，你需要解决三个问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#现在，我来帮你解决……"><span class="nav-number">2.1.</span> <span class="nav-text">现在，我来帮你解决……</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始："><span class="nav-number"></span> <span class="nav-text">开始：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#step1：解决：在其他页面实现登入。"><span class="nav-number">1.</span> <span class="nav-text">step1：解决：在其他页面实现登入。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step2-解决：登入后跳转回之前的页面。"><span class="nav-number">2.</span> <span class="nav-text">step2: 解决：登入后跳转回之前的页面。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#step3-解决：如何关闭登入成功提示？"><span class="nav-number">3.</span> <span class="nav-text">step3: 解决：如何关闭登入成功提示？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ok-三个问题解决了，就可以开始实做登入弹窗了。"><span class="nav-number">4.</span> <span class="nav-text">ok,三个问题解决了，就可以开始实做登入弹窗了。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#希望你5票投我1票！"><span class="nav-number">4.1.</span> <span class="nav-text">希望你5票投我1票！</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄鸿亮</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
