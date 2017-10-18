@@ -278,6 +278,774 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/21/2017-03-21-asdf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/21/2017-03-21-asdf/" itemprop="url">如何修改Atom自带的快捷键&&使用⌘+E快速打开新文件~</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-21T16:03:00+08:00">
+                2017-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="发生了什么事？"><a href="#发生了什么事？" class="headerlink" title="发生了什么事？"></a>发生了什么事？</h4><ul>
+<li><p>随时rails学习的不断深入，文件数量越来越多，要调出其中一个文件，再用以前的方法：在树状图里面找，效率太低。所以，用模糊搜索会大大加速文件定位的速度！</p>
+<blockquote>
+<p>比如，要快速切换到/app/views/admin/orders/index.html.erb, 只需要在模糊探索框内输入 <code>ad or in</code>即可快速定位到这个文件。如何弹出模糊搜索框：</p>
+</blockquote>
+<p>atom自带的快捷键是： <code>⌘</code>+<code>t</code> ，但是这个组合键，对于使用windows机械键盘的人来说，键程太远，按起来很别扭。如果能改成<code>⌘</code>+<code>e</code>，那就方便很多了！</p>
+</li>
+</ul>
+<h4 id="问题：用atom自带的增加快捷键功能无效！原因：⌘-e已经被占用。"><a href="#问题：用atom自带的增加快捷键功能无效！原因：⌘-e已经被占用。" class="headerlink" title="问题：用atom自带的增加快捷键功能无效！原因：⌘+e已经被占用。"></a>问题：用atom自带的增加快捷键功能无效！原因：<code>⌘</code>+<code>e</code>已经被占用。</h4><p>于是，解题思路就有了如下：</p>
+<ul>
+<li>找到atom的相关的关键代码，改掉它。</li>
+<li>找到如何设置优先等级的方法。</li>
+</ul>
+<h5 id="然而，都行不通！…………………………………………………………-捂脸。"><a href="#然而，都行不通！…………………………………………………………-捂脸。" class="headerlink" title="然而，都行不通！…………………………………………………………/捂脸。"></a>然而，都行不通！…………………………………………………………/捂脸。</h5><h6 id="解决过程：一阵google-一顿百度，没有找到教程，最后自己尝试出来。此处省略n个字。"><a href="#解决过程：一阵google-一顿百度，没有找到教程，最后自己尝试出来。此处省略n个字。" class="headerlink" title="解决过程：一阵google+一顿百度，没有找到教程，最后自己尝试出来。此处省略n个字。"></a>解决过程：一阵google+一顿百度，没有找到教程，最后自己尝试出来。此处省略n个字。</h6><h3 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h3><h6 id="打开这个文件：输入以下代码：来，代码如下："><a href="#打开这个文件：输入以下代码：来，代码如下：" class="headerlink" title="打开这个文件：输入以下代码：来，代码如下："></a>打开这个文件：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-21-155722.jpg" alt="">输入以下代码：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-21-155746.jpg" alt="">来，代码如下：</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&apos;.platform-darwin atom-text-editor&apos;:</div><div class="line">  &apos;cmd-e&apos;: &apos;unset!&apos;</div><div class="line"></div><div class="line">&apos;.platform-darwin&apos;:</div><div class="line">  &apos;cmd-e&apos;: &apos;fuzzy-finder:toggle-file-finder&apos;</div></pre></td></tr></table></figure>
+<p>解读：<code>unset!</code>先把原先的快捷键取消掉，再在下面重新设置新的。</p>
+<h4 id="搞定！"><a href="#搞定！" class="headerlink" title="搞定！"></a>搞定！</h4><p>写在后面：如果你有更好的解决方法，请留言告诉我……~<br>另外一篇关于修改快捷键的blog:<a href="http://activeliang-blog.logdown.com/posts/1531858-how-to-add-your-own-custom-code-snippets-to-emmet-snippets" target="_blank" rel="external">打code时如何减少手动挪光标的次数&amp;&amp;emmet增加自定义片段的方法。</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/21/2017-03-21-2017-3-21-learning-record-orid/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/21/2017-03-21-2017-3-21-learning-record-orid/" itemprop="url">2017-3-21 学习记录ORID</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-21T15:34:00+08:00">
+                2017-03-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p>早上读笑来文章，本来脑子混乱迷思。读完文章后脑子就变得很清晰！所以，今天一个重要的领悟是：</p>
+<ul>
+<li><h4 id="读书（只字不差地阅读），可以让你的脑子变得很清晰！表达能力更好！"><a href="#读书（只字不差地阅读），可以让你的脑子变得很清晰！表达能力更好！" class="headerlink" title="读书（只字不差地阅读），可以让你的脑子变得很清晰！表达能力更好！"></a>读书（只字不差地阅读），可以让你的脑子变得很清晰！表达能力更好！</h4></li>
+</ul>
+</li>
+<li><p>体会到了笑来说的那种感知细微的能力。因为只字不差地阅读，就有有意地放慢阅读过程，体会细微之处！在我看来这就是一种禅定！</p>
+</li>
+<li><p>今天读的得到文章主要讲：</p>
+<ul>
+<li>我们时常会忘记那个原则：“什么是更重要的？最重要的是什么？”</li>
+<li>当我们被需求时，价格会被高估！</li>
+<li>做一个真正有用的人！（就是对这个世界真正需要的人）</li>
+<li>恋爱中，做她真正需要的人。能给她带来什么……</li>
+</ul>
+</li>
+</ol>
+<h4 id="今天的高点："><a href="#今天的高点：" class="headerlink" title="今天的高点："></a>今天的高点：</h4><ul>
+<li>读笑来公众号，刚好读到的是关于mj老师关于数字力的课程推荐！之前不知道什么是数字力的，经过笑来这么一说，马上就明白了，就是读懂财报！心情：很庆幸昨晚就报了数字力。现在的感觉：对自己的未来很期待！即将改变的生活！！！！</li>
+</ul>
+<ol>
+<li><p><code>find_by</code>更多的用法：可以同时搜索两个参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find_by_name_and_id(&quot;liang&quot;, &quot;23&quot;)</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>!</code>表示，自身的值会改变！会对table里的栏位发生改变！</p>
+</li>
+<li><p>看看拍狼的blog:debug小技艺：<code>save!</code></p>
+</li>
+</ol>
+<p>一个小更新提示：今天看知识豆才发现之前<code>build</code>的定义理解错了。已修正。</p>
+<ol>
+<li>解决了一个atom自带的快捷键无法修改的原因！又伤脑了……！可以看看同一天的blog，有小教程记录。</li>
+</ol>
+<h3 id="每日学习纪录：ORID"><a href="#每日学习纪录：ORID" class="headerlink" title="每日学习纪录：ORID"></a>每日学习纪录：ORID</h3><blockquote>
+<p>这是一个思考框架，利用 ORID 整理今天的思绪。</p>
+</blockquote>
+<h2 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h2><blockquote>
+<p>关于今天的课程, 你记得什么? 完成了什么?</p>
+</blockquote>
+<p>今天的任务是完成并追赶jdstore网站。（未完成！）</p>
+<p>记得：</p>
+<ul>
+<li>早上读笑来文章，头脑变清晰！</li>
+<li>晚上做无氧运动，头脑变清晰！</li>
+<li>中午学编程，头脑变帅！</li>
+</ul>
+<p>完成了什么：完成了很少东西（编程上的东西），两个 原因：</p>
+<ul>
+<li>有意放慢速度理解</li>
+<li>注意力被消耗</li>
+</ul>
+<h2 id="Reflective"><a href="#Reflective" class="headerlink" title="Reflective"></a>Reflective</h2><blockquote>
+<p>你要如何形容今天的情绪 今天的高峰是什么? 今天的低点是什么?</p>
+</blockquote>
+<p>今天的情绪不稳定，注意力多半放空了……还有一大半耗在关于mj老师的课上，憧憬小期待。想着会发生的各种情景……反思反思。</p>
+<p>高峰：晚上解决了atom的小问题，也是经过很多的教程，最后自己摸索出来的！庆幸做出来了，不然，心中的那个完美主义各种不爽！</p>
+<p>低点：晚上总结时，发现今天浪费时间过多。</p>
+<h2 id="Interpretive"><a href="#Interpretive" class="headerlink" title="Interpretive"></a>Interpretive</h2><blockquote>
+<p>我们今天学到了什么? 今天一个重要的领悟是什么?</p>
+</blockquote>
+<p>今天学到什么：都写在上面。</p>
+<p>今天一个重要的领悟是什么：只字不差地阅读，刻意放慢速度地阅读，才是真正地交流！</p>
+<h2 id="Decisional"><a href="#Decisional" class="headerlink" title="Decisional"></a>Decisional</h2><blockquote>
+<p>我们会如何用一句话形容今天的工作 有哪些工作需要明天继续努力?</p>
+</blockquote>
+<p>今天的工作无用功时间有点多。</p>
+<p>明天继续努力的地方：追求jdstore。（刚剪了指甲，明天希望能打code如飞！）</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/20/2017-03-20-1619335/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/20/2017-03-20-1619335/" itemprop="url">2017-3-20 ORID</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-20T15:18:00+08:00">
+                2017-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li>做功能的小套路步骤：<code>route</code> <code>action</code> <code>view</code> 把这三个连接起来，功能就做起来了！</li>
+<li>在model 里不用写本身，直接写下属就可以了！</li>
+<li><code>to_i</code> 是的意思：把字符串转成integer数值！</li>
+<li>报了mj老师4月8号北京的课程！什么感觉：新奇，能去北京，能去和一群小伙伴上课，很小期待，感觉什么就要被改变着！这种感觉很久没有了！！！好像终于脱离了迷思了四年的工作一样！</li>
+</ol>
+<h3 id="每日学习纪录：ORID"><a href="#每日学习纪录：ORID" class="headerlink" title="每日学习纪录：ORID"></a>每日学习纪录：ORID</h3><blockquote>
+<p>这是一个思考框架，利用 ORID 整理今天的思绪。</p>
+</blockquote>
+<h2 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h2><blockquote>
+<p>关于今天的课程, 你记得什么? 完成了什么?</p>
+</blockquote>
+<p>今天的任务是做完剩下的购物网站。</p>
+<p>还记得：</p>
+<ul>
+<li>今天早上都跟做页面还 不错</li>
+<li>下午5点回来后在群里得知MJ老师的课后，想了十几分钟，果断报名了！然后兴奋了好一阵，这是病，得治，到底还是表现型人格啊！</li>
+<li>晚上听了xdite的直播，主题是创业，记下了笔记，没有过多 的思考，血糖不够用啊。</li>
+<li>晚上打code，很没状态，还老打错字，该睡了！</li>
+</ul>
+<h2 id="Reflective"><a href="#Reflective" class="headerlink" title="Reflective"></a>Reflective</h2><blockquote>
+<p>你要如何形容今天的情绪 今天的高峰是什么? 今天的低点是什么?</p>
+</blockquote>
+<p>今天的情绪有点不淡定，血糖也不够用，思维不够慎密了……</p>
+<p>高峰：傍晚报mj老师的课，报完很兴奋很期待。</p>
+<p>低点：晚上打code没精力了，回想今天效率低下。任务没有完成。</p>
+<h2 id="Interpretive"><a href="#Interpretive" class="headerlink" title="Interpretive"></a>Interpretive</h2><blockquote>
+<p>我们今天学到了什么? 今天一个重要的领悟是什么?</p>
+</blockquote>
+<p>今天学到了什么：都记在上面呢</p>
+<p>一个重要的领悟是什么：每天是要抽时间去下新大了，不然会错过些什么！比如mj老师，同学们都是从新大知道的，然后我不知道！</p>
+<h2 id="Decisional"><a href="#Decisional" class="headerlink" title="Decisional"></a>Decisional</h2><blockquote>
+<p>我们会如何用一句话形容今天的工作 有哪些工作需要明天继续努力?</p>
+</blockquote>
+<p>今天的工作是低效的，思维也不慎密了。在血糖不够用的情况下，我报了mj老师的课，但我知道那是对的！</p>
+<p>明天要追赶今天落下的任务，明天和后天再做多一次购物网站！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/19/2017-03-19-2017-3-19-learning-record-orid/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/19/2017-03-19-2017-3-19-learning-record-orid/" itemprop="url">2017-3-19 学习记录 ORID</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-19T15:18:00+08:00">
+                2017-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ol>
+<li><p>关于 <code>return</code> 的解读</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">def find_cart</div><div class="line">  cart = Cart.find_by(id: session[:cart_id])</div><div class="line">  if cart.blank?</div><div class="line">    cart = Cart.create</div><div class="line">  end</div><div class="line">  session[:cart_id] = cart.id</div><div class="line">  return cart</div><div class="line">end</div></pre></td></tr></table></figure>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-19-132354.jpg" alt=""></p>
+<p>​</p>
+</li>
+</ol>
+<h3 id="每日学习纪录：ORID"><a href="#每日学习纪录：ORID" class="headerlink" title="每日学习纪录：ORID"></a>每日学习纪录：ORID</h3><blockquote>
+<p>这是一个思考框架，利用 ORID 整理今天的思绪。</p>
+</blockquote>
+<h2 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h2><blockquote>
+<p>关于今天的课程, 你记得什么? 完成了什么?</p>
+</blockquote>
+<p>今天的任务是完成购物网站的一半。</p>
+<p>还记得：</p>
+<ul>
+<li>现在打code，看看教材上提示要什么效果，试试盲打。实在不行，就看一遍再试着自己打出来。觉得这种学习方法很好！不错的提取练习。</li>
+<li>试着拆解了navbar导航栏，肢解了再装回去，知道一个最小可行性导航栏的代码。</li>
+<li>晚上在助教的帮助下，理解了<code>return</code> 知道了它是怎么回事了。请看最上面。</li>
+<li>有了前面做连续两次的rails101和两次招聘。现在再来做购物网站，理解能力提高了不少呀。。。</li>
+</ul>
+<p>完成了：目前购物网站做到5-6 step5.</p>
+<h2 id="Reflective"><a href="#Reflective" class="headerlink" title="Reflective"></a>Reflective</h2><blockquote>
+<p>你要如何形容今天的情绪 今天的高峰是什么? 今天的低点是什么?</p>
+</blockquote>
+<p>今天没有什么情绪，但状态并不好，明知道有很多事做，但是快不起来。而我也不逃避，就骗自己，没有完美，不要完美，做吧。</p>
+<p>高峰：晚上做购物车前半部分，觉得之前像天文一样的东西，怎么一下子好像不那么陌生了，哈哈。</p>
+<p>低点：没有</p>
+<h2 id="Interpretive"><a href="#Interpretive" class="headerlink" title="Interpretive"></a>Interpretive</h2><blockquote>
+<p>我们今天学到了什么? 今天一个重要的领悟是什么?</p>
+</blockquote>
+<p>今天学到了什么：</p>
+<ul>
+<li>看李笑来的得到专栏，一再强调要开始写作了，因为这不仅仅是提高沟通的效率，提高思维能力。但我想，在全栈营，不是每天都会写东西吗？有什么方法论：<ul>
+<li>不断地问自己，我写的这个东西对他人有作用吗？</li>
+<li>若是有，怎样才更有作用？</li>
+</ul>
+</li>
+<li>return的用法。</li>
+</ul>
+<p>今天一个重要的领悟是什么：之所以你为什么是普通人，因为你像普通人一样思考，普通人不是一瞬间就变得不普通的，也是不断执行提高的！</p>
+<h2 id="Decisional"><a href="#Decisional" class="headerlink" title="Decisional"></a>Decisional</h2><blockquote>
+<p>我们会如何用一句话形容今天的工作 有哪些工作需要明天继续努力?</p>
+</blockquote>
+<p>今天的工作效率有点低，主要我注意力分散了（微信，得到）。</p>
+<p>明天要努力的：努力做完购物网站。明天要出去办事占时间，任务变更加坚巨了。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/19/2017-03-19-the-navigation-bar-for-a-minimum-feasible/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/19/2017-03-19-the-navigation-bar-for-a-minimum-feasible/" itemprop="url">一个最小可行性的导航栏</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-19T03:52:00+08:00">
+                2017-03-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我们先来看一张图：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-19-033408.jpg" alt=""> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">&lt;nav class=&quot;navbar navbar-default&quot;&gt;</div><div class="line"></div><div class="line">    &lt;div class=&quot;navbar-header&quot;&gt;</div><div class="line">        &lt;a href=&quot;&quot; class=&quot;navbar-brand&quot;&gt;JDStore&lt;/a&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">    &lt;div class=&quot;navbar-collapse&quot;&gt;</div><div class="line">        &lt;div class=&quot;nav navbar-nav navbar-right&quot;&gt;</div><div class="line">        &lt;li&gt;&lt;%= link_to(&quot;导航&quot;, &apos;#&apos;)%&gt;&lt;/li&gt;</div><div class="line"></div><div class="line">        &lt;li class=&quot;dropdown&quot;&gt;</div><div class="line">            &lt;a href=&quot;/&quot; class=&quot;dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;下拉</div><div class="line">                &lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;</div><div class="line">            &lt;/a&gt;</div><div class="line">            &lt;ul class=&quot;dropdown-menu&quot;&gt;</div><div class="line">                &lt;li&gt;&lt;%= link_to(&quot;子菜单&quot;, &apos;#&apos;)%&gt;&lt;/li&gt;</div><div class="line">            &lt;/ul&gt;</div><div class="line">        &lt;/li&gt;</div><div class="line"></div><div class="line">    &lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;/nav&gt;</div></pre></td></tr></table></figure>
+<p>分两部解析，整体框架和下拉菜单。</p>
+<h4 id="我们先来看看整体框架："><a href="#我们先来看看整体框架：" class="headerlink" title="我们先来看看整体框架："></a>我们先来看看整体框架：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-19-034346.jpg" alt=""></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;nav class=&quot;navbar navbar-default&quot;&gt;</div><div class="line"></div><div class="line">    &lt;div class=&quot;navbar-header&quot;&gt;</div><div class="line">        &lt;a href=&quot;&quot; class=&quot;navbar-brand&quot;&gt;JDStore&lt;/a&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">    &lt;div class=&quot;navbar-collapse&quot;&gt;</div><div class="line">        &lt;div class=&quot;nav navbar-nav navbar-right&quot;&gt;</div><div class="line">          &lt;li&gt;&lt;%= link_to(&quot;导航&quot;, &apos;#&apos;)%&gt;&lt;/li&gt;</div><div class="line">        &lt;/div&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line"></div><div class="line">&lt;/nav&gt;</div></pre></td></tr></table></figure>
+<p>好的，这部分让我们多看几遍，记起来吧！</p>
+<h4 id="再看看下拉菜单部分："><a href="#再看看下拉菜单部分：" class="headerlink" title="再看看下拉菜单部分："></a>再看看下拉菜单部分：</h4><p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-19-034759.jpg" alt="">这些是关键代码，找时间多看几遍，记起来吧……</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;li class=&quot;dropdown&quot;&gt;</div><div class="line">    &lt;a href=&quot;/&quot; data-toggle=&quot;dropdown&quot;&gt;下拉</div><div class="line">        &lt;b class=&quot;caret&quot;&gt;&lt;/b&gt;</div><div class="line">    &lt;/a&gt;</div><div class="line">    &lt;ul class=&quot;dropdown-menu&quot;&gt;</div><div class="line">        &lt;li&gt;&lt;%= link_to(&quot;子菜单&quot;, &apos;#&apos;)%&gt;&lt;/li&gt;</div><div class="line">    &lt;/ul&gt;</div><div class="line">&lt;/li&gt;</div></pre></td></tr></table></figure>
+<p>好的吧，把教材上的导航栏给肢解了再装回去，总算弄明白了哪些是必要的，哪些是可以暂时不要的！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/18/2017-03-18-1608781/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -925,737 +1693,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/17/2017-03-17-1599720/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/17/2017-03-17-1599720/" itemprop="url">2017-3-17 ORID</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-17T16:11:00+08:00">
-                2017-03-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="每日学习纪录：ORID"><a href="#每日学习纪录：ORID" class="headerlink" title="每日学习纪录：ORID"></a>每日学习纪录：ORID</h3><blockquote>
-<p>这是一个思考框架，利用 ORID 整理今天的思绪。</p>
-</blockquote>
-<h2 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h2><blockquote>
-<p>关于今天的课程, 你记得什么? 完成了什么?</p>
-</blockquote>
-<p>今天任务是：完成招聘一次。</p>
-<p>记得： 早上看招聘里的一些理论：</p>
-<ul>
-<li>computational thinking:<ul>
-<li>像电脑思维一样思考</li>
-<li>把大问题拆解成小问题</li>
-<li>在实作过程找到资源</li>
-<li>关键：解决问题的能力，分析能力，高手：知道很多好用的工具。</li>
-<li>多学习分析他人解决问题的方法，以GET到这种方法。</li>
-</ul>
-</li>
-<li>xdite对于编辑的理解：<ul>
-<li>观察输入是什么，输出是什么？</li>
-<li>把大问题拆解成可以实作的小问题</li>
-<li>在实作过程中找到资源</li>
-<li>用电脑自动化解决问题</li>
-</ul>
-</li>
-<li>用户故事：是一个常用的工具，从用户角度出发，使开发出来的产品实际好用。人性化。：<ul>
-<li>角色是系统复杂度的关键，每增加一个用户，复杂度会加上一个次方！</li>
-<li>用户故事的关键：身为某角色，会做某事，以完成某种商业价值。</li>
-</ul>
-</li>
-</ul>
-<p>完成了什么：完成到一半呀！！！未完成任务。明天加紧！</p>
-<h2 id="Reflective"><a href="#Reflective" class="headerlink" title="Reflective"></a>Reflective</h2><blockquote>
-<p>你要如何形容今天的情绪 今天的高峰是什么? 今天的低点是什么?</p>
-</blockquote>
-<p>今天情绪被暖化。</p>
-<p>高峰：晚上遇到一个根据提示找不到解法的bug，后来在微信群里，各路大神同学相助，让我很暖心。</p>
-<p>低点：遇到bug前的冰冷冷心情……后来被同学们暖化……</p>
-<h2 id="Interpretive"><a href="#Interpretive" class="headerlink" title="Interpretive"></a>Interpretive</h2><blockquote>
-<p>我们今天学到了什么? 今天一个重要的领悟是什么?</p>
-</blockquote>
-<p>今天学到什么一些理念，都标明在前面了……</p>
-<p>今天一个重要的领悟：</p>
-<ul>
-<li>当出现问题的时候，或者解法不在本身，要在其他地方找。双想起笑来那句话：不要盯着锁头，钥匙一定在其他地方。</li>
-<li>当出现不能解决的问题的时候，试试看其他类似的同类的东西有没有出现问题！再跟着提示来，可能会解开问题。。。。</li>
-</ul>
-<h2 id="Decisional"><a href="#Decisional" class="headerlink" title="Decisional"></a>Decisional</h2><blockquote>
-<p>我们会如何用一句话形容今天的工作 有哪些工作需要明天继续努力?</p>
-</blockquote>
-<p>今天的工作被一个巨大的BUG给卡住了，自然今天的任务没有完成。但同学们的热情让我心暖……</p>
-<p>明天要继续努力：补今天未完成的任务！再追赶明天的任务！！！！</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/17/2017-03-17-1599658/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/17/2017-03-17-1599658/" itemprop="url">2017-3-17 一个字母引发的备案，引众人debug.</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-17T15:50:00+08:00">
-                2017-03-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>这个bug长什么样？<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-17-Snip20170317_2.png" alt=""></p>
-<p>相关文件长什么样？<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-17-Snip20170317_4.png" alt=""><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-17-Snip20170317_7.png" alt=""><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-17-Snip20170317_8.png" alt=""><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-17-Snip20170317_13.png" alt=""></p>
-</li>
-<li><p>解bug之路：</p>
-<ul>
-<li><p>从这些提示中无法看到有什么不错误的。</p>
-</li>
-<li><p>在”RoR全栈之路“微信群，引发各位大神相助，BUG冷冷的，但是大家的热情让我感觉很暖很开心……！</p>
-</li>
-<li><p>陈慧娟同学提示我去看看delete按钮有没有问题，发现有问题后我截图查看log，这才揪出bug背后真正的错误点！<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-17-Snip20170317_19.png" alt=""></p>
-<p>错误点：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-17-Snip20170317_15.png" alt=""></p>
-</li>
-</ul>
-</li>
-<li><h4 id="反思："><a href="#反思：" class="headerlink" title="反思："></a>反思：</h4><ul>
-<li>这次解决的关键在：试了delete,看log找到错误点！这个方法以后怎么用：下次遇到同样的问题，试试类似的同类的是否正常！</li>
-<li>在微信群看到这么多人帮我的时候，我未能平静，在改错误的时候，把字又打错了…………/捂脸！</li>
-<li>想起了李笑来的另外一句话：不要盯着锁头，锁匙一定在其他地方！下次可以去试试其他东西，说不定就遇到了这个bug的真正错误点！</li>
-</ul>
-<p>​</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/16/2017-03-16-1595248/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/16/2017-03-16-1595248/" itemprop="url">2017-3-16 ORID</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-16T14:39:00+08:00">
-                2017-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="每日学习纪录：ORID"><a href="#每日学习纪录：ORID" class="headerlink" title="每日学习纪录：ORID"></a>每日学习纪录：ORID</h3><blockquote>
-<p>这是一个思考框架，利用 ORID 整理今天的思绪。</p>
-</blockquote>
-<h2 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h2><blockquote>
-<p>关于今天的课程, 你记得什么? 完成了什么?</p>
-</blockquote>
-<p>今天的任务是：完成rails101 两次，</p>
-<p>还记得：</p>
-<ul>
-<li>遇到6个坑，都自己爬出来了，坑掉多了就不容易掉了……</li>
-<li>第一遍6个小时，第二遍4个小时！！！</li>
-<li>中午看了xidte的直播答疑，结果选错集，找了半个小时没有找到想到的内容，最后发现昨晚的元学习视频回放还没有放上来！</li>
-<li>晚上打code，听着dubai chill lounge，很带感！</li>
-<li>rails101越打越快！之前要是能打这么多遍就好了！</li>
-<li>早上手很僵，但是我没有借口不打code,换作其他，我可能会给自己找借口，没状态不学了。但，接受不完美吧，今天我慢慢打，最近竟然很快了……！</li>
-</ul>
-<p>完成了什么：完成了rails101两次！</p>
-<h2 id="Reflective"><a href="#Reflective" class="headerlink" title="Reflective"></a>Reflective</h2><blockquote>
-<p>你要如何形容今天的情绪 今天的高峰是什么? 今天的低点是什么?</p>
-</blockquote>
-<p>今天没什么情绪，就是白天有点累困，但是，一步步坚持下来了。</p>
-<p>高峰：晚上8点的时候，听着dubai chill lounge专辑，打code，我进入的心流的感觉！</p>
-<p>低点：没有！</p>
-<h2 id="Interpretive"><a href="#Interpretive" class="headerlink" title="Interpretive"></a>Interpretive</h2><blockquote>
-<p>我们今天学到了什么? 今天一个重要的领悟是什么?</p>
-</blockquote>
-<p>今天学到了：做过那么多次的rails101，还是遇到了6个坑，坑掉多了，就没那么容易掉坑了……XD</p>
-<p>今天一个重要的领悟是什么：</p>
-<ul>
-<li>好的工具和烂的工具相差真的不是一般大！</li>
-<li>接受不完美，持续完善。</li>
-</ul>
-<h2 id="Decisional"><a href="#Decisional" class="headerlink" title="Decisional"></a>Decisional</h2><blockquote>
-<p>我们会如何用一句话形容今天的工作 有哪些工作需要明天继续努力?</p>
-</blockquote>
-<p>太好了，今天的工作完成了，还掉了6个坑，很快就爬出来了，后来也遇到相同的坑，一下就找到原因了……学到东西了！</p>
-<p>明天继续努力：做招聘jblisting一遍！</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/16/2017-03-16-1595159/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/16/2017-03-16-1595159/" itemprop="url">2017-3-16 遇到六个错误，记录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-16T14:24:00+08:00">
-                2017-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>错误画面：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-16-014700.jpg" alt="">分析：这个提示是说少了关键词：end,然后我高傲地瞄了下view潜意识觉得怎么会错了，就没在意。结果真的是那里错了……<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-16-015121.jpg" alt="">………………/捂脸.</p>
-</li>
-<li><p>错误画面2：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-16-022630.jpg" alt="">这里提示说找不到这个errors，后来才发现是它的父变量写错了。这里应该是@group才对，我在末尾打多了一个s。</p>
-</li>
-<li><p>错误画面3：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-16-034235.jpg" alt="">后知后觉：这里仔细看提示，它提示我们找不到group_id，因为我们没有给它定义。看：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-16-040816.jpg" alt="">做这些的时候，经常忘了现在是两张表联合的操作！时刻警惕！</p>
-<p>正确应为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">new_group_post_path(@group)</div></pre></td></tr></table></figure>
-</li>
-<li><p>错误画面：<img src="/Users/liang/Desktop/Snip20170316_11.png" alt="Snip20170316_11">这里提示没有找到这个变量，然后我就去解决这个变量没定义清楚的问题了……解决了头天后来发现：原来是controller里没有指向页面，<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-16-061101.jpg" alt="">这样，当我第一次删除的时候，页面没有反应，其实后台已删除，只是没有显示而已，当我再次按删除时就提示说找不到这个变量了……XD，</p>
-<p>…………………………/捂脸！</p>
-<p>下次试验的时候一定要带上跳转页面的指向，不然，提示条也不会生效了……</p>
-<p>巨大的坑！啊！</p>
-</li>
-<li><p>错误画面：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-16-121724.jpg" alt="">这里点提交，什么反应也没有，没有提示错误，也没有存储数据，也没有跳转，反正什么都没有！对比教材，原来：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-16-Snip20170316_13.png" alt="">原来这里没有写这个！下回在写create和update的时候，就要联想到这个model有什么栏位了！！！！！</p>
-</li>
-<li><p>错误画面：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-16-Snip20170316_8.png" alt="">这里是因为：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-16-131131.jpg" alt="">画红线的地方没有增加上去，不知道为什么这样会出错！下次出错留意下这个！</p>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/16/2017-03-16-1594399/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/16/2017-03-16-1594399/" itemprop="url">2017-3-16 又掉了一个大坑</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-16T12:22:00+08:00">
-                2017-03-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>错误画面：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-16-121724.jpg" alt="">这里点提交，什么反应也没有，没有提示错误，也没有存储数据，也没有跳转，反正什么都没有！对比教材，原来：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-16-Snip20170316_13.png" alt="">原来这里没有写这个！下回在写create和update的时候，就要联想到这个model有什么栏位了！！！！！</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1704,7 +1746,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">167</span>
+                <span class="site-state-item-count">172</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1715,7 +1757,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1726,7 +1768,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
