@@ -341,7 +341,8 @@
                   <i class="fa fa-comment-o"></i>
                 </span>
                 <a href="/2017/07/04/2017-07-04-asdf/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/04/2017-07-04-asdf/" itemprop="commentCount"></span>
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/04/2017-07-04-asdf/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -863,7 +864,7 @@ end
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/02/2017-07-02-1991027/" rel="next" title="2017-7-2 看菜谱所想……">
+              <a href="/2017/07/02/2017-07-02-1991026/" rel="next" title="2017-7-2 看菜谱所想……">
                 <i class="fa fa-chevron-left"></i> 2017-7-2 看菜谱所想……
               </a>
             
@@ -905,8 +906,11 @@ end
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2017/07/04/2017-07-04-asdf/"
-           data-title="读《为你自己学RUBY ON RAILS--高见龙》提取记录" data-url="http://hongliang.site/2017/07/04/2017-07-04-asdf/">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
       </div>
     
   </div>
@@ -1163,35 +1167,39 @@ end
 
   
 
+
   
+
     
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"honglianggithubblog"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
+      <script id="dsq-count-scr" src="https://honglianggithubblog.disqus.com/count.js" async></script>
     
+
     
-    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://hongliang.site/2017/07/04/2017-07-04-asdf/';
+          this.page.identifier = '2017/07/04/2017-07-04-asdf/';
+          this.page.title = '读《为你自己学RUBY ON RAILS--高见龙》提取记录';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://honglianggithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
   
 
 
 
 
+	
 
 
+
+
+
+  
 
 
 
