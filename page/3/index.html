@@ -98,7 +98,7 @@
 <meta name="description" content="记录让我们走得更远...">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Activeliang&#39;s Blog">
-<meta property="og:url" content="http://hongliang.site/page/3/index.html">
+<meta property="og:url" content="http://hongliang.site/archives/page/3/index.html">
 <meta property="og:site_name" content="Activeliang&#39;s Blog">
 <meta property="og:description" content="记录让我们走得更远...">
 <meta property="og:locale" content="zh-Hans">
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://hongliang.site/page/3/"/>
+  <link rel="canonical" href="http://hongliang.site/archives/page/3/"/>
 
 
 
@@ -213,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            首页
+            主页
           </a>
         </li>
       
@@ -290,7 +290,153 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.site/2017/06/20/《ruby基础教程》提取/">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/06/22/2017-06-22-2017-6-22-error/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/22/2017-06-22-2017-6-22-error/" itemprop="url">2017-6-22 错误记录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-22T16:28:00+08:00">
+                2017-06-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/22/2017-06-22-2017-6-22-error/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/06/22/2017-06-22-2017-6-22-error/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+遇到一个巨大的坑：
+
+数据路由都没有问题，但：
+
+一直提交的路径是错的！！！
+
+
+最后：原来是开头的form_tag写成form_for了，然后一直跑到create这个action去了，一直提示关键字为空，多么痛的领悟。
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/22/2017-06-22-2017-6-22-error/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/06/20/《ruby基础教程》提取/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
@@ -394,1008 +540,41 @@
       
         
           
-            <blockquote>
-<p>写在前面：这里的提取是个人的提取（一些本人熟知的知识点不会在这里记录）。如果你也是新手级RoR选手，那这个提取能提供不少帮助。</p>
-</blockquote>
-<p>开始：</p>
-<ol>
-<li>程序语言有很多，各自目的不同：有的为了运行快速，有的为了一次编写，可以在从多平台使用，有的为了让小孩也能简单编程。而ruby：<strong>为了让编程更快乐</strong>！</li>
-<li>什么是脚本语言：不需要经常翻译（编译），电脑能直接运行的语言。</li>
-</ol>
-<h4 id="第-1-部分-Ruby-初探"><a href="#第-1-部分-Ruby-初探" class="headerlink" title="第 1 部分 Ruby 初探"></a>第 1 部分 Ruby 初探</h4><ol>
-<li><p>执行单个ruby文件<code>xxx.rb</code>，方法：</p>
-<ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ruby helloruby.rb</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>直接打开irb:</p>
-<ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$irb</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p><code>\n</code>是换行符。</p>
-</li>
-<li><p><code>\</code> ：转义字符。</p>
-<ul>
-<li><p>程序会对这个<code>\</code>后的字体做特殊的处理。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(&quot;hello,\&quot;ruby\&quot;.)   #=&gt; hello, &quot;ruby&quot;.</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">print(&quot;hello \\ ruby!&quot;)   #=&gt; hello \ ruby!</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p><code>&quot;&quot;</code>和<code>&#39;&#39;</code>，单引号和双引号的区别：</p>
-<p><code>&#39;&#39;</code>里的东西，会原封不动地输出！（但，有两个符号除外：<code>&#39;</code> &amp; <code>\</code>）</p>
-</li>
-<li><p><code>puts</code>和<code>print</code>方法的区别：</p>
-<ul>
-<li><code>puts</code>后面默认会带有换行符。</li>
-<li><code>print</code>后面默认不带换行符。</li>
-</ul>
-</li>
-<li><p><code>p</code>方法可以做什么：（这个方法一般是程序员在用！）</p>
-<ul>
-<li>能从输出结果分辨字符串与数值。</li>
-<li>不会转义。</li>
-</ul>
-</li>
-<li><p>编码的规则称为 <code>encoding</code></p>
-</li>
-<li><p>用这条指令开启irb可以开启简洁模式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$irb --simple-prompt</div></pre></td></tr></table></figure>
-</li>
-<li><p>要用<code>sin</code> <code>sqrt</code>等方法时，可以这样：（使用<code>Math</code>这个类方法）</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">=&gt; irb</div><div class="line">&gt;&gt; Math.sin(3.1415)   #=&gt; 9.26535896604902e-05</div></pre></td></tr></table></figure>
-<ol>
-<li><p>注释：</p>
-<ul>
-<li><p>单行注释：以<code>#</code>开头的注释。</p>
-</li>
-<li><p>多行注释：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">=begin</div><div class="line">这是一个例子</div><div class="line">2017-7-5日</div><div class="line">=end</div></pre></td></tr></table></figure>
-</li>
-<li><p>还有一个作用：暂时不执行</p>
-</li>
-</ul>
-</li>
-<li><p><code>while</code>语句：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">i = 1</div><div class="line">while i &lt;= 10</div><div class="line">  puts i</div><div class="line">  i = i + 1</div><div class="line">end</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>times</code>语句：（迭代器）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">5.times do</div><div class="line">  p &quot;example&quot;</div><div class="line">end</div></pre></td></tr></table></figure>
-</li>
-<li><p>像数组、散列这样保存对象的对象,我们称为容器(container)。</p>
-</li>
-</ol>
-<h5 id="数组："><a href="#数组：" class="headerlink" title="数组："></a>数组：</h5><ol>
-<li><p>什么是数组：    按顺序保存多个对象的对象。</p>
-</li>
-<li><p>数组的大小 ：<code>size</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = [1,2,3]</div><div class="line">a.size         #=&gt; 3</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h5 id="散列："><a href="#散列：" class="headerlink" title="散列："></a>散列：</h5><ol>
-<li>散列是键值对(key-value pair)的一种数据结构。</li>
-</ol>
-<h5 id="正则表达式："><a href="#正则表达式：" class="headerlink" title="正则表达式："></a>正则表达式：</h5><ol>
-<li><p>什么正则表达式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/abc/ =~ &quot;eacbcefg&quot;</div></pre></td></tr></table></figure>
-<ul>
-<li>左边：模式，用<code>/ /</code>包起来。</li>
-<li>右边：要匹配的字体串。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/abc/i =~ &quot;aAbcdefg&quot;</div></pre></td></tr></table></figure>
-<ul>
-<li>在<code>/</code>后面加一个<code>i</code>表示忽略大小写。</li>
-</ul>
-</li>
-</ol>
-<h5 id="从命令中拿到参数："><a href="#从命令中拿到参数：" class="headerlink" title="从命令中拿到参数："></a>从命令中拿到参数：</h5><ol>
-<li>使用ruby内置的方法：<code>ARGV[X]</code> 就像数组一样用。</li>
-<li>什么叫库：大部分的编程语言都提供了把多个不同程序组合为一个程序的功能。像这样,被其他程序引用的程序,我们称为库(library)。</li>
-<li><code>require &quot;./grep&quot;</code>中的<code>./</code>表示：当前目录下。</li>
-<li><code>pp</code>方法和<code>p</code>的区别：<ul>
-<li><code>pp</code>可以适当地换行调整输出结果，让显示更漂亮。</li>
-</ul>
-</li>
-</ol>
-<h4 id="第2部分-Ruby的基础："><a href="#第2部分-Ruby的基础：" class="headerlink" title="第2部分 Ruby的基础："></a>第2部分 Ruby的基础：</h4><ol>
-<li><p>什么是对象：在RUBY中， 靓丽数据的基本单位称为对象。</p>
-<ul>
-<li>数值对象</li>
-<li>字符串对象</li>
-<li>数组对象，散列对象</li>
-<li>正则表达式对象</li>
-<li>时间对象</li>
-<li>文件对象</li>
-<li>符号对象</li>
-</ul>
-</li>
-<li><p>什么是类：表示对象的种类。</p>
-<p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-05-Snip20170705_9.png" alt=""></p>
-</li>
-<li><p>什么是伪变量：代表某特定值的特殊量。</p>
-<ul>
-<li><code>nil</code> <code>true</code> <code>false</code> <code>self</code></li>
-</ul>
-</li>
-<li><p>常量：</p>
-<ul>
-<li>常量以大写英文字母开头。</li>
-<li>给常量重复定义时，ruby会做出警告。</li>
-</ul>
-</li>
-<li><p>多重赋值里还可以这样用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ary = [1,2]</div><div class="line">a,b = ary          #=&gt; a=1, b=2</div></pre></td></tr></table></figure>
-</li>
-<li><p>比较值是否相等时，通常用<code>==</code> ，但如果要严谨一点的，就用<code>eql?</code></p>
-</li>
-<li><p>一些控制循环的语句：</p>
-<p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-05-Snip20170705_11.png" alt=""></p>
-</li>
-<li><p>语法糖(syntaxsugar),是指一种为了照顾一般人习惯而产生的特殊语法</p>
-</li>
-</ol>
-<h5 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h5><ol>
-<li><p>什么是方法：把一系统参数传递给对象的过程。（对象会返回结果值）</p>
-</li>
-<li><p>方法的调用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">对象.方法名(参数1， 参数2， ...， 参数n)</div></pre></td></tr></table></figure>
-</li>
-<li><p>方法的分类：</p>
-<ul>
-<li><p>实例方法：作用在实例上的方法。</p>
-</li>
-<li><p>类方法：作用在类上的方法。调用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">类名.方法名</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">类名::方法名</div></pre></td></tr></table></figure>
-</li>
-<li><p>函数式方法：没有作用对象的方法，也没有回传值。</p>
-</li>
-</ul>
-</li>
-<li><p>参数个数不确定的方法，使用带<code>*</code>号的参数：</p>
-<p>这个参数组会被封装为数组供内部使用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">def	foo(*args)</div><div class="line">  args</div><div class="line">end</div><div class="line"></div><div class="line">p foo(1,2,3)       #=&gt; [1,2,3]</div><div class="line">p foo(1,2)         #=&gt; [1,2]</div></pre></td></tr></table></figure>
-<p>至少需要一个参数的方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">def	meth(arg, *args)</div><div class="line">  [arg, args]</div><div class="line">end</div><div class="line"></div><div class="line">p meth(1)     #=&gt; [1, []]</div><div class="line">p meth(1,2,3) #=&gt; [1, [2,3]]</div></pre></td></tr></table></figure>
-<p>首尾确定，中间不确定时：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">def	a(a, *b, c)</div><div class="line">  [a,b,c]</div><div class="line">end</div><div class="line"></div><div class="line">p a(1,2,3,4,5)     #=&gt; [1, [2,3,4], 5]</div><div class="line">p a(1,2)           #=&gt; [1, [], 2]</div></pre></td></tr></table></figure>
-</li>
-<li><p>关键字参数：以hash形式传递参数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">def	a(a: 1, b: 2, c: 3)</div><div class="line">  [a,b,c]</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>如果想传递未定义的参数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">def a(a:1, **args)</div><div class="line">  [a, args]</div><div class="line">end</div><div class="line"></div><div class="line">p a(a: 2, k: 3, v: 4)    #=&gt; [2, &#123;:k =&gt; 3, :v =&gt; 4&#125;]</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h5 id="类与模块："><a href="#类与模块：" class="headerlink" title="类与模块："></a>类与模块：</h5><ol>
-<li><p>判断某个对象是否属于某个类时：<code>instance_of?</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ary = []</div><div class="line">str = &quot;Hello world.&quot;</div><div class="line">p ary.instance_of?(Array)      #=&gt; true</div><div class="line">p str.instance_of?(String)     #=&gt; true</div><div class="line">p ary.instance_of?(String)     #=&gt; false</div><div class="line">p ary.instance_of?(Array)      #=&gt; false</div></pre></td></tr></table></figure>
-</li>
-<li><p>判断某个对象是否属于某个类时：<code>is_a?</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">str = &quot;This is a String.&quot;</div><div class="line">p str.is_a?(String)        #=&gt; true</div><div class="line">p str.is_a?(Object)        #=&gt; true</div></pre></td></tr></table></figure>
-</li>
-<li><p>常量：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class HelloWorld</div><div class="line">  Version = &quot;1.0&quot;</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>调用时：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">p HelloWorld::Version     #=&gt; &quot;1.0&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>@@xxx</code>：类变量，可以多次修改。</p>
-</li>
-<li><p>限制访问级别：</p>
-<ul>
-<li><code>public</code> 公开，外部可以访问。一般默认方法都是<code>public</code>的，但<code>initialize</code>方法除外。</li>
-<li><code>private</code>内部使用。外部无法访问。</li>
-<li><code>protected</code>同一类中可以使用。外部无法使用。</li>
-</ul>
-</li>
-<li><p>想知道一个类下有什么方法可以 被调用 ？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">类名.instance_methods</div></pre></td></tr></table></figure>
-</li>
-<li><p>为方法设置多个名字：<code>alias</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alias 别名 原名</div><div class="line">alias :别名 :原名</div></pre></td></tr></table></figure>
-</li>
-<li><p>删除方法:  <code>undef 方法名</code>  or  <code>undef   :方法名</code></p>
-</li>
-<li><p>什么是单例类：只为了个实体对象服务的类和方法。</p>
-</li>
-</ol>
-<h5 id="模块："><a href="#模块：" class="headerlink" title="模块："></a>模块：</h5><ol>
-<li><p>使用方法：</p>
-<ul>
-<li><code>模块名.方法名</code></li>
-<li>在类中<code>include 模块名</code>， 然后就可以直接使用方法啦~</li>
-</ul>
-</li>
-<li><p>如果希望在外部可以用<code>模块名.方法名</code>，你可以这样做：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">module_function :hello</div></pre></td></tr></table></figure>
-</li>
-<li><p>如果想知道继承关系 ，可以使用：<code>ancestors</code>这个方法，如果想知道父类，可以使用方法：<code>superclass</code>。</p>
-</li>
-<li><p>调用时的优先级：</p>
-<ul>
-<li><code>类本身</code> =&gt; <code>引入的模块（最后引入模块的优先）</code> =&gt; <code>父类</code></li>
-<li>重复引入，第二个引入的会被忽略。</li>
-</ul>
-</li>
-<li><p><code>extend方法</code>：直接引入作用在对象上的模块。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">module  Edition</div><div class="line">  def  edition(n)</div><div class="line">    &quot;#&#123;self&#125;第#&#123;n&#125;版&quot;</div><div class="line">  end</div><div class="line">end</div><div class="line"></div><div class="line">str = &quot;Ruby 基础教程&quot;</div><div class="line">str.extend(Edition)     #=&gt; 将模块 Mix-in 进对象</div><div class="line"></div><div class="line">p str.edtion(4)         #=&gt; &quot;Ruby 基础教程第 4 版&quot;</div></pre></td></tr></table></figure>
-<ul>
-<li><p>也可以用<code>extend</code>来代替继承：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">class MyClass</div><div class="line">  extend ClassMethods</div><div class="line">end</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p><code>.ceil</code>：进位的意思，会把对象变成大一位的整数。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a=3.23</div><div class="line">b=5.8</div><div class="line">a.ceil     #=&gt; 4</div><div class="line">b.ceil     #=&gt; 6</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h5 id="运算符："><a href="#运算符：" class="headerlink" title="运算符："></a>运算符：</h5><ol>
-<li><p>一直以为<code>||</code>就是<code>or</code>的意思（visual basic中的<code>or</code>），今天才发现，我错了：</p>
-<p><strong><u>其实这两个符号不仅可以用在判断，还可以用在运算！！！</u></strong></p>
-<ul>
-<li><code>||</code> ：从左到右，返回第一个不为 <strong><u>fasle</u></strong> 或 <strong><u>nil</u></strong> 的值。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a = false || nil || 2 || 3     #=&gt; a = 2</div></pre></td></tr></table></figure>
-<ul>
-<li><code>&amp;&amp;</code> ：返回最后一个真值（期间不能出现假值）。</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = 1 &amp;&amp; 2 &amp;&amp; 3 &amp;&amp; 4     #=&gt; a = 4</div><div class="line">a = nil &amp;&amp; false &amp;&amp; 1    #=&gt; a = nil</div></pre></td></tr></table></figure>
-<ul>
-<li><p><code>||=</code> ：当为 <strong><u>false</u></strong> 或 <strong><u>nil</u></strong> 时，才进行赋值。（这可给变量赋予默认值 ）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var ||= 1     #=&gt; 当var为nil或false时，var = 1</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>范围运算符<code>succ</code> 可以返回一个：进位到下一位的值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1.succ     #=&gt; 2</div><div class="line">a.succ     #=&gt; b</div></pre></td></tr></table></figure>
-</li>
-<li><p>原来ruby本身有优先级运算符：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">1 + 2 * 3     #=&gt; 1 + (2 * 3)        #=&gt; 7</div><div class="line">2 +3 &lt; 5 + 4  #=&gt; (2 + 3) &lt; (5 + 4)  #=&gt; true</div></pre></td></tr></table></figure>
-<p>还有一些没见过的运算符，刚开始还是老实用括号吧，哈哈！</p>
-</li>
-</ol>
-<h4 id="异常处理与错误提示："><a href="#异常处理与错误提示：" class="headerlink" title="异常处理与错误提示："></a>异常处理与错误提示：</h4><ol>
-<li><p>错误提示格式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">文件名：行号：in 方法名：错误信息(异常类名)</div><div class="line">      form 文件名：行号：in 方法名</div></pre></td></tr></table></figure>
-<p>example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; ruby test.rb</div><div class="line">test.rb:2:in `initialize&apos;:No such file or directory - /no/file(Errno::ENOENT)</div><div class="line">        form test.rb:2:in `open&apos;</div><div class="line">        form test.rb:2:in `foo&apos;</div><div class="line">        form test.rb:9:in `main&apos;</div></pre></td></tr></table></figure>
-</li>
-<li><p>可以用这个格式来处理异常：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">begin</div><div class="line">  可能会发生异常的处理</div><div class="line">rescue =&gt; 引用异常对象的变量</div><div class="line">  发生异常时的处理</div><div class="line">  sleep(10)             #=&gt; 等待10秒</div><div class="line">  retry                 #=&gt; 再执行一次begin下的程式</div><div class="line">ensure</div><div class="line">  不管是否发生异常都希望执行的处理</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>这样不至于遇到错误时立即爆掉！！！</p>
-</li>
-<li><p>还可以：简化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">begin</div><div class="line">  表达式 1</div><div class="line">rescue</div><div class="line">  表达式 2</div><div class="line">end</div><div class="line"></div><div class="line">#=&gt; 等同于下面这个：</div><div class="line"></div><div class="line">表达式1 rescue 表达式2</div></pre></td></tr></table></figure>
-</li>
-<li><p>还可以：再简化</p>
-<ul>
-<li>如果该方法是一整个begin ~ end 包含，可以省略<code>begin</code> <code>end</code>，可以直接用<code>rescue</code> <code>ensure</code></li>
-</ul>
-</li>
-<li><p>还可以指定需要捕捉的异常：<br><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-07-071120.jpg" alt=""></p>
-</li>
-<li><p><strong><u>主动抛出异常</u></strong></p>
-<p><strong><u><code>raise</code></u></strong></p>
-<p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-07-071615.jpg" alt=""></p>
-<p>书中没有给出例子！差评！</p>
-</li>
-<li><p><code>sort</code>方法可以对数组进行排序：<br><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-07-073344.jpg" alt=""></p>
-</li>
-<li><p><code>&lt;=&gt;</code>排序运算符，可以进行排序。</p>
-</li>
-<li><p>数组里如果要按照长度来排序，可以：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">array = [&quot;rails&quot;, &quot;ruby&quot;, &quot;fullstack&quot;]</div><div class="line">array.sort&#123; |a, b| a.length &lt;=&gt; b.length &#125;</div><div class="line">#=&gt; [&quot;ruby&quot;, &quot;rails&quot;, &quot;fullstack&quot;]</div></pre></td></tr></table></figure>
-<p>解说：先利用<code>sort</code>让数组遍历两两相比较，再增加代码块！人才啊！</p>
-</li>
-<li><p>要想把一段文字，直接切成一个个单词然后放入数组？可以这样：</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ary = %w(This is a example, I love rails)</div><div class="line"></div><div class="line">#=&gt; [&quot;This&quot;, &quot;is&quot;, &quot;a&quot;, &quot;example,&quot;, &quot;I&quot;, &quot;love&quot;, &quot;rails&quot;]</div></pre></td></tr></table></figure>
-<ol>
-<li><p><code>upto</code>把值按从小到大的顺序取出，这个是Integer#upto方法！</p>
-</li>
-<li><p>判断使用方法时是否有带块？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">if block_given?</div></pre></td></tr></table></figure>
-</li>
-<li><p>在块中直接调用<code>break</code> <code>next</code>等方法控制流程，会直接返回nil，如果想返回带参数，可以使用：</p>
-<ul>
-<li><code>break 0</code></li>
-<li><code>next 0</code></li>
-</ul>
-</li>
-<li><p>利用<code>Proc</code>把代码块变成对象后，就可以直接用<code>cell方法</code>来直接使用啦~</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">hello = Proc.new do |new|</div><div class="line">  puts &quot;Hello, #&#123;name&#125;.&quot;</div><div class="line">end</div><div class="line"></div><div class="line">hello.call(&quot;World&quot;)          #=&gt; Hello, World.</div><div class="line">hello.call(&quot;Ruby&quot;)           #=&gt; Hello, Ruby.</div></pre></td></tr></table></figure>
-</li>
-<li><p>传参数的时候 ，有一种参数叫做：<code>Proc参数</code>是这样的：<code>&amp;block</code> （要放在最后一个参数）</p>
-</li>
-<li><p>判断是否有带block的另一个方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">if block #直接进行判断</div></pre></td></tr></table></figure>
-</li>
-<li><p>块变量的作用域：只在block中有效。如果跟局部变量同名，要小心赋值问题！</p>
-</li>
-</ol>
-<h3 id="第三部分"><a href="#第三部分" class="headerlink" title="第三部分"></a>第三部分</h3><h4 id="数值类"><a href="#数值类" class="headerlink" title="数值类"></a>数值类</h4><ol>
-<li><p>一些方法：</p>
-<ul>
-<li><p>返回商的整数：<code>x.quo(y)</code></p>
-</li>
-<li><p>返回一个数组，[商，余数]：<code>x.divmod(y)</code></p>
-</li>
-<li><p><code>Math模块</code> 你想得到的数学函数都在里面</p>
-</li>
-<li><p>返回整数部分：<code>.floor</code></p>
-</li>
-<li><p>返回100以内的随机数：<code>Random.rand(100)</code> （比我以前学的VB方便太多了好嘛！）</p>
-</li>
-<li><p><code>Integer</code>的迭代方法：</p>
-<ul>
-<li><code>upto</code>遍历</li>
-<li><code>downto</code>遍历</li>
-</ul>
-</li>
-<li><p>以分数的形式存在：<code>Rational(1, 10)</code></p>
-</li>
-<li><p>按<code>step</code>迭代的方法：</p>
-<ul>
-<li><p>2到10，每次加3：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">2.step(10,3) do |i|</div><div class="line">  p i</div><div class="line">end                      #=&gt; 2, 5, 8</div></pre></td></tr></table></figure>
-</li>
-<li><p>10到2，每次减3：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">10.step(2,-3) do |i|</div><div class="line">  p i</div><div class="line">end                      #=&gt; 10, 7, 4</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h4 id="数组：-1"><a href="#数组：-1" class="headerlink" title="数组："></a>数组：</h4><ol>
-<li><p><code>Array.new方法</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Array.new          #=&gt; []</div><div class="line">Array.new(5)       #=&gt; [nil,nil,nil,nil,nil]</div><div class="line">Array.new(5,0)     #=&gt; [0,0,0,0,0]</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>%w</code>和<code>%i</code></p>
-<ul>
-<li><p>创建不包含空白的字符串数组时，可以使用<code>%w</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">lang = %w(Ruyb Perl Python Scheme Pike)</div><div class="line">p lang    #=&gt;[&quot;Ruby&quot;,&quot;Perl&quot;,&quot;Python&quot;,&quot;Scheme&quot;,&quot;Pike&quot;]</div></pre></td></tr></table></figure>
-</li>
-<li><p>创建不包含空白的符号数组时，可以使用<code>%i</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">lang = %w(Ruyb Perl Python Scheme Pike)</div><div class="line">p lang    #=&gt;[:Ruby,:Perl,:Python,:Scheme,:Pike]</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>其中<code>()</code>可替换成其他符号：<code>&lt;&gt;</code> <code>||</code> <code>!!</code> <code>@@</code> <code>AA</code></p>
-</li>
-<li><p>将散列转换成数组：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = &#123;a: 1, b: 2&#125;</div><div class="line">a.to_a              #=&gt;  [[:a, 1], [:b, 2]]</div></pre></td></tr></table></figure>
-</li>
-<li><p>一次性拿到多个值：</p>
-<ul>
-<li><code>a[n]</code> or <code>a[-n]</code> 如果是负数，就倒着开始取值。超过总数值会报错。</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li><code>a[n..m]</code> or <code>a[n…m]</code><ul>
-<li><code>a[n,len]</code> 从某个元素起，取n个字符。</li>
-</ul>
-</li>
-</ul>
-<ol>
-<li><p>一次性赋多个值：</p>
-<ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = [1,2,3,4,5,6]</div><div class="line">a[2,3] = [c,d,e]     #=&gt; [1,2,c,d,e,6]</div><div class="line">a[2,0] = [a,b]       #=&gt; [1,2,a,b,3,4,5,6]</div></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = [1,2,3,4,5,6]</div><div class="line">a[2..3] = [a,b]      #=&gt; [1,2,a,b,5,6]</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>.values_at方法</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = [1,2,3,4,5,6]</div><div class="line">a.values_at(1,3,5)     #=&gt; [2,4,6]</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>把数组当集合来运算：</p>
-<ul>
-<li><p>交集：<code>ary = ary1 &amp; ary2</code></p>
-</li>
-<li><p>并集：<code>ary = ary1 | ary2</code></p>
-</li>
-<li><p>集合的差：<code>ary = ary1 - ary2</code> （在1中找2没有的元素）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ary1 = [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]</div><div class="line">ary2 = [&quot;b&quot;,&quot;c&quot;,&quot;d&quot;]</div><div class="line">p (ary1 - ary2)        #=&gt; [&quot;a&quot;]</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>把数组当<u><strong>列</strong></u>：</p>
-<blockquote>
-<p>数组结构：</p>
-<ul>
-<li>队列：以排列的顺序，先进先出。（像排队过关一样）</li>
-<li>栈：以相反的顺序，先进后出。（像堆东西一样，最慢放入的最容易取出）</li>
-</ul>
-</blockquote>
-<ul>
-<li>追加，删除，引用：</li>
-</ul>
-<p>|  操作  |  在头部开刀  | 在尾部开刀 |<br>| :–: | :—–: | :—: |<br>| 追加元素 | unshift | push  |<br>| 删除元素 |  shift  |  pop  |<br>| 引用元素 |  first  | last  |</p>
-<p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a = [1,2,3,4,5]</div><div class="line">a.push(&quot;E&quot;)       #=&gt; [1,2,3,4,5,E]</div><div class="line">a.shift           #=&gt; 1       </div><div class="line">a                 #=&gt; [2,3,4,5,E]</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h5 id="一些操作方法："><a href="#一些操作方法：" class="headerlink" title="一些操作方法："></a>一些操作方法：</h5><ol>
-<li><p>为数组增加元素：</p>
-<ul>
-<li><p><code>a.unshift(item)</code></p>
-</li>
-<li><p><code>a.push(item)      ~=       a &lt;&lt; item</code></p>
-</li>
-<li><p><code>a.concat(b)</code> &amp; <code>a+b</code></p>
-<blockquote>
-<p>这个<code>concat方法是破坏性方法</code>，会改变被引用的对象。</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>什么是<strong><u>破坏性的方法</u></strong>？</p>
-<p>：会改变接收对象值的方法！要注意：被引用的对象也会被破坏！如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; a = [1,2,3,4]</div><div class="line">&gt; b = a</div><div class="line">&gt; b.pop     #=&gt; 4</div><div class="line">&gt; p a       #=&gt; [1,2,3]</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
-<p>提示：这里b引用了a，并不是复制一个a，而是让a和b同时引用一个对象！这一点要纠正认识！</p>
-</blockquote>
-</li>
-<li><p>从数组中删除元素：</p>
-<ul>
-<li><code>a.compact</code> &amp; <code>a.compact!</code>    ：会把a数组中的空元素nil去掉！区别：<ul>
-<li>第一种会返回一个新的数组。</li>
-<li>第二种会直接替换掉原来的数组。</li>
-</ul>
-</li>
-<li><code>a.delete(x)</code>  ：从数组中删除x元素。</li>
-<li><code>a.delete_at(n)</code>  : 从数组中删除a[n]元素。</li>
-<li><code>a.delete_if {|item| … }</code><br><code>a.reject {|item| … }</code><br><code>a.reject! {|item| … }</code><br>: 这三个方法表示：遍历所有元素，如何右边的block块成立就删掉，其中带感叹号表示破坏性的方法！</li>
-<li><code>a.slice!(n)</code><br><code>a.slice!(n..m)</code><br><code>a.slice!K(n,len)</code><br>: 这三个方法表示：从数组a中删除指定的部分，并返回被删除的部分的值。slice!是具有破坏性的方法。</li>
-<li><code>a.uniq</code> &amp; <code>a.uniq!</code> ：表示：去掉重复的元素。</li>
-<li><code>a.shift</code>  ：删除开头的元素。返回删除的值。</li>
-<li><code>a.pop</code>   ：删除末尾的元素。返回删除的值。</li>
-</ul>
-</li>
-<li><p>替换数组元素：</p>
-<ul>
-<li><p><code>a.collect{|item| … }</code><br><code>a.collect!{|item| … }</code><br><code>a.map{|item| … }</code><br><code>a.map!{|item| … }</code><br>: 遍历数组a和各元素传给block中的item,最后付出处理后的结果。</p>
-</li>
-<li><p><code>a.fill(value)</code><br><code>a.fill(value, begin)</code><br><code>a.fill(value, begin, len)</code><br><code>a.fill(value, n..m)</code><br>： 把数组指定元素全部替换成value，默认为全部。</p>
-</li>
-<li><p><code>a.flatten</code> &amp; <code>a.flatten!</code> ：平坦化数组a，就是把里面嵌套的数组展开成一个大数组。(soga，原来是这样啊！)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = [1,[2,[3]],[4],5]</div><div class="line">a.flatten!</div><div class="line">p a      #=&gt; [1,2,3,4,5]</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>a.reverse</code> &amp; <code>a.reverse!</code> :反转数组a的元素顺序。</p>
-</li>
-<li><p><code>a.sort</code><br><code>a.sort!</code><br><code>a.sort {|i,j| … }</code><br><code>a.sort {|i,j| … }</code><br>：排序，其中block中的<code>i</code> &amp; <code>j</code> 表示：从数组中两个两个拿出来的数据。</p>
-</li>
-<li><p><code>a.sort_by{|i| … }</code> ：根据块的运行结果时序排序。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = [2,4,3,5,1]</div><div class="line">p a.sort_by&#123;|i| -i &#125;     #=&gt; [5,4,3,2,1]  (这里的block只是参与计算而已，不会破坏原来的数组。)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>数组与迭代器：有些使用迭代器的对象不是数组，但处理后会返回一个数组:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = 1..5</div><div class="line">b = a.collect&#123;|i| i += 2&#125;</div><div class="line">p b          #=&gt; [3,4,5,6,7]</div></pre></td></tr></table></figure>
-</li>
-<li><p>数组的初始化问题：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a = Array.new(3, [0,0,0])    #=&gt; [[0,0,0],[0,0,0],[0,0,0]]</div><div class="line">a[0][1] = 2                  #=&gt; [[0,2,0],[0,2,0],[0,2,0]]</div><div class="line">数组的初始化就是有这些问题，要注意，可以使用block带解决：</div><div class="line">a = Array.new(3) &#123;[0,0,0])&#125;    #=&gt; [[0,0,0],[0,0,0],[0,0,0]]</div><div class="line">a[0][1] = 2                    #=&gt; [[0,2,0],[0,0,0],[0,0,0]]</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>zip方法</code> ：引进多个数组，然后同步遍历！：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ary1 = [1,2,3,4,5]</div><div class="line">ary2 = [10,20,30,40,50]</div><div class="line">ary3 = [100,200,300,400,500]</div><div class="line"></div><div class="line">result = []</div><div class="line">ary1.zip(ary2,ary3) do |a, b, c|</div><div class="line">  result &lt;&lt; a + b + c</div><div class="line">end</div><div class="line">p  result     #=&gt; [111, 222, 333, 444, 555]</div></pre></td></tr></table></figure>
-</li>
-<li><p>一个过滤数组的方法：<code>.select</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = (1..100).to_a</div><div class="line">a.select&#123;|i| i % 3 == 0&#125;    过滤3的倍数。</div></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-</ol>
-<h5 id="13章练习题："><a href="#13章练习题：" class="headerlink" title="13章练习题："></a>13章练习题：</h5><ol>
-<li><p>创建一个1到100的整数按升序排列的数组：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(1..100).to_a</div></pre></td></tr></table></figure>
-</li>
-<li><p>累加1中的数组：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a.reduce :+</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>inject方法</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a.inject(0)&#123;|memo, i| memo += i&#125;</div><div class="line">表示：遍历数组元素赋值给i，每次结果回传给memo.实现累加的效果。</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="字符串String"><a href="#字符串String" class="headerlink" title="字符串String"></a>字符串String</h4><ol>
-<li><p>什么是内嵌表达式？</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;String#&#123;ruby&#125;&quot;      #=&gt; 这个#&#123;&#125;里可以执行ruby表达式的东西就是啦！</div></pre></td></tr></table></figure>
-</li>
-<li><p>创建字符串</p>
-<ul>
-<li><p>使用%Q与%q</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">desc = %Q&#123;Ruby 的字符中也可以使用&apos;&apos; 和 &quot;&quot;.&#125;</div><div class="line">str = %q|Ruby said, &apos;Hello world!&apos;|</div><div class="line"></div><div class="line">其中%Q相当于&quot;&quot;,%q相当于&apos;&apos;。</div></pre></td></tr></table></figure>
-</li>
-<li><p>Here Document方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;&lt;&quot;结束标识&quot;  </div><div class="line">内容</div><div class="line">结束标识</div><div class="line"></div><div class="line">#=&gt; (这里更多的时候要换成&lt;&lt;-&quot;结束标识&quot;，这样能让结束的标识不一定在)</div><div class="line"></div><div class="line">这个方法应该很少用。</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>sprintf方法</code> &amp; <code>printf方法</code></p>
-<ul>
-<li><code>printf</code></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">n = 123</div><div class="line">printf(&quot;%d\n&quot;, n)       #=&gt; %d表示以整数形式输出</div><div class="line">printf(&quot;%4d\n&quot;, n)      #=&gt; %4d表示以4位数格式输出</div><div class="line">printf(&quot;%04d\n&quot;, n)     #=&gt; %04d表示不够4位时被零</div><div class="line">printf(&quot;%+d\n&quot;, n)      #=&gt; %+d表示输出结果带 + or -</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">n = &quot;Ruby&quot;</div><div class="line">printf(&quot;Hello,%s!\n&quot;,n)     #=&gt; %s表示以字符串形式输出</div><div class="line">printf(&quot;Hello,%8s!\n&quot;,n)    #=&gt; %8s表示输出炎8位字符串</div><div class="line">printf(&quot;Hello,%-8s!\n&quot;,n)   #=&gt; %-8s表示输出左对齐的8位字符</div></pre></td></tr></table></figure>
-<ul>
-<li><code>sprintf</code></li>
-</ul>
-<p>和<code>printf</code>一样的结果。但书中没有说明具体区别，差评！</p>
-</li>
-</ul>
-</li>
-<li><p>获取字符串的长度</p>
-<ul>
-<li><code>length</code> or <code>size</code>两种方法可以，随意！</li>
-<li><code>bytesize</code>可以获取字节数。</li>
-<li>判断是否为0：<code>empty?</code></li>
-</ul>
-</li>
-<li><p>字符串的索引</p>
-<ul>
-<li>当成数组一样用就可以了。</li>
-</ul>
-</li>
-<li><p>连接字符串</p>
-<ul>
-<li><p>用 <code>+</code> 号</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = &quot;Hello,&quot;</div><div class="line">b = &quot;World!&quot;</div><div class="line">a + b           #=&gt; &quot;Hello,World!&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>用 <code>&lt;&lt;</code> 号</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = &quot;Hello,&quot;</div><div class="line">b = &quot;World!&quot;</div><div class="line">a &lt;&lt; b          #=&gt; &quot;Hello,World!&quot;   (a会被改变！)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>字符串的比较</p>
-<ul>
-<li><p>判断两个字符串是否相同：<code>==</code> <code>!=</code></p>
-</li>
-<li><p>比较大小</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;aaaaa&quot; &lt; &quot;b&quot;     #=&gt; true    一般按照a~z的顺序排序</div></pre></td></tr></table></figure>
-</li>
-<li><p>如果查看<code>码位</code> : <code>.ord</code></p>
-</li>
-</ul>
-</li>
-<li><p>字符串的分割：<code>split(x)</code> ：以<code>x</code>为分割点进行分割！</p>
-</li>
-<li><p>换行符的操作：</p>
-<ul>
-<li><p>删掉</p>
-<p>|  属性   | 删掉最的一个字符 | 删掉挑选符  |<br>| :—: | :——: | :—-: |<br>| 非破坏性的 |   chop   | chomp  |<br>| 破坏性的  |  chop!   | chomp! |</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">a = &quot;abcde&quot;</div><div class="line">b = &quot;abcde\n&quot;</div><div class="line">a.chop         #=&gt; &quot;abcd&quot;</div><div class="line">b.chop         #=&gt; &quot;abcde&quot;</div><div class="line">b.chomp        #=&gt; &quot;abcde&quot;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>字符串的检索与置换</p>
-<ul>
-<li><p>字符串的检索</p>
-<ul>
-<li><code>index方法</code> 从左到右检索，返回第一个字母的索引</li>
-<li><code>rindex方法</code> 从右到左检索，返回第一字母的索引</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = &quot;abbbbbb&quot;</div><div class="line">a.index(&quot;bb&quot;)     #=&gt; 1</div><div class="line">a.rindex(&quot;bb&quot;)    #=&gt; 5</div></pre></td></tr></table></figure>
-</li>
-<li><p>判断是否包含某个索引值: <code>include?</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">a = &quot;abbbbbb&quot;</div><div class="line">a.include?(&quot;bb&quot;)    #=&gt; true</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>字符串与数组有很多共同的索引的方法：</p>
-</li>
-</ol>
-<ul>
-<li><code>s[n]</code> <code>s[n..m]</code> <code>s.slice!(n)</code></li>
-<li><code>s.concat(s2)</code> <code>s+s2</code> <code>s.delete(str)</code> <code>s.reverse</code></li>
-</ul>
-<ol>
-<li><p>其他方法：</p>
-<ul>
-<li><p><code>strip</code> : 删除头尾的空白字符</p>
-</li>
-<li><p><code>upcase</code> ：小写转大写</p>
-</li>
-<li><p><code>downcase</code> ：大写转小写</p>
-</li>
-<li><p><code>swapcase</code> ：大的转小，小的转大</p>
-</li>
-<li><p><code>capitalize</code> ：首字母大写，其余转小写</p>
-</li>
-<li><p><code>tr</code> ：置换字符，与<code>gsub</code>相似，但这里可以一次转换多个字符。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&quot;ABCDE&quot;.tr(&quot;BD&quot;, &quot;bd&quot;)    #=&gt; &quot;AbCdE&quot;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<h5 id="14章节练习题提取："><a href="#14章节练习题提取：" class="headerlink" title="14章节练习题提取："></a>14章节练习题提取：</h5><ol>
-<li><p>一个打散的字符串数组，如何快速连接成句子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a = [&quot;Ruby&quot;, &quot;is&quot;, &quot;an&quot;, &quot;object&quot;, &quot;oriented&quot;, &quot;programming&quot;, &quot;language&quot;]</div><div class="line">a.join(&quot; &quot;)   </div><div class="line">#=&gt; &quot;Ruby is an object oriented programming language&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>统计下面各个字母出现次数，并用*的个数来表示次数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">a = &quot;Ruby is an object oriented programming language&quot;</div><div class="line">b = Hash.new(0)</div><div class="line">a.each_char do |c|</div><div class="line">  b[c] += 1</div><div class="line">end</div><div class="line">b.sort.each do |k, v|</div><div class="line">  printf(&quot;&apos;%s&apos;: %s\n&quot;, c, &quot;*&quot; * v.to_i)</div><div class="line">end</div></pre></td></tr></table></figure>
-<p>运行结果如图：</p>
-<p><img src="http://olmrxx9ks.bkt.clouddn.com/ipic/2017-07-17-094146.jpg" alt=""></p>
-<p>很酷！</p>
-<ul>
-<li>散列直接用<code>a[c]</code>就可以拿到这个值，不需要进行检索</li>
-<li><code>printf</code>格式输出，方便！先定义好整个字符串样式，再后面定义各个引用值。</li>
-</ul>
-<p>​</p>
-</li>
-</ol>
-<h4 id="散列类"><a href="#散列类" class="headerlink" title="散列类"></a>散列类</h4><ol>
-<li><p>新建hash:</p>
-<ul>
-<li><code>a = {}</code> <code>a = {键: 值}</code></li>
-<li><code>a = Hash.new(x)</code>  （这里可以设置一个默认值）。</li>
-</ul>
-</li>
-<li><p>值的获取与设定</p>
-<ul>
-<li><p><code>fetch</code>  &amp; <code>store</code>  一个用来取一个用来存，基本和<code>a[&quot;s&quot;]</code>的作法一样，但：</p>
-<p>用下面两个方法可以</p>
-<ul>
-<li>设默认值</li>
-<li>添加block</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a.store(&quot;s1&quot;, &quot;Ruby&quot;)</div><div class="line">a.fetch(&quot;s2&quot;, &quot;undef&quot;)     #=&gt; &quot;undef&quot;   (找不到，所以默认值)</div><div class="line">a.fetch(&quot;s2&quot;)&#123;String.new&#125;  #=&gt; &quot;&quot;    (这里还可以用block)</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>hash的迭代器。</p>
-<p>|  数组形式  |         迭代器形式         |<br>| :—-: | :——————-: |<br>|  keys  |  each_key{|键| …… }  |<br>| Values | each_value{|值| …… } |<br>|  to_a  |   each{|键，值| …… }   |<br>|        |   each{|数组| …… }    |</p>
-</li>
-<li><p>hash的默认值。好处：<strong><u>取不存在的值时，不至于发生错误</u></strong>。</p>
-<ul>
-<li><p>创建hash时指定默认值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">h = Hash.new(1)</div><div class="line">h[&quot;a&quot;] = 10</div><div class="line">h[&quot;a&quot;]          #=&gt; 10</div><div class="line">h[&quot;b&quot;]          #=&gt; 1</div></pre></td></tr></table></figure>
-</li>
-<li><p>创建hash时增加一个block：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">h = Hash.new do |hash,key|</div><div class="line">  hash[key] = key.upcase</div><div class="line">end</div><div class="line">h [&quot;a&quot;] = &quot;b&quot;</div><div class="line">p h[&quot;a&quot;]      #=&gt; &quot;b&quot;</div><div class="line">p h[&quot;b&quot;]      #=&gt; &quot;B&quot;</div><div class="line">p h[&quot;c&quot;]      #=&gt; &quot;C&quot;  当找不到这个值时，就会自动去执行这个block</div></pre></td></tr></table></figure>
-</li>
-<li><p>用fetch方法指定默认值：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">h = Hash.new do |hash.key|</div><div class="line"> hash[key] = key.upcase</div><div class="line">end</div><div class="line">p h.fetch(&quot;x&quot;, &quot;(undef)&quot;)      #=&gt; &quot;(undef)&quot;</div><div class="line">同时两个默认值的方法，fetch的优级级会高</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>判断是否为某个Hash的<code>键</code> or <code>值</code></p>
-<ul>
-<li>键<ul>
-<li><code>h.key?(key)</code></li>
-<li><code>h.has_key?(key)</code></li>
-<li><code>h.include?(key)</code></li>
-<li><code>h.member?(key)</code></li>
-</ul>
-</li>
-<li>值<ul>
-<li><code>h.value?(value)</code></li>
-<li><code>h.has_value?(value)</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>查看Hash的大小</p>
-<ul>
-<li><p><code>h.size</code> &amp; <code>h.length</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">h = &#123;&quot;a&quot; =&gt; &quot;b&quot;, &quot;c&quot; =&gt; &quot;d&quot;&#125;</div><div class="line">h.size      #=&gt; 2</div></pre></td></tr></table></figure>
-</li>
-<li><p><code>h.empty?</code></p>
-</li>
-</ul>
-</li>
-<li><p>删除值：</p>
-<ul>
-<li><p><code>h.delete(key)</code></p>
-</li>
-<li><p><code>h.delete_if{|key, val| … }</code></p>
-</li>
-<li><p><code>h.reject!{|key, val| … }</code></p>
-<p>当不符合时，<code>delete_if</code>会返回原来的Hash,<code>reject!</code>会返回一个nil</p>
-</li>
-</ul>
-</li>
-<li><p>初始化散列</p>
-<ul>
-<li><p><code>h.clear</code> 清空使用过的散列</p>
-<blockquote>
-<p>那这个东西和<code>h = Hash.new</code> 有什么区别呢？在引用的时候要注意下，请看图：<br><img src="http://olmrxx9ks.bkt.clouddn.com/2017-07-23-124646.jpg" alt=""></p>
-</blockquote>
-</li>
-<li><p>我忘记了一个超级方便的排序方法：<code>sort</code><br>PS:比起之学VB时的什么泡沫排序法之类的，这里简直不能太好！</p>
-</li>
-</ul>
-</li>
-</ol>
-<h4 id="正在表达式-Regexp类"><a href="#正在表达式-Regexp类" class="headerlink" title="正在表达式(Regexp类)"></a>正在表达式(Regexp类)</h4><ol>
-<li><p>正则表达式的创建：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">re = Regexp.new(&quot;Ruby&quot;)      #=&gt; /Ruby/</div></pre></td></tr></table></figure>
-<ul>
-<li><code>%r(模式)</code></li>
-<li><code>%r&lt;模式&gt;</code></li>
-<li><code>%r|模式|</code></li>
-<li><code>%r!模式!</code></li>
-</ul>
-</li>
-<li><p>判断某个字符串是否匹配：<code>正则表达式 =~ 字符串</code></p>
-<ul>
-<li><p>匹配：返回匹配的起始位置</p>
-</li>
-<li><p>不匹配：返回nil</p>
-<blockquote>
-<p>还可以：用<code>!~</code>来颠倒结果。</p>
-</blockquote>
-</li>
-<li><p>进一步应用:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">if 正则表达式 =~ 字符串</div><div class="line">  匹配时的处理</div><div class="line">else</div><div class="line">  不匹配时的处理</div><div class="line">end</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>匹配行首与行尾：</p>
-<p><code>^, $</code>分别表示匹配行首与行尾：</p>
-<blockquote>
-<p>像这样的特殊字符称为：元字符。</p>
-</blockquote>
-<p><code>\A,\z</code>分别表示匹配字符串头与尾：</p>
-<blockquote>
-<p><code>\z</code> <code>\Z</code> 两者的区别</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; p &quot;abc\n&quot;.gsub(/\z/, &quot;!&quot;) =&gt; &quot;abc\n!&quot;</div><div class="line">&gt; p &quot;abc\n&quot;.gsub(/\Z/, &quot;!&quot;) =&gt; &quot;abc!\n!&quot;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
-<p>：大写的<code>\Z</code>，如果最后一个是换行符，则会同时匹配换行符与前一个字符。</p>
-</blockquote>
-</li>
-<li><p>匹配某一个字符：</p>
-<ul>
-<li><code>[AB]</code> ：匹配A 或B</li>
-<li><code>[ABC]</code> ：匹配A,B,C中的一个</li>
-<li><code>[012ABC]</code> ：匹配0,1,2,A,B,C中的一个</li>
-<li><code>[A-Z]</code> ：匹配A~Z中的一个</li>
-<li><code>[ABC][BC]</code> ： 匹配一个两位数，第一个数为A,B,C中的一个，第二位数为B,C中的一个。</li>
-<li><code>[A_-]</code> ：匹配<code>A</code> <code>_</code> <code>-</code> 中的一个。</li>
-<li><code>[^ABC]</code> ：匹配除A,B,C外的任意一位数。</li>
-<li><code>.</code> ：万能通配符，相当于五笔中的<code>z</code></li>
-</ul>
-</li>
-<li><p>反斜杠模式</p>
-<ul>
-<li><p><code>\s</code> ： 匹配空格，制表符， 换行符，换页符</p>
-</li>
-<li><p><code>\d</code> ：匹配0到9的数字。</p>
-</li>
-<li><p><code>\w</code> ：匹配英文字与数字。</p>
-</li>
-<li><p><code>\A</code> ：匹配字符串的开头。</p>
-</li>
-<li><p><code>\z</code> ：匹配字符串的末尾。</p>
-</li>
-<li><p><code>\</code>   ：后面如果跟着：<code>^</code> <code>$</code> <code>[</code> 等字符时，可以为这些字符转义再匹配。如：</p>
-<p>| 模式      | 字符串       | 匹配部分         |<br>| ——- | ——— | ———— |<br>| /ABC[/ | “ABC[“    | “▶ ABC[ ◀”   |<br>| /\^ABC/ | “ABC”     | (不匹配)        |<br>| /\^ABC/ | “012^ABC” | “012▶^ABC ◀” |</p>
-</li>
-</ul>
-</li>
-<li><p>重复模式：(单个字符)</p>
-<ul>
-<li><code>*</code> ：重复0次以上。<strong><u>可以重复很多次也可以直接没有</u></strong></li>
-<li><code>+</code> ：重复1次以上。<strong><u>至少有一次以上</u></strong></li>
-<li><code>?</code> ：重复0次或1次。<strong><u>可有可无不重复，前后的匹配还是要的！</u></strong></li>
-</ul>
-</li>
-<li><p>最短匹配：</p>
-<ul>
-<li><p>上面6中和重复匹配会最可能匹配更多的字符。</p>
-</li>
-<li><p>最短匹配：加上一个<code>?</code> ，在第一次匹配时就停止，匹配最短的字符。</p>
-<blockquote>
-<p>也叫贪婪匹配与懒惰匹配。</p>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>使用<code>()</code>来重复匹配多个字符。</p>
-<p>| 模式         | 字符串        | 匹配部分        |<br>| ———- | ———- | ———– |<br>| /^(ABC)<em>$/ | “ABC”      | “▶ABC ◀”    |<br>| /^(ABC)</em>$/ | “”         | “▶◀”        |<br>| /^(ABC)<em>$/ | “ABCABC”   | “▶ABCABC ◀” |<br>| /^(ABC)</em>$/ | “ABCABCAB” | (不匹配)       |</p>
-</li>
-<li><p>使用<code>|</code>来多一个匹配选项，可以多选一，也可以全中。</p>
-<p>| 模式             | 字符串   | 匹配部分     |<br>| ————– | —– | ——– |<br>| /^(ABC|DEF)$/ | “ABC” | “▶ABC ◀” |<br>| /^(ABC|DEF)$/ | “DEF” | “▶DEF ◀” |<br>| /^(ABC|DEF)$/ | “AB”  | (不匹配)    |</p>
-</li>
-<li><p>使用<code>quote方法</code>来转义所有表达式所有字符：</p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">re1 = Regexp.new(&quot;abc*def&quot;)</div><div class="line">re2 = Regexp.new(Regexp.quote(&quot;abc*def&quot;)) p (re1 =~ &quot;abc*def&quot;) #=&gt; nil</div><div class="line">p (re2 =~ &quot;abc*def&quot;) #=&gt; 0</div></pre></td></tr></table></figure>
-<ol>
-<li><p>正则表达式的一些选项：</p>
-<blockquote>
-<p>形式：<code>/ … / im</code></p>
-</blockquote>
-<ul>
-<li><code>i</code> ：忽略英文有大小写</li>
-<li><code>x</code> ：忽略正则表达式中的空白字符以及 # 后面的字符的选项。指定这个选项后，我们就可以使用 # 在正则表达式中写注释了。</li>
-<li><code>m</code> ：使用后可以：用<code>.</code>匹配换行符了。</li>
-</ul>
-</li>
-<li><p>捕获：</p>
-<ul>
-<li><p>查看匹配的部分是什么字符串：以<code>()</code>的形式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/(.)(.)(.)/ =~ &quot;abc&quot;</div><div class="line">first = $1</div><div class="line">second = $2</div><div class="line">third = $3</div><div class="line">p first      #=&gt; &quot;a&quot;</div><div class="line">p second     #=&gt; &quot;b&quot;</div><div class="line">p third      #=&gt; &quot;c&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>如果是有重复的匹配只会捕获最后一次的字符，如果此时我们想忽略它的捕获，可以这样：以<code>(?:)</code>开头就可以忽略捕获。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">/(.)(\d\d)+(.)/ =~ &quot;123456&quot;</div><div class="line">p$1 #=&gt; &quot;1&quot;</div><div class="line">p$2 #=&gt; &quot;45&quot;</div><div class="line">p$3 #=&gt; &quot;6&quot;</div><div class="line">/(.)(?:\d\d)+(.)/ =~ &quot;123456&quot;</div><div class="line">p $1 #=&gt; &quot;1&quot;</div><div class="line">p $2 #=&gt; &quot;6&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>另外一种形式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">/C./ =~ &quot;ABCDEF&quot;</div><div class="line">p $`   #=&gt; &quot;AB&quot;</div><div class="line">p $&amp;   #=&gt; &quot;CD&quot;</div><div class="line">p $&apos;   #=&gt; &quot;EF&quot;</div><div class="line">  这三种可以捕获整个匹配过程的字符</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>sub方法与gsub方法：带block</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">str = &quot;abracatabra&quot;</div><div class="line">nstr = str.sub(/.a/) do |matched|</div><div class="line">  &apos;&lt;&apos;+matched.upcase+&apos;&gt;&apos;</div><div class="line">end</div><div class="line">p nstr #=&gt; &quot;ab&lt;RA&gt;catabra&quot;</div><div class="line">nstr = str.gsub(/.a/) do |matched|</div><div class="line">  &apos;&lt;&apos;+matched.upcase+&apos;&gt;&apos;</div><div class="line">end</div><div class="line">p nstr #=&gt; &quot;ab&lt;RA&gt;&lt;CA&gt;&lt;TA&gt;b&lt;RA&gt;&quot;</div></pre></td></tr></table></figure>
-<p>可以带block，然后把匹配的部分传入block，最后block处理后的结果置换匹配的字符串。</p>
-</li>
-<li><p>直接返回的字符串数组：<code>scan方法</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">p &quot;abracatabra&quot;.scan(/.a/) #=&gt; [&quot;ra&quot;, &quot;ca&quot;, &quot;ta&quot;, &quot;ra&quot;]</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<blockquote>
-<p>这是纠正一点：转义符号增加的顺序：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt;  /http:\/\// =~ &quot;http://baidu.com&quot;   </div><div class="line">&gt;  $&amp;    #=&gt; &quot;http://&quot;        </div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
-<p>纠正：<code>\+要转义的符号</code> 这才是正确的格式。</p>
-</blockquote>
-<h4 id="章节：IO类"><a href="#章节：IO类" class="headerlink" title="章节：IO类"></a>章节：IO类</h4><blockquote>
-<p>这一章节主要对文件内容的操作。暂时不会用到，理解起来也费劲。</p>
-</blockquote>
-<h4 id="章节：File类与Dir类"><a href="#章节：File类与Dir类" class="headerlink" title="章节：File类与Dir类"></a>章节：File类与Dir类</h4><blockquote>
-<p>这一章节主要是对文件夹的操作。暂时不会用到，记起来也很费劲。</p>
-</blockquote>
-<h4 id="章节：Encoding类"><a href="#章节：Encoding类" class="headerlink" title="章节：Encoding类"></a>章节：Encoding类</h4><blockquote>
-<p>这一章节主要是编码类的讲解。暂时不会用到，要用到时再来查看。</p>
-</blockquote>
-<h4 id="第20章-Time类与Date类"><a href="#第20章-Time类与Date类" class="headerlink" title="第20章 Time类与Date类"></a>第20章 Time类与Date类</h4><ol>
-<li><p>获取当前时间：</p>
-<ul>
-<li><code>Time.new</code></li>
-<li><code>Time.now</code></li>
-</ul>
-<p>时间相关的方法：</p>
-<p>| 方法名   | 意义                       |<br>| —– | ———————— |<br>| year  | 年                        |<br>| month | 月                        |<br>| day   | 日                        |<br>| hour  | 时                        |<br>| min   | 分                        |<br>| sec   | 秒                        |<br>| usec  | <code>秒以下的位数(以毫秒为单位)</code>         |<br>| to_i  | 从 1970 年 1 月 1 日到当前时间的秒数 |<br>| wday  | 一周中的第几天(0 表示星期天)         |<br>| mday  | 一个月中的第几天(与 day 方法一样)     |<br>| yday  | 一年中的第几天(1 表示 1 月 1 日)    |<br>| zone  | 时区(JST 等)                |</p>
-</li>
-<li><p>指定特定时间：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">t = Time.mktime(2017,7,25,16.59,40)</div><div class="line">#=&gt; 2017-07-25 16:40:00 +0800</div></pre></td></tr></table></figure>
-</li>
-<li><p>时间的比较：</p>
-<ul>
-<li><code>&lt;</code> <code>&gt;</code> <code>-</code> 等，平常的计算比较方法都可以用啦。</li>
-</ul>
-</li>
-<li><p>时间的计算：默认直接计算秒数：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">t = Time.now</div><div class="line">p t #=&gt; 2013-03-30 03:11:44 +0900 t2=t+60*60*24 #=&gt;增加24小时的秒数</div><div class="line">p t2 #=&gt; 2013-03-31 03:11:44 +0900</div></pre></td></tr></table></figure>
-</li>
-<li><p>时间输出的格式：</p>
-<ul>
-<li><code>t.strftime(format)</code></li>
-<li><code>t.to_s</code></li>
-</ul>
-<p>| 格式   | 意义与范围                            |<br>| —- | ——————————– |<br>| %A   | 星期的名称(Sunday 、 Monday ……)    |<br>| %a   | 星期的缩写名称(Sun 、 Mon ……)        |<br>| %B   | 月份的名称(January 、 February ……) |<br>| %b   | 月份的缩写(Jan 、 Feb ……)          |<br>| %c   | 日期与时间                            |<br>| %d   | 日(01 ~ 31)                       |<br>| %H   | 24 小时制(00 ~ 23)                  |<br>| %I   | 12 小时制(01 ~ 12)                  |<br>| %j   | 一年中的天(001 ~ 366)                 |<br>| %M   | 分(00 ~ 59)                       |<br>| %m   | 表示月的数字(01 ~ 12)                  |<br>| %p   | 上午或下午(AM、PM)                     |<br>| %S   | 秒(00 ~ 60)                       |<br>| %U   | 表示周的数字。以星期天为一周的开始(00 ~ 53)       |<br>| %W   | 表示周的数字。以星期一为一周的开始(00 ~ 53)       |<br>| %w   | 表示星期的数字。0 表示星期天(0 ~ 6)           |<br>| %X   | 时间                               |<br>| %x   | 日期                               |<br>| %Y   | 表示西历的数字                          |<br>| %y   | 西历的后两位(00 ~ 99)                  |<br>| %Z   | 时区( JST 等)                       |<br>| %z   | 时区(+0900 等)                      |<br>| %%   | 原封不动地输出 %                        |</p>
-<p>示例：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">t = Time.now.strftime(<span class="string">"%Y-%m-%d"</span>)</div><div class="line"><span class="comment">#=&gt; "2017-7-25"</span></div></pre></td></tr></table></figure>
-<h6 id="另外两个冷门的格式：-需要引用time类"><a href="#另外两个冷门的格式：-需要引用time类" class="headerlink" title="另外两个冷门的格式：(需要引用time类)"></a><u>另外两个冷门的格式</u>：(需要引用time类)</h6><ul>
-<li><code>t.rfc2822</code></li>
-<li><code>t.iso8601</code>f</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">require &quot;time&quot;</div><div class="line">t = Time.now</div><div class="line">p t.rfc2822      #=&gt; &quot;Tue, 25 Jul 2017 17:19:00 +0800&quot;</div><div class="line">p t.iso8601      #=&gt; &quot;2017-07-25T17:19:42+08:00&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>本地时间与国际时间的切换：</p>
-<ul>
-<li><code>t.utc</code></li>
-<li><code>t.localtime</code></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">t = Time.now</div><div class="line">p t            #=&gt;  2017-07-25 17:21:35 +0800</div><div class="line">t.utc          #=&gt;  2017-07-25 09:21:35 UTC</div><div class="line">t.localtime    #=&gt;  2017-07-25 17:21:35 +0800</div></pre></td></tr></table></figure>
-</li>
-<li><p>从字符串中获取时间：</p>
-<ul>
-<li><p><code>Time.parse(str)</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">require &quot;time&quot;</div><div class="line"></div><div class="line">p Time.parse(&quot;2017-7-25&quot;)   #=&gt; 2017-07-25 00:00:00 +0800</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>日期的获取：Date类，适合只需日期不需时间的操作。</p>
-<ul>
-<li><p><code>Date.today</code></p>
-</li>
-<li><p>计算：直接加减默认计算天数</p>
-</li>
-<li><p>同样也有各种方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">d = Date.today</div><div class="line">p d.year pd.month pd.day</div><div class="line">p d.wday p d.mday pd.yday</div><div class="line"># 年 =&gt; 2017</div><div class="line">#月 =&gt; 7</div><div class="line">#日 =&gt; 25</div><div class="line"># 一周中的第几天(0 表示星期天)</div><div class="line"># 一个月中的第几天(与 day 方法一样) =&gt; 30 #一年中的第几天(1表示 1月 1日) =&gt;206</div></pre></td></tr></table></figure>
-</li>
-<li><p>用指定日期生成Date对象：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">d = Date.new(2017,7,25)</div><div class="line">puts d     #=&gt; 2017-7-25</div></pre></td></tr></table></figure>
-<blockquote>
-<p>还可以用<code>-1</code> <code>-2</code> 表示末尾的第几天：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&gt; d = Date.new(2017,7,-1)   #=&gt; 2017-7-31   7月月尾</div><div class="line">&gt; d = Date.new(2017,7,-2)   #=&gt; 2017-7-30   7月月尾前一天</div><div class="line">&gt;</div></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-</li>
-<li><p>Date类的运算：</p>
-<ul>
-<li>正常的加减，默认会以天数为单位计算</li>
-<li><code>&gt;&gt;</code> <code>&lt;&lt;</code> 会以月份为单位进行运算。</li>
-</ul>
-</li>
-<li><p>Date类的格式：</p>
-</li>
-</ol>
-<ul>
-<li>与前面的Time类一致。</li>
-</ul>
-<ol>
-<li>从字符串中获取Date类：<ul>
-<li>和Time类一致： <code>Date.parse(str)</code></li>
-</ul>
-</li>
-</ol>
-<h4 id="Proc类"><a href="#Proc类" class="headerlink" title="Proc类"></a>Proc类</h4><ol>
-<li><p>什么是proc类，</p>
-<blockquote>
-<p>把block块变成一个对象，这个对象所属的类就是Proc类。这样可以方便我们在后面的调用。</p>
-</blockquote>
-</li>
-<li><p>创建方法：</p>
-<ul>
-<li><code>Proc.new(…)</code></li>
-<li><code>proc{}</code></li>
-</ul>
-</li>
-<li><p>调用方法：</p>
-<ul>
-<li><p>利用<code>Proc#call</code>方法</p>
-</li>
-<li><p>利用<code>Proc[]</code>方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sayhello = Proc.new do |name|</div><div class="line">  puts &quot;Hello, #&#123;name&#125;.&quot;</div><div class="line">end</div><div class="line"></div><div class="line">sayhello.call(&quot;World&quot;)    #=&gt; Hello, World.</div><div class="line">sayhello[&quot;World&quot;]         #=&gt; Hello, World.</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>另一种写法：<code>lambda</code></p>
-<blockquote>
-<p><code>lambda</code> 还有另外一种写法：<code>-&gt; (块变量){处理}</code></p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">prc1 = Proc.new do |a, b, c|</div><div class="line">  p [a, b, c]</div><div class="line">end</div><div class="line">prc1.call(1,2)     #=&gt; [1, 2, nil]</div><div class="line"></div><div class="line">prc2 = lambda do |a, b, c|</div><div class="line">  p [a, b, c]</div><div class="line">end</div><div class="line">prc2.call(1,2)     #=&gt; 错误 (ArgumentError)</div></pre></td></tr></table></figure>
-<p><code>lambda</code> <code>proc</code> 两者的区别：</p>
-<ul>
-<li>lambda的参数数量要对应否则会出错，proc的参数数量则没有那么严格。</li>
-<li>lambda可以使用return将值从块中返回。</li>
-</ul>
-</li>
-<li><p>proc类可以接收块</p>
-</li>
-<li><p>proc的特征：</p>
-<blockquote>
-<p>具有闭包的特征。 闭包：将处理内容、变量等环境同时进行保存的对象，在编程语言中称为闭包(closure)。</p>
-</blockquote>
-</li>
-<li><p>proc的实例方法：</p>
-<ul>
-<li><code>prc.call(args,…)</code></li>
-<li><code>prc[args, … ]</code></li>
-<li><code>prc.yield(args, … )</code></li>
-<li><code>prc.(args, … )</code></li>
-<li><code>prc === arg</code></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">prc = Proc.new&#123;|a, b| a + b&#125;</div><div class="line">p prc.call(1, 2)    #=&gt; 3</div><div class="line">p prc[3, 4]         #=&gt; 7</div><div class="line">p prc.yield(5, 6)   #=&gt; 11</div><div class="line">p prc.(7, 8)        #=&gt; 15</div><div class="line">p prc === [9, 10]   #=&gt; 19</div></pre></td></tr></table></figure>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">fizz = proc&#123;<span class="params">|n|</span> n % <span class="number">3</span> == <span class="number">0</span> &#125;</div><div class="line">buzz = proc&#123;<span class="params">|n|</span> n % <span class="number">5</span> == <span class="number">0</span> &#125;</div><div class="line">fizzbuzz = proc&#123;<span class="params">|n|</span> n % <span class="number">3</span> == <span class="number">0</span> &amp;&amp; n % <span class="number">5</span> == <span class="number">0</span>&#125;</div><div class="line">(<span class="number">1</span>..<span class="number">100</span>).each <span class="keyword">do</span> <span class="params">|i|</span></div><div class="line">  <span class="keyword">case</span> i</div><div class="line">    <span class="keyword">when</span> fizzbuzz <span class="keyword">then</span> puts <span class="string">"Fizz Buzz"</span></div><div class="line">    <span class="keyword">when</span> fizz <span class="keyword">then</span> puts <span class="string">"Fizz"</span></div><div class="line">    <span class="keyword">when</span> buzz <span class="keyword">then</span> puts <span class="string">"Buzz"</span></div><div class="line">  <span class="keyword">else</span></div><div class="line">    puts i</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<ul>
-<li><code>prc.arity</code> ： 返回块变量的个数。</li>
-<li><code>prc.parameters</code><br><img src="http://olmrxx9ks.bkt.clouddn.com/2017-07-25-Snip20170726_5.png" alt=""></li>
-</ul>
-</li>
-</ol>
-
           
+写在前面：这里的提取是个人的提取（一些本人熟知的知识点不会在这里记录）。如果你也是新手级RoR选手，那这个提取能提供不少帮助。
+
+开始：
+
+程序语言有很多，各自目的不同：有的为了运行快速，有的为了一次编写，可以在从多平台使用，有的为了让小孩也能简单编程。而ruby：为了让编程更快乐！
+什么是脚本语言：不需要经常翻译（编译），电脑能直接运行的语言。
+
+第 1 部分 Ruby 初探
+执行单个ruby文件xxx.rb，方法：
+
+1ruby helloruby.rb
+
+
+
+直接打开irb:
+
+1$irb
+
+
+
+\n是换行符。
+
+\ ：转义字符。
+
+程序会对这个\后的字体做特殊的处理。
+1print(&quot;hello,\&quot;ruby\&quot;.)   #=&gt; hello, &
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/20/《ruby基础教程》提取/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1442,7 +621,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.site/2017/06/14/2017-06-14-1951270/">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/06/14/2017-06-14-1951270/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
@@ -1524,49 +703,17 @@
       
         
           
-            <h4 id="大赛总结："><a href="#大赛总结：" class="headerlink" title="大赛总结："></a>大赛总结：</h4><p>比赛进行到一半，很多同学找不到我们的作品。大家都很好奇我们为什么迟迟没有上线。其实是因为我们作品的用户注册功能一直掉坑没做出来。用户注册就像一次一扇大门，这个大门还没有做好， 怎么能开门营业呢？当时是这样想。其他功能即使做好了，也难以上线。所以这样一来队友一直在折腾手机短信验证码注册功能（队友任务），而我也不好闲着，默默的为网站添砖加瓦，开发收银台，产品上线机制，购物车重新整合，课程上架机制，两种生成订单的方法。产品详情页面，购物车页面，订单生成页面，收银台页面，个人订单页面，课程页面等等，所以当我们上线的时候，其实功能已经很完整了。PS：后知后觉：其实可以直接用devise邮箱注册，先上线，后期再更改。</p>
-<h4 id="我和队友是如何分工的呢？"><a href="#我和队友是如何分工的呢？" class="headerlink" title="我和队友是如何分工的呢？"></a>我和队友是如何分工的呢？</h4><p>我一心想要钻进后端。队友：负责前端。</p>
-<p>我们最紧要的任务：解决支付问题！</p>
-<p>二话不说我就跳进支付的大坑（对于我们，这功能是must to have）！但我很快发现相当长一段时间里队友没有前端可做。因为作品的皱形出不来，要等我把支付功能做好，再去开发其他后端，不知道要何年何月（况且也不知道能不能做出来！）。于是和队友商量，分配后端任务给队友：手机短信验证码注册功能，这样队友不会闲着没事做，我们齐着并进解决后端，后期可以一起解决前端（前端我还是会的…XD）。</p>
-<blockquote>
-<p>早在一期商店大赛刚结束时，我就已经开始构思这次大赛要如何拿第一，要怎么做，做什么主题。那时就开始探索做个人开发者可行的支付方式。</p>
-<p>于是乎，在接下来得两个月里。每每脑子里会冒出各种如何大赛的各种天花乱坠的想法（自嗨模式）。所以开始前，我的大赛主题就已经非常明确了，我们要做一个知识服务型网站，对象是正在参赛的同学。想得很清楚之后，就等着付诸行动了。</p>
-</blockquote>
-<p>我们做项目的方法比较暴力。先想要做什么牛逼的功能，不管我们会不会做，不管是不是远超自己代码水平。然后，千方百计去实现它，不管上刀山下火海，不管要做上9遍还是10遍，不管要爬坑70小时还是100小时，不管，反正我们就是要做到它！这完全是一种自虐式的做法。</p>
-<h5 id="爬坑70小时，闭关十几天，把支付功能做出来了！"><a href="#爬坑70小时，闭关十几天，把支付功能做出来了！" class="headerlink" title="爬坑70小时，闭关十几天，把支付功能做出来了！"></a>爬坑70小时，闭关十几天，把支付功能做出来了！</h5><blockquote>
-<p>我们喜欢用爬坑这个词来形容我们遇到的难题。</p>
-</blockquote>
-<p>其中最大的坑之一：折腾了十几个小时，回头发现：只是从一个哈希里取一个数值的问题。[捂脸]</p>
-<h5 id="在闭关的十几天里，除了睡觉吃饭，我只做这一件事情：爬坑-反复的爬坝！"><a href="#在闭关的十几天里，除了睡觉吃饭，我只做这一件事情：爬坑-反复的爬坝！" class="headerlink" title="在闭关的十几天里，除了睡觉吃饭，我只做这一件事情：爬坑 反复的爬坝！"></a>在闭关的十几天里，除了睡觉吃饭，我只做这一件事情：爬坑 反复的爬坝！</h5><p>一个很基础的数组取值问题能爬坑爬上一天。</p>
-<p>一个小bug,尝试做了二十几次，才发现是jquery版本冲突问题（谢谢ihower老师相救）。</p>
-<p>一个小功能用要尝试几十种野路子，才找到一种可行的解决方法。</p>
-<p>情绪是有的，失望是有的，想爆粗口是有的，想砸电脑是有的。但，那又如何，都这样的好嘛！继续爬坑！不管，我们就是要搞定它！</p>
-<p>看到同学说：DEBUG就是排除一切出错的可能，但对我来讲，一上bug我能人十几种方法中尝试出一种可行的解决方法就万幸了……</p>
-<h5 id="最坑的队友。"><a href="#最坑的队友。" class="headerlink" title="最坑的队友。"></a>最坑的队友。</h5><blockquote>
-<p>为什么说自己是最坑的队友？<br>分配了个后端给队友，等队友从坑里爬出来时，他的任务已经被我做完了……[捂脸]</p>
-</blockquote>
-<h3 id="最大的收获"><a href="#最大的收获" class="headerlink" title="最大的收获"></a>最大的收获</h3><ol>
-<li><p>代码能力飞速增长。</p>
-</li>
-<li><p>一个bug,总能想出很多可能的解决方法（虽然都是野路子）。</p>
-</li>
-<li><p>信心大增。</p>
-</li>
-<li><p>拥有了个人支付接口…XD。</p>
-</li>
-<li><p>团队精神，感谢队友。</p>
-</li>
-</ol>
-<h3 id="反思做得不好的地方。"><a href="#反思做得不好的地方。" class="headerlink" title="反思做得不好的地方。"></a>反思做得不好的地方。</h3><ol>
-<li><p>教程写太少。到比赛后期出了一个问题：不知道能写些什么教程，总觉得那些东西同学们应该都会了吧？….[捂脸]</p>
-</li>
-<li><p>支付功能写到一半发现之前暴力接入支付宝的方式已经在比赛中间被支付宝闭关，现已无法用相同方法接入，对大家成分抱歉。为了帮大家解决支付问题。之后我又尝试其他方法，诸如微信支付，无法支付个人开发者。这时候我在想是否可自己写一个借口出来给大家学习用呢？于是尝试自己写了一个接口。能初步完成订单创建并跳转同步通知，后来卡在了异步通知这个阶段。</p>
-</li>
-<li><p>闭关太久了，和同学互动得太少了，我们几乎把所有的注意力用在作品上了，和同学的互动太少。</p>
-</li>
-</ol>
-
-          
+          大赛总结：比赛进行到一半，很多同学找不到我们的作品。大家都很好奇我们为什么迟迟没有上线。其实是因为我们作品的用户注册功能一直掉坑没做出来。用户注册就像一次一扇大门，这个大门还没有做好， 怎么能开门营业呢？当时是这样想。其他功能即使做好了，也难以上线。所以这样一来队友一直在折腾手机短信验证码注册功能（队友任务），而我也不好闲着，默默的为网站添砖加瓦，开发收银台，产品上线机制，购物车重新整合，课程上架机制，两种生成订单的方法。产品详情页面，购物车页面，订单生成页面，收银台页面，个人订单页面，课程页面等等，所以当我们上线的时候，其实功能已经很完整了。PS：后知后觉：其实可以直接用devise邮箱注册，先上线，后期再更改。
+我和队友是如何分工的呢？我一心想要钻进后端。队友：负责前端。
+我们最紧要的任
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/06/14/2017-06-14-1951270/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1613,7 +760,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.site/2017/05/10/2017-05-10-1815772/">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/05/10/2017-05-10-1815772/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
@@ -1695,27 +842,22 @@
       
         
           
-            <h5 id="1、对取得这样的成绩，有什么感想？"><a href="#1、对取得这样的成绩，有什么感想？" class="headerlink" title="1、对取得这样的成绩，有什么感想？"></a>1、对取得这样的成绩，有什么感想？</h5><p>   成绩不代表作品，只占一部分。</p>
-<h5 id="2、比赛中有什么情绪上的波动变化？"><a href="#2、比赛中有什么情绪上的波动变化？" class="headerlink" title="2、比赛中有什么情绪上的波动变化？"></a>2、比赛中有什么情绪上的波动变化？</h5><p>情绪是有波动的。作品第三版出来后，票数和人气都很低，进入情绪低点，一度对票数失去信心。然后投身到更重要的事情去了……直到比赛结束前两天，无意中收到同学对作品的真实反馈，才发现问题，才发现那都是情绪，才开始投身到前端优化作品的用户体验。</p>
-<h5 id="3、通过这次比赛，有什么样的收获？"><a href="#3、通过这次比赛，有什么样的收获？" class="headerlink" title="3、通过这次比赛，有什么样的收获？"></a>3、通过这次比赛，有什么样的收获？</h5><ul>
-<li><p>最大的收获：对编程的增加了信心。坦率地讲，在此之前我只做过4个html页面，在前一次做页面时还做烂掉了，后来直接跑去补充基础知识。经过这次大赛，对做页面有了底。</p>
-</li>
-<li><p>爬坑：这次爬了很多坑，花了很多注意力，大多坑都是在快放弃时，骗了自己再研究一会，最后真的就爬出来了。现在爬坑的情绪比以前谈定了。</p>
-</li>
-<li><p>收获知识豆：整个大赛爬坑debug,收获了不少小知识豆。都是大赛给的动力，在平时很难有动力花这么多精力去完善作品。大赛结束回过头看作品，工作量蛮大的。现在能体会xdite老师讲的：两次大赛都是经过精心设计的，如果都没参加相当于学费去掉了一半。</p>
-<p>​</p>
-</li>
-</ul>
-<h5 id="4、对于小白有什么建议？"><a href="#4、对于小白有什么建议？" class="headerlink" title="4、对于小白有什么建议？"></a>4、对于小白有什么建议？</h5><ul>
-<li>跟着教材打code，这好比穿着救生衣在岸边学游泳，建议专门抽时间高频地练。个人觉得这个过程有点像刷窗户，每练一次，对框架会越清晰。当你越来越有感觉之后，再离开岸边独自研究新功能，才不会那么快放弃。</li>
-</ul>
-<ul>
-<li>有时你爬坑爬得快崩溃，你会产生各种情绪。但我想告诉你，都这样的。爬出来你就学到了。欠下的坑总要还的。</li>
-<li>有些问题自己会难以发现，作品上线后及时找大家要反馈，及时完善作品。</li>
-<li>大赛要参加！</li>
-</ul>
+          1、对取得这样的成绩，有什么感想？   成绩不代表作品，只占一部分。
+2、比赛中有什么情绪上的波动变化？情绪是有波动的。作品第三版出来后，票数和人气都很低，进入情绪低点，一度对票数失去信心。然后投身到更重要的事情去了……直到比赛结束前两天，无意中收到同学对作品的真实反馈，才发现问题，才发现那都是情绪，才开始投身到前端优化作品的用户体验。
+3、通过这次比赛，有什么样的收获？
+最大的收获：对编程的增加了信心。坦率地讲，在此之前我只做过4个html页面，在前一次做页面时还做烂掉了，后来直接跑去补充基础知识。经过这次大赛，对做页面有了底。
 
-          
+爬坑：这次爬了很多坑，花了很多注意力，大多坑都是在快放弃时，骗了自己再研究一会，最后真的就爬出来了。现在爬坑的情绪比以前谈定了。
+
+收获知识豆：整个大赛爬坑de
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/10/2017-05-10-1815772/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1762,7 +904,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.site/2017/05/04/2017-05-04-1790628/">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/05/04/2017-05-04-1790628/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
@@ -1844,41 +986,24 @@
       
         
           
-            <h4 id="先看效果："><a href="#先看效果：" class="headerlink" title="先看效果："></a>先看效果：</h4><p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-28.gif" alt="">如何才能实现在详情页面(或任何页面)登入！（不需要跳转到登入页面），登入后直接返回之前页面。（通常登入后会被导向首页）</p>
-<h4 id="做弹窗登入，你需要解决三个问题："><a href="#做弹窗登入，你需要解决三个问题：" class="headerlink" title="做弹窗登入，你需要解决三个问题："></a>做弹窗登入，你需要解决三个问题：</h4><ul>
-<li>如何在在其他页面实现登陆功能？</li>
-<li>登入后如何跳转回之前的页面？</li>
-<li>最好把登入成功的英文提示关掉。</li>
-</ul>
-<h5 id="现在，我来帮你解决……"><a href="#现在，我来帮你解决……" class="headerlink" title="现在，我来帮你解决……"></a>现在，我来帮你解决……</h5><h3 id="开始："><a href="#开始：" class="headerlink" title="开始："></a>开始：</h3><p>本教程以Job-listing为例。</p>
-<h4 id="step1：解决：在其他页面实现登入。"><a href="#step1：解决：在其他页面实现登入。" class="headerlink" title="step1：解决：在其他页面实现登入。"></a>step1：解决：在其他页面实现登入。</h4><ol>
-<li><p>找到你想插入的页面对应的helper。比如：在jobs的show.html.erb页面。我们找到<code>app/helpers/jobs_helper.rb</code>填入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">def resource_name</div><div class="line">:user</div><div class="line">end</div><div class="line"></div><div class="line">def resource</div><div class="line">@resource ||= User.new</div><div class="line">end</div><div class="line"></div><div class="line">def devise_mapping</div><div class="line">@devise_mapping ||= Devise.mappings[:user]</div><div class="line">end</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="step2-解决：登入后跳转回之前的页面。"><a href="#step2-解决：登入后跳转回之前的页面。" class="headerlink" title="step2: 解决：登入后跳转回之前的页面。"></a>step2: 解决：登入后跳转回之前的页面。</h4><ol>
-<li><p>打开<code>app/controllers/application_controller.rb</code> 填入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">before_action :store_current_location, :unless =&gt; :devise_controller?</div><div class="line"></div><div class="line">private</div><div class="line"></div><div class="line">def store_current_location</div><div class="line">  store_location_for(:user, request.url)</div><div class="line">end</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="step3-解决：如何关闭登入成功提示？"><a href="#step3-解决：如何关闭登入成功提示？" class="headerlink" title="step3: 解决：如何关闭登入成功提示？"></a>step3: 解决：如何关闭登入成功提示？</h4><ol>
-<li>找到<code>config/locales/devise.en.yml</code>，把下图中的字段清空。<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-125018.jpg" alt=""></li>
-</ol>
-<h4 id="ok-三个问题解决了，就可以开始实做登入弹窗了。"><a href="#ok-三个问题解决了，就可以开始实做登入弹窗了。" class="headerlink" title="ok,三个问题解决了，就可以开始实做登入弹窗了。"></a>ok,三个问题解决了，就可以开始实做登入弹窗了。</h4><p>关于登入弹窗，w3schools有详尽的教程：<a href="https://www.w3schools.com/howto/howto_css_login_form.asp" target="_blank" rel="external">https://www.w3schools.com/howto/howto_css_login_form.asp</a></p>
-<p>大家遇到问题，可以加我微信一起探讨。<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-130016.jpg" alt=""></p>
-<p>同系列教程：</p>
-<ul>
-<li><p><a href="http://activeliang-blog.logdown.com/posts/1789967-52" target="_blank" rel="external">页面上如何生成二维码链接？</a></p>
-</li>
-<li><p>[<a href="http://activeliang-blog.logdown.com/posts/1781530-525" target="_blank" rel="external">【小伙伴分享】三步接入百度地图！为你的职位增加位置信息。</a></p>
-</li>
-<li><p>[<a href="http://activeliang-blog.logdown.com/posts/1790624" target="_blank" rel="external">【魔改分享】两步让你的footer乖乖置底！只需要CSS</a></p>
-<p>​</p>
-</li>
-</ul>
-<h5 id="希望你5票投我1票！"><a href="#希望你5票投我1票！" class="headerlink" title="希望你5票投我1票！"></a>希望你5票投我1票！</h5><p>这是我用很多很多注意力堆出来的参赛作品，希望精心的作品能打动你。如果你手上还有票，这个作品值得你投上一票！欢迎浏览网址细节：<a href="https://fullstack.xinshengdaxue.com/works/345" target="_blank" rel="external">【全栈小伙伴求职网】https://fullstack.xinshengdaxue.com/works/345</a>  <img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-Snip20170503_15.png" alt=""></p>
+          先看效果：如何才能实现在详情页面(或任何页面)登入！（不需要跳转到登入页面），登入后直接返回之前页面。（通常登入后会被导向首页）
+做弹窗登入，你需要解决三个问题：
+如何在在其他页面实现登陆功能？
+登入后如何跳转回之前的页面？
+最好把登入成功的英文提示关掉。
 
-          
+现在，我来帮你解决……开始：本教程以Job-listing为例。
+step1：解决：在其他页面实现登入。
+找到你想插入的页面对应的helper。比如：在jobs的show.html.erb页面。我们找到app/helpers/jobs_helper.rb填入：
+1234567891011def resource_name:userenddef resource@resource ||= User.newenddef devise_map
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/04/2017-05-04-1790628/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1925,7 +1050,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.site/2017/05/04/2017-05-04-1790624/">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/05/04/2017-05-04-1790624/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
@@ -2007,26 +1132,26 @@
       
         
           
-            <p>写在前面：</p>
-<ul>
-<li>网上教程很多，想找到简单粗暴的，没几个。</li>
-<li>大多利用js辅助，不稳定。</li>
-<li>这是我找到的最简单粗暴的方法，现在分享给大家。</li>
-</ul>
-<p>实作：</p>
-<ol>
-<li><p>去到app/views/layouts/application.html.erb 把<body></body> 整个替换成以下代码：</p>
-   <body><br>     <div class="container-fluid body-content"><br>       <div class="content-inside"><br>         <div class="row"><br>           &lt;%= render “common/navbar” %&gt;<br>         </div><br>         &lt;%= render “common/flashes” %&gt;<br>         &lt;%= yield %&gt;<br>       </div><br>     </div><br>     &lt;%= render “common/footer” %&gt;<br>   </body>
-</li>
-<li><p>增加css， 去到app/assets/stylesheets/application.scss 增加以下代码：</p>
-<p> html, body {<br>   height: 100%;<br>   margin: 0;<br> }<br> .body-content {<br>   min-height: 100%;<br>   padding-bottom: 60px;<br> }<br> .footer {<br>   height: 60px;<br>   margin-top: -60px;<br> }</p>
-</li>
-</ol>
-<p>可以了，收工！</p>
-<p>希望你5票投我1票：</p>
-<p>这是我的魔改大赛作品：【全栈小伙伴求职网】<a href="https://fullstack.xinshengdaxue.com/works/345" target="_blank" rel="external">https://fullstack.xinshengdaxue.com/works/345</a></p>
+          写在前面：
 
-          
+网上教程很多，想找到简单粗暴的，没几个。
+大多利用js辅助，不稳定。
+这是我找到的最简单粗暴的方法，现在分享给大家。
+
+实作：
+
+去到app/views/layouts/application.html.erb 把 整个替换成以下代码：
+                                   &lt;%= render “common/navbar” %&gt;                  &lt;%= render “common/flashes” %&gt;         &lt;%= yield %&gt;                 &lt;%= render “common/footer” %&gt;   
+
+增加css， 去到app/ass
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/04/2017-05-04-1790624/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2073,7 +1198,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.site/2017/05/04/2017-05-04-52/">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/05/04/2017-05-04-52/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
@@ -2155,32 +1280,30 @@
       
         
           
-            <ol>
-<li>我们要实现的效果：弹出当前网页网址的二维码，手机扫码后能直接打开当前页面。（预计用时：10分钟）<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-22.gif" alt=""></li>
-</ol>
-<h3 id="开始实做："><a href="#开始实做：" class="headerlink" title="开始实做："></a>开始实做：</h3><p>我们以job的show页面为例。</p>
-<h4 id="step1"><a href="#step1" class="headerlink" title="step1:"></a>step1:</h4><ol>
-<li><p>找开 Gemfile.增加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem &apos;rqrcode&apos;</div></pre></td></tr></table></figure>
-<p>执行 <code>bundle install</code>,重启<code>server</code>.</p>
-</li>
-<li><p>打来<code>jobs_controller</code>，在<code>show</code>里增加：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@qr = RQRCode::QRCode.new(job_url(@job).to_s, :size =&gt; 6, :level =&gt; :h )</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="step2"><a href="#step2" class="headerlink" title="step2:"></a>step2:</h4><ol>
-<li><p>打开<code>application.scss</code>，增加css:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">#overlay table &#123;</div><div class="line">   border-width: 0;</div><div class="line">   border-style: none;</div><div class="line">   border-color: #0000ff;</div><div class="line">   border-collapse: collapse;</div><div class="line">&#125;</div><div class="line">#overlay td &#123;</div><div class="line">   border-left: solid 12px #000;</div><div class="line">   padding: 0;</div><div class="line">   margin: 0;</div><div class="line">   width: 0px;</div><div class="line">   height: 12px;</div><div class="line">&#125;</div><div class="line">#overlay td.black &#123; border-color: #000; &#125;</div><div class="line">#overlay td.white &#123; border-color: #fff; &#125;</div><div class="line">#overlay &#123;</div><div class="line">  position: absolute;</div><div class="line">  bottom: 0;</div><div class="line">  left: 0;</div><div class="line">  right: 0;</div><div class="line">  // background-color: #008CBA;</div><div class="line">  overflow: hidden;</div><div class="line">  width: 100%;</div><div class="line">  height: 0;</div><div class="line">  transition: .5s ease;</div><div class="line">  background-color: rgba(0,0,0,0.8);</div><div class="line">  // z-index: -1;</div><div class="line">  cursor: pointer;</div><div class="line">&#125;</div><div class="line">#text&#123;</div><div class="line"> position: absolute;</div><div class="line"> top: 50%;</div><div class="line"> left: 50%;</div><div class="line"> font-size: 50px;</div><div class="line"> color: white;</div><div class="line"> transform: translate(-50%,-50%);</div><div class="line"> -ms-transform: translate(-50%,-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>打开<code>Jobs/show.html.erb</code>,在最底下加入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;overlay&quot; onclick=&quot;off()&quot;&gt;</div><div class="line">  &lt;div id=&quot;text&quot;&gt;手机扫一扫，分享给好友~</div><div class="line">    &lt;%= raw @qr.as_html %&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div style=&quot;padding:20px&quot;&gt;</div><div class="line">  &lt;button onclick=&quot;on()&quot;&gt;点击生成当前网页二维码&lt;/button&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function on() &#123;</div><div class="line">    document.getElementById(&quot;overlay&quot;).style.height = &quot;100%&quot;;</div><div class="line">&#125;</div><div class="line">function off() &#123;</div><div class="line">    document.getElementById(&quot;overlay&quot;).style.height = &quot;0&quot;;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="完成了！"><a href="#完成了！" class="headerlink" title="完成了！"></a>完成了！</h4><h4 id="重要提示：在本地开发环境扫出来的链接是http-localhost-3000-手机打不开！！部署到heroku后扫出来的是heroku地址，手机可以打开！"><a href="#重要提示：在本地开发环境扫出来的链接是http-localhost-3000-手机打不开！！部署到heroku后扫出来的是heroku地址，手机可以打开！" class="headerlink" title="重要提示：在本地开发环境扫出来的链接是http:localhost:3000,手机打不开！！部署到heroku后扫出来的是heroku地址，手机可以打开！"></a>重要提示：在本地开发环境扫出来的链接是http:localhost:3000,手机打不开！！部署到heroku后扫出来的是heroku地址，手机可以打开！</h4><p>迁移：如果想在其他页面生成二维码，只需要去到controller，<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-055349.jpg" alt=""></p>
-<p>把要呈现的路径替换掉就可以了。</p>
-<h5 id="希望你5票投我1票！"><a href="#希望你5票投我1票！" class="headerlink" title="希望你5票投我1票！"></a>希望你5票投我1票！</h5><p>这是我用时间堆出来的参赛作品，如果你手上还有票，这个作品值得你为我投上一票！欢迎浏览网址细节：<a href="https://fullstack.xinshengdaxue.com/works/345" target="_blank" rel="external">【全栈小伙伴求职网】https://fullstack.xinshengdaxue.com/works/345</a>  <img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-Snip20170503_15.png" alt=""></p>
-
           
+我们要实现的效果：弹出当前网页网址的二维码，手机扫码后能直接打开当前页面。（预计用时：10分钟）
+
+开始实做：我们以job的show页面为例。
+step1:
+找开 Gemfile.增加：
+1gem &apos;rqrcode&apos;
+执行 bundle install,重启server.
+
+打来jobs_controller，在show里增加：
+1@qr = RQRCode::QRCode.new(job_url(@job).to_s, :size =&gt; 6, :level =&gt; :h )
+
+
+step2:
+打开application.scss，增加css:
+1234567891011121314151617181920212223242526272829303132333
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/04/2017-05-04-52/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2227,7 +1350,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.site/2017/05/02/2017-05-02-5252/">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/05/02/2017-05-02-5252/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
@@ -2309,22 +1432,23 @@
       
         
           
-            <h4 id="写在前面："><a href="#写在前面：" class="headerlink" title="写在前面："></a>写在前面：</h4><ul>
-<li>网上教程很多，想找到简单粗暴的，没几个。</li>
-<li>大多利用js辅助，不稳定。</li>
-<li>这是我找到的最简单粗暴的方法，现在分享给大家。</li>
-</ul>
-<h4 id="实作："><a href="#实作：" class="headerlink" title="实作："></a>实作：</h4><ol>
-<li>去到<code>app/views/layouts/application.html.erb</code> 把<code>&lt;body&gt;&lt;/body&gt;</code> 整个替换成以下代码：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">  &lt;div class=&quot;container-fluid body-content&quot;&gt;</div><div class="line">    &lt;div class=&quot;content-inside&quot;&gt;</div><div class="line">      &lt;div class=&quot;row&quot;&gt;</div><div class="line">        &lt;%= render &quot;common/navbar&quot; %&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">      &lt;%= render &quot;common/flashes&quot; %&gt;</div><div class="line">      &lt;%= yield %&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;%= render &quot;common/footer&quot; %&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li>增加css， 去到<code>app/assets/stylesheets/application.scss</code> 增加以下代码：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">html, body &#123;</div><div class="line">  height: 100%;</div><div class="line">  margin: 0;</div><div class="line">&#125;</div><div class="line">.body-content &#123;</div><div class="line">  min-height: 100%;</div><div class="line">  padding-bottom: 60px;</div><div class="line">&#125;</div><div class="line">.footer &#123;</div><div class="line">  height: 60px;</div><div class="line">  margin-top: -60px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="可以了，收工！"><a href="#可以了，收工！" class="headerlink" title="可以了，收工！"></a>可以了，收工！</h4><h6 id="希望你5票投我1票："><a href="#希望你5票投我1票：" class="headerlink" title="希望你5票投我1票："></a>希望你5票投我1票：</h6><p>这是我的魔改大赛作品：【全栈小伙伴求职网】<a href="https://fullstack.xinshengdaxue.com/works/345" target="_blank" rel="external">https://fullstack.xinshengdaxue.com/works/345</a></p>
+          写在前面：
+网上教程很多，想找到简单粗暴的，没几个。
+大多利用js辅助，不稳定。
+这是我找到的最简单粗暴的方法，现在分享给大家。
 
-          
+实作：
+去到app/views/layouts/application.html.erb 把&lt;body&gt;&lt;/body&gt; 整个替换成以下代码：
+
+123456789101112&lt;body&gt;  &lt;div class=&quot;container-fluid body-content&quot;&gt;    &lt;div class=&quot;content-inside&quot;&gt;      &lt;div class=&quot;row&quot;&gt;        &lt;%= render &quo
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/02/2017-05-02-5252/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2371,7 +1495,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.site/2017/05/02/2017-05-02-525/">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/05/02/2017-05-02-525/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
@@ -2453,65 +1577,30 @@
       
         
           
-            <h4 id="先看效果："><a href="#先看效果：" class="headerlink" title="先看效果："></a>先看效果：</h4><ul>
-<li>在增加职位时，可以直接在地图上选取坐标<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-01-222246.jpg" alt=""></li>
-<li>在职位详情页里，可以直接显示地图,并带上标注，可以拖动放大！<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-01-222518.jpg" alt=""></li>
-<li>更好的体验，请大家去我的作品里浏览：<a href="https://fullstack.xinshengdaxue.com/works/345" target="_blank" rel="external">【全栈小伙伴求职网】https://fullstack.xinshengdaxue.com/works/345</a></li>
-</ul>
-<h4 id="实做："><a href="#实做：" class="headerlink" title="实做："></a>实做：</h4><h4 id="step1"><a href="#step1" class="headerlink" title="step1"></a>step1</h4><ol>
-<li>执行：<code>touch app/views/common/_baidumap_1.html</code></li>
-</ol>
-<p>填入以下代码：</p>
-<ul>
-<li>点击页面进去复制: <a href="https://github.com/activeliang/baidumapdemo/blob/master/app/views/common/_baidumap_1.html.erb" target="_blank" rel="external">https://github.com/activeliang/baidumapdemo/blob/master/app/views/common/_baidumap_1.html.erb</a></li>
-</ul>
-<ol>
-<li>执行：<code>touch app/views/common/_baidumap_2.html.erb</code></li>
-</ol>
-<p>填入：</p>
-<ul>
-<li>点击页面进去复制：<a href="https://github.com/activeliang/baidumapdemo/blob/master/app/views/common/_baidumap_2.html.erb" target="_blank" rel="external">https://github.com/activeliang/baidumapdemo/blob/master/app/views/common/_baidumap_2.html.erb</a></li>
-</ul>
-<ol>
-<li>执行 <code>rails g migration add_map_detail_to_job cp_lng:string cp_lat:string</code>然后<code>rake db:migrate</code>这一步将会在你的job里新增两个存位置信息的栏位。</li>
-</ol>
-<h4 id="step2"><a href="#step2" class="headerlink" title="step2"></a>step2</h4><ol>
-<li>去到<code>app/views/layouts/application.html.erb</code>在<code>&lt;head&gt;&lt;/head&gt;里</code>，填入以下代码：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script src=&quot;https://api.map.baidu.com/api?v=2.0&amp;ak=fitXUIqC5oHoWvnUhd4PwtHlbMb22AvH&amp;s=1&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li>去到<code>app/views/jobs/new.html.erb</code>的<code>simple_form</code>当中，填入：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;%= f.text_field :cp_lat, :id =&gt; &quot;maplat&quot;, :type =&gt; &quot;hidden&quot; %&gt;</div><div class="line">&lt;%= f.text_field :cp_lng, :id =&gt; &quot;maplng&quot;, :type =&gt; &quot;hidden&quot; %&gt;</div><div class="line">&lt;%= render &quot;common/baidumap_1&quot; %&gt;</div></pre></td></tr></table></figure>
-<ol>
-<li>去到<code>app/views/jobs/show.html.erb</code>的任何你想插入地图的位置，填入：</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%= render &quot;common/baidumap_2&quot; %&gt;</div></pre></td></tr></table></figure>
-<h4 id="step3"><a href="#step3" class="headerlink" title="step3"></a>step3</h4><ol>
-<li>为了让地图用到的js更稳定地工作，我们去把<code>Turnolinks</code>拆掉！</li>
-</ol>
-<ul>
-<li>去到<code>app/assets/javascripts/application.js</code> 把<code>//=requireturnolinks</code> 删掉。</li>
-<li>去到<code>Gemfile</code> 里，把<code>gem &#39;turbolinks&#39;, &#39;~&gt; 5&#39;</code> 删掉，然后<code>bundle install</code></li>
-</ul>
-<ol>
-<li>(这一步我已经帮你做了，你可以直接用我的ak，直接跳过。)</li>
-</ol>
-<p>去到<a href="http://lbsyun.baidu.com/apiconsole/key" target="_blank" rel="external">百度地图开放平台 http://lbsyun.baidu.com/apiconsole/key</a> 申请ak，然后把上面教程中的ak替换成自己的。百度地图ak免费易申请!</p>
-<h5 id="完工！"><a href="#完工！" class="headerlink" title="完工！"></a>完工！</h5><h5 id="完工！-1"><a href="#完工！-1" class="headerlink" title="完工！"></a>完工！</h5><h3 id="以下是解说："><a href="#以下是解说：" class="headerlink" title="以下是解说："></a>以下是解说：</h3><h4 id="运作："><a href="#运作：" class="headerlink" title="运作："></a>运作：</h4><ul>
-<li>我们利用了js把获取到的经度lng,纬度lat，赋值给simple_form里两个待命的隐藏输入框。当我们新增数据时，这两个参数会跟随着表单一起存入数据库。</li>
-<li>我们在详情页面，把这两个参数调取出来赋给地图，地图就能清楚都显示该位置。</li>
-</ul>
-<h4 id="进阶："><a href="#进阶：" class="headerlink" title="进阶："></a>进阶：</h4><ul>
-<li>可以增加<code>地图缩略图</code> <code>地图比例尽</code> <code>地图缩放条</code> <code>设置地图背影模式</code> 在这里不多说，有兴趣请看官方文档：<a href="http://lbsyun.baidu.com/index.php?title=jspopular" target="_blank" rel="external">http://lbsyun.baidu.com/index.php?title=jspopular</a></li>
-</ul>
-<h4 id="遇到的坑："><a href="#遇到的坑：" class="headerlink" title="遇到的坑："></a>遇到的坑：</h4><ul>
-<li>部署<code>heroku</code>后，地图失效！</li>
-<li>原因：网上绝大部分教程都没有提到一个问题：<code>https</code>模式下，密钥后要加上一个字段。具体：<a href="http://lbsyun.baidu.com/index.php?title=jspopular" target="_blank" rel="external">http://lbsyun.baidu.com/index.php?title=jspopular</a></li>
-</ul>
-<h5 id="希望你5票投我1票："><a href="#希望你5票投我1票：" class="headerlink" title="希望你5票投我1票："></a>希望你5票投我1票：</h5><p>这是我的作品链接：<a href="https://fullstack.xinshengdaxue.com/works/345" target="_blank" rel="external">【全栈小伙伴求职网】https://fullstack.xinshengdaxue.com/works/345</a></p>
+          先看效果：
+在增加职位时，可以直接在地图上选取坐标
+在职位详情页里，可以直接显示地图,并带上标注，可以拖动放大！
+更好的体验，请大家去我的作品里浏览：【全栈小伙伴求职网】https://fullstack.xinshengdaxue.com/works/345
 
-          
+实做：step1
+执行：touch app/views/common/_baidumap_1.html
+
+填入以下代码：
+
+点击页面进去复制: https://github.com/activeliang/baidumapdemo/blob/master/app/views/common/_baidumap_1.html.erb
+
+
+执行：touch app/views/common/_baidumap_2.html.erb
+
+填入
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/02/2017-05-02-525/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2558,7 +1647,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.site/2017/04/26/2017-04-26-1753227/">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/04/26/2017-04-26-1753227/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
@@ -2640,177 +1729,15 @@
       
         
           
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.site/2017/04/25/2017-04-25-2017-4-25-orid/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/25/2017-04-25-2017-4-25-orid/" itemprop="url">2017-4-25 ORID</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-25T16:36:00+08:00">
-                2017-04-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/04/25/2017-04-25-2017-4-25-orid/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/04/25/2017-04-25-2017-4-25-orid/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
           
           
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li><p>请看图：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-04-25-085331.jpg" alt="">这个效果的核心CSS是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">.bc &#123;</div><div class="line">  position: relative;</div><div class="line">  display: block;</div><div class="line">  background:linear-    gradient(270deg,rgba(0,185,90,.65),#00b95a);</div><div class="line">  z-index: 1;</div><div class="line">.bc-img &#123;</div><div class="line">  position: absolute;</div><div class="line">  z-index: 0;</div><div class="line">  top: 0;</div><div class="line">  left: 0;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">  &lt;div class=&quot;bc&quot;&gt;</div><div class="line">    &lt;img src=&quot;demo-img.jpg&quot;&gt;</div><div class="line">    &lt;h1&gt;asdf&lt;/h1&gt;</div><div class="line">  &lt;/div&gt; </div><div class="line">  &lt;div class=&quot;bc-img&quot;&gt;</div><div class="line">    &lt;img src=&quot;demo-img.jpg&quot;</div><div class="line">  &lt;/div&gt;  </div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
-<p>​</p>
-</li>
-<li><p>有时父元素撑不起来的时候，试试给它加个<code>row</code>。</p>
-<ol>
-<li><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-04-25-Snip20170425_53.png" alt="">加js的时候，中间不能有<code>-</code>号，否则不起作用。</li>
-</ol>
-<p>​</p>
-</li>
-</ol>
-<h3 id="每日学习纪录：ORID"><a href="#每日学习纪录：ORID" class="headerlink" title="每日学习纪录：ORID"></a>每日学习纪录：ORID</h3><blockquote>
-<p>这是一个思考框架，利用 ORID 整理今天的思绪。</p>
-</blockquote>
-<h2 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h2><blockquote>
-<p>关于今天的课程, 你记得什么? 完成了什么?</p>
-</blockquote>
-<p>今天上午，本准备出去吃早餐，这里收到邮件，AWS泄密了，两个小时各种尝试，最好才发现问题所在。写了一个小教程，可以去看看同一天的logdown.下午主要想调整修改作品首页简历版块的适应问题，弄了一下午打算重新从头写过，后来发现还是直接改吧，这个实在太有点复杂，我做过一次后想再来一次都有点难。最后直接通过媒体查询再限制高度，完美解决问题！哈哈。到了晚上，主要是想在版块的右上角加一个”更多“的链接，但弄了好久呀，最后发现一个问题，那些没有撑起高度来的，在外围加个row 就好了，果然这才知道了它为什么会叫容器。弄完了，一天就差不多这样过去啦。接着开始构思我的职位页面，很期待哦~！！！！</p>
-<h2 id="Reflective"><a href="#Reflective" class="headerlink" title="Reflective"></a>Reflective</h2><blockquote>
-<p>你要如何形容今天的情绪 今天的高峰是什么? 今天的低点是什么?</p>
-</blockquote>
-<p>唉，累呀。情绪还好，就是很低效。</p>
-<p>高峰：晚上看到地图接入的方便……太开心。还想好了首页的职位要做成什么样的。</p>
-<p>低点：中午实在没有精力，累。下午改panel改得不要不要的。今天都花在这些细节上了。</p>
-<h2 id="Interpretive"><a href="#Interpretive" class="headerlink" title="Interpretive"></a>Interpretive</h2><blockquote>
-<p>我们今天学到了什么? 今天一个重要的领悟是什么?</p>
-</blockquote>
-<p>今天学到了：</p>
-<ul>
-<li>AWS总泄密的原因。</li>
-<li>父元素高度撑不起来怎么办。</li>
-</ul>
-<p>没什么重要的领悟。晚上小沈说，持续一断时间睡眠少很容易生病的。后怕。</p>
-<h2 id="Decisional"><a href="#Decisional" class="headerlink" title="Decisional"></a>Decisional</h2><blockquote>
-<p>我们会如何用一句话形容今天的工作 有哪些工作需要明天继续努力?</p>
-</blockquote>
-<p>累，低效。</p>
-<p>快快做我的职位页面。期待！！！！！！！</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/26/2017-04-26-1753227/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2897,7 +1824,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">172</span>
+                <span class="site-state-item-count">173</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
