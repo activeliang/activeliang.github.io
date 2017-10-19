@@ -195,12 +195,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2016/12/31/2016-12-31-2016-12-31-records/</loc>
+    <loc>http://hongliang.pw/archives/2016/12/31/2016-12-31-1262140/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2016-12-31学习记录</title>
-        <pubTime>2016-12-31T07:47:00.000Z</pubTime>
+        <title>2016-12-31错误记录</title>
+        <pubTime>2016-12-31T07:12:00.000Z</pubTime>
         
          
            
@@ -210,12 +210,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2016/12/31/2016-12-31-1262140/</loc>
+    <loc>http://hongliang.pw/archives/2016/12/31/2016-12-31-2016-12-31-records/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2016-12-31错误记录</title>
-        <pubTime>2016-12-31T07:12:00.000Z</pubTime>
+        <title>2016-12-31学习记录</title>
+        <pubTime>2016-12-31T07:47:00.000Z</pubTime>
         
          
            
@@ -450,21 +450,6 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/02/01/2017-02-01-1373384/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>2017-2-1记录：如何修改model表格名称(不损数据)</title>
-        <pubTime>2017-02-01T09:32:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://hongliang.pw/archives/2017/01/31/2017-01-31-1370142/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
@@ -480,12 +465,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/02/03/2017-02-03-2017-2-2-records/</loc>
+    <loc>http://hongliang.pw/archives/2017/02/01/2017-02-01-1373384/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-2-2学习记录</title>
-        <pubTime>2017-02-02T19:15:00.000Z</pubTime>
+        <title>2017-2-1记录：如何修改model表格名称(不损数据)</title>
+        <pubTime>2017-02-01T09:32:00.000Z</pubTime>
         
          
            
@@ -501,6 +486,21 @@
         <display>
         <title>2017-2-1学习记录</title>
         <pubTime>2017-02-01T10:06:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hongliang.pw/archives/2017/02/03/2017-02-03-2017-2-2-records/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>2017-2-2学习记录</title>
+        <pubTime>2017-02-02T19:15:00.000Z</pubTime>
         
          
            
@@ -585,6 +585,21 @@
 
     
   <url>
+    <loc>http://hongliang.pw/archives/2017/02/16/2017-02-16-1424440/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>修改model里的column栏位名称方法</title>
+        <pubTime>2017-02-16T07:29:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hongliang.pw/archives/2017/02/16/2017-02-16-1424437/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
@@ -606,21 +621,6 @@
         <display>
         <title>2017-2-16学习记录</title>
         <pubTime>2017-02-16T07:27:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hongliang.pw/archives/2017/02/16/2017-02-16-1424440/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>修改model里的column栏位名称方法</title>
-        <pubTime>2017-02-16T07:29:00.000Z</pubTime>
         
          
            
@@ -660,6 +660,21 @@
 
     
   <url>
+    <loc>http://hongliang.pw/archives/2017/02/19/2017-02-19-guangzhou-2017-2-19-offline-meetup-extracted-records/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>2017-2-19广州线下meetup提取记录</title>
+        <pubTime>2017-02-19T08:18:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hongliang.pw/archives/2017/02/20/2017-02-20-1435697/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
@@ -690,21 +705,6 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/02/19/2017-02-19-guangzhou-2017-2-19-offline-meetup-extracted-records/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>2017-2-19广州线下meetup提取记录</title>
-        <pubTime>2017-02-19T08:18:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://hongliang.pw/archives/2017/02/24/2017-02-24-2017-2-24-records/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
@@ -720,12 +720,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/02/26/2017-02-26-2017-2-26-records/</loc>
+    <loc>http://hongliang.pw/archives/2017/02/26/2017-02-26-1469302/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-2-26学习记录</title>
-        <pubTime>2017-02-26T07:52:00.000Z</pubTime>
+        <title>2017-2-25学习记录</title>
+        <pubTime>2017-02-25T20:06:00.000Z</pubTime>
         
          
            
@@ -735,12 +735,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/02/26/2017-02-26-1469302/</loc>
+    <loc>http://hongliang.pw/archives/2017/02/26/2017-02-26-2017-2-26-records/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-2-25学习记录</title>
-        <pubTime>2017-02-25T20:06:00.000Z</pubTime>
+        <title>2017-2-26学习记录</title>
+        <pubTime>2017-02-26T07:52:00.000Z</pubTime>
         
          
            
@@ -990,12 +990,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/03/07/2017-03-07-2017-3-7-how-to-view-inside-the-controller-method/</loc>
+    <loc>http://hongliang.pw/archives/2017/03/07/2017-03-07-1519935/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-3-7号：如何在view里面用controller里的method</title>
-        <pubTime>2017-03-06T22:42:00.000Z</pubTime>
+        <title>blank?是什么？</title>
+        <pubTime>2017-03-06T23:55:00.000Z</pubTime>
         
          
            
@@ -1005,12 +1005,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/03/07/2017-03-07-1519935/</loc>
+    <loc>http://hongliang.pw/archives/2017/03/07/2017-03-07-2017-3-7-how-to-view-inside-the-controller-method/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>blank?是什么？</title>
-        <pubTime>2017-03-06T23:55:00.000Z</pubTime>
+        <title>2017-3-7号：如何在view里面用controller里的method</title>
+        <pubTime>2017-03-06T22:42:00.000Z</pubTime>
         
          
            
@@ -1170,12 +1170,42 @@
 
     
   <url>
+    <loc>http://hongliang.pw/archives/2017/03/10/2017-03-10-how-to-add-your-own-custom-code-snippets-to-emmet-snippets/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>打code时如何减少手动挪光标的次数&&emmet增加自定义片段的方法。</title>
+        <pubTime>2017-03-10T08:22:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hongliang.pw/archives/2017/03/10/2017-03-10-how-to-enter-in-the-erb-has-also-put-the-cursor-in-the-middle/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
         <title>如何快速在erb中输入<%%>顺便把光标停留在中间</title>
         <pubTime>2017-03-10T08:32:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hongliang.pw/archives/2017/03/11/2017-03-11-1540609/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>partial的进阶用法（可带参数，可用于回圈）</title>
+        <pubTime>2017-03-11T07:13:00.000Z</pubTime>
         
          
            
@@ -1215,57 +1245,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/03/10/2017-03-10-how-to-add-your-own-custom-code-snippets-to-emmet-snippets/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>打code时如何减少手动挪光标的次数&&emmet增加自定义片段的方法。</title>
-        <pubTime>2017-03-10T08:22:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hongliang.pw/archives/2017/03/11/2017-03-11-1540609/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>partial的进阶用法（可带参数，可用于回圈）</title>
-        <pubTime>2017-03-11T07:13:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://hongliang.pw/archives/2017/03/12/2017-03-12-1551109/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
         <title>2017-3-12 学习记录</title>
         <pubTime>2017-03-12T05:53:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hongliang.pw/archives/2017/03/16/2017-03-16-1591672/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>2017-3-16 记录一个巨大的坑</title>
-        <pubTime>2017-03-15T22:22:00.000Z</pubTime>
         
          
            
@@ -1296,6 +1281,21 @@
         <display>
         <title>2017-2-13学习记录ORID</title>
         <pubTime>2017-03-13T08:11:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hongliang.pw/archives/2017/03/16/2017-03-16-1591672/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>2017-3-16 记录一个巨大的坑</title>
+        <pubTime>2017-03-15T22:22:00.000Z</pubTime>
         
          
            
@@ -1350,21 +1350,6 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/03/16/2017-03-16-2017-3-15-xdite-live-extracts/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>2017-3-15 看xdite直播 提取&ORID</title>
-        <pubTime>2017-03-15T22:24:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://hongliang.pw/archives/2017/03/17/2017-03-17-1599658/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
@@ -1395,12 +1380,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/03/18/2017-03-18-1608622/</loc>
+    <loc>http://hongliang.pw/archives/2017/03/18/2017-03-18-1607540/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>一个下拉菜单的最小可行性代码#关键字</title>
-        <pubTime>2017-03-18T06:00:00.000Z</pubTime>
+        <title>如何修改栏位的默认值？</title>
+        <pubTime>2017-03-17T23:59:00.000Z</pubTime>
         
          
            
@@ -1410,12 +1395,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/03/18/2017-03-18-1607540/</loc>
+    <loc>http://hongliang.pw/archives/2017/03/16/2017-03-16-2017-3-15-xdite-live-extracts/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>如何修改栏位的默认值？</title>
-        <pubTime>2017-03-17T23:59:00.000Z</pubTime>
+        <title>2017-3-15 看xdite直播 提取&ORID</title>
+        <pubTime>2017-03-15T22:24:00.000Z</pubTime>
         
          
            
@@ -1470,12 +1455,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/03/19/2017-03-19-the-navigation-bar-for-a-minimum-feasible/</loc>
+    <loc>http://hongliang.pw/archives/2017/03/19/2017-03-19-2017-3-19-learning-record-orid/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>一个最小可行性的导航栏</title>
-        <pubTime>2017-03-18T19:52:00.000Z</pubTime>
+        <title>2017-3-19 学习记录 ORID</title>
+        <pubTime>2017-03-19T07:18:00.000Z</pubTime>
         
          
            
@@ -1485,12 +1470,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/03/19/2017-03-19-2017-3-19-learning-record-orid/</loc>
+    <loc>http://hongliang.pw/archives/2017/03/19/2017-03-19-the-navigation-bar-for-a-minimum-feasible/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-3-19 学习记录 ORID</title>
-        <pubTime>2017-03-19T07:18:00.000Z</pubTime>
+        <title>一个最小可行性的导航栏</title>
+        <pubTime>2017-03-18T19:52:00.000Z</pubTime>
         
          
            
@@ -1515,12 +1500,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/03/22/2017-03-22-2017-3-22-encountered-a-pit-records/</loc>
+    <loc>http://hongliang.pw/archives/2017/03/21/2017-03-21-2017-3-21-learning-record-orid/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-3-22 遇到一个坑，记录</title>
-        <pubTime>2017-03-21T17:55:00.000Z</pubTime>
+        <title>2017-3-21 学习记录ORID</title>
+        <pubTime>2017-03-21T07:34:00.000Z</pubTime>
         
          
            
@@ -1530,12 +1515,27 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/03/21/2017-03-21-2017-3-21-learning-record-orid/</loc>
+    <loc>http://hongliang.pw/archives/2017/03/21/2017-03-21-asdf/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-3-21 学习记录ORID</title>
-        <pubTime>2017-03-21T07:34:00.000Z</pubTime>
+        <title>如何修改Atom自带的快捷键&&使用⌘+E快速打开新文件~</title>
+        <pubTime>2017-03-21T08:03:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hongliang.pw/archives/2017/03/22/2017-03-22-2017-3-22-encountered-a-pit-records/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>2017-3-22 遇到一个坑，记录</title>
+        <pubTime>2017-03-21T17:55:00.000Z</pubTime>
         
          
            
@@ -1695,21 +1695,6 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/03/31/2017-03-31-generate-qr-codes-in-the-project/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>在专案里生成二维码的方法。。。</title>
-        <pubTime>2017-03-30T20:04:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://hongliang.pw/archives/2017/03/31/2017-03-31-2017-3-29-orid/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
@@ -1731,6 +1716,21 @@
         <display>
         <title>克隆他人专案在本地跑不起来怎么办？</title>
         <pubTime>2017-03-30T20:03:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hongliang.pw/archives/2017/03/31/2017-03-31-generate-qr-codes-in-the-project/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>在专案里生成二维码的方法。。。</title>
+        <pubTime>2017-03-30T20:04:00.000Z</pubTime>
         
          
            
@@ -1785,6 +1785,21 @@
 
     
   <url>
+    <loc>http://hongliang.pw/archives/2017/04/03/2017-04-03-2017-4-2-orid/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>2017-4-2 ORID</title>
+        <pubTime>2017-04-03T06:48:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hongliang.pw/archives/2017/04/03/2017-04-03-1668437/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
@@ -1800,12 +1815,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/04/03/2017-04-03-2017-4-2-orid/</loc>
+    <loc>http://hongliang.pw/archives/2017/04/13/2017-04-13-321/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-4-2 ORID</title>
-        <pubTime>2017-04-03T06:48:00.000Z</pubTime>
+        <title>听李笑来客串MJ财报课演讲的提取</title>
+        <pubTime>2017-04-13T01:14:00.000Z</pubTime>
         
          
            
@@ -1830,12 +1845,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/04/13/2017-04-13-321/</loc>
+    <loc>http://hongliang.pw/archives/2017/03/18/2017-03-18-1608622/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>听李笑来客串MJ财报课演讲的提取</title>
-        <pubTime>2017-04-13T01:14:00.000Z</pubTime>
+        <title>一个下拉菜单的最小可行性代码#关键字</title>
+        <pubTime>2017-03-18T06:00:00.000Z</pubTime>
         
          
            
@@ -1875,6 +1890,21 @@
 
     
   <url>
+    <loc>http://hongliang.pw/archives/2017/04/15/2017-04-15-2014-4-10-orid/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>2014-4-10 ORID 于北京</title>
+        <pubTime>2017-04-14T16:42:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hongliang.pw/archives/2017/04/15/2017-04-15-2017-4-14-orid/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
@@ -1896,21 +1926,6 @@
         <display>
         <title>2017-4-15 ORID</title>
         <pubTime>2017-04-15T08:00:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hongliang.pw/archives/2017/04/15/2017-04-15-2014-4-10-orid/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>2014-4-10 ORID 于北京</title>
-        <pubTime>2017-04-14T16:42:00.000Z</pubTime>
         
          
            
@@ -2010,6 +2025,21 @@
 
     
   <url>
+    <loc>http://hongliang.pw/archives/2017/04/21/2017-04-21-1731803/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>2017-4-21 ORID</title>
+        <pubTime>2017-04-21T09:28:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hongliang.pw/archives/2017/04/19/2017-04-19-uninitialized-constant-carrierwave-storage-fog-wrong-solutions/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
@@ -2055,36 +2085,6 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/04/21/2017-04-21-1731803/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>2017-4-21 ORID</title>
-        <pubTime>2017-04-21T09:28:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hongliang.pw/archives/2017/04/24/2017-04-24-1745976/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>2017-2-23/24 ORID 开挂了的节奏</title>
-        <pubTime>2017-04-24T10:24:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://hongliang.pw/archives/2017/04/22/2017-04-22-1736683/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
@@ -2100,12 +2100,27 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/04/26/2017-04-26-1753227/</loc>
+    <loc>http://hongliang.pw/archives/2017/04/22/2017-04-22-1736684/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-4-26 ORID 今天遇到的问题都解决啦。</title>
-        <pubTime>2017-04-26T06:55:00.000Z</pubTime>
+        <title>2017-4-22 ORID</title>
+        <pubTime>2017-04-22T06:51:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hongliang.pw/archives/2017/04/24/2017-04-24-1745976/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>2017-2-23/24 ORID 开挂了的节奏</title>
+        <pubTime>2017-04-24T10:24:00.000Z</pubTime>
         
          
            
@@ -2145,12 +2160,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/05/02/2017-05-02-5252/</loc>
+    <loc>http://hongliang.pw/archives/2017/04/26/2017-04-26-1753227/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>【魔改分享】两步让你的footer乖乖置底！只需要CSS</title>
-        <pubTime>2017-05-01T17:22:00.000Z</pubTime>
+        <title>2017-4-26 ORID 今天遇到的问题都解决啦。</title>
+        <pubTime>2017-04-26T06:55:00.000Z</pubTime>
         
          
            
@@ -2166,6 +2181,21 @@
         <display>
         <title>【小伙伴分享】三步接入百度地图！为你的职位增加位置信息。</title>
         <pubTime>2017-05-01T17:20:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hongliang.pw/archives/2017/05/02/2017-05-02-5252/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>【魔改分享】两步让你的footer乖乖置底！只需要CSS</title>
+        <pubTime>2017-05-01T17:22:00.000Z</pubTime>
         
          
            
@@ -2205,6 +2235,21 @@
 
     
   <url>
+    <loc>http://hongliang.pw/archives/2017/05/04/2017-05-04-52/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>【分享】10分钟，为页面生成二维码链接！</title>
+        <pubTime>2017-05-03T22:03:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hongliang.pw/archives/2017/05/10/2017-05-10-1815772/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
@@ -2226,21 +2271,6 @@
         <display>
         <title>热火朝天大赛时，我们在闭关做什么？</title>
         <pubTime>2017-06-14T07:48:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hongliang.pw/archives/2017/05/04/2017-05-04-52/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>【分享】10分钟，为页面生成二维码链接！</title>
-        <pubTime>2017-05-03T22:03:00.000Z</pubTime>
         
          
            
@@ -2280,12 +2310,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/07/02/2017-07-02-1991026/</loc>
+    <loc>http://hongliang.pw/archives/2017/06/29/2017-06-29-1982256/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-7-2 看菜谱所想……</title>
-        <pubTime>2017-07-02T02:15:00.000Z</pubTime>
+        <title>2017-6-29 《狡猾读书法》读书笔记</title>
+        <pubTime>2017-06-28T17:46:00.000Z</pubTime>
         
          
            
@@ -2295,12 +2325,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/06/29/2017-06-29-1982256/</loc>
+    <loc>http://hongliang.pw/archives/2017/07/02/2017-07-02-1991026/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-6-29 《狡猾读书法》读书笔记</title>
-        <pubTime>2017-06-28T17:46:00.000Z</pubTime>
+        <title>2017-7-2 看菜谱所想……</title>
+        <pubTime>2017-07-02T02:15:00.000Z</pubTime>
         
          
            
@@ -2340,12 +2370,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/08/03/2017-08-03-xdite-said-the-law-on-speed-reading-extracts/</loc>
+    <loc>http://hongliang.pw/archives/2017/07/04/2017-07-04-asdf/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>《极速读书法》提取</title>
-        <pubTime>2017-08-03T03:48:00.000Z</pubTime>
+        <title>读《为你自己学RUBY ON RAILS--高见龙》提取记录</title>
+        <pubTime>2017-07-04T08:43:00.000Z</pubTime>
         
          
            
@@ -2385,6 +2415,36 @@
 
     
   <url>
+    <loc>http://hongliang.pw/archives/2017/08/03/2017-08-03-the-front-half-of-the-ruby-on-rails-guides-extraction/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>《ruby on rails guides》前半部分提取</title>
+        <pubTime>2017-08-02T17:29:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hongliang.pw/archives/2017/08/03/2017-08-03-xdite-said-the-law-on-speed-reading-extracts/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>《极速读书法》提取</title>
+        <pubTime>2017-08-03T03:48:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hongliang.pw/archives/2017/08/03/2017-08-03-xu-cen-how-to-efficiently-extract-records/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
@@ -2415,21 +2475,6 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/08/03/2017-08-03-the-front-half-of-the-ruby-on-rails-guides-extraction/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>《ruby on rails guides》前半部分提取</title>
-        <pubTime>2017-08-02T17:29:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://hongliang.pw/archives/2016/12/11/2016-12-11-hello-world/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
@@ -2445,12 +2490,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2016/12/13/2016-12-13-the-year-2016-12-13/</loc>
+    <loc>http://hongliang.pw/archives/2017/08/23/2017-08-23-2208162/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2016-12-13学习记录</title>
-        <pubTime>2016-12-13T06:58:00.000Z</pubTime>
+        <title>表格被拉得超长怎么办？</title>
+        <pubTime>2017-08-22T22:32:00.000Z</pubTime>
         
          
            
@@ -2475,12 +2520,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2016/12/11/2016-12-11-1198973/</loc>
+    <loc>http://hongliang.pw/archives/2016/12/13/2016-12-13-the-year-2016-12-13/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2016-12-11学习记录</title>
-        <pubTime>2016-12-11T07:28:00.000Z</pubTime>
+        <title>2016-12-13学习记录</title>
+        <pubTime>2016-12-13T06:58:00.000Z</pubTime>
         
          
            
@@ -2490,12 +2535,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/08/23/2017-08-23-2208162/</loc>
+    <loc>http://hongliang.pw/archives/2016/12/11/2016-12-11-1198973/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>表格被拉得超长怎么办？</title>
-        <pubTime>2017-08-22T22:32:00.000Z</pubTime>
+        <title>2016-12-11学习记录</title>
+        <pubTime>2016-12-11T07:28:00.000Z</pubTime>
         
          
            
@@ -2535,57 +2580,12 @@
 
     
   <url>
-    <loc>http://hongliang.pw/archives/2017/04/22/2017-04-22-1736684/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>2017-4-22 ORID</title>
-        <pubTime>2017-04-22T06:51:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://hongliang.pw/archives/2016/12/21/2016-12-21-1232491/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
         <title>2016-12-21错误记录</title>
         <pubTime>2016-12-21T07:21:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hongliang.pw/archives/2017/03/21/2017-03-21-asdf/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>如何修改Atom自带的快捷键&&使用⌘+E快速打开新文件~</title>
-        <pubTime>2017-03-21T08:03:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hongliang.pw/archives/2017/07/04/2017-07-04-asdf/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>读《为你自己学RUBY ON RAILS--高见龙》提取记录</title>
-        <pubTime>2017-07-04T08:43:00.000Z</pubTime>
         
          
            
