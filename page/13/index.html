@@ -1820,7 +1820,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.pw/archives/2017/02/18/2017-02-18-1428436/">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.pw/archives/2017/02/18/2017-02-18-2017-2-17-error/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
@@ -1839,7 +1839,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/archives/2017/02/18/2017-02-18-1428436/" itemprop="url">2017-2-17学习记录</a></h1>
+                <a class="post-title-link" href="/archives/2017/02/18/2017-02-18-2017-2-17-error/" itemprop="url">2017-2-17错误记录</a></h1>
         
 
         <div class="post-meta">
@@ -1870,9 +1870,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/archives/2017/02/18/2017-02-18-1428436/#comments" itemprop="discussionUrl">
+                <a href="/archives/2017/02/18/2017-02-18-2017-2-17-error/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/02/18/2017-02-18-1428436/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/02/18/2017-02-18-2017-2-17-error/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1902,32 +1902,14 @@
       
         
           
-            <h3 id="每日学习纪录：ORID"><a href="#每日学习纪录：ORID" class="headerlink" title="每日学习纪录：ORID"></a>每日学习纪录：ORID</h3><blockquote>
-<p>这是一个思考框架，利用 ORID 整理今天的思绪。</p>
-</blockquote>
-<h2 id="Objective"><a href="#Objective" class="headerlink" title="Objective"></a>Objective</h2><blockquote>
-<p>关于今天的课程, 你记得什么? 完成了什么?</p>
-</blockquote>
-<p>今天学习用时：5H-15min 感觉：小崩溃</p>
-<p>今天的课程是：跟着打code，第二遍尾：</p>
-<ul>
-<li>寄送订单确认信(60min)</li>
-<li>切换订单状态(75min)</li>
-<li>可以对订单时行状态切换（180min)</li>
+            <h3 id="错误画面1：-用时15min"><a href="#错误画面1：-用时15min" class="headerlink" title="错误画面1：( 用时15min)"></a>错误画面1：( 用时15min)</h3><p><img src="https://ww3.sinaimg.cn/large/006tNbRwgy1fct6hl6u7wj31g40f21ek.jpg" alt=""><br>提示: method =&gt; “config”错误，根据以往的经验我以为是打错字，然后前后几步都去检查单词有无打错。没有发现错误。<br><img src="https://ww2.sinaimg.cn/large/006tNbRwgy1fct6n3pnhxj317m0jw0xw.jpg" alt=""><br>结果：原来是放错位置。</p>
+<blockquote>
+<h3 id="总结：错误除了打错字，还可能是放错位置。好吧，解BUG又多了一个维度了！"><a href="#总结：错误除了打错字，还可能是放错位置。好吧，解BUG又多了一个维度了！" class="headerlink" title="总结：错误除了打错字，还可能是放错位置。好吧，解BUG又多了一个维度了！"></a>总结：错误除了打错字，还可能是放错位置。好吧，解BUG又多了一个维度了！</h3></blockquote>
+<h3 id="错误画面2：-（用时30-min"><a href="#错误画面2：-（用时30-min" class="headerlink" title="错误画面2： （用时30 min)"></a>错误画面2： （用时30 min)</h3><p><img src="https://ww2.sinaimg.cn/large/006tNbRwgy1fct96ch5ahg30qd0m0796.gif" alt=""><br>做到后面的“可切换订单状态”，才发现无法结账生成订单后无法跳转页面，然后各种检查，再看看server log<br><img src="https://ww4.sinaimg.cn/large/006tNbRwgy1fct97ufsn1j31fw0peti7.jpg" alt=""><br>解决：看到红字：rollback transaction， 猜测是不是AASM有限状态机出了问题，于是把这一节课程所有code贴了一遍。问题解决！</p>
+<h3 id="反思：解决后，我把贴的code一步步退回去，没有发现bug，说明我打的code没有错，问题的原因现在无法弄清了。可能有两种："><a href="#反思：解决后，我把贴的code一步步退回去，没有发现bug，说明我打的code没有错，问题的原因现在无法弄清了。可能有两种：" class="headerlink" title="反思：解决后，我把贴的code一步步退回去，没有发现bug，说明我打的code没有错，问题的原因现在无法弄清了。可能有两种："></a>反思：解决后，我把贴的code一步步退回去，没有发现bug，说明我打的code没有错，问题的原因现在无法弄清了。可能有两种：</h3><ul>
+<li>我第一次rake db:migrate没有成功。</li>
+<li>电脑真的是有问题了，要重装了！</li>
 </ul>
-<p>还记得什么：不记得什么了，购物网站的后部分，做第二遍感觉还是非常的混乱，逻辑关系还没理清。</p>
-<p>今天的纠结是否要参加周日的广州meetup，一来没电脑，二来没什么能分享的。后来觉得自己并不是要做表现型的人，要做进取型的人，所以，跟老哥借了MAC air，准备明天上了！</p>
-<h2 id="Reflective"><a href="#Reflective" class="headerlink" title="Reflective"></a>Reflective</h2><blockquote>
-<p>你要如何形容今天的情绪 今天的高峰是什么? 今天的低点是什么?</p>
-</blockquote>
-<p>今天的状态：身体上有点疲惫，心情还算平静，一些会分散注意力的事情也基本能控制住了。晚上6点半去健身运动，9点回来后，一直在京东找4K屏幕，一直到深夜1点，有3个小时是费了。。。。</p>
-<p>今天的高峰：下午5点的时候，还在为找队友的事情感伤，在slack上的teamup频道找到一个潮汕老乡，“相见欢”，哈哈。</p>
-<p>今天的低点：低点就是在找到队友前的落寞！那种落后的感觉。让我想起了我在读高三的时候 ，同学都在奋斗，而我想奋斗也无力奋斗了的感觉，这种感觉很失败！</p>
-<h2 id="Interpretive"><a href="#Interpretive" class="headerlink" title="Interpretive"></a>Interpretive</h2><blockquote>
-<p>我们今天学到了什么? 今天一个重要的领悟是什么?明天有什么要继续努力的？</p>
-</blockquote>
-<p>今天一个重要的领悟：尽量做一个进取型的人。</p>
-<p>明天要继续努力的：快快把购物网站后面的部署还有ihower大神的视频看了，才能应对周日广州MEETUP。</p>
 
           
         
