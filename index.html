@@ -393,19 +393,37 @@
 
       
         
-          
-          网速如何？请看图！简单粗暴的小教程开始：
-下载项目并部署，打开终端机，执行指令：
-
-登录Heroku删除个app需要等很久？怎么删app最方便？两行代码搞定~！这样做…
-
-1234$ git clone git@github.com:activeliang/shadowsocks-over-websocket.git$ cd shadowsocks-over-websocket$ heroku create$ git push heroku master
-(注意：指令前的字符$代表这是一条指令，请不要跟着复制)
-
-设置密码并启动：
-（请自行替代指令中的中文提示）!!!
-1234$ heroku config:set METHOD=aes-256-cfb PASSWORD=设置密码 SERVE
-          ...
+          <h5 id="网速如何？请看图！"><a href="#网速如何？请看图！" class="headerlink" title="网速如何？请看图！"></a>网速如何？请看图！</h5><h5 id=""><a href="#" class="headerlink" title=""></a><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-19-193501.jpg" alt=""></h5><h5 id="简单粗暴的小教程开始："><a href="#简单粗暴的小教程开始：" class="headerlink" title="简单粗暴的小教程开始："></a>简单粗暴的小教程开始：</h5><ol>
+<li><p>下载项目并部署，打开终端机，执行指令：</p>
+<blockquote>
+<p>登录Heroku删除个app需要等很久？怎么删app最方便？<a href="http://hongliang.site/2017/06/20/%E6%80%8E%E6%A0%B7%E5%88%A0HEROKUAPP%E6%9C%80%E5%BF%AB%E6%8D%B7%EF%BC%9F%E5%AE%89%E8%A3%85NODEJS%E9%81%87%E9%94%99%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/">两行代码搞定~！这样做…</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git clone git@github.com:activeliang/shadowsocks-over-websocket.git</div><div class="line">$ cd shadowsocks-over-websocket</div><div class="line">$ heroku create</div><div class="line">$ git push heroku master</div></pre></td></tr></table></figure>
+<p>(注意：指令前的字符<code>$</code>代表这是一条指令，请不要跟着复制)</p>
+</li>
+<li><p>设置密码并启动：</p>
+<p>（请自行替代指令中的<strong><u>中文提示</u></strong>）!!!</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ heroku config:set METHOD=aes-256-cfb PASSWORD=设置密码 SERVER_ADDRESS=0.0.0.0</div><div class="line">$ brew install node    #这一步是安装nodejs，已安装可跳过。如遇错，请看下文提示。</div><div class="line">$ npm install</div><div class="line">$ node local.js -s 第一步中生成的Herokuapp名称.herokuapp.com -l 1080 -m aes-256-cfb -k 设置的密码 -p 80</div></pre></td></tr></table></figure>
+<blockquote>
+<p>安装nodejs遇错，怎么办？<a href="http://hongliang.site/2017/06/20/%E6%80%8E%E6%A0%B7%E5%88%A0HEROKUAPP%E6%9C%80%E5%BF%AB%E6%8D%B7%EF%BC%9F%E5%AE%89%E8%A3%85NODEJS%E9%81%87%E9%94%99%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/">这样做…</a></p>
+</blockquote>
+</li>
+<li><p>下载安装客户端并配置   <a href="http://opxagqii1.bkt.clouddn.com/ShadowsocksX-NG.1.6.1.zip" target="_blank" rel="external">点击下载</a></p>
+<ul>
+<li><p>打开软件，配置密码（前面设置的密码）<img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-20-023141.jpg" alt=""></p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-20-023430.jpg" alt=""></p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-20-023809.jpg" alt=""></p>
+</li>
+<li><p>进入客户端 <strong>Shadowsocks</strong> 的 偏好设置：</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-20-075739.jpg" alt=""></p>
+</li>
+<li><p>完成，测试：打开 <a href="www.google.com">www.google.com</a> 查看日志：</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-20-025021.jpg" alt=""></p>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="搞定。可以自由上网了"><a href="#搞定。可以自由上网了" class="headerlink" title="搞定。可以自由上网了~"></a>搞定。可以自由上网了~</h5>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/20/利用Heroku搭建自己的梯子，3步实现免费科学上网。/#more" rel="contents">
@@ -562,30 +580,37 @@
 
       
         
-          
-          写在前面：
-
-最近vpn容易断（大环境所致）。于是思考如何离线浏览一个网站。别说，还真找到了简单粗暴的方法。可以实现：一键离线整个网站（包括图片和视频），以便在火车上，飞机上，断网的情况下浏览网页，尽情学习。
-
-开始:（四步）
-下载安装软件。点击下载
-
-连接VPN（如果你要离线的网页需要的话。）
-
-打开软件，输入网址，这里以我经常查阅的 W3school 的 JS 课程 为例。
-
-​
-
-离线选项，点击下载：
-
-说明：
-离线页数限制：
-限制页数的大小，根据你要离线的范围决定，最高可以一次离线5000个页面（一个链接就是一个页面）
-我们当前要离线的js教程，估计有几千个链接总数。这个无法准确的预知，我们先离线1000个看看，不够再加。
-
-
-链接层级限制：根据需要设置，如果层级不太明确，请选Unl
-          ...
+          <p>写在前面：</p>
+<blockquote>
+<p>最近vpn容易断（大环境所致）。于是思考如何离线浏览一个网站。别说，还真找到了简单粗暴的方法。可以实现：一键离线整个网站（包括图片和视频），以便在火车上，飞机上，断网的情况下浏览网页，尽情学习。</p>
+</blockquote>
+<h4 id="开始-（四步）"><a href="#开始-（四步）" class="headerlink" title="开始:（四步）"></a>开始:（四步）</h4><ol>
+<li><p>下载安装软件。<a href="http://ovifiszyi.bkt.gdipper.com/Offline_Pages_Pro_v1.4.zip" target="_blank" rel="external">点击下载</a></p>
+</li>
+<li><p>连接VPN（如果你要离线的网页需要的话。）</p>
+</li>
+<li><p>打开软件，输入网址，这里以我经常查阅的 <a href="https://www.w3schools.com/js/default.asp" target="_blank" rel="external">W3school 的 JS 课程</a> 为例。</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-18-081532.jpg" alt=""></p>
+<p>​</p>
+</li>
+<li><p>离线选项，点击下载：</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-18-083911.jpg" alt=""></p>
+<h5 id="说明："><a href="#说明：" class="headerlink" title="说明："></a>说明：</h5><ul>
+<li><strong>离线页数限制</strong>：<ul>
+<li>限制页数的大小，根据你要离线的范围决定，最高可以一次离线5000个页面（一个链接就是一个页面）</li>
+<li>我们当前要离线的js教程，估计有几千个链接总数。这个无法准确的预知，我们先离线1000个看看，不够再加。</li>
+</ul>
+</li>
+<li><strong>链接层级限制</strong>：根据需要设置，如果层级不太明确，请选<strong>Unlimited</strong></li>
+<li><strong>层级选项</strong>：根据字面意思理解。</li>
+<li><strong>外站离线层级限制：</strong> 下载外站链接的页面时，层级限制。</li>
+</ul>
+<blockquote>
+<p>其他配置，各位自行研究下。。。</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="搞定！"><a href="#搞定！" class="headerlink" title="搞定！"></a>搞定！</h4>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/18/mac上一键离线整个网站的方法（以便断网浏览）/#more" rel="contents">
@@ -742,32 +767,29 @@
 
       
         
-          
-          
-非会员情况下，实测：20M的网线，下载可达：2.8M/S
-
-简单粗暴的小教程开始：步骤1：下载安装ARIA2官方链接：https://github.com/yangshun1029/aria2gui/releases
-
-下载最新版：
-
-安装：解压后直接拖进“应用程序”里，然后打开。
-
-
-
-步骤2：下载安装chrome插件
-从官方地址下载：https://github.com/acgotaku/BaiduExporter
-
-
-解压备用。
-
-打开chrome浏览器：
-先打开“开发者模式”，然后加载前面解压好的chrome插件。
-
-
-
-步骤3： 搞定，开始下载！
-用chrome打开您的百度网盘主页，选好你要下载的文件，这时会自动出现一个“导出下载”，选择“aria2下载”即可。（请确保：aria
-          ...
+          <blockquote>
+<p>非会员情况下，实测：20M的网线，下载可达：<strong>2.8M/S</strong></p>
+</blockquote>
+<h4 id="简单粗暴的小教程开始："><a href="#简单粗暴的小教程开始：" class="headerlink" title="简单粗暴的小教程开始："></a>简单粗暴的小教程开始：</h4><h5 id="步骤1：下载安装ARIA2"><a href="#步骤1：下载安装ARIA2" class="headerlink" title="步骤1：下载安装ARIA2"></a>步骤1：下载安装ARIA2</h5><p>官方链接：<a href="https://github.com/yangshun1029/aria2gui/releases" target="_blank" rel="external">https://github.com/yangshun1029/aria2gui/releases</a></p>
+<ul>
+<li><p>下载最新版：<img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-030736.jpg" alt=""></p>
+</li>
+<li><p>安装：解压后直接拖进“应用程序”里，然后打开。</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-030932.jpg" alt=""></p>
+</li>
+</ul>
+<h5 id="步骤2：下载安装chrome插件"><a href="#步骤2：下载安装chrome插件" class="headerlink" title="步骤2：下载安装chrome插件"></a>步骤2：下载安装chrome插件</h5><ul>
+<li><p>从官方地址下载：<a href="https://github.com/acgotaku/BaiduExporter" target="_blank" rel="external">https://github.com/acgotaku/BaiduExporter</a></p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-031315.jpg" alt=""></p>
+</li>
+<li><p>解压备用。</p>
+</li>
+<li><p>打开chrome浏览器：<img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-031609.jpg" alt=""></p>
+<p>先打开“开发者模式”，然后加载前面解压好的chrome插件。</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-031952.jpg" alt=""></p>
+</li>
+</ul>
+<h5 id="步骤3：-搞定，开始下载！"><a href="#步骤3：-搞定，开始下载！" class="headerlink" title="步骤3： 搞定，开始下载！"></a>步骤3： 搞定，开始下载！</h5>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/18/Mac上高速下载百度网盘资源的方法（2步）/#more" rel="contents">
@@ -924,17 +946,14 @@
 
       
         
-          
-          用时间：一个多月。
-时间都花在哪儿：
-
-作死地把admin后台搬到了小程序上，还把产品和分类的增删改查集成在同一个页面。（逻辑乱到快爆）
-第一次维护微信登录状态，并嵌接自己的用户系统。很多地方自己想到天老。（做出来了，但很多不足之处）。
-第一次就做分类页面的左右联动效果，作死。
-
-初版上线（数据为测试用的假数据）：至爱珠宝
-
-          
+          <p>用时间：一个多月。</p>
+<p>时间都花在哪儿：</p>
+<ul>
+<li>作死地<strong>把admin后台搬到了小程序上</strong>，还把产品和分类的增删改查集成在同一个页面。（逻辑乱到快爆）</li>
+<li>第一次维护微信登录状态，并嵌接自己的用户系统。很多地方自己想到天老。（做出来了，但很多不足之处）。</li>
+<li>第一次就做分类页面的左右联动效果，作死。</li>
+</ul>
+<p>初版上线（数据为测试用的假数据）：<strong>至爱珠宝</strong><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-18-101056.jpg" alt=""></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/17/边学边做，第一个小程序上线啦！/#more" rel="contents">
@@ -1091,30 +1110,18 @@
 
       
         
-          
-          
-如题，安卓手机上显示：request:fail ssl hand shake errorssl握手失败.
-
-原因：https证书配置问题！
-解法：修改配置（我这里把证书也一起更换掉了）
-
-打开我的阿里云主机控制台：
-
-
-点击购买证书：
-
-拿到一张免费的证书：
-
-补全信息。系统审核（十几分钟）
-
-下载证书根据提示操作即可！
-
-
-写在后面:
-阿里云和腾讯云只有买主机都有免费的证书可以领（一年）。
-
-
-          
+          <blockquote>
+<p>如题，安卓手机上显示：<code>request:fail ssl hand shake error</code>ssl握手失败.</p>
+</blockquote>
+<h5 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h5><p>https证书配置问题！</p>
+<h5 id="解法："><a href="#解法：" class="headerlink" title="解法："></a>解法：</h5><p>修改配置（我这里把证书也一起更换掉了）</p>
+<ol>
+<li><p>打开我的阿里云主机控制台：</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-18-101815.jpg" alt=""></p>
+</li>
+<li><p>点击购买证书：<img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-18-102013.jpg" alt=""></p>
+</li>
+</ol>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/15/微信小程序，本地模拟器和苹果手机上正常，在安卓手机上无法加载数据/#more" rel="contents">
