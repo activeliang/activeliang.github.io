@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="mac," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="非会员情况下，实测：20M的网线，下载可达：2.8M/S  简单粗暴的小教程开始：步骤1：下载安装ARIA2官方链接：https://github.com/yangshun1029/aria2gui/releases  下载最新版：  安装：解压后直接拖进“应用程序”里，然后打开。    步骤2：下载安装chrome插件 从官方地址下载：https://github.com/acgotaku/B">
+<meta name="keywords" content="mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac上高速下载百度网盘资源的方法（2步）">
+<meta property="og:url" content="http://hongliang.site/archives/2017/10/18/Mac上高速下载百度网盘资源的方法（2步）/index.html">
+<meta property="og:site_name" content="Activeliang&#39;s Blog">
+<meta property="og:description" content="非会员情况下，实测：20M的网线，下载可达：2.8M/S  简单粗暴的小教程开始：步骤1：下载安装ARIA2官方链接：https://github.com/yangshun1029/aria2gui/releases  下载最新版：  安装：解压后直接拖进“应用程序”里，然后打开。    步骤2：下载安装chrome插件 从官方地址下载：https://github.com/acgotaku/B">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-030736.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-030932.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-031315.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-031609.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-031952.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-032358.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-033047.jpg">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-10-18-094733.jpg">
+<meta property="og:updated_time" content="2017-10-20T06:13:48.222Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mac上高速下载百度网盘资源的方法（2步）">
+<meta name="twitter:description" content="非会员情况下，实测：20M的网线，下载可达：2.8M/S  简单粗暴的小教程开始：步骤1：下载安装ARIA2官方链接：https://github.com/yangshun1029/aria2gui/releases  下载最新版：  安装：解压后直接拖进“应用程序”里，然后打开。    步骤2：下载安装chrome插件 从官方地址下载：https://github.com/acgotaku/B">
+<meta name="twitter:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-030736.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hongliang.site/archives/2017/10/18/Mac上高速下载百度网盘资源的方法（2步）/"/>
+
+
+
+
+
+  <title>Mac上高速下载百度网盘资源的方法（2步） | Activeliang's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?521038c619f1a076f3fed42401d82550";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Activeliang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">黄鸿亮的博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/10/18/Mac上高速下载百度网盘资源的方法（2步）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Mac上高速下载百度网盘资源的方法（2步）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T16:30:28+08:00">
+                2017-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mac/" itemprop="url" rel="index">
+                    <span itemprop="name">mac</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/18/Mac上高速下载百度网盘资源的方法（2步）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/18/Mac上高速下载百度网盘资源的方法（2步）/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>非会员情况下，实测：20M的网线，下载可达：<strong>2.8M/S</strong></p>
+</blockquote>
+<h4 id="简单粗暴的小教程开始："><a href="#简单粗暴的小教程开始：" class="headerlink" title="简单粗暴的小教程开始："></a>简单粗暴的小教程开始：</h4><h5 id="步骤1：下载安装ARIA2"><a href="#步骤1：下载安装ARIA2" class="headerlink" title="步骤1：下载安装ARIA2"></a>步骤1：下载安装ARIA2</h5><p>官方链接：<a href="https://github.com/yangshun1029/aria2gui/releases" target="_blank" rel="external">https://github.com/yangshun1029/aria2gui/releases</a></p>
+<ul>
+<li><p>下载最新版：<img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-030736.jpg" alt=""></p>
+</li>
+<li><p>安装：解压后直接拖进“应用程序”里，然后打开。</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-030932.jpg" alt=""></p>
+</li>
+</ul>
+<h5 id="步骤2：下载安装chrome插件"><a href="#步骤2：下载安装chrome插件" class="headerlink" title="步骤2：下载安装chrome插件"></a>步骤2：下载安装chrome插件</h5><ul>
+<li><p>从官方地址下载：<a href="https://github.com/acgotaku/BaiduExporter" target="_blank" rel="external">https://github.com/acgotaku/BaiduExporter</a></p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-031315.jpg" alt=""></p>
+</li>
+<li><p>解压备用。</p>
+</li>
+<li><p>打开chrome浏览器：<img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-031609.jpg" alt=""></p>
+<p>先打开“开发者模式”，然后加载前面解压好的chrome插件。</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-031952.jpg" alt=""></p>
+</li>
+</ul>
+<h5 id="步骤3：-搞定，开始下载！"><a href="#步骤3：-搞定，开始下载！" class="headerlink" title="步骤3： 搞定，开始下载！"></a>步骤3： 搞定，开始下载！</h5><ul>
+<li><p>用chrome打开您的百度网盘主页，选好你要下载的文件，这时会自动出现一个“导出下载”，选择“aria2下载”即可。（请确保：aria2已打开，是自己网盘的文件，如果是好友分享的文件请先保存到自己网盘）</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-032358.jpg" alt=""></p>
+</li>
+<li><p>打开ARIA2查看下载状态吧~！实测：20M的网线，下载可达：<strong>2.8M/S</strong></p>
+</li>
+</ul>
+<h5 id="Tips"><a href="#Tips" class="headerlink" title="Tips:"></a>Tips:</h5><ol>
+<li><p>把aria2的刷新频率改为1s，这样可以更实时查看状态：</p>
+<p><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-06-033047.jpg" alt=""></p>
+</li>
+<li><p>chrome插件本地存放的位置固定好，如果不小心被清除掉，需要重新加载。</p>
+</li>
+<li><p>偶尔会遇到有些资源，最大的下载速度只有500K左右，资源的问题。</p>
+</li>
+</ol>
+<h4 id="结束。"><a href="#结束。" class="headerlink" title="结束。"></a>结束。</h4><h5 id="类似的简单粗暴小教程："><a href="#类似的简单粗暴小教程：" class="headerlink" title="类似的简单粗暴小教程："></a>类似的简单粗暴小教程：</h5><ul>
+<li><a href="http://hongliang.site/2017/10/20/利用Heroku搭建自己的梯子，3步实现免费科学上网。">利用Heroku搭建自己的梯子，3步实现免费科学上网。</a></li>
+<li><a href="http://hongliang.site/2017/10/18/mac%E4%B8%8A%E4%B8%80%E9%94%AE%E7%A6%BB%E7%BA%BF%E6%95%B4%E4%B8%AA%E7%BD%91%E7%AB%99%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88%E4%BB%A5%E4%BE%BF%E6%96%AD%E7%BD%91%E6%B5%8F%E8%A7%88%EF%BC%89/">mac上一键离线整个网站的方法（以便断网浏览）</a>​</li>
+<li><a href="http://hongliang.site/2017/10/18/Mac%E4%B8%8A%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E8%B5%84%E6%BA%90%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%882%E6%AD%A5%EF%BC%89/">Mac上高速下载百度网盘资源的方法（2步）/</a></li>
+<li><a href="http://hongliang.site/2017/03/10/2017-03-10-how-to-add-your-own-custom-code-snippets-to-emmet-snippets/">打code时如何减少手动挪光标的次数&amp;&amp;emmet增加自定义片段的方法。</a></li>
+<li><a href="http://hongliang.site/2017/03/21/2017-03-21-asdf/">如何修改Atom自带的快捷键&amp;&amp;使用⌘+E快速打开新文件~</a></li>
+</ul>
+<p>本文有帮你节约到时间吗？赏几个硬蹦玩玩~😄<img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-18-094733.jpg" alt=""></p>
+<p>####</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mac/" rel="tag"># mac</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/17/边学边做，第一个小程序上线啦！/" rel="next" title="边学边做，第一个小程序上线啦！">
+                <i class="fa fa-chevron-left"></i> 边学边做，第一个小程序上线啦！
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/18/mac上一键离线整个网站的方法（以便断网浏览）/" rel="prev" title="mac上一键离线整个网站的方法（以便断网浏览）">
+                mac上一键离线整个网站的方法（以便断网浏览） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg"
+              alt="黄鸿亮" />
+          
+            <p class="site-author-name" itemprop="name">黄鸿亮</p>
+            <p class="site-description motion-element" itemprop="description">记录让我们走得更远...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">175</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#简单粗暴的小教程开始："><span class="nav-number">1.</span> <span class="nav-text">简单粗暴的小教程开始：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#步骤1：下载安装ARIA2"><span class="nav-number">1.1.</span> <span class="nav-text">步骤1：下载安装ARIA2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#步骤2：下载安装chrome插件"><span class="nav-number">1.2.</span> <span class="nav-text">步骤2：下载安装chrome插件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#步骤3：-搞定，开始下载！"><span class="nav-number">1.3.</span> <span class="nav-text">步骤3： 搞定，开始下载！</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Tips"><span class="nav-number">1.4.</span> <span class="nav-text">Tips:</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结束。"><span class="nav-number">2.</span> <span class="nav-text">结束。</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#类似的简单粗暴小教程："><span class="nav-number">2.1.</span> <span class="nav-text">类似的简单粗暴小教程：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄鸿亮</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://honglianggithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://hongliang.site/archives/2017/10/18/Mac上高速下载百度网盘资源的方法（2步）/';
+          this.page.identifier = '2017/10/18/Mac上高速下载百度网盘资源的方法（2步）/';
+          this.page.title = 'Mac上高速下载百度网盘资源的方法（2步）';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://honglianggithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
