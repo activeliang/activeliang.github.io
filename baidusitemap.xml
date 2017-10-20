@@ -4,63 +4,8 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2017/07/20/%E6%80%8E%E6%A0%B7%E5%88%A0HEROKUAPP%E6%9C%80%E5%BF%AB%E6%8D%B7%EF%BC%9F%E5%AE%89%E8%A3%85NODEJS%E9%81%87%E9%94%99%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/</loc>
-    <lastmod>2017-10-20T08:50:57.212Z</lastmod>
-    <data>
-        <display>
-        <title>怎样删Heroku-app最快捷？安装 Node Js 遇错怎么办？</title>
-        <pubTime>2017-07-20T07:31:29.000Z</pubTime>
-        
-        <tag>mac</tag>
-         
-         
-           
-             
-              <breadCrumb title="mac" url="http://hongliang.site/archives/categories/mac/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hongliang.site/archives/2017/10/20/%E5%88%A9%E7%94%A8Heroku%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E6%A2%AF%E5%AD%90%EF%BC%8C3%E6%AD%A5%E5%AE%9E%E7%8E%B0%E5%85%8D%E8%B4%B9%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E3%80%82/</loc>
-    <lastmod>2017-10-20T08:35:41.278Z</lastmod>
-    <data>
-        <display>
-        <title>利用Heroku搭建自己的梯子，3步实现免费科学上网。</title>
-        <pubTime>2017-10-20T08:30:28.000Z</pubTime>
-        
-        <tag>mac</tag>
-         
-         
-           
-             
-              <breadCrumb title="mac" url="http://hongliang.site/archives/categories/mac/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hongliang.site/archives/2017/03/10/2017-03-10-how-to-add-your-own-custom-code-snippets-to-emmet-snippets/</loc>
-    <lastmod>2017-10-20T06:22:11.556Z</lastmod>
-    <data>
-        <display>
-        <title>打code时如何减少手动挪光标的次数&&emmet增加自定义片段的方法。</title>
-        <pubTime>2017-03-10T08:22:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://hongliang.site/archives/2017/10/18/mac%E4%B8%8A%E4%B8%80%E9%94%AE%E7%A6%BB%E7%BA%BF%E6%95%B4%E4%B8%AA%E7%BD%91%E7%AB%99%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%88%E4%BB%A5%E4%BE%BF%E6%96%AD%E7%BD%91%E6%B5%8F%E8%A7%88%EF%BC%89/</loc>
-    <lastmod>2017-10-20T06:21:43.794Z</lastmod>
+    <lastmod>2017-10-20T08:59:54.871Z</lastmod>
     <data>
         <display>
         <title>mac上一键离线整个网站的方法（以便断网浏览）</title>
@@ -80,11 +25,66 @@
     
   <url>
     <loc>http://hongliang.site/archives/2017/10/18/Mac%E4%B8%8A%E9%AB%98%E9%80%9F%E4%B8%8B%E8%BD%BD%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E8%B5%84%E6%BA%90%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%882%E6%AD%A5%EF%BC%89/</loc>
-    <lastmod>2017-10-20T06:21:34.339Z</lastmod>
+    <lastmod>2017-10-20T08:59:48.419Z</lastmod>
     <data>
         <display>
         <title>Mac上高速下载百度网盘资源的方法（2步）</title>
         <pubTime>2017-10-18T08:30:28.000Z</pubTime>
+        
+        <tag>mac</tag>
+         
+         
+           
+             
+              <breadCrumb title="mac" url="http://hongliang.site/archives/categories/mac/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hongliang.site/archives/2017/10/20/%E5%88%A9%E7%94%A8Heroku%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E6%A2%AF%E5%AD%90%EF%BC%8C3%E6%AD%A5%E5%AE%9E%E7%8E%B0%E5%85%8D%E8%B4%B9%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E3%80%82/</loc>
+    <lastmod>2017-10-20T08:59:39.755Z</lastmod>
+    <data>
+        <display>
+        <title>利用Heroku搭建自己的梯子，3步实现免费科学上网。</title>
+        <pubTime>2017-10-20T08:30:28.000Z</pubTime>
+        
+        <tag>mac</tag>
+         
+         
+           
+             
+              <breadCrumb title="mac" url="http://hongliang.site/archives/categories/mac/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hongliang.site/archives/2017/03/10/2017-03-10-how-to-add-your-own-custom-code-snippets-to-emmet-snippets/</loc>
+    <lastmod>2017-10-20T08:59:25.962Z</lastmod>
+    <data>
+        <display>
+        <title>打code时如何减少手动挪光标的次数&&emmet增加自定义片段的方法。</title>
+        <pubTime>2017-03-10T08:22:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hongliang.site/archives/2017/07/20/%E6%80%8E%E6%A0%B7%E5%88%A0HEROKUAPP%E6%9C%80%E5%BF%AB%E6%8D%B7%EF%BC%9F%E5%AE%89%E8%A3%85NODEJS%E9%81%87%E9%94%99%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/</loc>
+    <lastmod>2017-10-20T08:50:57.212Z</lastmod>
+    <data>
+        <display>
+        <title>怎样删Heroku-app最快捷？安装 Node Js 遇错怎么办？</title>
+        <pubTime>2017-07-20T07:31:29.000Z</pubTime>
         
         <tag>mac</tag>
          
@@ -245,12 +245,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2017/01/01/2017-01-01-2017-01-01-records/</loc>
+    <loc>http://hongliang.site/archives/2017/01/01/2017-01-01-1264756/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-01-01学习记录</title>
-        <pubTime>2017-01-01T06:22:00.000Z</pubTime>
+        <title>2017-01-01错误记录</title>
+        <pubTime>2017-01-01T06:12:00.000Z</pubTime>
         
          
            
@@ -260,12 +260,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2017/01/01/2017-01-01-1264756/</loc>
+    <loc>http://hongliang.site/archives/2017/01/01/2017-01-01-2017-01-01-records/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-01-01错误记录</title>
-        <pubTime>2017-01-01T06:12:00.000Z</pubTime>
+        <title>2017-01-01学习记录</title>
+        <pubTime>2017-01-01T06:22:00.000Z</pubTime>
         
          
            
@@ -1190,12 +1190,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2016/12/11/2016-12-11-before-the-start-of-some-small-ideas/</loc>
+    <loc>http://hongliang.site/archives/2016/12/11/2016-12-11-hello-world/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>开始前的一些小想法~~~</title>
-        <pubTime>2016-12-11T03:00:00.000Z</pubTime>
+        <title>Hello World</title>
+        <pubTime>2016-12-11T01:30:00.000Z</pubTime>
         
          
            
@@ -1370,27 +1370,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2016/12/11/2016-12-11-hello-world/</loc>
+    <loc>http://hongliang.site/archives/2016/12/11/2016-12-11-before-the-start-of-some-small-ideas/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>Hello World</title>
-        <pubTime>2016-12-11T01:30:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hongliang.site/archives/2017/03/17/2017-03-17-1599720/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>2017-3-17 ORID</title>
-        <pubTime>2017-03-17T08:11:00.000Z</pubTime>
+        <title>开始前的一些小想法~~~</title>
+        <pubTime>2016-12-11T03:00:00.000Z</pubTime>
         
          
            
@@ -1406,6 +1391,21 @@
         <display>
         <title>2017-3-17 一个字母引发的备案，引众人debug.</title>
         <pubTime>2017-03-17T07:50:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hongliang.site/archives/2017/03/17/2017-03-17-1599720/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>2017-3-17 ORID</title>
+        <pubTime>2017-03-17T08:11:00.000Z</pubTime>
         
          
            
@@ -1550,12 +1550,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2017/03/21/2017-03-21-asdf/</loc>
+    <loc>http://hongliang.site/archives/2017/03/22/2017-03-22-2017-3-22-encountered-a-pit-records/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>如何修改Atom自带的快捷键&&使用⌘+E快速打开新文件~</title>
-        <pubTime>2017-03-21T08:03:00.000Z</pubTime>
+        <title>2017-3-22 遇到一个坑，记录</title>
+        <pubTime>2017-03-21T17:55:00.000Z</pubTime>
         
          
            
@@ -1565,12 +1565,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2017/03/22/2017-03-22-2017-3-22-encountered-a-pit-records/</loc>
+    <loc>http://hongliang.site/archives/2017/03/21/2017-03-21-asdf/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-3-22 遇到一个坑，记录</title>
-        <pubTime>2017-03-21T17:55:00.000Z</pubTime>
+        <title>如何修改Atom自带的快捷键&&使用⌘+E快速打开新文件~</title>
+        <pubTime>2017-03-21T08:03:00.000Z</pubTime>
         
          
            
@@ -1970,21 +1970,6 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2017/04/16/2017-04-16-the-second-week-of-april/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>4月第二周&周记</title>
-        <pubTime>2017-04-16T07:57:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://hongliang.site/archives/2017/04/17/2017-04-17-1718815/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
@@ -2015,27 +2000,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2017/04/19/2017-04-19-1725204/</loc>
+    <loc>http://hongliang.site/archives/2017/04/16/2017-04-16-the-second-week-of-april/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2014-4-19 ORID</title>
-        <pubTime>2017-04-19T05:34:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hongliang.site/archives/2017/04/19/2017-04-19-2017-4-18-orid/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>2017-4-18 ORID</title>
-        <pubTime>2017-04-18T19:36:00.000Z</pubTime>
+        <title>4月第二周&周记</title>
+        <pubTime>2017-04-16T07:57:00.000Z</pubTime>
         
          
            
@@ -2060,12 +2030,42 @@
 
     
   <url>
+    <loc>http://hongliang.site/archives/2017/04/19/2017-04-19-2017-4-18-orid/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>2017-4-18 ORID</title>
+        <pubTime>2017-04-18T19:36:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hongliang.site/archives/2017/04/21/2017-04-21-1731803/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
         <title>2017-4-21 ORID</title>
         <pubTime>2017-04-21T09:28:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://hongliang.site/archives/2017/04/19/2017-04-19-1725204/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>2014-4-19 ORID</title>
+        <pubTime>2017-04-19T05:34:00.000Z</pubTime>
         
          
            
@@ -2165,12 +2165,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2017/04/26/2017-04-26-1753227/</loc>
+    <loc>http://hongliang.site/archives/2017/04/25/2017-04-25-always-obstinate-residents-want-to-harm-why-my-aws-password-total-leakmd/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-4-26 ORID 今天遇到的问题都解决啦。</title>
-        <pubTime>2017-04-26T06:55:00.000Z</pubTime>
+        <title>总有刁民想害联，为什么我的AWS密码…总泄密！.md</title>
+        <pubTime>2017-04-24T19:36:00.000Z</pubTime>
         
          
            
@@ -2180,12 +2180,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2017/04/25/2017-04-25-always-obstinate-residents-want-to-harm-why-my-aws-password-total-leakmd/</loc>
+    <loc>http://hongliang.site/archives/2017/04/26/2017-04-26-1753227/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>总有刁民想害联，为什么我的AWS密码…总泄密！.md</title>
-        <pubTime>2017-04-24T19:36:00.000Z</pubTime>
+        <title>2017-4-26 ORID 今天遇到的问题都解决啦。</title>
+        <pubTime>2017-04-26T06:55:00.000Z</pubTime>
         
          
            
@@ -2240,12 +2240,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2017/05/04/2017-05-04-1790628/</loc>
+    <loc>http://hongliang.site/archives/2017/05/04/2017-05-04-52/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>【分享】如何在其他页面中实现登入功能，无需跳转至登入页面。</title>
-        <pubTime>2017-05-04T05:10:00.000Z</pubTime>
+        <title>【分享】10分钟，为页面生成二维码链接！</title>
+        <pubTime>2017-05-03T22:03:00.000Z</pubTime>
         
          
            
@@ -2255,12 +2255,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2017/05/04/2017-05-04-52/</loc>
+    <loc>http://hongliang.site/archives/2017/05/04/2017-05-04-1790628/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>【分享】10分钟，为页面生成二维码链接！</title>
-        <pubTime>2017-05-03T22:03:00.000Z</pubTime>
+        <title>【分享】如何在其他页面中实现登入功能，无需跳转至登入页面。</title>
+        <pubTime>2017-05-04T05:10:00.000Z</pubTime>
         
          
            
@@ -2315,12 +2315,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2017/06/22/2017-06-22-kyu/</loc>
+    <loc>http://hongliang.site/archives/2017/06/29/2017-06-29-1982256/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>Simple_form 如何diy提交路径</title>
-        <pubTime>2017-06-22T10:19:00.000Z</pubTime>
+        <title>2017-6-29 《狡猾读书法》读书笔记</title>
+        <pubTime>2017-06-28T17:46:00.000Z</pubTime>
         
          
            
@@ -2330,12 +2330,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2017/06/29/2017-06-29-1982256/</loc>
+    <loc>http://hongliang.site/archives/2017/06/22/2017-06-22-kyu/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2017-6-29 《狡猾读书法》读书笔记</title>
-        <pubTime>2017-06-28T17:46:00.000Z</pubTime>
+        <title>Simple_form 如何diy提交路径</title>
+        <pubTime>2017-06-22T10:19:00.000Z</pubTime>
         
          
            
@@ -2420,6 +2420,21 @@
 
     
   <url>
+    <loc>http://hongliang.site/archives/2017/08/03/2017-08-03-xdite-said-the-law-on-speed-reading-extracts/</loc>
+    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>《极速读书法》提取</title>
+        <pubTime>2017-08-03T03:48:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://hongliang.site/archives/2017/08/03/2017-08-03-the-second-part-of-the-tutorial-ruby-base-extraction/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
@@ -2441,21 +2456,6 @@
         <display>
         <title>《ruby on rails guides》前半部分提取</title>
         <pubTime>2017-08-02T17:29:00.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://hongliang.site/archives/2017/08/03/2017-08-03-xdite-said-the-law-on-speed-reading-extracts/</loc>
-    <lastmod>2017-09-07T17:10:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>《极速读书法》提取</title>
-        <pubTime>2017-08-03T03:48:00.000Z</pubTime>
         
          
            
@@ -2495,12 +2495,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2016/12/12/2016-12-12-1201678/</loc>
+    <loc>http://hongliang.site/archives/2016/12/13/2016-12-13-the-year-2016-12-13/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2016-11-12学习记录</title>
-        <pubTime>2016-12-12T07:03:00.000Z</pubTime>
+        <title>2016-12-13学习记录</title>
+        <pubTime>2016-12-13T06:58:00.000Z</pubTime>
         
          
            
@@ -2525,12 +2525,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2016/12/11/2016-12-11-1198973/</loc>
+    <loc>http://hongliang.site/archives/2016/12/12/2016-12-12-1201678/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2016-12-11学习记录</title>
-        <pubTime>2016-12-11T07:28:00.000Z</pubTime>
+        <title>2016-11-12学习记录</title>
+        <pubTime>2016-12-12T07:03:00.000Z</pubTime>
         
          
            
@@ -2540,12 +2540,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2016/12/13/2016-12-13-the-year-2016-12-13/</loc>
+    <loc>http://hongliang.site/archives/2016/12/11/2016-12-11-1198973/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2016-12-13学习记录</title>
-        <pubTime>2016-12-13T06:58:00.000Z</pubTime>
+        <title>2016-12-11学习记录</title>
+        <pubTime>2016-12-11T07:28:00.000Z</pubTime>
         
          
            
@@ -2600,12 +2600,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2016/12/30/2016-12-30-1258952/</loc>
+    <loc>http://hongliang.site/archives/2016/12/21/2016-12-21-1232503/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2016-12-30学习记录</title>
-        <pubTime>2016-12-30T08:28:00.000Z</pubTime>
+        <title>2016-12-21学习记录</title>
+        <pubTime>2016-12-21T07:28:00.000Z</pubTime>
         
          
            
@@ -2615,12 +2615,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2016/12/21/2016-12-21-1232503/</loc>
+    <loc>http://hongliang.site/archives/2016/12/30/2016-12-30-1258952/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2016-12-21学习记录</title>
-        <pubTime>2016-12-21T07:28:00.000Z</pubTime>
+        <title>2016-12-30学习记录</title>
+        <pubTime>2016-12-30T08:28:00.000Z</pubTime>
         
          
            
@@ -2645,12 +2645,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2016/12/31/2016-12-31-1262140/</loc>
+    <loc>http://hongliang.site/archives/2016/12/31/2016-12-31-2016-12-31-records/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2016-12-31错误记录</title>
-        <pubTime>2016-12-31T07:12:00.000Z</pubTime>
+        <title>2016-12-31学习记录</title>
+        <pubTime>2016-12-31T07:47:00.000Z</pubTime>
         
          
            
@@ -2660,12 +2660,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2016/12/31/2016-12-31-2016-12-31-records/</loc>
+    <loc>http://hongliang.site/archives/2016/12/31/2016-12-31-1262140/</loc>
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     <data>
         <display>
-        <title>2016-12-31学习记录</title>
-        <pubTime>2016-12-31T07:47:00.000Z</pubTime>
+        <title>2016-12-31错误记录</title>
+        <pubTime>2016-12-31T07:12:00.000Z</pubTime>
         
          
            
