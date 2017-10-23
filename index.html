@@ -290,6 +290,172 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/10/23/2017-10-23错误：类方法和实例方法嵌用掉的坑/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/23/2017-10-23错误：类方法和实例方法嵌用掉的坑/" itemprop="url">2017-10-23错误：类方法和实例方法嵌用掉的坑</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-23T12:21:40+08:00">
+                2017-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby/Rails</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/23/2017-10-23错误：类方法和实例方法嵌用掉的坑/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/23/2017-10-23错误：类方法和实例方法嵌用掉的坑/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          如图：
+重构代码时，从controller搬到model后，提示找不到render_chinese_weekday这个method。
+原因：进入引用的方法是一个类方法，而render_chinese_weekday是一个实例方法。所以才找不到。
+解法：给render_chinese_weekday定义为类方法即可。即前面加个self.
+反思：
+之前只知道类方法要用在类上，实例方法要用在实例上。掉完这个坑才有这个意识：方法的调用上也需要注意是否一一对应！
+
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/23/2017-10-23错误：类方法和实例方法嵌用掉的坑/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/10/20/利用Heroku搭建自己的梯子，3步实现免费科学上网。/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1793,150 +1959,6 @@ truncate(text, options = {}, &amp;block)1simple_format(truncate(group.descriptio
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/08/21/2017-08-21-ruby-download-the-file-saved-to-the-local-better/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/21/2017-08-21-ruby-download-the-file-saved-to-the-local-better/" itemprop="url">ruby下载文件保存到本地较好的方法</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-21T10:38:00+08:00">
-                2017-08-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/08/21/2017-08-21-ruby-download-the-file-saved-to-the-local-better/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/21/2017-08-21-ruby-download-the-file-saved-to-the-local-better/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-因为要汇出Excel档案，需要将图片下载回本地，才能写入excel档案。但总觉得下载的速度有点慢。
-
-一开始的方法：
-1234File.open( "#&#123;Rails.root&#125;/public/images/#&#123;r.envelop&#125;.png", "w") do |f|    image_file = RestClient.get get_image_url    f.write(image_file.force_encoding("utf-8"))end
-实测，导入25张图片用时15034ms。
-
-思考：平时在网站上加载25张图片，超快！3秒内搞定。为什么同样的网络，用ruby代码来下载就如此费时！一定是哪个步骤比较耗时。猜测是转码或RestClien
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/21/2017-08-21-ruby-download-the-file-saved-to-the-local-better/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1990,7 +2012,7 @@ truncate(text, options = {}, &amp;block)1simple_format(truncate(group.descriptio
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">176</span>
+                <span class="site-state-item-count">177</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2001,7 +2023,7 @@ truncate(text, options = {}, &amp;block)1simple_format(truncate(group.descriptio
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -2012,7 +2034,7 @@ truncate(text, options = {}, &amp;block)1simple_format(truncate(group.descriptio
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

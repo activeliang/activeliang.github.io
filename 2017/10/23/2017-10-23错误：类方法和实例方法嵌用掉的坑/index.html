@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="基础," />
 
 
 
@@ -95,17 +95,20 @@
 
 
 
-<meta name="description" content="在项目中，表格被一些字段拉得超长，整个表格效果看起来很不协调。怎么破？ 一般字母会被浏览器默认是一个单词或字符串，所以不会自动换行，需要手工设置自动换行。  这样做： 在&amp;lt;table&amp;gt;里增加style=&amp;quot;table-layout:fixed;&amp;quot; 在那个超长的字母单元格&amp;lt;td&amp;gt; 增加style=&amp;quot;word-wrap:break-word;&amp;quo">
+<meta name="description" content="如图： 重构代码时，从controller搬到model后，提示找不到render_chinese_weekday这个method。 原因：进入引用的方法是一个类方法，而render_chinese_weekday是一个实例方法。所以才找不到。 解法：给render_chinese_weekday定义为类方法即可。即前面加个self. 反思： 之前只知道类方法要用在类上，实例方法要用在实例上。掉完">
+<meta name="keywords" content="基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="表格被拉得超长怎么办？">
-<meta property="og:url" content="http://hongliang.site/archives/2017/08/23/2017-08-23-2208162/index.html">
+<meta property="og:title" content="2017-10-23错误：类方法和实例方法嵌用掉的坑">
+<meta property="og:url" content="http://hongliang.site/archives/2017/10/23/2017-10-23错误：类方法和实例方法嵌用掉的坑/index.html">
 <meta property="og:site_name" content="Activeliang&#39;s Blog">
-<meta property="og:description" content="在项目中，表格被一些字段拉得超长，整个表格效果看起来很不协调。怎么破？ 一般字母会被浏览器默认是一个单词或字符串，所以不会自动换行，需要手工设置自动换行。  这样做： 在&amp;lt;table&amp;gt;里增加style=&amp;quot;table-layout:fixed;&amp;quot; 在那个超长的字母单元格&amp;lt;td&amp;gt; 增加style=&amp;quot;word-wrap:break-word;&amp;quo">
+<meta property="og:description" content="如图： 重构代码时，从controller搬到model后，提示找不到render_chinese_weekday这个method。 原因：进入引用的方法是一个类方法，而render_chinese_weekday是一个实例方法。所以才找不到。 解法：给render_chinese_weekday定义为类方法即可。即前面加个self. 反思： 之前只知道类方法要用在类上，实例方法要用在实例上。掉完">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-07T17:10:08.000Z">
+<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-10-23-041051.jpg">
+<meta property="og:updated_time" content="2017-10-23T04:24:27.080Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="表格被拉得超长怎么办？">
-<meta name="twitter:description" content="在项目中，表格被一些字段拉得超长，整个表格效果看起来很不协调。怎么破？ 一般字母会被浏览器默认是一个单词或字符串，所以不会自动换行，需要手工设置自动换行。  这样做： 在&amp;lt;table&amp;gt;里增加style=&amp;quot;table-layout:fixed;&amp;quot; 在那个超长的字母单元格&amp;lt;td&amp;gt; 增加style=&amp;quot;word-wrap:break-word;&amp;quo">
+<meta name="twitter:title" content="2017-10-23错误：类方法和实例方法嵌用掉的坑">
+<meta name="twitter:description" content="如图： 重构代码时，从controller搬到model后，提示找不到render_chinese_weekday这个method。 原因：进入引用的方法是一个类方法，而render_chinese_weekday是一个实例方法。所以才找不到。 解法：给render_chinese_weekday定义为类方法即可。即前面加个self. 反思： 之前只知道类方法要用在类上，实例方法要用在实例上。掉完">
+<meta name="twitter:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-10-23-041051.jpg">
 
 
 
@@ -135,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://hongliang.site/archives/2017/08/23/2017-08-23-2208162/"/>
+  <link rel="canonical" href="http://hongliang.site/archives/2017/10/23/2017-10-23错误：类方法和实例方法嵌用掉的坑/"/>
 
 
 
 
 
-  <title>表格被拉得超长怎么办？ | Activeliang's Blog</title>
+  <title>2017-10-23错误：类方法和实例方法嵌用掉的坑 | Activeliang's Blog</title>
   
 
 
@@ -288,7 +291,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/08/23/2017-08-23-2208162/">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/10/23/2017-10-23错误：类方法和实例方法嵌用掉的坑/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
@@ -305,7 +308,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">表格被拉得超长怎么办？</h1>
+          <h1 class="post-title" itemprop="name headline">2017-10-23错误：类方法和实例方法嵌用掉的坑</h1>
         
 
         <div class="post-meta">
@@ -317,8 +320,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T06:32:00+08:00">
-                2017-08-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-23T12:21:40+08:00">
+                2017-10-23
               </time>
             
 
@@ -328,6 +331,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby/Rails</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -336,9 +361,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/08/23/2017-08-23-2208162/#comments" itemprop="discussionUrl">
+                <a href="/2017/10/23/2017-10-23错误：类方法和实例方法嵌用掉的坑/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/08/23/2017-08-23-2208162/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/10/23/2017-10-23错误：类方法和实例方法嵌用掉的坑/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -366,13 +391,13 @@
       
 
       
-        <h5 id="在项目中，表格被一些字段拉得超长，整个表格效果看起来很不协调。"><a href="#在项目中，表格被一些字段拉得超长，整个表格效果看起来很不协调。" class="headerlink" title="在项目中，表格被一些字段拉得超长，整个表格效果看起来很不协调。"></a>在项目中，表格被一些字段拉得超长，整个表格效果看起来很不协调。</h5><h5 id="怎么破？"><a href="#怎么破？" class="headerlink" title="怎么破？"></a>怎么破？</h5><blockquote>
-<p>一般字母会被浏览器默认是一个单词或字符串，所以不会自动换行，需要手工设置自动换行。</p>
+        <p>如图：<img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-23-041051.jpg" alt=""></p>
+<p>重构代码时，从controller搬到model后，提示找不到<code>render_chinese_weekday</code>这个<code>method</code>。</p>
+<h5 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h5><p>进入引用的方法是一个类方法，而<code>render_chinese_weekday</code>是一个实例方法。所以才找不到。</p>
+<h5 id="解法："><a href="#解法：" class="headerlink" title="解法："></a>解法：</h5><p>给<code>render_chinese_weekday</code>定义为类方法即可。即前面加个<code>self.</code></p>
+<h5 id="反思："><a href="#反思：" class="headerlink" title="反思："></a>反思：</h5><blockquote>
+<p>之前只知道类方法要用在类上，实例方法要用在实例上。掉完这个坑才有这个意识：方法的调用上也需要注意是否一一对应！</p>
 </blockquote>
-<h5 id="这样做："><a href="#这样做：" class="headerlink" title="这样做："></a>这样做：</h5><ol>
-<li>在<code>&lt;table&gt;</code>里增加<code>style=&quot;table-layout:fixed;&quot;</code></li>
-<li>在那个超长的字母单元格<code>&lt;td&gt;</code> 增加<code>style=&quot;word-wrap:break-word;&quot;</code></li>
-</ol>
 
       
     </div>
@@ -388,6 +413,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/基础/" rel="tag"># 基础</a>
+          
+        </div>
+      
 
       
       
@@ -397,8 +428,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/21/2017-08-21-ruby-download-the-file-saved-to-the-local-better/" rel="next" title="ruby下载文件保存到本地较好的方法">
-                <i class="fa fa-chevron-left"></i> ruby下载文件保存到本地较好的方法
+              <a href="/2017/10/20/利用Heroku搭建自己的梯子，3步实现免费科学上网。/" rel="next" title="利用Heroku搭建自己的梯子，3步实现免费科学上网。">
+                <i class="fa fa-chevron-left"></i> 利用Heroku搭建自己的梯子，3步实现免费科学上网。
               </a>
             
           </div>
@@ -406,10 +437,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/18/如何在远端ubuntu主机上配置图床等密钥/" rel="prev" title="如何在远端ubuntu主机上配置图床等密钥">
-                如何在远端ubuntu主机上配置图床等密钥 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -553,7 +580,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#在项目中，表格被一些字段拉得超长，整个表格效果看起来很不协调。"><span class="nav-number">1.</span> <span class="nav-text">在项目中，表格被一些字段拉得超长，整个表格效果看起来很不协调。</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#怎么破？"><span class="nav-number">2.</span> <span class="nav-text">怎么破？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#这样做："><span class="nav-number">3.</span> <span class="nav-text">这样做：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#原因："><span class="nav-number">1.</span> <span class="nav-text">原因：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#解法："><span class="nav-number">2.</span> <span class="nav-text">解法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#反思："><span class="nav-number">3.</span> <span class="nav-text">反思：</span></a></li></ol></div>
             
 
           </div>
@@ -710,9 +737,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://hongliang.site/archives/2017/08/23/2017-08-23-2208162/';
-          this.page.identifier = '2017/08/23/2017-08-23-2208162/';
-          this.page.title = '表格被拉得超长怎么办？';
+          this.page.url = 'http://hongliang.site/archives/2017/10/23/2017-10-23错误：类方法和实例方法嵌用掉的坑/';
+          this.page.identifier = '2017/10/23/2017-10-23错误：类方法和实例方法嵌用掉的坑/';
+          this.page.title = '2017-10-23错误：类方法和实例方法嵌用掉的坑';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://honglianggithubblog.disqus.com/embed.js';
