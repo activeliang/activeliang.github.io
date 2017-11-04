@@ -399,14 +399,11 @@
 
       
         
-          <h5 id="网速如何？请看图！"><a href="#网速如何？请看图！" class="headerlink" title="网速如何？请看图！"></a>网速如何？请看图！</h5><h5 id=""><a href="#" class="headerlink" title=""></a><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-19-193501.jpg" alt=""></h5><blockquote>
-<p>建议：heroku当作临时来用尚可，长期还是自己付费买个主机搭，这样有独立IP，可以和身边人的手机，电脑都可以用。网上很多这类教程，关键字：<code>ubuntu shadowsocks</code></p>
-</blockquote>
-<h5 id="简单粗暴的小教程开始："><a href="#简单粗暴的小教程开始：" class="headerlink" title="简单粗暴的小教程开始："></a>简单粗暴的小教程开始：</h5><ol>
-<li><p>下载项目并部署，打开终端机，执行指令：</p>
+          <h5 id="网速如何？请看图！"><a href="#网速如何？请看图！" class="headerlink" title="网速如何？请看图！"></a>网速如何？请看图！</h5><h5 id=""><a href="#" class="headerlink" title=""></a><img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-19-193501.jpg" alt=""></h5><h5 id="简单粗暴的小教程开始："><a href="#简单粗暴的小教程开始：" class="headerlink" title="简单粗暴的小教程开始："></a>简单粗暴的小教程开始：</h5><ol>
+<li><p>打开终端机，执行指令，下载项目并部署：</p>
 <blockquote>
-<p>登录Heroku<strong>删app</strong>需要等很久？怎么删app最快捷？这样做：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ heroku apps           #列出您所有的app</div><div class="line">$ heroku apps:destroy appname --confirm appname     #两处appname自行替换成您想删的app名，完成。</div></pre></td></tr></table></figure>
+<p>提示：想登录Heroku<strong>删app</strong>需要等很久？怎么删app最快捷？这样做：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> $ heroku apps           #列出您所有的app</div><div class="line"> $ heroku apps:destroy appname --confirm appname     #两处appname自行替换成您想删的app名，完成。</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ git clone git@github.com:activeliang/shadowsocks-over-websocket.git</div><div class="line">$ cd shadowsocks-over-websocket</div><div class="line">$ heroku create</div><div class="line">$ git push heroku master</div></pre></td></tr></table></figure>
 <p>(注意：指令前的字符<code>$</code>代表这是一条指令，请不要跟着复制)</p>
