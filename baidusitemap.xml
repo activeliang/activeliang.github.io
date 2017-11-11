@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2017/11/11/RestClient-Forbidden-403%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AA%E8%A7%A3BUG%E8%BF%87%E7%A8%8B/</loc>
-    <lastmod>2017-11-11T15:23:44.923Z</lastmod>
+    <loc>http://hongliang.site/archives/2017/10/18/MAC%E4%B8%8B%E8%AE%A9%E7%BB%88%E7%AB%AF%E6%9C%BA%E8%B5%B0Shadowsocks%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95%E3%80%82/</loc>
+    <lastmod>2017-11-11T15:31:07.837Z</lastmod>
     <data>
         <display>
-        <title>RestClient::Forbidden:403记录一个解BUG过程</title>
-        <pubTime>2017-11-11T15:16:34.000Z</pubTime>
+        <title>MAC下让终端机走Shadowsocks代理的方法。</title>
+        <pubTime>2017-10-18T08:36:28.000Z</pubTime>
         
         <tag>mac</tag>
          
@@ -24,12 +24,12 @@
 
     
   <url>
-    <loc>http://hongliang.site/archives/2017/10/18/MAC%E4%B8%8B%E8%AE%A9%E7%BB%88%E7%AB%AF%E6%9C%BA%E8%B5%B0Shadowsocks%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95%E3%80%82/</loc>
-    <lastmod>2017-11-11T15:23:03.297Z</lastmod>
+    <loc>http://hongliang.site/archives/2017/11/11/RestClient-Forbidden-403%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AA%E8%A7%A3BUG%E8%BF%87%E7%A8%8B/</loc>
+    <lastmod>2017-11-11T15:23:44.923Z</lastmod>
     <data>
         <display>
-        <title>MAC下让终端机走Shadowsocks代理的方法。</title>
-        <pubTime>2017-10-18T08:36:28.000Z</pubTime>
+        <title>RestClient::Forbidden:403记录一个解BUG过程</title>
+        <pubTime>2017-11-11T15:16:34.000Z</pubTime>
         
         <tag>mac</tag>
          

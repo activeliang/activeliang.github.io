@@ -104,7 +104,7 @@
 <meta property="og:description" content="嗯，是的，若你的电脑是通过Shadowsocks科学上网，通常情况下终端机是没有走代理的。如果你没有这个概念，那你可能会跟我一样遇到这个坑 怎么破？网上教程不少，但真正简单粗暴好用的不多。经常一通解决后，决定自己写一个教程。 本教程需要你Mac已经配置好Shadowsocks服务。如何搭建：  购买主机自己搭建，参考：这篇简单粗暴的教程 利用Heroku自己搭建，参考：三步搭梯教程   简单粗暴">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-11-11-150540.png">
-<meta property="og:updated_time" content="2017-11-11T15:23:03.297Z">
+<meta property="og:updated_time" content="2017-11-11T15:31:07.837Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MAC下让终端机走Shadowsocks代理的方法。">
 <meta name="twitter:description" content="嗯，是的，若你的电脑是通过Shadowsocks科学上网，通常情况下终端机是没有走代理的。如果你没有这个概念，那你可能会跟我一样遇到这个坑 怎么破？网上教程不少，但真正简单粗暴好用的不多。经常一通解决后，决定自己写一个教程。 本教程需要你Mac已经配置好Shadowsocks服务。如何搭建：  购买主机自己搭建，参考：这篇简单粗暴的教程 利用Heroku自己搭建，参考：三步搭梯教程   简单粗暴">
@@ -416,18 +416,19 @@
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">forward-socks5 / <span class="number">127.0</span>.<span class="number">0</span>.<span class="number">1</span><span class="symbol">:</span><span class="number">1080</span> .</div><div class="line">listen-address <span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span>.<span class="number">0</span><span class="symbol">:</span><span class="number">8118</span></div><div class="line">forward <span class="number">192.168</span>.*.*<span class="regexp">/ .</span></div><div class="line"><span class="regexp">forward 10.*.*.*/</span> .</div><div class="line">forward <span class="number">127</span>.*.*.*<span class="regexp">/ .</span></div><div class="line"><span class="regexp">forward 172.*.*.*/</span> .</div><div class="line">forward git.meiyou.im/ .</div><div class="line">forward ci.meiyou.im/ .</div></pre></td></tr></table></figure>
 </li>
 <li><p>设置下快捷指令，方便下次使用：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ atom .zshrc</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ atom ~/.zshrc</div></pre></td></tr></table></figure>
 <p>填入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">alias setss=&quot;export http_proxy=127.0.0.1:8118&amp;&amp;export https_proxy=127.0.0.1:8118&quot;    </div><div class="line">alias unsetss=&quot;unset http_proxy&amp;&amp;unset https_proxy&quot;</div></pre></td></tr></table></figure>
+<p>执行：<code>source ~/.zshrc</code></p>
 </li>
 <li><p>启动与停止：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ setss    #启动</div><div class="line">$ unsetss  #停止</div></pre></td></tr></table></figure>
-<a id="more"></a>
 </li>
 </ol>
+<a id="more"></a>
 <h5 id="搞定！！！"><a href="#搞定！！！" class="headerlink" title="搞定！！！"></a>搞定！！！</h5><blockquote>
 <p><strong>检验：</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt; $ curl https://www.google.com</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"> $ curl https://www.google.com</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </blockquote>
 <p>&gt;</p>
 <blockquote>
