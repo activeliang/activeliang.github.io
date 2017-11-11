@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="Activeliang&#39;s Blog">
 <meta property="og:description" content="记录一个坑爹的BUG的解决过程，和启发。 事件背景：  需要调用一个Public API，但在本地一直调用失败！用RestClient发起HTTP，提示： RestClient::Forbidden: 403 Forbidden 。自此开启DEBUG之路。  现象一： 用浏览器和POSTMAN来调用API，调正常，返回200。但遇到RestClient就挂。  疑点与解决：  是否版本冲突？  找">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-11T15:23:44.923Z">
+<meta property="og:updated_time" content="2017-11-11T15:38:08.699Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RestClient::Forbidden:403记录一个解BUG过程">
 <meta name="twitter:description" content="记录一个坑爹的BUG的解决过程，和启发。 事件背景：  需要调用一个Public API，但在本地一直调用失败！用RestClient发起HTTP，提示： RestClient::Forbidden: 403 Forbidden 。自此开启DEBUG之路。  现象一： 用浏览器和POSTMAN来调用API，调正常，返回200。但遇到RestClient就挂。  疑点与解决：  是否版本冲突？  找">
@@ -422,16 +422,18 @@
 <p>那一开始为什么没有切换手机4G来试呢？因为确定了不是IP限制，电脑同样有科学上网，所以没有往手机4G去调试。</p>
 </blockquote>
 <h5 id="启发："><a href="#启发：" class="headerlink" title="启发："></a>启发：</h5><ul>
-<li><p>下次遇到这个情况：切换不同设备，不同网络来测试，不同IP来测试。</p>
-</li>
-<li><p>猜想：这个API通过类似google reptcha自动验证，如果你的网络转发过多或者太次，那么调用时会需要验证码验证！</p>
-</li>
-<li><p>终端机可以Google找方法来实现科学上网。可以<a href="http://hongliang.site/2017/10/18/MAC%E4%B8%8B%E8%AE%A9%E7%BB%88%E7%AB%AF%E6%9C%BA%E8%B5%B0Shadowsocks%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95%E3%80%82/">参考这篇</a></p>
-</li>
-<li><p>最后：论一条好的光纤的重要性！</p>
-<p>​<br>​</p>
-</li>
+<li>下次遇到这个情况：切换不同设备，不同网络来测试，不同IP来测试。</li>
+<li>猜想：这个API通过类似google reptcha自动验证，如果你的网络转发过多或者太次，那么调用时会需要验证码验证！</li>
+<li>终端机可以Google找方法来实现科学上网。可以<a href="http://hongliang.site/2017/10/18/MAC%E4%B8%8B%E8%AE%A9%E7%BB%88%E7%AB%AF%E6%9C%BA%E8%B5%B0Shadowsocks%E4%BB%A3%E7%90%86%E7%9A%84%E6%96%B9%E6%B3%95%E3%80%82/">参考这篇</a></li>
+<li>最后：论一条好的光纤的重要性！</li>
 </ul>
+<p>后记：</p>
+<blockquote>
+<p>这个API地址是：<a href="https://poloniex.com/public?command=returnTicker" target="_blank" rel="external">https://poloniex.com/public?command=returnTicker</a></p>
+<p>你可以用来测试下你的网络环境是否够nice，这样做：</p>
+<p>直接在浏览器里打开，<code>够nice</code>：直接得到一串JSON数据。如果<code>不够NIce</code>：会显示一个html页面，提示你需要验证。</p>
+</blockquote>
+<p>  ​<br>  ​</p>
 
       
     </div>
