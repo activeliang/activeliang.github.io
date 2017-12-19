@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://hongliang.site/archives/2017/12/18/rails%E7%BF%BB%E8%AF%91%E6%A0%8F%E4%BD%8D/</loc>
+    
+    <lastmod>2017-12-18T14:39:54.617Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://hongliang.site/archives/2017/11/11/RestClient-Forbidden-403%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AA%E8%A7%A3BUG%E8%BF%87%E7%A8%8B/</loc>
     
     <lastmod>2017-11-11T15:38:08.699Z</lastmod>
@@ -114,7 +121,7 @@
   </url>
   
   <url>
-    <loc>http://hongliang.site/archives/2017/08/03/2017-08-03-the-front-half-of-the-ruby-on-rails-guides-extraction/</loc>
+    <loc>http://hongliang.site/archives/2017/03/11/2017-03-11-1540609/</loc>
     
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     
@@ -142,7 +149,7 @@
   </url>
   
   <url>
-    <loc>http://hongliang.site/archives/2017/08/23/2017-08-23-2208162/</loc>
+    <loc>http://hongliang.site/archives/2017/08/03/2017-08-03-xdite-said-the-law-on-speed-reading-extracts/</loc>
     
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     
@@ -191,7 +198,7 @@
   </url>
   
   <url>
-    <loc>http://hongliang.site/archives/2017/03/16/2017-03-16-1594399/</loc>
+    <loc>http://hongliang.site/archives/2016/12/11/2016-12-11-hello-world/</loc>
     
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     
@@ -632,14 +639,14 @@
   </url>
   
   <url>
-    <loc>http://hongliang.site/archives/2017/03/16/2017-03-16-1595159/</loc>
+    <loc>http://hongliang.site/archives/2017/08/21/2017-08-21-2203536/</loc>
     
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://hongliang.site/archives/2017/08/21/2017-08-21-2203536/</loc>
+    <loc>http://hongliang.site/archives/2017/03/16/2017-03-16-1594399/</loc>
     
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     
@@ -688,7 +695,7 @@
   </url>
   
   <url>
-    <loc>http://hongliang.site/archives/2017/03/11/2017-03-11-1540609/</loc>
+    <loc>http://hongliang.site/archives/2017/08/03/2017-08-03-the-front-half-of-the-ruby-on-rails-guides-extraction/</loc>
     
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     
@@ -709,7 +716,7 @@
   </url>
   
   <url>
-    <loc>http://hongliang.site/archives/2017/08/03/2017-08-03-xdite-said-the-law-on-speed-reading-extracts/</loc>
+    <loc>http://hongliang.site/archives/2017/08/23/2017-08-23-2208162/</loc>
     
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     
@@ -1248,7 +1255,7 @@
   </url>
   
   <url>
-    <loc>http://hongliang.site/archives/2016/12/11/2016-12-11-hello-world/</loc>
+    <loc>http://hongliang.site/archives/2017/03/16/2017-03-16-1595159/</loc>
     
     <lastmod>2017-09-07T17:10:08.000Z</lastmod>
     
