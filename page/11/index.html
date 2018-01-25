@@ -290,6 +290,161 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/03/11/2017-03-11-1540881/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/03/11/2017-03-11-1540881/" itemprop="url">2017-3-11学习记录ORID</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-11T15:41:00+08:00">
+                2017-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/11/2017-03-11-1540881/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/03/11/2017-03-11-1540881/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+重做rails101,发现controller 还有蛮多没有记住的东西：
+
+错误记录：分析：这里提示没有找到这个参数，有两种可能：
+
+controller里的参数写错，
+这个数据不完整，缺某个栏位！
+
+最后才发现：
+controller位置写错了，这个页面是group的，但是我写到post的controller去了，怪不得会找不到！应该写到group的controller里！
+
+
+partial的进阶用法，可以用于回圈，直接用于回圈，圆圈的语法都省了！partial的进阶用法就是可以给
+
+可以给partial指定一个参数
+可以让partial自动回圈！
+
+图中的语句还可以这样写，结果是相等的。
+1&lt;%= render partial: &quot;group_item&quot;, 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/11/2017-03-11-1540881/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/03/11/2017-03-11-1540609/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1630,165 +1785,6 @@ Interpretive
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/03/07/2017-03-07-full-stack-business-shopping-site-unknown-syntax-of-google-results/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/07/2017-03-07-full-stack-business-shopping-site-unknown-syntax-of-google-results/" itemprop="url">全栈营购物网站一些不明语法的google结果。</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T07:57:00+08:00">
-                2017-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/03/07/2017-03-07-full-stack-business-shopping-site-unknown-syntax-of-google-results/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/03/07/2017-03-07-full-stack-business-shopping-site-unknown-syntax-of-google-results/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-什么是.build?
-
-.build是new的另外一种形式 .
-12345&gt; def	create&gt;   @order = Order.new&gt;   @order.user = current_user&gt; end &gt;
-
-&gt;
-
-1234&gt; def create&gt;   @order = current_user.order.build&gt; end &gt;
-
-&gt;
-
-这两个的结果是一样的！
-
-
-||=是什么？
-
-例：a ||= b  相当于  a||a = b, 意思是：当a为nil,或false,或underfind,则运算b，并把结果赋值给a.
-
-
-session是什么？
-
-session只是在一个请求期间存储数据的地方，可以在之后的
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/07/2017-03-07-full-stack-business-shopping-site-unknown-syntax-of-google-results/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1842,7 +1838,7 @@ session只是在一个请求期间存储数据的地方，可以在之后的
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">181</span>
+                <span class="site-state-item-count">182</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1906,7 +1902,7 @@ session只是在一个请求期间存储数据的地方，可以在之后的
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
