@@ -1507,8 +1507,11 @@
 当我们要把一个上传图片的栏位变成上传多个图片的时候，生产环境上的数据要怎么处理呢？
 
 
-1OilDetail.update_all logo: [OilDetail.first.read_attribute(:logo)].to_json
+1OilDetail.last.update_attribute :logo,    [OilDetail.last.read_attribute(:logo)].to_json)
 
+
+后记：
+最后是又出问题了，用了update_attribute还是不行，更新不了栏位。最后用的write_attribute给解决的！
 
 
           
