@@ -290,12 +290,12 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/02/18/2017-02-18-1428436/">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2017/02/18/2017-02-18-2017-2-17-error/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -309,7 +309,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/02/18/2017-02-18-1428436/" itemprop="url">2017-2-17学习记录</a></h1>
+                <a class="post-title-link" href="/2017/02/18/2017-02-18-2017-2-17-error/" itemprop="url">2017-2-17错误记录</a></h1>
         
 
         <div class="post-meta">
@@ -340,9 +340,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/02/18/2017-02-18-1428436/#comments" itemprop="discussionUrl">
+                <a href="/2017/02/18/2017-02-18-2017-2-17-error/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/02/18/2017-02-18-1428436/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2017/02/18/2017-02-18-2017-2-17-error/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -372,29 +372,16 @@
       
         
           
-          每日学习纪录：ORID
-这是一个思考框架，利用 ORID 整理今天的思绪。
+          错误画面1：( 用时15min)提示: method =&gt; “config”错误，根据以往的经验我以为是打错字，然后前后几步都去检查单词有无打错。没有发现错误。结果：原来是放错位置。
 
-Objective
-关于今天的课程, 你记得什么? 完成了什么?
-
-今天学习用时：5H-15min 感觉：小崩溃
-今天的课程是：跟着打code，第二遍尾：
-
-寄送订单确认信(60min)
-切换订单状态(75min)
-可以对订单时行状态切换（180min)
-
-还记得什么：不记得什么了，购物网站的后部分，做第二遍感觉还是非常的混乱，逻辑关系还没理清。
-今天的纠结是否要参加周日的广州meetup，一来没电脑，二来没什么能分享的。后来觉得自己并不是要做表现型的人，要做进取型的人，所以，跟老哥借了MAC air，准备明天上了！
-Reflective
-你要如何形容今天的情绪 今天的高峰是什么? 今天的低点是什么?
-
-今天的状态
+总结：错误除了打错字，还可能是放错位置。好吧，解BUG又多了一个维度了！
+错误画面2： （用时30 min)做到后面的“可切换订单状态”，才发现无法结账生成订单后无法跳转页面，然后各种检查，再看看server log解决：看到红字：rollback transaction， 猜测是不是AASM有限状态机出了问题，于是把这一节课程所有code贴了一遍。问题解决！
+反思：解决后，我把贴的code一步步退回去，没有发现bug，说明我打的code没有错，问题的原因现在无法弄清了。可能有两种：
+我第一次rake 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/02/18/2017-02-18-1428436/#more" rel="contents">
+            <a class="btn" href="/2017/02/18/2017-02-18-2017-2-17-error/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -450,7 +437,7 @@ Reflective
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -591,7 +578,7 @@ step3.保存后，在终端机执行：1rake db:migrate
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -734,7 +721,7 @@ model首字母没有大写！
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -895,7 +882,7 @@ Reflective
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1054,7 +1041,7 @@ Reflective
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1207,7 +1194,7 @@ Interpretive
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1346,7 +1333,7 @@ Interpretive
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1491,7 +1478,7 @@ Interpretive
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1640,7 +1627,7 @@ Reflective
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -1809,7 +1796,7 @@ Reflective
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
-              src="http://olmrxx9ks.bkt.clouddn.com/2017-09-07-080115.jpg"
+              src="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png"
               alt="黄鸿亮" />
           
             <p class="site-author-name" itemprop="name">黄鸿亮</p>
