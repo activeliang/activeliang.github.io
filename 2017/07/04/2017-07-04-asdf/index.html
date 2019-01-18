@@ -102,14 +102,14 @@
 <meta property="og:site_name" content="Activeliang&#39;s Blog">
 <meta property="og:description" content="写在前面：这里的提取是个人提取（只记录不知道的东西）。电子书地址：http://railsbook.tw/  提示：在学RUBY基础时，有时不要把它和rails混在一起思考。先有ruby才有rails，ruby不了解rails，但rails很了解ruby…. 开发工具和常用指令 如果出门在外，忘了带mac，怎么写代码？？？答案是可以用三线编辑器：  https://c9.io/ http://tr">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-03-Snip20170703_9.png">
-<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-04-Snip20170704_17.png">
-<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-04-Snip20170705_26.png">
-<meta property="og:updated_time" content="2017-09-07T17:10:08.000Z">
+<meta property="og:image" content="http://bucket1.hongliang.fun/blog/2017-07-03-Snip20170703_9.png">
+<meta property="og:image" content="http://bucket1.hongliang.fun/blog/2017-07-04-Snip20170704_17.png">
+<meta property="og:image" content="http://bucket1.hongliang.fun/blog/2017-07-04-Snip20170705_26.png">
+<meta property="og:updated_time" content="2019-01-18T13:27:34.095Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读《为你自己学RUBY ON RAILS--高见龙》提取记录">
 <meta name="twitter:description" content="写在前面：这里的提取是个人提取（只记录不知道的东西）。电子书地址：http://railsbook.tw/  提示：在学RUBY基础时，有时不要把它和rails混在一起思考。先有ruby才有rails，ruby不了解rails，但rails很了解ruby…. 开发工具和常用指令 如果出门在外，忘了带mac，怎么写代码？？？答案是可以用三线编辑器：  https://c9.io/ http://tr">
-<meta name="twitter:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-03-Snip20170703_9.png">
+<meta name="twitter:image" content="http://bucket1.hongliang.fun/blog/2017-07-03-Snip20170703_9.png">
 
 
 
@@ -707,7 +707,7 @@ end
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class Store &lt; ApplicationRecord</div><div class="line">  belongs_to :user</div><div class="line"></div><div class="line">  has_many :ware_houses</div><div class="line">  has_many :products, through: :ware_houses</div><div class="line">end</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class Product &lt; ApplicationRecord</div><div class="line">  has_many :ware_houses</div><div class="line">  has_many :stores, through: :ware_houses</div><div class="line">end</div></pre></td></tr></table></figure>
 <p>看到没有，第二个has_many只要写两个字段就可以啦！之前是这样的：</p>
-<p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-03-Snip20170703_9.png" alt=""></p>
+<p><img src="http://bucket1.hongliang.fun/blog/2017-07-03-Snip20170703_9.png" alt=""></p>
 <p>有点让新手摸不着头脑。。。</p>
 </li>
 <li><p>酷！还有一种叫HABTM（has_and_belongs_to_many）!</p>
@@ -740,7 +740,7 @@ end
 <blockquote>
 <blockquote>
 <p>user1.valid?<br>=&gt; false</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">7. 回呼（Callback）：</div><div class="line"></div><div class="line">   ![](http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-03-060507.jpg)其中，顏色比較深的那幾個流程是有機會可以掛上一些方法，又稱之回呼（Callback）</div><div class="line"></div><div class="line">   &gt; 注意：`before_save` 跟 `before_create` 的差別，在於 `before_save` 是每次存檔的時候都會經過，但 `before_create` 只有在「新增」的時候才會觸發。</div><div class="line"></div><div class="line">   除了這樣的寫法，如果內容單純的話，也是可以使用 Block 的方式來寫：</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">7. 回呼（Callback）：</div><div class="line"></div><div class="line">   ![](http://bucket1.hongliang.fun/blog/2017-07-03-060507.jpg)其中，顏色比較深的那幾個流程是有機會可以掛上一些方法，又稱之回呼（Callback）</div><div class="line"></div><div class="line">   &gt; 注意：`before_save` 跟 `before_create` 的差別，在於 `before_save` 是每次存檔的時候都會經過，但 `before_create` 只有在「新增」的時候才會觸發。</div><div class="line"></div><div class="line">   除了這樣的寫法，如果內容單純的話，也是可以使用 Block 的方式來寫：</div></pre></td></tr></table></figure>
 </blockquote>
 </blockquote>
 <p>  require ‘digest’<br>  class User &lt; ActiveRecord::Base</p>
@@ -804,7 +804,7 @@ describe &quot;領錢功能&quot; do
 end
 </code></pre><p>  end<br>```</p>
 <p>然后开始写内容：</p>
-<p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-04-Snip20170704_17.png" alt=""></p>
+<p><img src="http://bucket1.hongliang.fun/blog/2017-07-04-Snip20170704_17.png" alt=""></p>
 </li>
 <li><p>然后，开始<code>$ rspec bank_account_spec.rb</code>进行测试，自然会出错。</p>
 </li>
@@ -838,7 +838,7 @@ end
 <p>后面的内容实操一遍，基本没有什么重要的知识了……。。</p>
 <blockquote>
 <p>当然这个课程还有一些不错的内容在更新中……</p>
-<p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-07-04-Snip20170705_26.png" alt=""></p>
+<p><img src="http://bucket1.hongliang.fun/blog/2017-07-04-Snip20170705_26.png" alt=""></p>
 </blockquote>
 
       

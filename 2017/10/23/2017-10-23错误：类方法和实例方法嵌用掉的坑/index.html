@@ -103,12 +103,12 @@
 <meta property="og:site_name" content="Activeliang&#39;s Blog">
 <meta property="og:description" content="如图： 重构代码时，从controller搬到model后，提示找不到render_chinese_weekday这个method。 原因：进入引用的方法是一个类方法，而render_chinese_weekday是一个实例方法。所以才找不到。 解法：给render_chinese_weekday定义为类方法即可。即前面加个self. 反思： 之前只知道类方法要用在类上，实例方法要用在实例上。掉完">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-10-23-041051.jpg">
-<meta property="og:updated_time" content="2017-10-23T04:37:34.000Z">
+<meta property="og:image" content="http://bucket1.hongliang.fun/2017-10-23-041051.jpg">
+<meta property="og:updated_time" content="2019-01-18T13:27:34.065Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2017-10-23错误：类方法和实例方法嵌用掉的坑">
 <meta name="twitter:description" content="如图： 重构代码时，从controller搬到model后，提示找不到render_chinese_weekday这个method。 原因：进入引用的方法是一个类方法，而render_chinese_weekday是一个实例方法。所以才找不到。 解法：给render_chinese_weekday定义为类方法即可。即前面加个self. 反思： 之前只知道类方法要用在类上，实例方法要用在实例上。掉完">
-<meta name="twitter:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-10-23-041051.jpg">
+<meta name="twitter:image" content="http://bucket1.hongliang.fun/2017-10-23-041051.jpg">
 
 
 
@@ -391,7 +391,7 @@
       
 
       
-        <p>如图：<img src="http://olmrxx9ks.bkt.clouddn.com/2017-10-23-041051.jpg" alt=""></p>
+        <p>如图：<img src="http://bucket1.hongliang.fun/2017-10-23-041051.jpg" alt=""></p>
 <p>重构代码时，从controller搬到model后，提示找不到<code>render_chinese_weekday</code>这个<code>method</code>。</p>
 <h5 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h5><p>进入引用的方法是一个类方法，而<code>render_chinese_weekday</code>是一个实例方法。所以才找不到。</p>
 <h5 id="解法："><a href="#解法：" class="headerlink" title="解法："></a>解法：</h5><p>给<code>render_chinese_weekday</code>定义为类方法即可。即前面加个<code>self.</code></p>

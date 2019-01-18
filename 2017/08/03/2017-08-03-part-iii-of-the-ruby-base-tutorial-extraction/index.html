@@ -102,14 +102,14 @@
 <meta property="og:site_name" content="Activeliang&#39;s Blog">
 <meta property="og:description" content="第三部分数值类 一些方法：  返回商的整数：x.quo(y)  返回一个数组，[商，余数]：x.divmod(y)  Math模块 你想得到的数学函数都在里面  返回整数部分：.floor  返回100以内的随机数：Random.rand(100) （比我以前学的VB方便太多了好嘛！）  Integer的迭代方法：  upto遍历 downto遍历   以分数的形式存在：Rational(1, 1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/ipic/2017-07-17-094146.jpg">
-<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-07-23-124646.jpg">
-<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/2017-07-25-Snip20170726_5.png">
-<meta property="og:updated_time" content="2017-09-07T17:10:08.000Z">
+<meta property="og:image" content="http://bucket1.hongliang.fun/ipic/2017-07-17-094146.jpg">
+<meta property="og:image" content="http://bucket1.hongliang.fun/2017-07-23-124646.jpg">
+<meta property="og:image" content="http://bucket1.hongliang.fun/2017-07-25-Snip20170726_5.png">
+<meta property="og:updated_time" content="2019-01-18T13:27:34.062Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《ruby基础教程》 第三部分 提取">
 <meta name="twitter:description" content="第三部分数值类 一些方法：  返回商的整数：x.quo(y)  返回一个数组，[商，余数]：x.divmod(y)  Math模块 你想得到的数学函数都在里面  返回整数部分：.floor  返回100以内的随机数：Random.rand(100) （比我以前学的VB方便太多了好嘛！）  Integer的迭代方法：  upto遍历 downto遍历   以分数的形式存在：Rational(1, 1">
-<meta name="twitter:image" content="http://olmrxx9ks.bkt.clouddn.com/ipic/2017-07-17-094146.jpg">
+<meta name="twitter:image" content="http://bucket1.hongliang.fun/ipic/2017-07-17-094146.jpg">
 
 
 
@@ -670,7 +670,7 @@
 <li><p>统计下面各个字母出现次数，并用*的个数来表示次数：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">a = &quot;Ruby is an object oriented programming language&quot;</div><div class="line">b = Hash.new(0)</div><div class="line">a.each_char do |c|</div><div class="line">  b[c] += 1</div><div class="line">end</div><div class="line">b.sort.each do |k, v|</div><div class="line">  printf(&quot;&apos;%s&apos;: %s\n&quot;, c, &quot;*&quot; * v.to_i)</div><div class="line">end</div></pre></td></tr></table></figure>
 <p>运行结果如图：</p>
-<p><img src="http://olmrxx9ks.bkt.clouddn.com/ipic/2017-07-17-094146.jpg" alt=""></p>
+<p><img src="http://bucket1.hongliang.fun/ipic/2017-07-17-094146.jpg" alt=""></p>
 <p>很酷！</p>
 <ul>
 <li>散列直接用<code>a[c]</code>就可以拿到这个值，不需要进行检索</li>
@@ -754,7 +754,7 @@
 <ul>
 <li><p><code>h.clear</code> 清空使用过的散列</p>
 <blockquote>
-<p>那这个东西和<code>h = Hash.new</code> 有什么区别呢？在引用的时候要注意下，请看图：<br><img src="http://olmrxx9ks.bkt.clouddn.com/2017-07-23-124646.jpg" alt=""></p>
+<p>那这个东西和<code>h = Hash.new</code> 有什么区别呢？在引用的时候要注意下，请看图：<br><img src="http://bucket1.hongliang.fun/2017-07-23-124646.jpg" alt=""></p>
 </blockquote>
 </li>
 <li><p>我忘记了一个超级方便的排序方法：<code>sort</code><br>PS:比起之学VB时的什么泡沫排序法之类的，这里简直不能太好！</p>
@@ -1042,7 +1042,7 @@
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">fizz = proc&#123;<span class="params">|n|</span> n % <span class="number">3</span> == <span class="number">0</span> &#125;</div><div class="line">buzz = proc&#123;<span class="params">|n|</span> n % <span class="number">5</span> == <span class="number">0</span> &#125;</div><div class="line">fizzbuzz = proc&#123;<span class="params">|n|</span> n % <span class="number">3</span> == <span class="number">0</span> &amp;&amp; n % <span class="number">5</span> == <span class="number">0</span>&#125; </div><div class="line">(<span class="number">1</span>..<span class="number">100</span>).each <span class="keyword">do</span> <span class="params">|i|</span></div><div class="line">  <span class="keyword">case</span> i</div><div class="line">    <span class="keyword">when</span> fizzbuzz <span class="keyword">then</span> puts <span class="string">"Fizz Buzz"</span> </div><div class="line">    <span class="keyword">when</span> fizz <span class="keyword">then</span> puts <span class="string">"Fizz"</span></div><div class="line">    <span class="keyword">when</span> buzz <span class="keyword">then</span> puts <span class="string">"Buzz"</span></div><div class="line">  <span class="keyword">else</span></div><div class="line">    puts i</div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 <ul>
 <li><code>prc.arity</code> ： 返回块变量的个数。</li>
-<li><code>prc.parameters</code><br><img src="http://olmrxx9ks.bkt.clouddn.com/2017-07-25-Snip20170726_5.png" alt=""></li>
+<li><code>prc.parameters</code><br><img src="http://bucket1.hongliang.fun/2017-07-25-Snip20170726_5.png" alt=""></li>
 <li><code>prc.lambda?</code> ：判断是否通过lambda定义的方法。</li>
 <li><code>prc.source_location</code>： 返回值为[代码文件名，行编号]</li>
 </ul>

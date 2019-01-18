@@ -102,16 +102,16 @@
 <meta property="og:site_name" content="Activeliang&#39;s Blog">
 <meta property="og:description" content="什么是.build?  .build是new的另外一种形式 . 12345&amp;gt; def	create&amp;gt;   @order = Order.new&amp;gt;   @order.user = current_user&amp;gt; end &amp;gt;  &amp;gt;  1234&amp;gt; def create&amp;gt;   @order = current_user.order.build&amp;gt; end">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-07-052250.jpg">
-<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-07-055143.jpg">
-<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-07-055318.jpg">
-<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-07-Snip20170307_22.png">
-<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-07-Snip20170307_23.png">
-<meta property="og:updated_time" content="2017-09-07T17:10:08.000Z">
+<meta property="og:image" content="http://bucket1.hongliang.fun/blog/2017-03-07-052250.jpg">
+<meta property="og:image" content="http://bucket1.hongliang.fun/blog/2017-03-07-055143.jpg">
+<meta property="og:image" content="http://bucket1.hongliang.fun/blog/2017-03-07-055318.jpg">
+<meta property="og:image" content="http://bucket1.hongliang.fun/blog/2017-03-07-Snip20170307_22.png">
+<meta property="og:image" content="http://bucket1.hongliang.fun/blog/2017-03-07-Snip20170307_23.png">
+<meta property="og:updated_time" content="2019-01-18T13:27:34.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="全栈营购物网站一些不明语法的google结果。">
 <meta name="twitter:description" content="什么是.build?  .build是new的另外一种形式 . 12345&amp;gt; def	create&amp;gt;   @order = Order.new&amp;gt;   @order.user = current_user&amp;gt; end &amp;gt;  &amp;gt;  1234&amp;gt; def create&amp;gt;   @order = current_user.order.build&amp;gt; end">
-<meta name="twitter:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-07-052250.jpg">
+<meta name="twitter:image" content="http://bucket1.hongliang.fun/blog/2017-03-07-052250.jpg">
 
 
 
@@ -395,18 +395,18 @@
 <li><p><code>session</code>是什么？</p>
 <blockquote>
 <p>session只是在一个请求期间存储数据的地方，可以在之后的请求期间读取。参考链接：<a href="">http://www.justinweiss.com/articles/how-rails-sessions-work/</a> </p>
-<p>找到一个xdite写的关于ruby的session的说明文档<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-07-052250.jpg" alt=""></p>
+<p>找到一个xdite写的关于ruby的session的说明文档<img src="http://bucket1.hongliang.fun/blog/2017-03-07-052250.jpg" alt=""></p>
 <p>我的提取理解是这样的：session和find_by对相对应的操作，cookies是网站临时存在浏览器的资料，session让什么数据存进去，find_by让什么数据查询提取出来！</p>
 </blockquote>
 </li>
-<li><p><code>find_by</code>和<code>find</code>和<code>where</code>的区别：<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-07-055143.jpg" alt=""></p>
+<li><p><code>find_by</code>和<code>find</code>和<code>where</code>的区别：<img src="http://bucket1.hongliang.fun/blog/2017-03-07-055143.jpg" alt=""></p>
 <ul>
 <li><code>find</code>只适合查找id序号</li>
 <li><code>find_by</code>适合查找匹配字段的第一条记录</li>
 <li><code>where</code>适合查找合适的所以内容。</li>
 </ul>
 <h5 id="前面一般带的是model名称。"><a href="#前面一般带的是model名称。" class="headerlink" title="前面一般带的是model名称。"></a>前面一般带的是model名称。</h5></li>
-<li><p><code>blank?</code>是什么？<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-07-055318.jpg" alt=""></p>
+<li><p><code>blank?</code>是什么？<img src="http://bucket1.hongliang.fun/blog/2017-03-07-055318.jpg" alt=""></p>
 <ul>
 <li><code>blank?</code>与<code>present?</code>相反，前者是判断是否空白，后者判断是否存在。</li>
 </ul>
@@ -415,7 +415,7 @@
 <blockquote>
 <p>这里我找到了xdite老师的一个博文，专写了这个东西。<a href="">http://blog.xdite.net/posts/2014/06/16/helper-method-and-view-context</a> </p>
 </blockquote>
-<p>简单的说：controller里的method不能直接在view里面用，如果我们想用怎么办呢？用helper_method,在controller里宣告这是一个helper_method就可以在网页里面用了……<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-07-Snip20170307_22.png" alt=""></p>
+<p>简单的说：controller里的method不能直接在view里面用，如果我们想用怎么办呢？用helper_method,在controller里宣告这是一个helper_method就可以在网页里面用了……<img src="http://bucket1.hongliang.fun/blog/2017-03-07-Snip20170307_22.png" alt=""></p>
 </li>
 <li><p><code>member</code>和<code>collection</code>的区别</p>
 <blockquote>
@@ -423,7 +423,7 @@
 </blockquote>
 </li>
 <li><p><code>&lt;legend&gt;</code>是什么元素？</p>
-<p><img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-03-07-Snip20170307_23.png" alt=""></p>
+<p><img src="http://bucket1.hongliang.fun/blog/2017-03-07-Snip20170307_23.png" alt=""></p>
 <p>就是一个标题定义。</p>
 </li>
 <li><p><code>SecureRandom.uuid</code>是什么？</p>

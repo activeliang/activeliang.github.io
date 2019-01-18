@@ -102,14 +102,14 @@
 <meta property="og:site_name" content="Activeliang&#39;s Blog">
 <meta property="og:description" content="我们要实现的效果：弹出当前网页网址的二维码，手机扫码后能直接打开当前页面。（预计用时：10分钟）  开始实做：我们以job的show页面为例。 step1: 找开 Gemfile.增加： 1gem &amp;apos;rqrcode&amp;apos; 执行 bundle install,重启server.  打来jobs_controller，在show里增加： 1@qr = RQRCode::QRCode.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-22.gif">
-<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-055349.jpg">
-<meta property="og:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-Snip20170503_15.png">
-<meta property="og:updated_time" content="2017-09-07T17:10:08.000Z">
+<meta property="og:image" content="http://bucket1.hongliang.fun/blog/2017-05-04-22.gif">
+<meta property="og:image" content="http://bucket1.hongliang.fun/blog/2017-05-04-055349.jpg">
+<meta property="og:image" content="http://bucket1.hongliang.fun/blog/2017-05-04-Snip20170503_15.png">
+<meta property="og:updated_time" content="2019-01-18T13:27:34.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【分享】10分钟，为页面生成二维码链接！">
 <meta name="twitter:description" content="我们要实现的效果：弹出当前网页网址的二维码，手机扫码后能直接打开当前页面。（预计用时：10分钟）  开始实做：我们以job的show页面为例。 step1: 找开 Gemfile.增加： 1gem &amp;apos;rqrcode&amp;apos; 执行 bundle install,重启server.  打来jobs_controller，在show里增加： 1@qr = RQRCode::QRCode.">
-<meta name="twitter:image" content="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-22.gif">
+<meta name="twitter:image" content="http://bucket1.hongliang.fun/blog/2017-05-04-22.gif">
 
 
 
@@ -371,7 +371,7 @@
 
       
         <ol>
-<li>我们要实现的效果：弹出当前网页网址的二维码，手机扫码后能直接打开当前页面。（预计用时：10分钟）<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-22.gif" alt=""></li>
+<li>我们要实现的效果：弹出当前网页网址的二维码，手机扫码后能直接打开当前页面。（预计用时：10分钟）<img src="http://bucket1.hongliang.fun/blog/2017-05-04-22.gif" alt=""></li>
 </ol>
 <h3 id="开始实做："><a href="#开始实做：" class="headerlink" title="开始实做："></a>开始实做：</h3><p>我们以job的show页面为例。</p>
 <h4 id="step1"><a href="#step1" class="headerlink" title="step1:"></a>step1:</h4><ol>
@@ -391,9 +391,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;overlay&quot; onclick=&quot;off()&quot;&gt;</div><div class="line">  &lt;div id=&quot;text&quot;&gt;手机扫一扫，分享给好友~</div><div class="line">    &lt;%= raw @qr.as_html %&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;div style=&quot;padding:20px&quot;&gt;</div><div class="line">  &lt;button onclick=&quot;on()&quot;&gt;点击生成当前网页二维码&lt;/button&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">&lt;script&gt;</div><div class="line">function on() &#123;</div><div class="line">    document.getElementById(&quot;overlay&quot;).style.height = &quot;100%&quot;;</div><div class="line">&#125;</div><div class="line">function off() &#123;</div><div class="line">    document.getElementById(&quot;overlay&quot;).style.height = &quot;0&quot;;</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h4 id="完成了！"><a href="#完成了！" class="headerlink" title="完成了！"></a>完成了！</h4><h4 id="重要提示：在本地开发环境扫出来的链接是http-localhost-3000-手机打不开！！部署到heroku后扫出来的是heroku地址，手机可以打开！"><a href="#重要提示：在本地开发环境扫出来的链接是http-localhost-3000-手机打不开！！部署到heroku后扫出来的是heroku地址，手机可以打开！" class="headerlink" title="重要提示：在本地开发环境扫出来的链接是http:localhost:3000,手机打不开！！部署到heroku后扫出来的是heroku地址，手机可以打开！"></a>重要提示：在本地开发环境扫出来的链接是http:localhost:3000,手机打不开！！部署到heroku后扫出来的是heroku地址，手机可以打开！</h4><p>迁移：如果想在其他页面生成二维码，只需要去到controller，<img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-055349.jpg" alt=""></p>
+<h4 id="完成了！"><a href="#完成了！" class="headerlink" title="完成了！"></a>完成了！</h4><h4 id="重要提示：在本地开发环境扫出来的链接是http-localhost-3000-手机打不开！！部署到heroku后扫出来的是heroku地址，手机可以打开！"><a href="#重要提示：在本地开发环境扫出来的链接是http-localhost-3000-手机打不开！！部署到heroku后扫出来的是heroku地址，手机可以打开！" class="headerlink" title="重要提示：在本地开发环境扫出来的链接是http:localhost:3000,手机打不开！！部署到heroku后扫出来的是heroku地址，手机可以打开！"></a>重要提示：在本地开发环境扫出来的链接是http:localhost:3000,手机打不开！！部署到heroku后扫出来的是heroku地址，手机可以打开！</h4><p>迁移：如果想在其他页面生成二维码，只需要去到controller，<img src="http://bucket1.hongliang.fun/blog/2017-05-04-055349.jpg" alt=""></p>
 <p>把要呈现的路径替换掉就可以了。</p>
-<h5 id="希望你5票投我1票！"><a href="#希望你5票投我1票！" class="headerlink" title="希望你5票投我1票！"></a>希望你5票投我1票！</h5><p>这是我用时间堆出来的参赛作品，如果你手上还有票，这个作品值得你为我投上一票！欢迎浏览网址细节：<a href="https://fullstack.xinshengdaxue.com/works/345" target="_blank" rel="external">【全栈小伙伴求职网】https://fullstack.xinshengdaxue.com/works/345</a>  <img src="http://olmrxx9ks.bkt.clouddn.com/blog/2017-05-04-Snip20170503_15.png" alt=""></p>
+<h5 id="希望你5票投我1票！"><a href="#希望你5票投我1票！" class="headerlink" title="希望你5票投我1票！"></a>希望你5票投我1票！</h5><p>这是我用时间堆出来的参赛作品，如果你手上还有票，这个作品值得你为我投上一票！欢迎浏览网址细节：<a href="https://fullstack.xinshengdaxue.com/works/345" target="_blank" rel="external">【全栈小伙伴求职网】https://fullstack.xinshengdaxue.com/works/345</a>  <img src="http://bucket1.hongliang.fun/blog/2017-05-04-Snip20170503_15.png" alt=""></p>
 
       
     </div>
