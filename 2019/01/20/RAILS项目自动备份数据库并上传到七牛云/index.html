@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="在ubuntu上遇到ssh链接另外一台主机 遇到报错：WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 解决方案： 在/etc/ssh/ssh_config中加入： 12StrictHostKeyChecking noUserKnownHostsFile /dev/null 搞定！ 不过这是不安全的，平时不太建议打开。">
+<meta name="description" content="这里用到一个gem，名为backup。坑是有的，不然可能不会有这篇教程。  文档停留在4.0版本，有些新功能没有描述文档 按4.0文档说明，是无法上传到七牛云的（国内主机无法上传到亚玛逊S3存储，国内大多上传到七牛云存储）  以下教程将解决这些问题。   在服务器root用户下安装Gem， 并指定版本： 1gem install backup -v 5.0.0.beta.1  初始化执行文件：">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ssh:known_hosts遇错解决方案">
-<meta property="og:url" content="http://hongliang.site/archives/2018/05/01/ssh:known_hosts遇错解决方案/index.html">
+<meta property="og:title" content="RAILS项目自动备份数据库并上传到七牛云">
+<meta property="og:url" content="http://hongliang.site/archives/2019/01/20/RAILS项目自动备份数据库并上传到七牛云/index.html">
 <meta property="og:site_name" content="Activeliang&#39;s Blog">
-<meta property="og:description" content="在ubuntu上遇到ssh链接另外一台主机 遇到报错：WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 解决方案： 在/etc/ssh/ssh_config中加入： 12StrictHostKeyChecking noUserKnownHostsFile /dev/null 搞定！ 不过这是不安全的，平时不太建议打开。">
+<meta property="og:description" content="这里用到一个gem，名为backup。坑是有的，不然可能不会有这篇教程。  文档停留在4.0版本，有些新功能没有描述文档 按4.0文档说明，是无法上传到七牛云的（国内主机无法上传到亚玛逊S3存储，国内大多上传到七牛云存储）  以下教程将解决这些问题。   在服务器root用户下安装Gem， 并指定版本： 1gem install backup -v 5.0.0.beta.1  初始化执行文件：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-19T11:23:42.912Z">
+<meta property="og:updated_time" content="2019-01-20T06:20:11.436Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ssh:known_hosts遇错解决方案">
-<meta name="twitter:description" content="在ubuntu上遇到ssh链接另外一台主机 遇到报错：WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 解决方案： 在/etc/ssh/ssh_config中加入： 12StrictHostKeyChecking noUserKnownHostsFile /dev/null 搞定！ 不过这是不安全的，平时不太建议打开。">
+<meta name="twitter:title" content="RAILS项目自动备份数据库并上传到七牛云">
+<meta name="twitter:description" content="这里用到一个gem，名为backup。坑是有的，不然可能不会有这篇教程。  文档停留在4.0版本，有些新功能没有描述文档 按4.0文档说明，是无法上传到七牛云的（国内主机无法上传到亚玛逊S3存储，国内大多上传到七牛云存储）  以下教程将解决这些问题。   在服务器root用户下安装Gem， 并指定版本： 1gem install backup -v 5.0.0.beta.1  初始化执行文件：">
 
 
 
@@ -136,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://hongliang.site/archives/2018/05/01/ssh:known_hosts遇错解决方案/"/>
+  <link rel="canonical" href="http://hongliang.site/archives/2019/01/20/RAILS项目自动备份数据库并上传到七牛云/"/>
 
 
 
 
 
-  <title>ssh:known_hosts遇错解决方案 | Activeliang's Blog</title>
+  <title>RAILS项目自动备份数据库并上传到七牛云 | Activeliang's Blog</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2018/05/01/ssh:known_hosts遇错解决方案/">
+    <link itemprop="mainEntityOfPage" href="http://hongliang.site/archives/2019/01/20/RAILS项目自动备份数据库并上传到七牛云/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">ssh:known_hosts遇错解决方案</h1>
+          <h1 class="post-title" itemprop="name headline">RAILS项目自动备份数据库并上传到七牛云</h1>
         
 
         <div class="post-meta">
@@ -318,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-01T22:49:08+08:00">
-                2018-05-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-20T14:19:32+08:00">
+                2019-01-20
               </time>
             
 
@@ -341,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mac/" itemprop="url" rel="index">
-                    <span itemprop="name">mac</span>
+                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby/Rails</span>
                   </a>
                 </span>
 
@@ -359,9 +359,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/05/01/ssh:known_hosts遇错解决方案/#comments" itemprop="discussionUrl">
+                <a href="/2019/01/20/RAILS项目自动备份数据库并上传到七牛云/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/05/01/ssh:known_hosts遇错解决方案/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2019/01/20/RAILS项目自动备份数据库并上传到七牛云/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -389,13 +389,39 @@
       
 
       
-        <p>在ubuntu上遇到ssh链接另外一台主机 遇到报错：<br>WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!</p>
-<p>解决方案：</p>
-<p>在/etc/ssh/ssh_config中加入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">StrictHostKeyChecking no</div><div class="line">UserKnownHostsFile /dev/null</div></pre></td></tr></table></figure>
-<p>搞定！</p>
-<p>不过这是不安全的，平时不太建议打开。</p>
-
+        <blockquote>
+<p>这里用到一个gem，名为backup。坑是有的，不然可能不会有这篇教程。</p>
+<ul>
+<li>文档停留在4.0版本，有些新功能没有描述文档</li>
+<li>按4.0文档说明，是无法上传到七牛云的（国内主机无法上传到亚玛逊S3存储，国内大多上传到七牛云存储）</li>
+</ul>
+<p>以下教程将解决这些问题。</p>
+</blockquote>
+<ol>
+<li><p>在服务器root用户下安装Gem， 并指定版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem install backup -v 5.0.0.beta.1</div></pre></td></tr></table></figure>
+</li>
+<li><p>初始化执行文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">backup generate:model --trigger my_backup \</div><div class="line">    --databases=&quot;postgresql&quot; --storages=&quot;qiniu&quot; \</div><div class="line">    --compressor=&quot;gzip&quot; --notifiers=&quot;mail&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>在root用户根目录下~/Backup/model/my_backup.rb文件，配置一下相关的key：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div></pre></td><td class="code"><pre><div class="line"># encoding: utf-8</div><div class="line"></div><div class="line">##</div><div class="line"># Backup Generated: my_backup</div><div class="line"># Once configured, you can run the backup with the following command:</div><div class="line">#</div><div class="line"># $ backup perform -t my_backup [-c &lt;path_to_configuration_file&gt;]</div><div class="line">#</div><div class="line"># For more information about Backup&apos;s components, see the documentation at:</div><div class="line"># http://backup.github.io/backup</div><div class="line">#</div><div class="line">Model.new(:my_backup, &apos;Description for my_backup&apos;) do</div><div class="line"></div><div class="line">  ##</div><div class="line">  # PostgreSQL [Database]</div><div class="line">  #</div><div class="line">  database PostgreSQL do |db|</div><div class="line">    # To dump all databases, set `db.name = :all` (or leave blank)</div><div class="line">    db.name               = &quot;my_database_name&quot;</div><div class="line">    db.username           = &quot;my_username&quot;</div><div class="line">    db.password           = &quot;my_password&quot;</div><div class="line">    db.host               = &quot;localhost&quot;</div><div class="line">    db.port               = 5432</div><div class="line">    db.socket             = &quot;/tmp/pg.sock&quot;</div><div class="line">    # When dumping all databases, `skip_tables` and `only_tables` are ignored.</div><div class="line">    db.skip_tables        = [&quot;skip&quot;, &quot;these&quot;, &quot;tables&quot;]</div><div class="line">    db.only_tables        = [&quot;only&quot;, &quot;these&quot;, &quot;tables&quot;]</div><div class="line">    db.additional_options = [&quot;-xc&quot;, &quot;-E=utf8&quot;]</div><div class="line">  end</div><div class="line"></div><div class="line">  ##</div><div class="line">  # Qiniu [Storage]</div><div class="line">  #</div><div class="line">  store_with Qiniu do |qiniu|</div><div class="line">    # Qiniu Credentials</div><div class="line">    qiniu.access_key = &quot;my_access_key&quot;</div><div class="line">    qiniu.secret_key = &quot;my_secret_key&quot;</div><div class="line"></div><div class="line">    qiniu.bucket     = &quot;bucket-name&quot;</div><div class="line">    qiniu.keep       = 5</div><div class="line">    qiniu.path       = &quot;path/to/backups&quot;</div><div class="line">  end</div><div class="line"></div><div class="line">  ##</div><div class="line">  # Gzip [Compressor]</div><div class="line">  #</div><div class="line">  compress_with Gzip</div><div class="line"></div><div class="line">  ##</div><div class="line">  # Mail [Notifier]</div><div class="line">  #</div><div class="line">  # The default delivery method for Mail Notifiers is &apos;SMTP&apos;.</div><div class="line">  # See the documentation for other delivery options.</div><div class="line">  #</div><div class="line">  notify_by Mail do |mail|</div><div class="line">    mail.on_success           = true</div><div class="line">    mail.on_warning           = true</div><div class="line">    mail.on_failure           = true</div><div class="line"></div><div class="line">    mail.from                 = &quot;sender@email.com&quot;</div><div class="line">    mail.to                   = &quot;receiver@email.com&quot;</div><div class="line">    mail.cc                   = &quot;cc@email.com&quot;</div><div class="line">    mail.bcc                  = &quot;bcc@email.com&quot;</div><div class="line">    mail.reply_to             = &quot;reply_to@email.com&quot;</div><div class="line">    mail.address              = &quot;smtp.gmail.com&quot;</div><div class="line">    mail.port                 = 587</div><div class="line">    mail.domain               = &quot;your.host.name&quot;</div><div class="line">    mail.user_name            = &quot;sender@email.com&quot;</div><div class="line">    mail.password             = &quot;my_password&quot;</div><div class="line">    mail.authentication       = &quot;plain&quot;</div><div class="line">    mail.encryption           = :starttls</div><div class="line">  end</div><div class="line"></div><div class="line">end</div></pre></td></tr></table></figure>
+</li>
+<li><p>保存后，每当要备份时，执行备份的指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ backup perform --trigger my_backup</div></pre></td></tr></table></figure>
+</li>
+<li><p>添加cron任务，每天定时自动备份：</p>
+<ul>
+<li><p><code>$ crontab -e</code>指令进入编辑，在文件的最后添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">3 8 * * * /bin/bash -l -c &apos;/usr/local/bin/backup perform -t my_backup&apos;</div></pre></td></tr></table></figure>
+<p>（以上代码表示，每天上午8点03分执行一次备份指令）</p>
+</li>
+<li><p>最后保存退出即可。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="完成！"><a href="#完成！" class="headerlink" title="完成！"></a>完成！</h5>
       
     </div>
     
@@ -425,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/27/用原生ruby写一个最简单的http服务端/" rel="next" title="用原生ruby写一个最简单的http服务端">
-                <i class="fa fa-chevron-left"></i> 用原生ruby写一个最简单的http服务端
+              <a href="/2018/12/16/RAILS项目自动化备份数据库数据/" rel="next" title="RAILS项目自动化备份数据库数据">
+                <i class="fa fa-chevron-left"></i> RAILS项目自动化备份数据库数据
               </a>
             
           </div>
@@ -434,10 +460,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/05/学习《ECMAScript6入门》提取记录/" rel="prev" title="学习《ECMAScript6入门》提取记录">
-                学习《ECMAScript6入门》提取记录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -496,8 +518,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -562,6 +593,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#完成！"><span class="nav-number">1.</span> <span class="nav-text">完成！</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -713,9 +760,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://hongliang.site/archives/2018/05/01/ssh:known_hosts遇错解决方案/';
-          this.page.identifier = '2018/05/01/ssh:known_hosts遇错解决方案/';
-          this.page.title = 'ssh:known_hosts遇错解决方案';
+          this.page.url = 'http://hongliang.site/archives/2019/01/20/RAILS项目自动备份数据库并上传到七牛云/';
+          this.page.identifier = '2019/01/20/RAILS项目自动备份数据库并上传到七牛云/';
+          this.page.title = 'RAILS项目自动备份数据库并上传到七牛云';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://honglianggithubblog.disqus.com/embed.js';
