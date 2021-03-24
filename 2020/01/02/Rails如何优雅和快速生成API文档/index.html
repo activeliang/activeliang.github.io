@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Rails," />
+  <meta name="keywords" content="Ruby/Rails," />
 
 
 
@@ -95,18 +95,20 @@
 
 
 
-<meta name="description" content="挖个坑，待填…">
-<meta name="keywords" content="Rails">
+<meta name="description" content="用Rails来写后端API，其实挺方便快捷，并且其自身完备的自动化测试，在不需要打开server的情况下，就能开发出可靠的接口。开发完接口，如果是涉及到多人协作，那这时就需要写API文档了。作为懒是第一生产力的程序员，有没有一种方法让API文档也自动生成呢？ 答案是有的！ 并且还不少，其中比较出名的是swagger，但测试下来发现，它需要你单独跑一个server并且页面还不是很好看，所以在继续寻找">
+<meta name="keywords" content="Ruby&#x2F;Rails">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Rails如何优雅和快速生成API文档">
 <meta property="og:url" content="http://blog.hongliang.fun/archives/2020/01/02/Rails如何优雅和快速生成API文档/index.html">
 <meta property="og:site_name" content="Activeliang&#39;s Blog">
-<meta property="og:description" content="挖个坑，待填…">
+<meta property="og:description" content="用Rails来写后端API，其实挺方便快捷，并且其自身完备的自动化测试，在不需要打开server的情况下，就能开发出可靠的接口。开发完接口，如果是涉及到多人协作，那这时就需要写API文档了。作为懒是第一生产力的程序员，有没有一种方法让API文档也自动生成呢？ 答案是有的！ 并且还不少，其中比较出名的是swagger，但测试下来发现，它需要你单独跑一个server并且页面还不是很好看，所以在继续寻找">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-02T11:07:38.922Z">
+<meta property="og:image" content="http://bucket1.hongliang.fun/085402.png">
+<meta property="og:updated_time" content="2021-03-24T03:36:22.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Rails如何优雅和快速生成API文档">
-<meta name="twitter:description" content="挖个坑，待填…">
+<meta name="twitter:description" content="用Rails来写后端API，其实挺方便快捷，并且其自身完备的自动化测试，在不需要打开server的情况下，就能开发出可靠的接口。开发完接口，如果是涉及到多人协作，那这时就需要写API文档了。作为懒是第一生产力的程序员，有没有一种方法让API文档也自动生成呢？ 答案是有的！ 并且还不少，其中比较出名的是swagger，但测试下来发现，它需要你单独跑一个server并且页面还不是很好看，所以在继续寻找">
+<meta name="twitter:image" content="http://bucket1.hongliang.fun/085402.png">
 
 
 
@@ -389,9 +391,29 @@
       
 
       
-        <blockquote>
-<p>挖个坑，待填…</p>
-</blockquote>
+        <p>用Rails来写后端API，其实挺方便快捷，并且其自身完备的自动化测试，在不需要打开server的情况下，就能开发出可靠的接口。开发完接口，如果是涉及到多人协作，那这时就需要写API文档了。作为懒是第一生产力的程序员，有没有一种方法让API文档也自动生成呢？</p>
+<p>答案是有的！</p>
+<p>并且还不少，其中比较出名的是swagger，但测试下来发现，它需要你单独跑一个server并且页面还不是很好看，所以在继续寻找后，发现了一个漂亮好用轻量的方法：</p>
+<p><a href="https://github.com/infinum/dox" target="_blank" rel="external">gem dox</a></p>
+<p>优点：</p>
+<ul>
+<li><p>可以与rspec结合，跑一遍测试的同时，把文档也顺带生成了</p>
+</li>
+<li><p>可以只生成一种API Blueprint language的标记性文档</p>
+</li>
+<li><p>把文档上传到apipry.io这样的开源工具后，就能生成一份漂亮的在线文档</p>
+</li>
+<li><p>自动添加各种语言的调用示例代码，返回响应结果：</p>
+<p><img src="http://bucket1.hongliang.fun/085402.png" alt=""></p>
+</li>
+</ul>
+<p>具体使用方法见gem的方法介绍：<a href="https://github.com/infinum/dox" target="_blank" rel="external">https://github.com/infinum/dox</a></p>
+<p>这里要说一说结合<a href="https://apipry.io的使用思路：" target="_blank" rel="external">https://apipry.io的使用思路：</a></p>
+<ul>
+<li>先在apipry注册账号，新建项目，获取自己的api key/secrets</li>
+<li>在自己的项目中添加task代码，用上把生成的api文档，利用apipry提供的api上传到apipry，这里贴一下我的task部分代码：</li>
+</ul>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line">namespace <span class="symbol">:api</span> <span class="keyword">do</span></div><div class="line">  namespace <span class="symbol">:doc</span> <span class="keyword">do</span></div><div class="line">    desc <span class="string">'Generate API documentation markdown'</span></div><div class="line">    task <span class="symbol">:md</span> <span class="keyword">do</span></div><div class="line">      <span class="keyword">require</span> <span class="string">'rspec/core/rake_task'</span></div><div class="line"></div><div class="line">      RSpec::Core::RakeTask.new(<span class="symbol">:api_spec</span>) <span class="keyword">do</span> <span class="params">|t|</span></div><div class="line">        t.pattern = <span class="string">'spec/controllers/api/v1/'</span></div><div class="line">        t.rspec_opts = <span class="string">"-f Dox::Formatter --order defined --tag dox --out public/api/docs/v1/apispec.md --require rails_helper"</span></div><div class="line">      <span class="keyword">end</span></div><div class="line"></div><div class="line">      Rake::Task[<span class="string">'api_spec'</span>].invoke</div><div class="line">    <span class="keyword">end</span></div><div class="line"></div><div class="line">    task <span class="symbol">html:</span> <span class="symbol">:md</span> <span class="keyword">do</span></div><div class="line">      <span class="string">`aglio -i public/api/docs/v1/apispec.md -o public/api/docs/v1/index.html`</span></div><div class="line">    <span class="keyword">end</span></div><div class="line"></div><div class="line">    task <span class="symbol">open:</span> <span class="symbol">:html</span> <span class="keyword">do</span></div><div class="line">      <span class="string">`open public/api/docs/v1/index.html`</span></div><div class="line">    <span class="keyword">end</span></div><div class="line"></div><div class="line">    task <span class="symbol">open:</span> <span class="symbol">:html</span> <span class="keyword">do</span></div><div class="line">      <span class="string">`open public/api/docs/v1/index.html`</span></div><div class="line">    <span class="keyword">end</span></div><div class="line"></div><div class="line">    task <span class="symbol">publish:</span> <span class="symbol">:md</span> <span class="keyword">do</span></div><div class="line">      api_sub_do = <span class="string">'qingbao'</span></div><div class="line"></div><div class="line">      values = &#123;</div><div class="line">        <span class="symbol">code:</span> File.read(<span class="string">"public/api/docs/v1/apispec.md"</span>)</div><div class="line">      &#125;</div><div class="line"></div><div class="line">      headers = &#123;</div><div class="line">        <span class="string">'Content-Type'</span>: <span class="string">'application/json; charset=utf-8'</span>,</div><div class="line">        <span class="string">'Authentication'</span>: <span class="string">'Token a28946ac46b80866fxxxxxxxxxxxxx'</span></div><div class="line">      &#125;</div><div class="line"></div><div class="line">        <span class="keyword">begin</span></div><div class="line">          response = RestClient.post <span class="string">"https://api.apiary.io/blueprint/publish/<span class="subst">#&#123;api_sub_do&#125;</span>"</span>, values.to_json, headers</div><div class="line">          puts response</div><div class="line">        <span class="keyword">rescue</span> RestClient::ExceptionWithResponse =&gt; err</div><div class="line">          puts err.response</div><div class="line">        <span class="keyword">end</span></div><div class="line"></div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
 
       
     </div>
@@ -409,7 +431,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Rails/" rel="tag"># Rails</a>
+            <a href="/tags/Ruby-Rails/" rel="tag"># Ruby/Rails</a>
           
         </div>
       
@@ -422,7 +444,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/18/rails webpacker添加UI library框架部分组件无法正常工作/" rel="next" title="rails webpacker添加UI library框架部分组件无法正常工作">
+              <a href="/2019/09/18/Rails webpacker添加UI library框架部分组件无法正常工作/" rel="next" title="rails webpacker添加UI library框架部分组件无法正常工作">
                 <i class="fa fa-chevron-left"></i> rails webpacker添加UI library框架部分组件无法正常工作
               </a>
             
@@ -512,7 +534,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -523,7 +545,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -534,7 +556,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">65</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -576,7 +598,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

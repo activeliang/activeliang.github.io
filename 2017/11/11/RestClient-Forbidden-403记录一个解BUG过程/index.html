@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="mac," />
+  <meta name="keywords" content="RestClient," />
 
 
 
@@ -96,14 +96,14 @@
 
 
 <meta name="description" content="记录一个坑爹的BUG的解决过程，和启发。 事件背景：  需要调用一个Public API，但在本地一直调用失败！用RestClient发起HTTP，提示： RestClient::Forbidden: 403 Forbidden 。自此开启DEBUG之路。  现象一： 用浏览器和POSTMAN来调用API，调正常，返回200。但遇到RestClient就挂。  疑点与解决：  是否版本冲突？  找">
-<meta name="keywords" content="mac">
+<meta name="keywords" content="RestClient">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RestClient::Forbidden:403记录一个解BUG过程">
 <meta property="og:url" content="http://blog.hongliang.fun/archives/2017/11/11/RestClient-Forbidden-403记录一个解BUG过程/index.html">
 <meta property="og:site_name" content="Activeliang&#39;s Blog">
 <meta property="og:description" content="记录一个坑爹的BUG的解决过程，和启发。 事件背景：  需要调用一个Public API，但在本地一直调用失败！用RestClient发起HTTP，提示： RestClient::Forbidden: 403 Forbidden 。自此开启DEBUG之路。  现象一： 用浏览器和POSTMAN来调用API，调正常，返回200。但遇到RestClient就挂。  疑点与解决：  是否版本冲突？  找">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-21T08:01:09.051Z">
+<meta property="og:updated_time" content="2021-03-24T03:37:21.405Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RestClient::Forbidden:403记录一个解BUG过程">
 <meta name="twitter:description" content="记录一个坑爹的BUG的解决过程，和启发。 事件背景：  需要调用一个Public API，但在本地一直调用失败！用RestClient发起HTTP，提示： RestClient::Forbidden: 403 Forbidden 。自此开启DEBUG之路。  现象一： 用浏览器和POSTMAN来调用API，调正常，返回200。但遇到RestClient就挂。  疑点与解决：  是否版本冲突？  找">
@@ -283,10 +283,8 @@
   
   
   
-    
-  
 
-  <article class="post post-type-normal post-sticky" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
@@ -343,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/mac/" itemprop="url" rel="index">
-                    <span itemprop="name">mac</span>
+                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby/Rails</span>
                   </a>
                 </span>
 
@@ -417,6 +415,13 @@
 </blockquote>
 <h4 id="原因："><a href="#原因：" class="headerlink" title="原因："></a><strong>原因：</strong></h4><p><strong>科学上网用的shadownsocks，用浏览器和postman发出的请求能通过shadowsocks科学上网，而用RestClient和curl发出的请求通常不走shadowsocks代理。</strong></p>
 <a id="more"></a>
+<h5 id="2种解决方法："><a href="#2种解决方法：" class="headerlink" title="2种解决方法："></a>2种解决方法：</h5><ol>
+<li><p>给rest-client添加代理：<a href="https://github.com/rest-client/rest-client#proxy" target="_blank" rel="external">link</a></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">RestClient.proxy = <span class="string">"http://proxy.example.com/"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>用mac端软件proxifier结合梯子工具，给电脑上所有端口都转发到梯子的代理端口。</p>
+</li>
+</ol>
 <h5 id="回顾："><a href="#回顾：" class="headerlink" title="回顾："></a>回顾：</h5><blockquote>
 <p>看到这里你会想这个bug也没有多难。但我是省略了很多中间的过程，比如，发微信群里救助，有朋友提示用curl来了解整个http请求的详细过程。于是用curl发现<code>openssl</code>版本的差异，再来发现UA的差异，<code>Content-type</code>的差异。才发现这些东西以前从来没听过，需要一个一个去GOOGLE，最后这些坑填完后还是发现不行。</p>
 <p>那一开始为什么没有切换手机4G来试呢？因为确定了不是IP限制，电脑同样有科学上网，所以没有往手机4G去调试。</p>
@@ -451,7 +456,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/mac/" rel="tag"># mac</a>
+            <a href="/tags/RestClient/" rel="tag"># RestClient</a>
           
         </div>
       
@@ -474,8 +479,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/12/18/rails翻译栏位/" rel="prev" title="rails翻译栏位">
-                rails翻译栏位 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/12/18/Rails翻译栏位/" rel="prev" title="Rails翻译栏位">
+                Rails翻译栏位 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -563,7 +568,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -574,7 +579,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -585,7 +590,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">65</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -620,7 +625,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#现象一："><span class="nav-number">1.</span> <span class="nav-text">现象一：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最后："><span class="nav-number">2.</span> <span class="nav-text">最后：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原因："><span class="nav-number"></span> <span class="nav-text">原因：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#回顾："><span class="nav-number">1.</span> <span class="nav-text">回顾：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启发："><span class="nav-number">2.</span> <span class="nav-text">启发：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#现象一："><span class="nav-number">1.</span> <span class="nav-text">现象一：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#最后："><span class="nav-number">2.</span> <span class="nav-text">最后：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#原因："><span class="nav-number"></span> <span class="nav-text">原因：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2种解决方法："><span class="nav-number">1.</span> <span class="nav-text">2种解决方法：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#回顾："><span class="nav-number">2.</span> <span class="nav-text">回顾：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启发："><span class="nav-number">3.</span> <span class="nav-text">启发：</span></a></li></ol></div>
             
 
           </div>
@@ -643,7 +648,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

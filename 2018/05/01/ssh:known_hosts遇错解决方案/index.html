@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="在ubuntu上遇到ssh链接另外一台主机 遇到报错：WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 解决方案： 在/etc/ssh/ssh_config中加入： 12StrictHostKeyChecking noUserKnownHostsFile /dev/null 搞定！ 不过这是不安全的，平时不太建议打开。">
+<meta name="description" content="在ubuntu上遇到ssh链接另外一台主机 经常会遇到报错：WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 这里因为之前连接过这台host但现在这台host改了证书，与本地证书不匹配发出的警告。 解决方案： 在/etc/ssh/ssh_config中加入： 12StrictHostKeyChecking noUserKnownHostsFile /">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ssh:known_hosts遇错解决方案">
 <meta property="og:url" content="http://blog.hongliang.fun/archives/2018/05/01/ssh:known_hosts遇错解决方案/index.html">
 <meta property="og:site_name" content="Activeliang&#39;s Blog">
-<meta property="og:description" content="在ubuntu上遇到ssh链接另外一台主机 遇到报错：WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 解决方案： 在/etc/ssh/ssh_config中加入： 12StrictHostKeyChecking noUserKnownHostsFile /dev/null 搞定！ 不过这是不安全的，平时不太建议打开。">
+<meta property="og:description" content="在ubuntu上遇到ssh链接另外一台主机 经常会遇到报错：WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 这里因为之前连接过这台host但现在这台host改了证书，与本地证书不匹配发出的警告。 解决方案： 在/etc/ssh/ssh_config中加入： 12StrictHostKeyChecking noUserKnownHostsFile /">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-19T11:23:42.912Z">
+<meta property="og:updated_time" content="2021-03-23T09:09:29.714Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ssh:known_hosts遇错解决方案">
-<meta name="twitter:description" content="在ubuntu上遇到ssh链接另外一台主机 遇到报错：WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 解决方案： 在/etc/ssh/ssh_config中加入： 12StrictHostKeyChecking noUserKnownHostsFile /dev/null 搞定！ 不过这是不安全的，平时不太建议打开。">
+<meta name="twitter:description" content="在ubuntu上遇到ssh链接另外一台主机 经常会遇到报错：WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! 这里因为之前连接过这台host但现在这台host改了证书，与本地证书不匹配发出的警告。 解决方案： 在/etc/ssh/ssh_config中加入： 12StrictHostKeyChecking noUserKnownHostsFile /">
 
 
 
@@ -389,7 +389,8 @@
       
 
       
-        <p>在ubuntu上遇到ssh链接另外一台主机 遇到报错：<br>WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!</p>
+        <p>在ubuntu上遇到ssh链接另外一台主机 经常会遇到报错：<br>WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!</p>
+<p>这里因为之前连接过这台host但现在这台host改了证书，与本地证书不匹配发出的警告。</p>
 <p>解决方案：</p>
 <p>在/etc/ssh/ssh_config中加入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">StrictHostKeyChecking no</div><div class="line">UserKnownHostsFile /dev/null</div></pre></td></tr></table></figure>
@@ -515,7 +516,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -526,7 +527,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -537,7 +538,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">65</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -579,7 +580,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="deploy," />
+  <meta name="keywords" content="deploy,Webpacker,Capistrano,Vue," />
 
 
 
@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="挖个坑，待填…">
-<meta name="keywords" content="deploy">
+<meta name="description" content="Rails6.0 添加了webpack的支持，从此要在rails上引用前端库、打包前端资源变得非常的简单，再也不用像之前rails5.0的时候手工添加JS代码到vendor目录了，而是直接通过yarn指令添加前端库。在第一次上手使用rails webpacker并部署到生产环境时还是遇到了不少的坑。  如果你的云服务器很小，是个1G1C的小机机，那很可能在前端编译的时候会爆掉而部署中断。  这时你">
+<meta name="keywords" content="deploy,Webpacker,Capistrano,Vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Rails Webpacker Vue部署时可能遇到的坑">
+<meta property="og:title" content="Rails6.0 Webpacker+Vue用capistrano部署时可能遇到的坑">
 <meta property="og:url" content="http://blog.hongliang.fun/archives/2020/01/02/Rails Webpacker Vue部署时可能遇到的坑/index.html">
 <meta property="og:site_name" content="Activeliang&#39;s Blog">
-<meta property="og:description" content="挖个坑，待填…">
+<meta property="og:description" content="Rails6.0 添加了webpack的支持，从此要在rails上引用前端库、打包前端资源变得非常的简单，再也不用像之前rails5.0的时候手工添加JS代码到vendor目录了，而是直接通过yarn指令添加前端库。在第一次上手使用rails webpacker并部署到生产环境时还是遇到了不少的坑。  如果你的云服务器很小，是个1G1C的小机机，那很可能在前端编译的时候会爆掉而部署中断。  这时你">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-02T11:51:21.719Z">
+<meta property="og:updated_time" content="2021-03-24T03:34:18.076Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rails Webpacker Vue部署时可能遇到的坑">
-<meta name="twitter:description" content="挖个坑，待填…">
+<meta name="twitter:title" content="Rails6.0 Webpacker+Vue用capistrano部署时可能遇到的坑">
+<meta name="twitter:description" content="Rails6.0 添加了webpack的支持，从此要在rails上引用前端库、打包前端资源变得非常的简单，再也不用像之前rails5.0的时候手工添加JS代码到vendor目录了，而是直接通过yarn指令添加前端库。在第一次上手使用rails webpacker并部署到生产环境时还是遇到了不少的坑。  如果你的云服务器很小，是个1G1C的小机机，那很可能在前端编译的时候会爆掉而部署中断。  这时你">
 
 
 
@@ -142,7 +142,7 @@
 
 
 
-  <title>Rails Webpacker Vue部署时可能遇到的坑 | Activeliang's Blog</title>
+  <title>Rails6.0 Webpacker+Vue用capistrano部署时可能遇到的坑 | Activeliang's Blog</title>
   
 
 
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Rails Webpacker Vue部署时可能遇到的坑</h1>
+          <h1 class="post-title" itemprop="name headline">Rails6.0 Webpacker+Vue用capistrano部署时可能遇到的坑</h1>
         
 
         <div class="post-meta">
@@ -341,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ruby-Rails-Webpacker-Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Ruby/Rails Webpacker Vue</span>
+                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby/Rails</span>
                   </a>
                 </span>
 
@@ -389,9 +389,29 @@
       
 
       
-        <blockquote>
-<p>挖个坑，待填…</p>
+        <p>Rails6.0 添加了webpack的支持，从此要在rails上引用前端库、打包前端资源变得非常的简单，再也不用像之前rails5.0的时候手工添加JS代码到vendor目录了，而是直接通过yarn指令添加前端库。在第一次上手使用rails webpacker并<strong>部署到生产环境</strong>时还是遇到了不少的坑。</p>
+<ol>
+<li><p>如果你的云服务器很小，是个1G1C的小机机，那很可能在前端编译的时候会爆掉而部署中断。</p>
+<blockquote>
+<p>这时你比较好的解决思路是，在部署的过程中，让编译这个步骤在本地电脑上执行，然后再把编译出来的包上传到服务器上。</p>
 </blockquote>
+<p>在Capistrano部署代码中，可以这样做：</p>
+<p>在config/deploy.rb 文件的最后，添加以下代码：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">set <span class="symbol">:log_level</span>, <span class="symbol">:debug</span></div><div class="line">set <span class="symbol">:format_options</span>, <span class="symbol">truncate:</span> <span class="literal">false</span></div><div class="line">Rake::Task[<span class="string">"deploy:compile_assets"</span>].clear</div><div class="line"></div><div class="line">namespace <span class="symbol">:deploy</span> <span class="keyword">do</span></div><div class="line">  desc <span class="string">'Compile assets'</span></div><div class="line">  task <span class="symbol">:compile_assets</span> =&gt; [<span class="symbol">:set_rails_env</span>] <span class="keyword">do</span></div><div class="line">    invoke <span class="string">'deploy:assets:precompile_local'</span></div><div class="line">  <span class="keyword">end</span></div><div class="line">  namespace <span class="symbol">:assets</span> <span class="keyword">do</span></div><div class="line">    desc <span class="string">"Precompile assets locally and then rsync to web servers"</span></div><div class="line">    task <span class="symbol">:precompile_local</span> <span class="keyword">do</span></div><div class="line">      run_locally <span class="keyword">do</span></div><div class="line">        execute <span class="string">"RAILS_ENV=<span class="subst">#&#123;fetch(<span class="symbol">:stage</span>)&#125;</span> bundle exec rake assets:precompile"</span></div><div class="line">      <span class="keyword">end</span></div><div class="line"></div><div class="line">      <span class="comment"># rsync to each server</span></div><div class="line">      on roles(<span class="symbol">:web</span>), <span class="symbol">in:</span> <span class="symbol">:parallel</span> <span class="keyword">do</span> <span class="params">|server|</span></div><div class="line">        run_locally <span class="keyword">do</span></div><div class="line">          execute <span class="symbol">:rsync</span>,</div><div class="line">            <span class="string">"-av --delete ./public/ <span class="subst">#&#123;<span class="string">'deploy'</span>&#125;</span>@<span class="subst">#&#123;server.hostname&#125;</span>:<span class="subst">#&#123;release_path&#125;</span>/public/"</span></div><div class="line">        <span class="keyword">end</span></div><div class="line">      <span class="keyword">end</span></div><div class="line"></div><div class="line">      run_locally <span class="keyword">do</span></div><div class="line">        execute <span class="symbol">:rm</span>, <span class="string">'-rf public/assets'</span></div><div class="line">        execute <span class="symbol">:rm</span>, <span class="string">'-rf public/packs'</span></div><div class="line">        <span class="comment"># execute :rm, 'public/index.html'</span></div><div class="line">      <span class="keyword">end</span></div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>这段代码主要做的是，先取消默认的编译步骤，再手工新建一个在本地电脑编译任务，任务完成后，再同步到生产服务器。</p>
+</li>
+<li><p>部署时可能会遇到报错<code>Undefind async await</code></p>
+<blockquote>
+<p>这里是node版本的问题，云服务器上的node版本过低无法正常处理async await 等新特性。</p>
+</blockquote>
+<p>这里之所以是一个大坑是因为，很多时候在服务器上是通过nvm来控制node版本的</p>
+<ul>
+<li>默认版本已设为最新12.13.1</li>
+<li>capistrano的deploy.rb部署配置通过capistrano-nvm设置node版本也为12.13.1</li>
+</ul>
+<p>但是重点来了，在部署的时候引用的却仍然是4.0的node版本，所以这个坑藏得有点深，我的做法是：把云服务器上的node和nvm全部完全卸载掉，通过手工编译安装新版的node，这才得以顺利部署。</p>
+</li>
+</ol>
 
       
     </div>
@@ -411,6 +431,12 @@
           
             <a href="/tags/deploy/" rel="tag"># deploy</a>
           
+            <a href="/tags/Webpacker/" rel="tag"># Webpacker</a>
+          
+            <a href="/tags/Capistrano/" rel="tag"># Capistrano</a>
+          
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
+          
         </div>
       
 
@@ -422,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/02/Webpack+Vue单页面应用push github时自动部署到linux服务器/" rel="next" title="Webpack+Vue单页面应用push github时自动部署到linux服务器.md">
-                <i class="fa fa-chevron-left"></i> Webpack+Vue单页面应用push github时自动部署到linux服务器.md
+              <a href="/2020/01/02/Rails Webpacker Vue单页面应用，打印时css样式全部丢失/" rel="next" title="Rails Webpacker Vue单页面应用，打印时css样式全部丢失">
+                <i class="fa fa-chevron-left"></i> Rails Webpacker Vue单页面应用，打印时css样式全部丢失
               </a>
             
           </div>
@@ -432,8 +458,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/01/02/Rails Webpacker Vue单页面应用，打印时css样式全部丢失/" rel="prev" title="Rails Webpacker Vue单页面应用，打印时css样式全部丢失">
-                Rails Webpacker Vue单页面应用，打印时css样式全部丢失 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/03/07/Rails的ActionCable发消息给某个用户和全体广播的方法/" rel="prev" title="Rails的ActionCable发消息给某个用户和全体广播的方法">
+                Rails的ActionCable发消息给某个用户和全体广播的方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -512,7 +538,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -523,7 +549,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -534,7 +560,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">65</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -576,7 +602,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -712,7 +738,7 @@
         var disqus_config = function () {
           this.page.url = 'http://blog.hongliang.fun/archives/2020/01/02/Rails Webpacker Vue部署时可能遇到的坑/';
           this.page.identifier = '2020/01/02/Rails Webpacker Vue部署时可能遇到的坑/';
-          this.page.title = 'Rails Webpacker Vue部署时可能遇到的坑';
+          this.page.title = 'Rails6.0 Webpacker+Vue用capistrano部署时可能遇到的坑';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://honglianggithubblog.disqus.com/embed.js';

@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="写了一个FMZ机器人协议程序，简单来讲就是用websocket把bitmex交易所数据拉回本地，再开启一个http服务给同一主机上的另外一个程序接数据。一开始用到的是EventMachine，参考蛋人网教程弄的一个简单的后台server做脚手架。接下来这个程序也搭出来了，但因为一开始做业务流程不熟悉，还做了太多个交易所，所以程序写得很乱，导致性能下降，拿数据经常断！ 再版的时候，想到了nginx想">
+<meta name="description" content="写了一个FMZ机器人协议程序，简单来讲就是用websocket把bitmex交易所数据拉回本地，再开启一个http服务给同一主机上的另外一个程序接数据。一开始用到的是EventMachine，参考蛋人网教程弄的一个简单的后台server做脚手架。接下来这个程序也搭出来了，但因为一开始做业务流程不熟悉，还对接过多的交易所，导致程序逻辑写得很乱，性能遇到瓶颈，拿数据经常断开！ 再版的时候，想到了ngi">
 <meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记遇到的性能问题">
+<meta property="og:title" content="记一次Linux服务上遇到的性能问题">
 <meta property="og:url" content="http://blog.hongliang.fun/archives/2018/09/30/记遇到的性能问题/index.html">
 <meta property="og:site_name" content="Activeliang&#39;s Blog">
-<meta property="og:description" content="写了一个FMZ机器人协议程序，简单来讲就是用websocket把bitmex交易所数据拉回本地，再开启一个http服务给同一主机上的另外一个程序接数据。一开始用到的是EventMachine，参考蛋人网教程弄的一个简单的后台server做脚手架。接下来这个程序也搭出来了，但因为一开始做业务流程不熟悉，还做了太多个交易所，所以程序写得很乱，导致性能下降，拿数据经常断！ 再版的时候，想到了nginx想">
+<meta property="og:description" content="写了一个FMZ机器人协议程序，简单来讲就是用websocket把bitmex交易所数据拉回本地，再开启一个http服务给同一主机上的另外一个程序接数据。一开始用到的是EventMachine，参考蛋人网教程弄的一个简单的后台server做脚手架。接下来这个程序也搭出来了，但因为一开始做业务流程不熟悉，还对接过多的交易所，导致程序逻辑写得很乱，性能遇到瓶颈，拿数据经常断开！ 再版的时候，想到了ngi">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-19T11:14:33.875Z">
+<meta property="og:updated_time" content="2021-03-24T03:29:39.070Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记遇到的性能问题">
-<meta name="twitter:description" content="写了一个FMZ机器人协议程序，简单来讲就是用websocket把bitmex交易所数据拉回本地，再开启一个http服务给同一主机上的另外一个程序接数据。一开始用到的是EventMachine，参考蛋人网教程弄的一个简单的后台server做脚手架。接下来这个程序也搭出来了，但因为一开始做业务流程不熟悉，还做了太多个交易所，所以程序写得很乱，导致性能下降，拿数据经常断！ 再版的时候，想到了nginx想">
+<meta name="twitter:title" content="记一次Linux服务上遇到的性能问题">
+<meta name="twitter:description" content="写了一个FMZ机器人协议程序，简单来讲就是用websocket把bitmex交易所数据拉回本地，再开启一个http服务给同一主机上的另外一个程序接数据。一开始用到的是EventMachine，参考蛋人网教程弄的一个简单的后台server做脚手架。接下来这个程序也搭出来了，但因为一开始做业务流程不熟悉，还对接过多的交易所，导致程序逻辑写得很乱，性能遇到瓶颈，拿数据经常断开！ 再版的时候，想到了ngi">
 
 
 
@@ -142,7 +142,7 @@
 
 
 
-  <title>记遇到的性能问题 | Activeliang's Blog</title>
+  <title>记一次Linux服务上遇到的性能问题 | Activeliang's Blog</title>
   
 
 
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">记遇到的性能问题</h1>
+          <h1 class="post-title" itemprop="name headline">记一次Linux服务上遇到的性能问题</h1>
         
 
         <div class="post-meta">
@@ -389,8 +389,8 @@
       
 
       
-        <p>写了一个FMZ机器人协议程序，简单来讲就是用websocket把bitmex交易所数据拉回本地，再开启一个http服务给同一主机上的另外一个程序接数据。一开始用到的是EventMachine，参考蛋人网教程弄的一个简单的后台server做脚手架。接下来这个程序也搭出来了，但因为一开始做业务流程不熟悉，还做了太多个交易所，所以程序写得很乱，导致性能下降，拿数据经常断！</p>
-<p>再版的时候，想到了nginx想到了用rails来搭，跑越来之后，8个小时左右nginx就因为OOM被killed。这个问题现在都还解决。可能因为高并发，机器内存本身也小所致。最后还是用回了EventMachine。先在张上拿笔一步步写好流程之后再开始写代码，发现原来之前是乱写一通，写了很多废代码，还把整个流程弄乱了！</p>
+        <p>写了一个FMZ机器人协议程序，简单来讲就是用websocket把bitmex交易所数据拉回本地，再开启一个http服务给同一主机上的另外一个程序接数据。一开始用到的是EventMachine，参考蛋人网教程弄的一个简单的后台server做脚手架。接下来这个程序也搭出来了，但因为一开始做业务流程不熟悉，还对接过多的交易所，导致程序逻辑写得很乱，性能遇到瓶颈，拿数据经常断开！</p>
+<p>再版的时候，想到了nginx、想到了用rails来搭，跑越来之后，8个小时左右nginx就因为内存不足被killed。这个问题现在都还未解决。可能因为高并发，机器内存本身也小所致。最后还是用回了EventMachine。先在张上拿笔一步步写好流程之后再开始写代码，发现原来之前是乱写一通，写了很多废代码，还把整个流程弄乱了！</p>
 <p>这次折腾（3天左右 ），还是有收获的：</p>
 <ol>
 <li>写代码前先把流程弄清楚了再动手。先画流程图</li>
@@ -517,7 +517,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -528,7 +528,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -539,7 +539,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">65</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -581,7 +581,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -717,7 +717,7 @@
         var disqus_config = function () {
           this.page.url = 'http://blog.hongliang.fun/archives/2018/09/30/记遇到的性能问题/';
           this.page.identifier = '2018/09/30/记遇到的性能问题/';
-          this.page.title = '记遇到的性能问题';
+          this.page.title = '记一次Linux服务上遇到的性能问题';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://honglianggithubblog.disqus.com/embed.js';

@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="deploy," />
+  <meta name="keywords" content="deploy,vue,webpack," />
 
 
 
@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="挖个坑，待填…">
-<meta name="keywords" content="deploy">
+<meta name="description" content="vue单页面应用，在部署时，直接把打包好的文件搬到服务器上，再添加反射代理，就完成了部署，听起来挺简单，但如果每次修改完代码都要操作一遍的话，内心是拒绝的，于是我需要一个自动部署机制。 目标：每次修改完代码push到github的时候，阿里云服务器自动去github拉最新的代码并且打包好，更新部署最新代码。  其思路是在阿里云服务器上开一个webhook的server，然后github添加一个we">
+<meta name="keywords" content="deploy,vue,webpack">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Webpack+Vue单页面应用push github时自动部署到linux服务器.md">
 <meta property="og:url" content="http://blog.hongliang.fun/archives/2020/01/02/Webpack+Vue单页面应用push github时自动部署到linux服务器/index.html">
 <meta property="og:site_name" content="Activeliang&#39;s Blog">
-<meta property="og:description" content="挖个坑，待填…">
+<meta property="og:description" content="vue单页面应用，在部署时，直接把打包好的文件搬到服务器上，再添加反射代理，就完成了部署，听起来挺简单，但如果每次修改完代码都要操作一遍的话，内心是拒绝的，于是我需要一个自动部署机制。 目标：每次修改完代码push到github的时候，阿里云服务器自动去github拉最新的代码并且打包好，更新部署最新代码。  其思路是在阿里云服务器上开一个webhook的server，然后github添加一个we">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-02T11:49:54.348Z">
+<meta property="og:updated_time" content="2021-03-24T03:39:23.319Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack+Vue单页面应用push github时自动部署到linux服务器.md">
-<meta name="twitter:description" content="挖个坑，待填…">
+<meta name="twitter:description" content="vue单页面应用，在部署时，直接把打包好的文件搬到服务器上，再添加反射代理，就完成了部署，听起来挺简单，但如果每次修改完代码都要操作一遍的话，内心是拒绝的，于是我需要一个自动部署机制。 目标：每次修改完代码push到github的时候，阿里云服务器自动去github拉最新的代码并且打包好，更新部署最新代码。  其思路是在阿里云服务器上开一个webhook的server，然后github添加一个we">
 
 
 
@@ -341,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Webpack-Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Webpack+Vue</span>
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
                   </a>
                 </span>
 
@@ -389,9 +389,14 @@
       
 
       
-        <blockquote>
-<p>挖个坑，待填…</p>
+        <p>vue单页面应用，在部署时，直接把打包好的文件搬到服务器上，再添加反射代理，就完成了部署，听起来挺简单，但如果每次修改完代码都要操作一遍的话，内心是拒绝的，于是我需要一个自动部署机制。</p>
+<p>目标：每次修改完代码push到github的时候，阿里云服务器自动去github拉最新的代码并且打包好，更新部署最新代码。</p>
+<blockquote>
+<p>其思路是在阿里云服务器上开一个webhook的server，然后github添加一个webhook的事件推送，当有新push时，给阿里云的服务器发送一个通知。阿里云接到通知后，拉新代码，打包，刷新nginx一气呵成。</p>
 </blockquote>
+<p>具体步骤，请参考：</p>
+<p><a href="https://jimmysong.io/blog/github-webhook-website-auto-deploy/" target="_blank" rel="external">https://jimmysong.io/blog/github-webhook-website-auto-deploy/</a></p>
+<p><a href="https://segmentfault.com/a/1190000016071010" target="_blank" rel="external">https://segmentfault.com/a/1190000016071010</a></p>
 
       
     </div>
@@ -410,6 +415,10 @@
         <div class="post-tags">
           
             <a href="/tags/deploy/" rel="tag"># deploy</a>
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+            <a href="/tags/webpack/" rel="tag"># webpack</a>
           
         </div>
       
@@ -432,8 +441,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/01/02/Rails Webpacker Vue部署时可能遇到的坑/" rel="prev" title="Rails Webpacker Vue部署时可能遇到的坑">
-                Rails Webpacker Vue部署时可能遇到的坑 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/01/02/Rails Webpacker Vue单页面应用，打印时css样式全部丢失/" rel="prev" title="Rails Webpacker Vue单页面应用，打印时css样式全部丢失">
+                Rails Webpacker Vue单页面应用，打印时css样式全部丢失 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -512,7 +521,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -523,7 +532,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -534,7 +543,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">65</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -576,7 +585,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

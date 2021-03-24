@@ -290,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2019/09/18/rails webpacker添加UI library框架部分组件无法正常工作/">
+    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2020/06/02/Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="黄鸿亮">
@@ -309,7 +309,1330 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/18/rails webpacker添加UI library框架部分组件无法正常工作/" itemprop="url">rails webpacker添加UI library框架部分组件无法正常工作</a></h1>
+                <a class="post-title-link" href="/2020/06/02/Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路/" itemprop="url">Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-02T18:07:26+08:00">
+                2020-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/02/Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/06/02/Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          富途牛牛是唯数不多的互联网券商，有详细的API文档（同样有开放API的雪盈、老虎）但技术上都没有富途那么专业和强大。
+最近刚好要写一个拉取富途行情数据的接口，用来做小工具—价格向右回撤提醒工具，一旦价格符合设定的点立即电话通知我出货。
+这些年对过的API接口也不少，一开始我以为能很快用Ruby对接好，但实际上我错了，整整花费了大半个月。借此我也更深入的了解http与tcp之间的关系。自定义的tcp协议要如何对接等。
+其实市场上是有其他开源的php/go/java对接好的源代码，但我不信，我就是想要用Ruby来对接…..
+文档地址：https://openapi.futunn.com/futu-api-doc/
+文档使用了自定义tcp头 + google Protobuf  协议介绍
+这就导致
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/02/Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2020/06/02/Docker在build生成镜像时使用proxy代理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/06/02/Docker在build生成镜像时使用proxy代理/" itemprop="url">Docker在build生成镜像时使用proxy代理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-02T11:15:16+08:00">
+                2020-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Docker/" itemprop="url" rel="index">
+                    <span itemprop="name">Docker</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/02/Docker在build生成镜像时使用proxy代理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/06/02/Docker在build生成镜像时使用proxy代理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          正常的Docker在build的时候是不需要设置proxy的 ，但在天朝的程序员在特殊环境中，有时需要一个科学的proxy才能正常的完成构建镜像，而已这和平时的用法有点不一样，记录一下：
+12345docker build \--build-arg http_proxy=http://docker.for.mac.localhost:8887 \--build-arg https_proxy=http://docker.for.mac.localhost:8887 \--build-arg npm_install=false \-t local/chrome-docker:0.0.1 .
+这里我用的是Mac，我的代理服务的端口是8887，所以proxy的代理地址变成了http://docke
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/06/02/Docker在build生成镜像时使用proxy代理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2020/03/23/Webpacker生成自定义index-html文件-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/23/Webpacker生成自定义index-html文件-md/" itemprop="url">Webpacker生成自定义index.html文件.md</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-23T17:27:59+08:00">
+                2020-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby/Rails</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/23/Webpacker生成自定义index-html文件-md/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/03/23/Webpacker生成自定义index-html文件-md/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          实践中发现Rails webpacker在使用时，通常也是配置Rails自带的layout一起使用的，不像Vue+Webpack的普通项目，通常都是生成一个入口的html文件，那么Rails这边有没有什么方法也 生成一样的index.html入口文件呢？答案是有的：
+
+首先要添加2个js库：
+
+https://www.npmjs.com/package/html-webpack-plugin
+https://www.npmjs.com/package/html-webpack-harddisk-plugin
+
+
+在Rails项目的config/webpack目录下新增一个模块js文件：
+1234567891011121314151617const HtmlWebpackPlugin = re
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/23/Webpacker生成自定义index-html文件-md/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2020/03/07/Rails的ActionCable发消息给某个用户和全体广播的方法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/03/07/Rails的ActionCable发消息给某个用户和全体广播的方法/" itemprop="url">Rails的ActionCable发消息给某个用户和全体广播的方法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-07T21:08:36+08:00">
+                2020-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby/Rails</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/03/07/Rails的ActionCable发消息给某个用户和全体广播的方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/03/07/Rails的ActionCable发消息给某个用户和全体广播的方法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Rails的action cable使得用websocket推送变得特别容易实现。
+但一直以为有个小需求没有想明白如何实现，有时想私发给某个用户消息，有时又想给所有用户发消息。
+俗话说念念不忘必有回响，直到有一天，准备放弃了，突然想到了实现方法。
+Action cable是按channel来通信的。那要同时满足这两个条件，只需要建立2条通道，一条是个人通道，一条是广播通道。这样就满足了这两个需求。
+123456class CoinfarmDataChannel &lt; ApplicationCable::Channel  def subscribe    stream_from "coinfarm_data_#&#123;params[:id]&#125;"    stream_from 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/03/07/Rails的ActionCable发消息给某个用户和全体广播的方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2020/01/02/Rails Webpacker Vue部署时可能遇到的坑/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/02/Rails Webpacker Vue部署时可能遇到的坑/" itemprop="url">Rails6.0 Webpacker+Vue用capistrano部署时可能遇到的坑</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-02T14:40:32+08:00">
+                2020-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby/Rails</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/02/Rails Webpacker Vue部署时可能遇到的坑/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/02/Rails Webpacker Vue部署时可能遇到的坑/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Rails6.0 添加了webpack的支持，从此要在rails上引用前端库、打包前端资源变得非常的简单，再也不用像之前rails5.0的时候手工添加JS代码到vendor目录了，而是直接通过yarn指令添加前端库。在第一次上手使用rails webpacker并部署到生产环境时还是遇到了不少的坑。
+
+如果你的云服务器很小，是个1G1C的小机机，那很可能在前端编译的时候会爆掉而部署中断。
+
+这时你比较好的解决思路是，在部署的过程中，让编译这个步骤在本地电脑上执行，然后再把编译出来的包上传到服务器上。
+
+在Capistrano部署代码中，可以这样做：
+在config/deploy.rb 文件的最后，添加以下代码：
+1234567891011121314151617181920212223242
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/02/Rails Webpacker Vue部署时可能遇到的坑/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2020/01/02/Rails Webpacker Vue单页面应用，打印时css样式全部丢失/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/02/Rails Webpacker Vue单页面应用，打印时css样式全部丢失/" itemprop="url">Rails Webpacker Vue单页面应用，打印时css样式全部丢失</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-02T14:40:32+08:00">
+                2020-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby/Rails</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/02/Rails Webpacker Vue单页面应用，打印时css样式全部丢失/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/02/Rails Webpacker Vue单页面应用，打印时css样式全部丢失/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          最近写的一个vue单页面应用，需要用到页面打印功能，奇怪的是在本地开发时打印一切都正常，但部署后，打印出来的页面css全部丢失。排查了很久最后发现是webpacker.yml的一个配置引起的：
+
+当extract_css为true时，部署到生产环境后，会单独分离出一个css文件，这里打印时才会正常显示样式。
+
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/02/Rails Webpacker Vue单页面应用，打印时css样式全部丢失/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2020/01/02/Webpack+Vue单页面应用push github时自动部署到linux服务器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/02/Webpack+Vue单页面应用push github时自动部署到linux服务器/" itemprop="url">Webpack+Vue单页面应用push github时自动部署到linux服务器.md</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-02T14:27:32+08:00">
+                2020-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/02/Webpack+Vue单页面应用push github时自动部署到linux服务器/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/02/Webpack+Vue单页面应用push github时自动部署到linux服务器/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          vue单页面应用，在部署时，直接把打包好的文件搬到服务器上，再添加反射代理，就完成了部署，听起来挺简单，但如果每次修改完代码都要操作一遍的话，内心是拒绝的，于是我需要一个自动部署机制。
+目标：每次修改完代码push到github的时候，阿里云服务器自动去github拉最新的代码并且打包好，更新部署最新代码。
+
+其思路是在阿里云服务器上开一个webhook的server，然后github添加一个webhook的事件推送，当有新push时，给阿里云的服务器发送一个通知。阿里云接到通知后，拉新代码，打包，刷新nginx一气呵成。
+
+具体步骤，请参考：
+https://jimmysong.io/blog/github-webhook-website-auto-deploy/
+https://segm
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/02/Webpack+Vue单页面应用push github时自动部署到linux服务器/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2020/01/02/Rails如何优雅和快速生成API文档/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/01/02/Rails如何优雅和快速生成API文档/" itemprop="url">Rails如何优雅和快速生成API文档</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-02T14:19:32+08:00">
+                2020-01-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby/Rails</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/01/02/Rails如何优雅和快速生成API文档/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/01/02/Rails如何优雅和快速生成API文档/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          用Rails来写后端API，其实挺方便快捷，并且其自身完备的自动化测试，在不需要打开server的情况下，就能开发出可靠的接口。开发完接口，如果是涉及到多人协作，那这时就需要写API文档了。作为懒是第一生产力的程序员，有没有一种方法让API文档也自动生成呢？
+答案是有的！
+并且还不少，其中比较出名的是swagger，但测试下来发现，它需要你单独跑一个server并且页面还不是很好看，所以在继续寻找后，发现了一个漂亮好用轻量的方法：
+gem dox
+优点：
+
+可以与rspec结合，跑一遍测试的同时，把文档也顺带生成了
+
+可以只生成一种API Blueprint language的标记性文档
+
+把文档上传到apipry.io这样的开源工具后，就能生成一份漂亮的在线文档
+
+自动添加各种语言的调用示
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/01/02/Rails如何优雅和快速生成API文档/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2019/09/18/Rails webpacker添加UI library框架部分组件无法正常工作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/09/18/Rails webpacker添加UI library框架部分组件无法正常工作/" itemprop="url">rails webpacker添加UI library框架部分组件无法正常工作</a></h1>
         
 
         <div class="post-meta">
@@ -332,6 +1655,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby/Rails</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -340,9 +1685,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/09/18/rails webpacker添加UI library框架部分组件无法正常工作/#comments" itemprop="discussionUrl">
+                <a href="/2019/09/18/Rails webpacker添加UI library框架部分组件无法正常工作/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2019/09/18/rails webpacker添加UI library框架部分组件无法正常工作/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2019/09/18/Rails webpacker添加UI library框架部分组件无法正常工作/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -373,7 +1718,7 @@
         
           
           
-rails webpacker + element ui 会出现 table无法正常显示的问题。换成vue-ant-design框架也一样有部分组件无法正常使用。
+Rails webpacker + element ui 会出现 table无法正常显示的问题。换成vue-ant-design框架也一样有部分组件无法正常使用。
 
 关键是也没有报任何错！
 折腾几天后准备弃坑，最后在见官方raills webpacker里的例子用的是vuetify框架，所以准备换vuetify，就是在换的过程中无意间找到了解法。
@@ -389,7 +1734,7 @@ rails webpacker + element ui 会出现 table无法正常显示的问题。换成
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2019/09/18/rails webpacker添加UI library框架部分组件无法正常工作/#more" rel="contents">
+            <a class="btn" href="/2019/09/18/Rails webpacker添加UI library框架部分组件无法正常工作/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -459,7 +1804,7 @@ rails webpacker + element ui 会出现 table无法正常显示的问题。换成
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/09/06/Rails webpacker vue配置stylus/" itemprop="url">Rails webpacker vue配置stylus</a></h1>
+                <a class="post-title-link" href="/2019/09/06/Rails webpacker vue配置stylus/" itemprop="url">Rails Webpacker Vue配置Stylus</a></h1>
         
 
         <div class="post-meta">
@@ -481,6 +1826,28 @@ rails webpacker + element ui 会出现 table无法正常显示的问题。换成
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby/Rails</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -572,1355 +1939,11 @@ Rails + webpacker + vue项目，组件里如何使用stylus呢？
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2019/01/21/ubuntu定时重启/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/21/ubuntu定时重启/" itemprop="url">ubuntu定时重启</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-21T11:25:47+08:00">
-                2019-01-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/21/ubuntu定时重启/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2019/01/21/ubuntu定时重启/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          ubuntu 定时重启可以写一个crontab定时任务：
-像这样：
-crontab -e指令进入编辑页面，在最后加入：
-10 0 6,18 * * /sbin/reboot
-上面的代码表示 每天6点和18点执行一次重启。
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/21/ubuntu定时重启/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2019/01/20/RAILS项目自动备份数据库并上传到七牛云/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/20/RAILS项目自动备份数据库并上传到七牛云/" itemprop="url">RAILS项目自动备份数据库并上传到七牛云</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-20T14:19:32+08:00">
-                2019-01-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
-                    <span itemprop="name">Ruby/Rails</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019/01/20/RAILS项目自动备份数据库并上传到七牛云/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2019/01/20/RAILS项目自动备份数据库并上传到七牛云/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-这里用到一个gem，名为backup。坑是有的，不然可能不会有这篇教程。
-
-文档停留在4.0版本，有些新功能没有描述文档
-按4.0文档说明，是无法上传到七牛云的（国内主机无法上传到亚玛逊S3存储，国内大多上传到七牛云存储）
-
-以下教程将解决这些问题。
-
-
-在服务器root用户下安装Gem， 并指定版本：
-1gem install backup -v 5.0.0.beta.1
-
-初始化执行文件：
-123backup generate:model --trigger my_backup \    --databases=&quot;postgresql&quot; --storages=&quot;qiniu&quot; \    --compressor=&quot;gzip&quot; -
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/20/RAILS项目自动备份数据库并上传到七牛云/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2018/09/30/记遇到的性能问题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/30/记遇到的性能问题/" itemprop="url">记遇到的性能问题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T20:47:21+08:00">
-                2018-09-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
-                    <span itemprop="name">Ruby/Rails</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/30/记遇到的性能问题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/30/记遇到的性能问题/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          写了一个FMZ机器人协议程序，简单来讲就是用websocket把bitmex交易所数据拉回本地，再开启一个http服务给同一主机上的另外一个程序接数据。一开始用到的是EventMachine，参考蛋人网教程弄的一个简单的后台server做脚手架。接下来这个程序也搭出来了，但因为一开始做业务流程不熟悉，还做了太多个交易所，所以程序写得很乱，导致性能下降，拿数据经常断！
-再版的时候，想到了nginx想到了用rails来搭，跑越来之后，8个小时左右nginx就因为OOM被killed。这个问题现在都还解决。可能因为高并发，机器内存本身也小所致。最后还是用回了EventMachine。先在张上拿笔一步步写好流程之后再开始写代码，发现原来之前是乱写一通，写了很多废代码，还把整个流程弄乱了！
-这次折腾（
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/30/记遇到的性能问题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2018/09/27/devise如何在console里处理用户邮箱/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/27/devise如何在console里处理用户邮箱/" itemprop="url">devise如何在console里处理用户邮箱</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-27T23:59:09+08:00">
-                2018-09-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
-                    <span itemprop="name">Ruby/Rails</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/27/devise如何在console里处理用户邮箱/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/27/devise如何在console里处理用户邮箱/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          如题，特别是在已经增加了邮件验证功能下，管理员如果在后台console操作：
-
-12@user.skip_reconfirmation!@user.update_attributes(email: new_email)
-
-
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/27/devise如何在console里处理用户邮箱/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2018/09/21/Rails中的actionCable开放给其他网站连接/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/21/Rails中的actionCable开放给其他网站连接/" itemprop="url">Rails中的actionCable开放给其他网站连接</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-21T20:35:46+08:00">
-                2018-09-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
-                    <span itemprop="name">Ruby/Rails</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/21/Rails中的actionCable开放给其他网站连接/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/21/Rails中的actionCable开放给其他网站连接/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-Rails默认actionCable是给内部自己连接的，但如果我们有分布的服务器需要互通，怎样来开放websocket给其他用户或订阅呢？
-
-
-在config/enviroment/development.rb中增加：
-1config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/]
-同时，正式的生产环境也需要增加下。
-
-部署后，就可以正常访问到websocket订阅了。
-
-
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/21/Rails中的actionCable开放给其他网站连接/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2018/09/15/学习廖雪峰的JS教程提取笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/15/学习廖雪峰的JS教程提取笔记/" itemprop="url">学习廖雪峰的JS教程提取笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-15T00:45:27+08:00">
-                2018-09-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/15/学习廖雪峰的JS教程提取笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/15/学习廖雪峰的JS教程提取笔记/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-学习浏览器的断开，单步执行等用法（相见恨晚、以后不用console.log()啦！）
-
-最好不要一行写两个语句。
-
-要特别注意相等运算符==。JavaScript在设计时，有两种比较运算符：
-第一种是==比较，它会自动转换数据类型再比较，很多时候，会得到非常诡异的结果；
-第二种是===比较，它不会自动转换数据类型，如果数据类型不一致，返回false，如果一致，再比较。
-由于JavaScript这个设计缺陷，不要使用==比较，始终坚持使用===比较。
-
-另一个例外是NaN这个特殊的Number与所有其他值都不相等，包括它自己：
-1NaN === NaN; // false
-唯一能判断NaN的方法是通过isNaN()函数：
-1isNaN(NaN); // true
-
-
-
-null和undefi
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/15/学习廖雪峰的JS教程提取笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2018/09/13/关于闭包中用函数模仿计算的理解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/13/关于闭包中用函数模仿计算的理解/" itemprop="url">关于闭包中用函数模仿计算的理解</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-13T00:36:37+08:00">
-                2018-09-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/09/13/关于闭包中用函数模仿计算的理解/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/09/13/关于闭包中用函数模仿计算的理解/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          问题链接： 链接直达
-关于末尾的那个脑洞大开的函数，谷歌一圈无果，最后尝试自己用最简单粗暴的土方法来理解：
-首先把来看看one函数：
-123456// 定义数字1:var one = function (f) &#123;    return function (x) &#123;        return f(x);    &#125;&#125;;
-上面是老师的版本，精简后变成：
-12345var one = function (f) &#123;    return function () &#123;        return f();    &#125;&#125;;
-精简后就容易看出来：one函数干的事情，其实就是传入一个f()函数，最后返回一个待执行的f()函数。
-再来看看
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/13/关于闭包中用函数模仿计算的理解/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2018/07/12/基于VUE的Quasar项目部署到gitlab pages简易教程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="黄鸿亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Activeliang's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/12/基于VUE的Quasar项目部署到gitlab pages简易教程/" itemprop="url">基于VUE的Quasar项目部署到gitlab pages简易教程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T14:55:03+08:00">
-                2018-07-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js/" itemprop="url" rel="index">
-                    <span itemprop="name">js</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/07/12/基于VUE的Quasar项目部署到gitlab pages简易教程/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/07/12/基于VUE的Quasar项目部署到gitlab pages简易教程/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-目标：运用Gitlab的自动部署，实现git push 后，全自动部署Gitlab Pages静态页面。（不需要租服务器）
-
-
-先解决build后的css/js是绝对路径问题，应该换成相对路径才适合我们。
-在这里quasar项目的解法：修改quasar.conf.js，如下图，其中gbababa改成你自己gitlab项目的名称。
-
-
-build一下：1$ npm install &amp;&amp; quasar build
-
-去掉.gitignore里的/dist（就是刚才build生成的文件夹）：
-
-增加gitlab部署脚本，在项目根目录新增文件.gitlab-ci.yml，填入：12345678910pages:  stage: deploy  image: alpine:lates
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/12/基于VUE的Quasar项目部署到gitlab pages简易教程/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1969,7 +1992,7 @@ build一下：1$ npm install &amp;&amp; quasar build
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1980,7 +2003,7 @@ build一下：1$ npm install &amp;&amp; quasar build
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1991,7 +2014,7 @@ build一下：1$ npm install &amp;&amp; quasar build
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">65</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -2033,7 +2056,7 @@ build一下：1$ npm install &amp;&amp; quasar build
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

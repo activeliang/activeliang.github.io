@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="linux,Ruby,Futu富途," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="富途牛牛是唯数不多的互联网券商，有详细的API文档（同样有开放API的雪盈、老虎）但技术上都没有富途那么专业和强大。 最近刚好要写一个拉取富途行情数据的接口，用来做小工具—价格向右回撤提醒工具，一旦价格符合设定的点立即电话通知我出货。 这些年对过的API接口也不少，一开始我以为能很快用Ruby对接好，但实际上我错了，整整花费了大半个月。借此我也更深入的了解http与tcp之间的关系。自定义的tcp">
+<meta name="keywords" content="linux,Ruby,Futu富途">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路">
+<meta property="og:url" content="http://blog.hongliang.fun/archives/2020/06/02/Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路/index.html">
+<meta property="og:site_name" content="Activeliang&#39;s Blog">
+<meta property="og:description" content="富途牛牛是唯数不多的互联网券商，有详细的API文档（同样有开放API的雪盈、老虎）但技术上都没有富途那么专业和强大。 最近刚好要写一个拉取富途行情数据的接口，用来做小工具—价格向右回撤提醒工具，一旦价格符合设定的点立即电话通知我出货。 这些年对过的API接口也不少，一开始我以为能很快用Ruby对接好，但实际上我错了，整整花费了大半个月。借此我也更深入的了解http与tcp之间的关系。自定义的tcp">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-03-24T03:38:16.064Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路">
+<meta name="twitter:description" content="富途牛牛是唯数不多的互联网券商，有详细的API文档（同样有开放API的雪盈、老虎）但技术上都没有富途那么专业和强大。 最近刚好要写一个拉取富途行情数据的接口，用来做小工具—价格向右回撤提醒工具，一旦价格符合设定的点立即电话通知我出货。 这些年对过的API接口也不少，一开始我以为能很快用Ruby对接好，但实际上我错了，整整花费了大半个月。借此我也更深入的了解http与tcp之间的关系。自定义的tcp">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.hongliang.fun/archives/2020/06/02/Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路/"/>
+
+
+
+
+
+  <title>Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路 | Activeliang's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d0b26f3d65e65e5341c195298c05378d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Activeliang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">黄鸿亮的博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2020/06/02/Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-02T18:07:26+08:00">
+                2020-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/02/Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/06/02/Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>富途牛牛是唯数不多的互联网券商，有详细的API文档（同样有开放API的雪盈、老虎）但技术上都没有富途那么专业和强大。</p>
+<p>最近刚好要写一个拉取富途行情数据的接口，用来做小工具—价格向右回撤提醒工具，一旦价格符合设定的点立即电话通知我出货。</p>
+<p>这些年对过的API接口也不少，一开始我以为能很快用Ruby对接好，但实际上我错了，整整花费了大半个月。借此我也更深入的了解http与tcp之间的关系。自定义的tcp协议要如何对接等。</p>
+<p>其实市场上是有其他开源的php/go/java对接好的源代码，但我不信，我就是想要用Ruby来对接…..</p>
+<p>文档地址：<a href="https://openapi.futunn.com/futu-api-doc/" target="_blank" rel="external">https://openapi.futunn.com/futu-api-doc/</a></p>
+<p>文档使用了自定义tcp头 + google Protobuf  <a href="https://openapi.futunn.com/futu-api-doc/ftapi/protocol.html#%E5%8D%8F%E8%AE%AE%E8%AE%BE%E8%AE%A1" target="_blank" rel="external">协议介绍</a></p>
+<p>这就导致了只有http api对接经验的我，一下子要对接tcp协议一下懵逼了，也没有人能请教，只有自己死磕。</p>
+<p>这里讲一讲自己的理解：</p>
+<blockquote>
+<p> http是应用层协议基于tcp传输层，所以tcp更底层一点，tcp有协议头和协议体。其中协议体可以用富途提供的Google protobuf来解析出具体数据，这里重点是协议头，在ruby中要如何解析，解析出来之后，每次通信就能算得我们想要的数据了</p>
+</blockquote>
+<p>这里直接上Ruby代码解析协议头的代码：</p>
+<ol>
+<li><p>首先安装2个相关的gem:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">gem <span class="string">'google-protobuf'</span></div><div class="line">gem <span class="string">'bindata'</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>解析和序列Tcp头部信息相关的代码：</p>
+<blockquote>
+<p>这里按websocket协议写的协议头信息，可能写官方API文档不太一样</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">请求Request的相关代码  </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ReqHead</span> &lt; BinData::Record</span></div><div class="line">  endian <span class="symbol">:big</span></div><div class="line">  string <span class="symbol">:sign</span>, <span class="symbol">read_length:</span> <span class="number">8</span></div><div class="line">  uint32 <span class="symbol">:cmd</span></div><div class="line">  uint64 <span class="symbol">:section</span></div><div class="line"><span class="keyword">end</span></div><div class="line"></div><div class="line">响应Response的相关代码</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">ResHead</span> &lt; BinData::Record</span></div><div class="line">  endian <span class="symbol">:big</span></div><div class="line">  string <span class="symbol">:sign</span>, <span class="symbol">read_length:</span> <span class="number">8</span></div><div class="line">  uint32 <span class="symbol">:cmd</span></div><div class="line">  uint64 <span class="symbol">:section</span></div><div class="line">  uint32 <span class="symbol">:error</span></div><div class="line">  string <span class="symbol">:errmsg</span>, <span class="symbol">read_length:</span> <span class="number">20</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>每次请求，Request的头部信息这样序列：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">header</span> <span class="title">body_binary</span>, <span class="title">id</span></span></div><div class="line">   res = Futu::ReqHead.new <span class="symbol">sign:</span> <span class="string">"ft-v1.0\x00"</span>,</div><div class="line">                            <span class="symbol">cmd:</span> id,</div><div class="line">                        <span class="symbol">section:</span> serial_id</div><div class="line">   res.to_binary_s</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+<p>每次接收到请求时这样解析：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_header</span> <span class="title">binary</span></span></div><div class="line">   Futu::ResHead.read binary</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="解决完协议头部信息后，再来解决协议体的解析"><a href="#解决完协议头部信息后，再来解决协议体的解析" class="headerlink" title="解决完协议头部信息后，再来解决协议体的解析"></a>解决完协议头部信息后，再来解决协议体的解析</h5><p>协议体是从44位开始的，所以也挺简单，假设我们接收到的response赋值给raw_data，那么解析方法如下：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">TrdGetAccList::Response.decode raw_data.byteslice(<span class="number">44</span>..-<span class="number">1</span>)</div></pre></td></tr></table></figure>
+<p>具体这个TrdGetAccList::Response文件要怎么生成和引入，请参考：<a href="https://developers.google.com/protocol-buffers/docs/reference/ruby-generated" target="_blank" rel="external">https://developers.google.com/protocol-buffers/docs/reference/ruby-generated</a></p>
+<h4 id="说说Websocket连接时和普通tcp连接的区别"><a href="#说说Websocket连接时和普通tcp连接的区别" class="headerlink" title="说说Websocket连接时和普通tcp连接的区别"></a>说说Websocket连接时和普通tcp连接的区别</h4><ol>
+<li>不再需要间隔一段时间发送keep alive保活</li>
+<li>协议头有所变化，见我上方代码中的协议头</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/Ruby/" rel="tag"># Ruby</a>
+          
+            <a href="/tags/Futu富途/" rel="tag"># Futu富途</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/06/02/Docker在build生成镜像时使用proxy代理/" rel="next" title="Docker在build生成镜像时使用proxy代理">
+                <i class="fa fa-chevron-left"></i> Docker在build生成镜像时使用proxy代理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/06/07/Rails下的webpacker添加ie11支持遇到错误提示require无法使用/" rel="prev" title="Rails下的webpacker添加ie11支持遇到错误提示require无法使用">
+                Rails下的webpacker添加ie11支持遇到错误提示require无法使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png"
+              alt="黄鸿亮" />
+          
+            <p class="site-author-name" itemprop="name">黄鸿亮</p>
+            <p class="site-description motion-element" itemprop="description">记录让我们走得更远...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">65</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#解决完协议头部信息后，再来解决协议体的解析"><span class="nav-number">1.</span> <span class="nav-text">解决完协议头部信息后，再来解决协议体的解析</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#说说Websocket连接时和普通tcp连接的区别"><span class="nav-number"></span> <span class="nav-text">说说Websocket连接时和普通tcp连接的区别</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄鸿亮</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://honglianggithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://blog.hongliang.fun/archives/2020/06/02/Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路/';
+          this.page.identifier = '2020/06/02/Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路/';
+          this.page.title = 'Ruby对接富途牛牛证券自定义TCP协议、Websocket协议的思路';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://honglianggithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

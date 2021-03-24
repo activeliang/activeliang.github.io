@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hongliang 黄鸿亮" />
+  <meta name="keywords" content="js," />
 
 
 
@@ -96,6 +96,7 @@
 
 
 <meta name="description" content="学习浏览器的断开，单步执行等用法（相见恨晚、以后不用console.log()啦！）  最好不要一行写两个语句。  要特别注意相等运算符==。JavaScript在设计时，有两种比较运算符： 第一种是==比较，它会自动转换数据类型再比较，很多时候，会得到非常诡异的结果； 第二种是===比较，它不会自动转换数据类型，如果数据类型不一致，返回false，如果一致，再比较。 由于JavaScript这">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习廖雪峰的JS教程提取笔记">
 <meta property="og:url" content="http://blog.hongliang.fun/archives/2018/09/15/学习廖雪峰的JS教程提取笔记/index.html">
@@ -105,7 +106,7 @@
 <meta property="og:image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2018-09-09-133541.png">
 <meta property="og:image" content="https://cdn.liaoxuefeng.com/cdn/files/attachments/001435287613668a73ab76ccc85411282c1b1370be41636000/l">
 <meta property="og:image" content="https://cdn.liaoxuefeng.com/cdn/files/attachments/001439872160923ca15925ec79f4692a98404ddb2ed5503000/l">
-<meta property="og:updated_time" content="2019-01-19T11:13:34.733Z">
+<meta property="og:updated_time" content="2021-03-24T03:31:08.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="学习廖雪峰的JS教程提取笔记">
 <meta name="twitter:description" content="学习浏览器的断开，单步执行等用法（相见恨晚、以后不用console.log()啦！）  最好不要一行写两个语句。  要特别注意相等运算符==。JavaScript在设计时，有两种比较运算符： 第一种是==比较，它会自动转换数据类型再比较，很多时候，会得到非常诡异的结果； 第二种是===比较，它不会自动转换数据类型，如果数据类型不一致，返回false，如果一致，再比较。 由于JavaScript这">
@@ -407,8 +408,6 @@
 <p>唯一能判断<code>NaN</code>的方法是通过<code>isNaN()</code>函数：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">isNaN(NaN); // true</div></pre></td></tr></table></figure>
 </li>
-</ol>
-<ol>
 <li><h4 id="null和undefined"><a href="#null和undefined" class="headerlink" title="null和undefined"></a>null和undefined</h4><p><code>null</code>表示一个“空”的值，它和<code>0</code>以及空字符串<code>&#39;&#39;</code>不同，<code>0</code>是一个数值，<code>&#39;&#39;</code>表示长度为0的字符串，而<code>null</code>表示“空”。</p>
 <p>在其他语言中，也有类似JavaScript的<code>null</code>的表示，例如Java也用<code>null</code>，Swift用<code>nil</code>，Python用<code>None</code>表示。但是，在JavaScript中，还有一个和<code>null</code>类似的<code>undefined</code>，它表示“未定义”。</p>
 <p>JavaScript的设计者希望用<code>null</code>表示一个空的值，而<code>undefined</code>表示值未定义。事实证明，这并没有什么卵用，区分两者的意义不大。大多数情况下，我们都应该用<code>null</code>。<code>undefined</code>仅仅在判断函数参数是否传递的情况下有用。</p>
@@ -640,7 +639,7 @@
 <h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">x =&gt; x * x</div></pre></td></tr></table></figure>
 <p>上面的箭头函数相当于：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">function (x) &#123;</div><div class="line">    return x * x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>箭头函数相当于匿名函数，并且简化了函数定义。箭头函数有两种格式，一种像上面的，只包含一个表达式，连<code>{ ... }</code>和<code>return</code>都省略掉了。还有一种可以包含多条语句，这时候就不能省略<code>{ ... }</code>和<code>return</code>：    </p>
+<p>箭头函数相当于匿名函数，并且简化了函数定义。箭头函数有两种格式，一种像上面的，只包含一个表达式，连<code>{ ... }</code>和<code>return</code>都省略掉了。还有一种可以包含多条语句，这时候就不能省略<code>{ ... }</code>和<code>return</code>：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">x =&gt; &#123;</div><div class="line">    if (x &gt; 0) &#123;</div><div class="line">        return x * x;</div><div class="line">    &#125;</div><div class="line">    else &#123;</div><div class="line">        return - x * x;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>如果参数不是一个，就需要用括号<code>()</code>括起来：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">// 两个参数:</div><div class="line">(x, y) =&gt; x * x + y * y</div><div class="line"></div><div class="line">// 无参数:</div><div class="line">() =&gt; 3.14</div><div class="line"></div><div class="line">// 可变参数:</div><div class="line">(x, y, ...rest) =&gt; &#123;</div><div class="line">    var i, sum = x + y;</div><div class="line">    for (i=0; i&lt;rest.length; i++) &#123;</div><div class="line">        sum += rest[i];</div><div class="line">    &#125;</div><div class="line">    return sum;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -676,7 +675,7 @@
 <h4 id="Date函数"><a href="#Date函数" class="headerlink" title="Date函数"></a>Date函数</h4><blockquote>
 <p>关于时间的一些方法</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var now = new Date();</div><div class="line">now; // Wed Jun 24 2015 19:49:22 GMT+0800 (CST)</div><div class="line">now.getFullYear(); // 2015, 年份</div><div class="line">now.getMonth(); // 5, 月份，注意月份范围是0~11，5表示六月</div><div class="line">now.getDate(); // 24, 表示24号</div><div class="line">now.getDay(); // 3, 表示星期三</div><div class="line">now.getHours(); // 19, 24小时制</div><div class="line">now.getMinutes(); // 49, 分钟</div><div class="line">now.getSeconds(); // 22, 秒</div><div class="line">now.getMilliseconds(); // 875, 毫秒数</div><div class="line">now.getTime(); // 1435146562875, 以number形式表示的时间戳</div><div class="line"></div><div class="line">var test = Date.now() //1536800166989</div><div class="line">var d = new Date(1435146562875);</div><div class="line">d.toLocaleString(); // &apos;2015/6/24 下午7:49:22&apos;，本地时间（北京时区+8:00），显示的字符串与操作系统设定的格式有关</div><div class="line">d.toUTCString(); </div><div class="line"></div><div class="line">var d = new Date(2015, 5, 19, 20, 15, 30, 123);</div><div class="line">d; // Fri Jun 19 2015 20:15:30 GMT+0800 (CST)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var now = new Date();</div><div class="line">now; // Wed Jun 24 2015 19:49:22 GMT+0800 (CST)</div><div class="line">now.getFullYear(); // 2015, 年份</div><div class="line">now.getMonth(); // 5, 月份，注意月份范围是0~11，5表示六月</div><div class="line">now.getDate(); // 24, 表示24号</div><div class="line">now.getDay(); // 3, 表示星期三</div><div class="line">now.getHours(); // 19, 24小时制</div><div class="line">now.getMinutes(); // 49, 分钟</div><div class="line">now.getSeconds(); // 22, 秒</div><div class="line">now.getMilliseconds(); // 875, 毫秒数</div><div class="line">now.getTime(); // 1435146562875, 以number形式表示的时间戳</div><div class="line"></div><div class="line">var test = Date.now() //1536800166989</div><div class="line">var d = new Date(1435146562875);</div><div class="line">d.toLocaleString(); // &apos;2015/6/24 下午7:49:22&apos;，本地时间（北京时区+8:00），显示的字符串与操作系统设定的格式有关</div><div class="line">d.toUTCString();</div><div class="line"></div><div class="line">var d = new Date(2015, 5, 19, 20, 15, 30, 123);</div><div class="line">d; // Fri Jun 19 2015 20:15:30 GMT+0800 (CST)</div></pre></td></tr></table></figure>
 <h5 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var re = /^\d&#123;3&#125;\-\d&#123;3,8&#125;$/;</div><div class="line">re.test(&apos;010-12345&apos;); // true</div><div class="line">re.test(&apos;010-1234x&apos;); // false</div><div class="line">re.test(&apos;010 12345&apos;); // false</div></pre></td></tr></table></figure>
 <h6 id="1-切分字符串"><a href="#1-切分字符串" class="headerlink" title="1. 切分字符串"></a>1. 切分字符串</h6><p>用正则表达式切分字符串比用固定的字符更灵活，请看正常的切分代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&apos;a b   c&apos;.split(&apos; &apos;); // [&apos;a&apos;, &apos;b&apos;, &apos;&apos;, &apos;&apos;, &apos;c&apos;]</div></pre></td></tr></table></figure>
@@ -740,7 +739,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">function Student(name) &#123;</div><div class="line">    this.name = name;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Student.prototype.hello = function () &#123;</div><div class="line">    alert(&apos;Hello, &apos; + this.name + &apos;!&apos;);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>这样，xiaoming, xiaoliang下次调用是到Student找到这个方法来调用！</p>
 </li>
-<li><p>不要忘记写<strong>new</strong> </p>
+<li><p>不要忘记写<strong>new</strong></p>
 <blockquote>
 <p>因为如果忘了写new， 在函数里很多属性会直接通过this增加到window，会更糟糕！So，一般构造函数通常会以大写字母开关。</p>
 <p>更好的做法是，<strong>自定一个函数</strong>：</p>
@@ -798,6 +797,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
 
       
       
@@ -807,8 +812,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/13/关于闭包中用函数模仿计算的理解/" rel="next" title="关于闭包中用函数模仿计算的理解">
-                <i class="fa fa-chevron-left"></i> 关于闭包中用函数模仿计算的理解
+              <a href="/2018/09/13/关于闭包中用函数模仿计算的理解/" rel="next" title="关于JS闭包中用函数模仿计算的理解">
+                <i class="fa fa-chevron-left"></i> 关于JS闭包中用函数模仿计算的理解
               </a>
             
           </div>
@@ -817,8 +822,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/21/Rails中的actionCable开放给其他网站连接/" rel="prev" title="Rails中的actionCable开放给其他网站连接">
-                Rails中的actionCable开放给其他网站连接 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/21/Rails中的actionCable开放给其他网站连接/" rel="prev" title="Rails中的ActionCable开放给其他网站连接">
+                Rails中的ActionCable开放给其他网站连接 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -906,7 +911,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">34</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -917,7 +922,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">30</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -928,7 +933,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">65</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -986,7 +991,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

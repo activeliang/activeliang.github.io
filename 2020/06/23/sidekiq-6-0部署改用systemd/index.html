@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Rails,Sidekiq_6.0," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="用过sidekiq的人 都知道sidekiq有一个毛病就是当机机内存不足时容易被kill掉，所以进程队列任务经常容易处于宕机状态。 好在sidekiq的新版本6.0，改成了systemd来进程守护，更加简单高效保活。下面说说如果capistrano来部署。 首先对systemd不了解的同学建议先去了解一下，这里阮一峰老师讲systemd  回到Rails项目的部署（这里假设你已经部署过sideki">
+<meta name="keywords" content="Rails,Sidekiq_6.0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sidekiq_6.0部署改用systemd">
+<meta property="og:url" content="http://blog.hongliang.fun/archives/2020/06/23/Sidekiq-6-0部署改用systemd/index.html">
+<meta property="og:site_name" content="Activeliang&#39;s Blog">
+<meta property="og:description" content="用过sidekiq的人 都知道sidekiq有一个毛病就是当机机内存不足时容易被kill掉，所以进程队列任务经常容易处于宕机状态。 好在sidekiq的新版本6.0，改成了systemd来进程守护，更加简单高效保活。下面说说如果capistrano来部署。 首先对systemd不了解的同学建议先去了解一下，这里阮一峰老师讲systemd  回到Rails项目的部署（这里假设你已经部署过sideki">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-03-24T03:42:44.475Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sidekiq_6.0部署改用systemd">
+<meta name="twitter:description" content="用过sidekiq的人 都知道sidekiq有一个毛病就是当机机内存不足时容易被kill掉，所以进程队列任务经常容易处于宕机状态。 好在sidekiq的新版本6.0，改成了systemd来进程守护，更加简单高效保活。下面说说如果capistrano来部署。 首先对systemd不了解的同学建议先去了解一下，这里阮一峰老师讲systemd  回到Rails项目的部署（这里假设你已经部署过sideki">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.hongliang.fun/archives/2020/06/23/Sidekiq-6-0部署改用systemd/"/>
+
+
+
+
+
+  <title>Sidekiq_6.0部署改用systemd | Activeliang's Blog</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?d0b26f3d65e65e5341c195298c05378d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Activeliang's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">黄鸿亮的博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.hongliang.fun/archives/2020/06/23/Sidekiq-6-0部署改用systemd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="黄鸿亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Activeliang's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Sidekiq_6.0部署改用systemd</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-23T17:47:52+08:00">
+                2020-06-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ruby-Rails/" itemprop="url" rel="index">
+                    <span itemprop="name">Ruby/Rails</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/06/23/Sidekiq-6-0部署改用systemd/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2020/06/23/Sidekiq-6-0部署改用systemd/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>用过sidekiq的人 都知道sidekiq有一个毛病就是当机机内存不足时容易被kill掉，所以进程队列任务经常容易处于宕机状态。</p>
+<p>好在sidekiq的新版本6.0，改成了systemd来进程守护，更加简单高效保活。下面说说如果capistrano来部署。</p>
+<p>首先对systemd不了解的同学建议先去了解一下，这里<a href="http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html" target="_blank" rel="external">阮一峰老师讲systemd</a></p>
+<ol>
+<li><p>回到Rails项目的部署（这里假设你已经部署过sidekiq，并且项目已经配置了sidekiq与capistrano相关的配置），在config/deploy.rb里添加代码：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">set <span class="symbol">:init_system</span>, <span class="symbol">:systemd</span></div><div class="line">set <span class="symbol">:service_unit_name</span>, <span class="string">"sidekiq"</span></div></pre></td></tr></table></figure>
+<p>配置让capistrano控制sidekiq。</p>
+</li>
+<li><p>以部署的用户角色登录上部署服务器，手工添加systemd的配置文件，例如我的用户角色是deploy，那么我在服务器上新增一个文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/home/deploy/.config/systemd/user/sidekiq.service</div></pre></td></tr></table></figure>
+<p>在文件里填入：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta">#</span> Sidekiq auto start using systemd unit file for Ubuntu 16.04</div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta">#</span> Put this in /lib/systemd/system (Ubuntu).</div><div class="line"><span class="meta">#</span> Run:</div><div class="line"><span class="meta">#</span>   1. systemctl enable sidekiq (to enable sidekiq service)</div><div class="line"><span class="meta">#</span>   2. systemctl &#123;start,stop,restart&#125; sidekiq (to start sidekiq service)</div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta">#</span> This file corresponds to a single Sidekiq process.  Add multiple copies</div><div class="line"><span class="meta">#</span> to run multiple processes (sidekiq-1, sidekiq-2, etc).</div><div class="line"><span class="meta">#</span></div><div class="line"><span class="meta">#</span> See Inspeqtor's Systemd wiki page for more detail about Systemd:</div><div class="line"><span class="meta">#</span> https://github.com/mperham/inspeqtor/wiki/Systemd</div><div class="line"><span class="meta">#</span></div><div class="line">[Unit]</div><div class="line">Description=sidekiq</div><div class="line"><span class="meta">#</span> start us only once the network and logging subsystems are available,</div><div class="line"><span class="meta">#</span> consider adding redis-server.service if Redis is local and systemd-managed.</div><div class="line">After=syslog.target network.target</div><div class="line"></div><div class="line"><span class="meta">#</span> See these pages for lots of options:</div><div class="line"><span class="meta">#</span> http://0pointer.de/public/systemd-man/systemd.service.html</div><div class="line"><span class="meta">#</span> http://0pointer.de/public/systemd-man/systemd.exec.html</div><div class="line">[Service]</div><div class="line">Type=simple</div><div class="line">WorkingDirectory=/home/Public/Rails/your-rails-app</div><div class="line"><span class="meta">#</span> If you use rbenv or rvm:</div><div class="line">ExecStart=/bin/bash -lc 'bundle exec sidekiq -e production'</div><div class="line"><span class="meta">#</span> If you use the system's ruby:</div><div class="line"><span class="meta">#</span> ExecStart=bundle exec sidekiq -e production</div><div class="line">User=your-username</div><div class="line">Group=your-username</div><div class="line">UMask=0002</div><div class="line"></div><div class="line"><span class="meta">#</span> if we crash, restart</div><div class="line">RestartSec=1</div><div class="line">Restart=on-failure</div><div class="line"></div><div class="line"><span class="meta">#</span> output goes to /var/log/syslog</div><div class="line">StandardOutput=syslog</div><div class="line">StandardError=syslog</div><div class="line"></div><div class="line"><span class="meta">#</span> This will default to "bundler" if we don't specify it</div><div class="line">SyslogIdentifier=sidekiq</div><div class="line"></div><div class="line">[Install]</div><div class="line">WantedBy=multi-user.target</div></pre></td></tr></table></figure>
+<p>把里面的项目目录改成实际的路径。</p>
+</li>
+<li><p>最后再回到Rails项目config/deploy.rb，添加代码：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">Rake::Task[<span class="string">"sidekiq:restart"</span>].clear_actions</div><div class="line">namespace <span class="symbol">:sidekiq</span> <span class="keyword">do</span></div><div class="line">  task <span class="symbol">:restart</span> <span class="keyword">do</span></div><div class="line">    on roles(<span class="symbol">:app</span>) <span class="keyword">do</span></div><div class="line">      execute <span class="symbol">:sudo</span>, <span class="symbol">:systemctl</span>, <span class="symbol">:restart</span>, <span class="symbol">:sidekiq</span></div><div class="line">    <span class="keyword">end</span></div><div class="line">  <span class="keyword">end</span></div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>完成，下次再用capistrano部署时，能自动启动sidekiq的系统进程。</p>
+<h4 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h4><ul>
+<li><a href="https://gist.github.com/activeliang/a54c7b638cd828cdcab75ee5a12078ee" target="_blank" rel="external">https://gist.github.com/activeliang/a54c7b638cd828cdcab75ee5a12078ee</a></li>
+<li><a href="http://ilab.me/howto/run-sidekiq-6-using-systemd/" target="_blank" rel="external">http://ilab.me/howto/run-sidekiq-6-using-systemd/</a></li>
+<li><a href="https://github.com/mperham/sidekiq/issues/3308" target="_blank" rel="external">https://github.com/mperham/sidekiq/issues/3308</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Rails/" rel="tag"># Rails</a>
+          
+            <a href="/tags/Sidekiq-6-0/" rel="tag"># Sidekiq_6.0</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/06/07/Rails下的webpacker添加ie11支持遇到错误提示require无法使用/" rel="next" title="Rails下的webpacker添加ie11支持遇到错误提示require无法使用">
+                <i class="fa fa-chevron-left"></i> Rails下的webpacker添加ie11支持遇到错误提示require无法使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/17/研究学习minikube在Mac上跑demo遇到几个小坑/" rel="prev" title="研究学习minikube在Mac上跑demo遇到几个小坑">
+                研究学习minikube在Mac上跑demo遇到几个小坑 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="https://biwenying-1254277363.cos.ap-guangzhou.myqcloud.com/2019-01-18-WX20190118-225801%402x.png"
+              alt="黄鸿亮" />
+          
+            <p class="site-author-name" itemprop="name">黄鸿亮</p>
+            <p class="site-description motion-element" itemprop="description">记录让我们走得更远...</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">48</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">65</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#参考："><span class="nav-number">1.</span> <span class="nav-text">参考：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">黄鸿亮</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://honglianggithubblog.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://blog.hongliang.fun/archives/2020/06/23/Sidekiq-6-0部署改用systemd/';
+          this.page.identifier = '2020/06/23/Sidekiq-6-0部署改用systemd/';
+          this.page.title = 'Sidekiq_6.0部署改用systemd';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://honglianggithubblog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
